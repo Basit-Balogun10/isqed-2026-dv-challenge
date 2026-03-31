@@ -1,0 +1,67 @@
+
+[          0 ns] UVM_INFO  @ tb_top: Reset asserted
+[         10 ns] UVM_INFO  @ tb_top: Clock started, period = 10 ns
+[         50 ns] UVM_INFO  @ tb_top: Reset deasserted
+[         60 ns] UVM_INFO  @ timer_env: Environment build phase complete
+[         70 ns] UVM_INFO  @ timer_agent: Agent configured
+[         80 ns] UVM_INFO  @ timer_scoreboard: Scoreboard initialized
+[        100 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x48, data=0x00000064
+[        120 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x4C, data=0x000000C8
+[        140 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x10, data=0x00000007
+[        160 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x40, data=0x00000001 (enable)
+[        170 ns] UVM_INFO  @ timer_monitor: Watchdog counter started
+[        180 ns] UVM_INFO  @ timer_scoreboard: Expecting bark at count threshold
+[        200 ns] UVM_INFO  @ timer_driver: Monitoring watchdog count
+[        300 ns] UVM_WARNING @ tl_monitor: No TL-UL transactions in last 100 ns
+[        500 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x00000022
+[        700 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x00000036
+[        900 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x0000004A
+[       1050 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x00000059
+[       1100 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x0000005E
+[       1110 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x0000005F
+[       1120 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x00000060
+[       1130 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x00000061
+[       1140 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x00000062
+[       1150 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x00000063
+[       1160 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x00000064
+[       1160 ns] UVM_INFO  @ timer_monitor: Bark interrupt asserted
+[       1160 ns] UVM_INFO  @ timer_monitor: INTR_STATE[2] = 1
+[       1165 ns] UVM_INFO  @ timer_scoreboard: Checking bark timing
+[       1175 ns] UVM_ERROR @ timer_scoreboard: WATCHDOG BARK TIMING MISMATCH
+                           Bark interrupt asserted at WATCHDOG_COUNT = 0x00000064 (100)
+                           WATCHDOG_BARK_THRESH = 0x00000064 (100)
+                           Expected bark at WATCHDOG_COUNT = 0x00000065 (101)
+                           INTR_STATE: 0x00000004
+[       1180 ns] UVM_WARNING @ clk_monitor: Simulation wall-clock time > 1s advisory
+[       1250 ns] UVM_INFO  @ timer_driver: Petting watchdog
+[       1260 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x50, data=0x00000001
+[       1270 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT reset to 0
+[       1280 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x0C, data=0x00000004 (W1C)
+[       1290 ns] UVM_INFO  @ timer_monitor: INTR_STATE[2] = 0
+[       1400 ns] UVM_WARNING @ timer_monitor: Watchdog lock not tested
+[       1500 ns] UVM_INFO  @ timer_driver: Verifying count after pet
+[       1510 ns] UVM_INFO  @ timer_monitor: WATCHDOG_COUNT = 0x00000018
+[       1600 ns] UVM_WARNING @ clk_monitor: Simulation wall-clock > 1s
+[       1700 ns] UVM_INFO  @ timer_driver: Test complete
+[       1720 ns] UVM_INFO  @ timer_reg_adapter: Reading WATCHDOG_COUNT: 0x0000002A
+[       1730 ns] UVM_INFO  @ timer_scoreboard: Count still incrementing after bark: OK
+[       1750 ns] UVM_INFO  @ timer_reg_adapter: Reading INTR_STATE: 0x00000004
+[       1760 ns] UVM_INFO  @ timer_scoreboard: No bite interrupt (count < bite threshold): PASS
+[       1770 ns] UVM_INFO  @ timer_driver: Checking alert
+[       1780 ns] UVM_INFO  @ timer_monitor: alert_o = 0
+[       1790 ns] UVM_INFO  @ timer_scoreboard: Alert not asserted: PASS
+[       1800 ns] UVM_INFO  @ timer_driver: Register readback
+[       1810 ns] UVM_INFO  @ timer_reg_adapter: Reading addr=0x40: 0x00000001
+[       1820 ns] UVM_INFO  @ timer_reg_adapter: Reading addr=0x48: 0x00000064
+[       1830 ns] UVM_INFO  @ timer_reg_adapter: Reading addr=0x4C: 0x000000C8
+[       1840 ns] UVM_INFO  @ timer_scoreboard: Register readback: PASS
+[       1850 ns] UVM_INFO  @ tl_monitor: Bus idle
+[       1900 ns] UVM_INFO  @ timer_env: Drain time complete
+
+# ----- UVM Report Summary -----
+# UVM_INFO    : 38
+# UVM_WARNING :  4
+# UVM_ERROR   :  1
+# UVM_FATAL   :  0
+# ** TEST FAILED ** (1 UVM_ERROR)
+# Simulation time: 1900 ns

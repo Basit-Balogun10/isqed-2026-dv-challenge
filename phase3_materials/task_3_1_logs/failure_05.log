@@ -1,0 +1,84 @@
+
+[          0 ns] UVM_INFO  @ tb_top: Reset asserted
+[         10 ns] UVM_INFO  @ tb_top: Clock started, period = 10 ns
+[         50 ns] UVM_INFO  @ tb_top: Reset deasserted
+[         60 ns] UVM_INFO  @ spi_env: Environment build phase complete
+[         70 ns] UVM_INFO  @ spi_agent: Agent configured: CPOL=0, CPHA=1
+[         80 ns] UVM_INFO  @ spi_scoreboard: Scoreboard initialized
+[        100 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x18, data=0x20222004
+[        120 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x14, data=0x00000000
+[        140 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x04, data=0x00000003
+[        160 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x0C, data=0x00000007
+[        180 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x10, data=0x0000000F
+[        210 ns] UVM_INFO  @ spi_driver: === Test 1: Single-byte transfer ===
+[        220 ns] UVM_INFO  @ spi_driver: TX data: 0xA5
+[        230 ns] UVM_INFO  @ spi_driver: Slave configured to return 0x3C
+[        240 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x1C, data=0x000000A5
+[        250 ns] UVM_INFO  @ spi_slave_model: MISO: 0x3C (MSB first)
+[        260 ns] UVM_INFO  @ spi_driver: Issuing COMMAND
+[        270 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x08, data=0x00000401
+[        280 ns] UVM_WARNING @ tl_monitor: TL-UL response latency: 3 cycles (advisory)
+[        300 ns] UVM_INFO  @ spi_monitor: FSM: IDLE -> CS_SETUP
+[        320 ns] UVM_INFO  @ spi_monitor: csn_o[0] asserted
+[        340 ns] UVM_INFO  @ spi_monitor: FSM: CS_SETUP -> DATA_XFER
+[        360 ns] UVM_INFO  @ spi_monitor: === Transfer in progress ===
+[        370 ns] UVM_INFO  @ spi_monitor: Bit 7: SCLK rising edge
+[        410 ns] UVM_INFO  @ spi_monitor: Bit 7: SCLK falling edge
+[        450 ns] UVM_INFO  @ spi_monitor: Bit 6: SCLK rising edge
+[        490 ns] UVM_INFO  @ spi_monitor: Bit 6: SCLK falling edge
+[        530 ns] UVM_INFO  @ spi_monitor: Bit 5: SCLK rising edge
+[        570 ns] UVM_INFO  @ spi_monitor: Bit 5: SCLK falling edge
+[        610 ns] UVM_INFO  @ spi_monitor: Bit 4: SCLK rising edge
+[        650 ns] UVM_INFO  @ spi_monitor: Bit 4: SCLK falling edge
+[        690 ns] UVM_INFO  @ spi_monitor: Bit 3: SCLK rising edge
+[        730 ns] UVM_INFO  @ spi_monitor: Bit 3: SCLK falling edge
+[        770 ns] UVM_INFO  @ spi_monitor: Bit 2: SCLK rising edge
+[        810 ns] UVM_INFO  @ spi_monitor: Bit 2: SCLK falling edge
+[        850 ns] UVM_INFO  @ spi_monitor: Bit 1: SCLK rising edge
+[        890 ns] UVM_INFO  @ spi_monitor: Bit 1: SCLK falling edge
+[        930 ns] UVM_INFO  @ spi_monitor: Bit 0: SCLK rising edge
+[        970 ns] UVM_INFO  @ spi_monitor: Bit 0: SCLK falling edge
+[        980 ns] UVM_INFO  @ spi_monitor: Transfer complete
+[        985 ns] UVM_INFO  @ spi_monitor: RX FIFO push
+[        990 ns] UVM_INFO  @ spi_monitor: FSM: DATA_XFER -> CS_HOLD
+[       1010 ns] UVM_INFO  @ spi_monitor: FSM: CS_HOLD -> CS_IDLE
+[       1030 ns] UVM_INFO  @ spi_monitor: csn_o[0] deasserted
+[       1040 ns] UVM_INFO  @ spi_monitor: FSM: CS_IDLE -> IDLE
+[       1050 ns] UVM_INFO  @ spi_reg_adapter: Reading RXDATA: 0x0000003C
+[       1060 ns] UVM_INFO  @ spi_scoreboard: RX data: expected=0x3C, actual=0x3C
+[       1070 ns] UVM_INFO  @ spi_scoreboard: Single-byte transfer: PASS
+[       1100 ns] UVM_INFO  @ spi_driver: === Test 2: Single-byte with different slave pattern ===
+[       1110 ns] UVM_INFO  @ spi_driver: Slave will drive 0xB7
+[       1120 ns] UVM_INFO  @ spi_slave_model: Reconfigured: MISO = 0xB7
+[       1130 ns] UVM_INFO  @ spi_driver: TX data: 0x55
+[       1140 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x1C, data=0x00000055
+[       1150 ns] UVM_INFO  @ spi_driver: Switching mode briefly for dynamic config test
+[       1160 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x18, data=0x20222000 (CPHA=0 temp)
+[       1170 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x18, data=0x20222004 (CPHA=1 restored)
+[       1175 ns] UVM_WARNING @ spi_monitor: CONFIGOPTS changed while engine idle
+[       1180 ns] UVM_INFO  @ spi_reg_adapter: Register write: addr=0x08, data=0x00000401
+[       1190 ns] UVM_INFO  @ spi_monitor: FSM: IDLE -> CS_SETUP
+[       1210 ns] UVM_INFO  @ spi_monitor: FSM: CS_SETUP -> DATA_XFER
+[       1220 ns] UVM_INFO  @ spi_monitor: === Transfer in progress ===
+[       1230 ns] UVM_INFO  @ spi_monitor: Bit 7: SCLK rising edge
+[       1270 ns] UVM_INFO  @ spi_monitor: Bit 7: SCLK falling edge
+[       1280 ns] UVM_INFO  @ spi_monitor: Continuing transfer...
+[       1680 ns] UVM_INFO  @ spi_monitor: Transfer complete. RX data = 0x5B
+[       1690 ns] UVM_INFO  @ spi_monitor: RX FIFO push
+[       1695 ns] UVM_WARNING @ tl_monitor: TL-UL read to STATUS register before output_valid stable (benign)
+[       1700 ns] UVM_INFO  @ spi_reg_adapter: Reading RXDATA: 0x0000005B
+[       1710 ns] UVM_ERROR @ spi_scoreboard: DATA MISMATCH
+                           Expected: 0xB7
+                           Actual:   0x5B
+                           CONFIGOPTS: 0x20222004
+                           STATUS: 0x00000020
+[       1720 ns] UVM_WARNING @ spi_monitor: Previous test PASS may not be representative
+[       1800 ns] UVM_INFO  @ spi_env: Drain time complete
+
+# ----- UVM Report Summary -----
+# UVM_INFO    : 52
+# UVM_WARNING :  4
+# UVM_ERROR   :  1
+# UVM_FATAL   :  0
+# ** TEST FAILED ** (1 UVM_ERROR)
+# Simulation time: 1800 ns

@@ -1,0 +1,121 @@
+dut: nexus_uart
+vplan:
+  - id: VP-UART-001
+    title: "Basic TX single byte"
+    description: "Enable TX path, write one byte to TXDATA, and verify correct serial frame on uart_tx_o including start bit, 8 data bits LSB-first, and stop bit at the configured baud rate."
+    priority: high
+    coverage_target: "cp_tx_data cross cp_baud_div.mid"
+
+  - id: VP-UART-002
+    title: "Basic RX single byte"
+    description: "Enable RX path, drive a valid serial frame on uart_rx_i, and verify the byte appears in RXDATA with correct value. Confirm STATUS.rx_fifo_empty deasserts."
+    priority: high
+    coverage_target: "cp_rx_data cross cp_baud_div.mid"
+
+  - id: VP-UART-003
+    title: "Baud rate low divisor"
+    description: "Configure baud_divisor to a low value (e.g. 1-3), perform TX and RX transfers, and verify correct bit timing. Checks edge-case divisor behavior."
+    priority: high
+    coverage_target: "cp_baud_div.low"
+
+  - id: VP-UART-004
+    title: "Baud rate mid divisor"
+    description: "Configure baud_divisor to a mid-range value (e.g. 100-500), perform TX and RX transfers, and verify correct bit timing matches expected baud rate."
+    priority: medium
+    coverage_target: "cp_baud_div.mid"
+
+  - id: VP-UART-005
+    title: "Baud rate high divisor"
+    description: "Configure baud_divisor to a high value (e.g. 10000+), perform TX and RX transfers, and verify correct bit timing. Stresses 16x oversampling at slow baud rates."
+    priority: high
+    coverage_target: "cp_baud_div.high cross cp_data_val"
+
+  - id: VP-UART-006
+    title: "Even parity mode"
+    description: "Set parity_mode to 01 (even), transmit and receive bytes with known data patterns, and verify the parity bit is the XOR reduction of the 8 data bits."
+    priority: high
+    coverage_target: "cp_parity_mode.even cross cp_data_val"
+
+  - id: VP-UART-007
+    title: "Odd parity mode"
+    description: "Set parity_mode to 10 (odd), transmit and receive bytes, and verify the parity bit is the complement of the even parity value."
+    priority: high
+    coverage_target: "cp_parity_mode.odd cross cp_data_val"
+
+  - id: VP-UART-008
+    title: "RX FIFO full and overflow"
+    description: "Fill the 32-byte RX FIFO completely by sending 32 bytes without reading RXDATA. Send one more byte and verify STATUS.rx_fifo_full asserts, STATUS.rx_overrun sets, and the rx_overflow interrupt fires."
+    priority: high
+    coverage_target: "cp_rx_fifo_level.full, cp_rx_overflow"
+
+  - id: VP-UART-009
+    title: "TX FIFO empty interrupt"
+    description: "Enable tx_empty interrupt, write one byte to TXDATA, wait for transmission to complete, and verify the tx_empty interrupt fires when the TX FIFO drains."
+    priority: medium
+    coverage_target: "cp_intr.tx_empty"
+
+  - id: VP-UART-010
+    title: "TX and RX watermark interrupts"
+    description: "Program tx_watermark and rx_watermark levels in FIFO_CTRL. Fill/drain FIFOs past the watermark thresholds and verify the corresponding watermark interrupts fire at the correct FIFO levels."
+    priority: high
+    coverage_target: "cp_tx_watermark cross cp_rx_watermark"
+
+  - id: VP-UART-011
+    title: "RX parity error injection"
+    description: "Enable even parity, drive an RX frame with intentionally wrong parity bit, and verify STATUS.rx_parity_err sets (sticky) and the rx_parity_err interrupt fires."
+    priority: high
+    coverage_target: "cp_intr.rx_parity_err, cp_parity_mode.even"
+
+  - id: VP-UART-012
+    title: "RX framing error injection"
+    description: "Drive an RX frame with a low stop bit (framing error), and verify STATUS.rx_frame_err sets and the rx_frame_err interrupt fires."
+    priority: high
+    coverage_target: "cp_intr.rx_frame_err"
+
+  - id: VP-UART-013
+    title: "RX break condition"
+    description: "Drive uart_rx_i low for an extended period (break condition) and verify the controller detects the framing error and recovers to IDLE after the break is released."
+    priority: medium
+    coverage_target: "cp_intr.rx_frame_err"
+
+  - id: VP-UART-014
+    title: "Loopback mode basic"
+    description: "Enable loopback_en with both TX and RX paths enabled. Write a byte to TXDATA and verify it appears in RXDATA via the internal loopback path. Confirm uart_rx_i is ignored."
+    priority: high
+    coverage_target: "cp_loopback cross cp_data_val"
+
+  - id: VP-UART-015
+    title: "RX timeout interrupt"
+    description: "Receive one byte, then leave the RX line idle. Verify the rx_timeout interrupt fires after the idle timeout period. Clear the interrupt and verify it does not re-fire while the line remains idle."
+    priority: high
+    coverage_target: "cp_intr.rx_timeout"
+
+  - id: VP-UART-016
+    title: "Back-to-back TX transfers"
+    description: "Fill the TX FIFO with multiple bytes and verify frames are transmitted back-to-back with minimal inter-frame gap. Check timing between stop bit of one frame and start bit of the next."
+    priority: medium
+    coverage_target: "cp_tx_fifo_level cross cp_baud_div"
+
+  - id: VP-UART-017
+    title: "Two stop bits configuration"
+    description: "Set stop_bits to 1 (2 stop bits), transmit a byte, and verify the TX output holds high for two bit periods after the data (and parity, if enabled). Receive a frame with 2 stop bits and verify acceptance."
+    priority: medium
+    coverage_target: "cp_stop_bits.two"
+
+  - id: VP-UART-018
+    title: "FIFO reset functionality"
+    description: "Fill both TX and RX FIFOs with data, then assert tx_fifo_rst and rx_fifo_rst in FIFO_CTRL. Verify both FIFOs are flushed (levels go to 0, empty flags assert) and the reset bits self-clear."
+    priority: medium
+    coverage_target: "cp_fifo_rst"
+
+  - id: VP-UART-019
+    title: "All interrupt sources via INTR_TEST"
+    description: "For each of the 7 interrupt sources, write the corresponding bit in INTR_TEST and verify INTR_STATE sets. Enable the interrupt in INTR_ENABLE and verify intr_o asserts. Clear via W1C and verify deassertion."
+    priority: medium
+    coverage_target: "cp_intr_test cross cp_intr_enable"
+
+  - id: VP-UART-020
+    title: "Loopback with parity interaction"
+    description: "Enable loopback mode with parity (even and odd). Transmit bytes with various data patterns and verify the parity bit is correctly generated, transmitted, and checked on the loopback receive path."
+    priority: high
+    coverage_target: "cp_loopback cross cp_parity_mode cross cp_data_val"

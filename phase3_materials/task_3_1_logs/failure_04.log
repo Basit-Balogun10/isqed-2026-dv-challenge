@@ -1,0 +1,75 @@
+
+[          0 ns] UVM_INFO  @ tb_top: Reset asserted
+[         10 ns] UVM_INFO  @ tb_top: Clock started, period = 10 ns
+[         50 ns] UVM_INFO  @ tb_top: Reset deasserted
+[         60 ns] UVM_INFO  @ timer_env: Environment build phase complete
+[         70 ns] UVM_INFO  @ timer_agent: Agent configured
+[         80 ns] UVM_INFO  @ timer_scoreboard: Scoreboard initialized
+[        100 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x38, data=0x00000000
+[        120 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x10, data=0x00000007
+[        140 ns] UVM_INFO  @ timer_reg_adapter: Reading register addr=0x20: 0x0000000000000000
+[        160 ns] UVM_INFO  @ timer_driver: === Test: Split write on 64-bit register ===
+[        170 ns] UVM_INFO  @ timer_driver: Setting comparator to 0x0000000100000000 using two 32-bit writes
+[        180 ns] UVM_INFO  @ timer_driver: Timer counter is incrementing
+[        190 ns] UVM_INFO  @ timer_driver: Current counter value: 0x000000000000000E
+[        200 ns] UVM_INFO  @ timer_driver: Step 1: Write comparator low word = 0x00000000
+[        210 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x28, data=0x00000000
+[        220 ns] UVM_INFO  @ timer_reg_adapter: Write complete
+[        222 ns] UVM_WARNING @ timer_monitor: counter_value (0x16) >= comparator (0x0000000000000000)
+[        225 ns] UVM_WARNING @ tl_monitor: TL-UL response queue depth = 3 (approaching advisory limit of 4)
+[        230 ns] UVM_INFO  @ timer_monitor: INTR_STATE[0] = 1
+[        235 ns] UVM_INFO  @ timer_monitor: intr_o[0] = 1
+[        240 ns] UVM_ERROR @ timer_scoreboard: UNEXPECTED TIMER INTERRUPT
+                           Expected: No interrupt until counter reaches 0x0000000100000000
+                           Actual: INTR_STATE[0] asserted at counter = 0x0000000000000016
+                           Register state:
+                             INTR_STATE:     0x00000001
+                             COMPARATOR_LO:  0x00000000
+                             COMPARATOR_HI:  0x00000000
+                             COUNTER_LO:     0x00000016
+                             COUNTER_HI:     0x00000000
+[        250 ns] UVM_INFO  @ timer_driver: Step 2: Write comparator high word = 0x00000001
+[        260 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x2C, data=0x00000001
+[        270 ns] UVM_INFO  @ timer_reg_adapter: Comparator now = 0x0000000100000000
+[        280 ns] UVM_INFO  @ timer_monitor: Comparison result: counter < comparator
+[        290 ns] UVM_INFO  @ timer_monitor: INTR_STATE[0] still 1 (sticky)
+[        300 ns] UVM_WARNING @ clk_monitor: Simulation wall-clock elapsed: 0.5s
+[        400 ns] UVM_INFO  @ timer_driver: Clearing interrupt and testing workaround sequence
+[        410 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x0C, data=0x00000001 (W1C)
+[        420 ns] UVM_INFO  @ timer_monitor: INTR_STATE[0] = 0
+[        430 ns] UVM_INFO  @ timer_driver: Setting second comparator with safe ordering
+[        440 ns] UVM_INFO  @ timer_driver: Step 1: Write HIGH = 0xFFFFFFFF
+[        450 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x34, data=0xFFFFFFFF
+[        470 ns] UVM_INFO  @ timer_driver: Step 2: Write LOW = 0x00001000
+[        480 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x30, data=0x00001000
+[        500 ns] UVM_INFO  @ timer_driver: Step 3: Write HIGH = 0x00000000
+[        510 ns] UVM_INFO  @ timer_reg_adapter: Register write: addr=0x34, data=0x00000000
+[        520 ns] UVM_INFO  @ timer_monitor: Comparator 1 = 0x0000000000001000
+[        530 ns] UVM_INFO  @ timer_scoreboard: Comparator 1 set without spurious interrupt: PASS
+[        540 ns] UVM_WARNING @ timer_monitor: Counter still incrementing, now at 0x38
+[        600 ns] UVM_INFO  @ timer_driver: Waiting for counter to reach comparator 1
+[      41210 ns] UVM_INFO  @ timer_monitor: Counter = 0x0000000000001000, comparison result: match
+[      41220 ns] UVM_INFO  @ timer_monitor: INTR_STATE[1] = 1, intr_o[1] = 1
+[      41230 ns] UVM_INFO  @ timer_scoreboard: Timer 1 interrupt at expected time: PASS
+[      41300 ns] UVM_WARNING @ clk_monitor: Simulation approaching 50K ns advisory limit
+[      41400 ns] UVM_WARNING @ timer_monitor: Counter overflow check: 0x1018, no risk
+[      41500 ns] UVM_INFO  @ timer_driver: Verifying register readback
+[      41510 ns] UVM_INFO  @ timer_reg_adapter: Reading addr=0x30: 0x00001000
+[      41520 ns] UVM_INFO  @ timer_reg_adapter: Reading addr=0x34: 0x00000000
+[      41530 ns] UVM_INFO  @ timer_scoreboard: Register readback: PASS
+[      41700 ns] UVM_INFO  @ timer_driver: Checking interrupt state
+[      41710 ns] UVM_INFO  @ timer_reg_adapter: Reading INTR_STATE: 0x00000002
+[      41720 ns] UVM_INFO  @ timer_reg_adapter: Reading INTR_ENABLE: 0x00000007
+[      41800 ns] UVM_INFO  @ timer_driver: Checking watchdog state
+[      41810 ns] UVM_INFO  @ timer_reg_adapter: Reading addr=0x40: 0x00000000 (watchdog disabled)
+[      41820 ns] UVM_INFO  @ timer_reg_adapter: Reading addr=0x44: 0x00000000
+[      41900 ns] UVM_INFO  @ tl_monitor: Bus idle, no outstanding transactions
+[      42000 ns] UVM_INFO  @ timer_env: Drain time complete
+
+# ----- UVM Report Summary -----
+# UVM_INFO    : 42
+# UVM_WARNING :  6
+# UVM_ERROR   :  1
+# UVM_FATAL   :  0
+# ** TEST FAILED ** (1 UVM_ERROR)
+# Simulation time: 42000 ns

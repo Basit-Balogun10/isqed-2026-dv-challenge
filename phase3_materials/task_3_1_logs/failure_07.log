@@ -1,0 +1,142 @@
+
+[          0 ns] UVM_INFO  @ tb_top: Reset asserted
+[         10 ns] UVM_INFO  @ tb_top: Clock started, period = 10 ns
+[         50 ns] UVM_INFO  @ tb_top: Reset deasserted
+[         60 ns] UVM_INFO  @ hmac_env: Environment build phase complete
+[         70 ns] UVM_INFO  @ hmac_agent: Agent configured for SHA-256 mode
+[         80 ns] UVM_INFO  @ hmac_scoreboard: Scoreboard initialized with reference vectors
+[        100 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x00, data=0x0000000D
+[        120 ns] UVM_INFO  @ hmac_reg_adapter: Register write complete
+[        140 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x04, data=0x00000007
+[        160 ns] UVM_INFO  @ hmac_driver: === Test 1: NIST "abc" vector ===
+[        170 ns] UVM_INFO  @ hmac_driver: Input: 3 bytes (24 bits)
+[        200 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000001 (start)
+[        210 ns] UVM_INFO  @ hmac_monitor: Engine started
+[        220 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x80, data=0x61626300
+[        230 ns] UVM_INFO  @ hmac_monitor: FIFO write accepted
+[        240 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x20, data=0x00000018
+[        245 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x24, data=0x00000000
+[        250 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000002 (process)
+[        260 ns] UVM_INFO  @ hmac_monitor: Processing started
+[        280 ns] UVM_WARNING @ hmac_monitor: FIFO depth usage: 1/32 (low)
+[        400 ns] UVM_INFO  @ hmac_monitor: Compression round 0 complete
+[        600 ns] UVM_INFO  @ hmac_monitor: Compression round 10 complete
+[       1000 ns] UVM_INFO  @ hmac_monitor: Compression round 30 complete
+[       1400 ns] UVM_INFO  @ hmac_monitor: Compression round 50 complete
+[       1700 ns] UVM_INFO  @ hmac_monitor: Compression round 63 complete (final)
+[       1720 ns] UVM_INFO  @ hmac_monitor: Done, output_valid = 1
+[       1730 ns] UVM_INFO  @ hmac_monitor: INTR_STATE[0] = 1
+[       1740 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[0]: 0xba7816bf
+[       1750 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[1]: 0x8f01cfea
+[       1760 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[2]: 0x414140de
+[       1770 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[3]: 0x5dae2223
+[       1780 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[4]: 0xb00361a3
+[       1790 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[5]: 0x96177a9c
+[       1800 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[6]: 0xb410ff61
+[       1810 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[7]: 0xf20015ad
+[       1830 ns] UVM_INFO  @ hmac_scoreboard: Test 1: PASS
+[       1900 ns] UVM_INFO  @ hmac_driver: === Test 2: Empty string ===
+[       1920 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000001
+[       1930 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x20, data=0x00000000
+[       1935 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x24, data=0x00000000
+[       1940 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000002
+[       2500 ns] UVM_INFO  @ hmac_monitor: Done
+[       2510 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[0..7]
+[       2590 ns] UVM_INFO  @ hmac_scoreboard: Test 2: PASS
+[       2600 ns] UVM_INFO  @ hmac_driver: === Test 3: 55-byte message (single block boundary) ===
+[       2630 ns] UVM_INFO  @ hmac_reg_adapter: Writing MSG_FIFO: 14 words
+[       2640 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x20, data=0x000001B8
+[       2645 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x24, data=0x00000000
+[       2650 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000002
+[       3300 ns] UVM_INFO  @ hmac_monitor: Done
+[       3310 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[0..7]
+[       3390 ns] UVM_INFO  @ hmac_scoreboard: Test 3: PASS
+[       3400 ns] UVM_INFO  @ hmac_driver: === Test 4: 56-byte message (two blocks) ===
+[       3440 ns] UVM_INFO  @ hmac_reg_adapter: Writing MSG_FIFO: 14 words
+[       3450 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x20, data=0x000001C0
+[       3455 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x24, data=0x00000000
+[       3460 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000002
+[       3470 ns] UVM_INFO  @ hmac_monitor: Processing block 1 of 2
+[       3480 ns] UVM_WARNING @ hmac_monitor: Two-block message, checking padding split
+[       4200 ns] UVM_INFO  @ hmac_monitor: Block 1 complete
+[       4210 ns] UVM_INFO  @ hmac_monitor: Processing block 2 of 2
+[       4900 ns] UVM_INFO  @ hmac_monitor: Block 2 complete
+[       4910 ns] UVM_INFO  @ hmac_monitor: Done
+[       4920 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[0]: 0xf5a5fd42
+[       4930 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[1]: 0xd16a2030
+[       4940 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[2]: 0x2798ef6e
+[       4950 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[3]: 0xd309979b
+[       4960 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[4]: 0x43003d23
+[       4970 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[5]: 0x20d9f0e8
+[       4980 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[6]: 0xea9831a9
+[       4990 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[7]: 0x2759fb4b
+[       5010 ns] UVM_INFO  @ hmac_scoreboard: Test 4: PASS
+[       5100 ns] UVM_INFO  @ hmac_driver: === Test 5: HMAC-SHA256 with key ===
+[       5110 ns] UVM_INFO  @ hmac_driver: RFC 4231 vector
+[       5140 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x00, data=0x0000000F (hmac_en=1)
+[       5150 ns] UVM_INFO  @ hmac_reg_adapter: Writing KEY[0..7]
+[       5160 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000001
+[       5170 ns] UVM_INFO  @ hmac_reg_adapter: Writing MSG_FIFO: "Hi There"
+[       5180 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x20, data=0x00000040
+[       5185 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x24, data=0x00000000
+[       5190 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000002
+[       5200 ns] UVM_INFO  @ hmac_monitor: HMAC mode: computing inner hash
+[       5900 ns] UVM_INFO  @ hmac_monitor: Inner hash complete
+[       5910 ns] UVM_INFO  @ hmac_monitor: Computing outer hash
+[       6600 ns] UVM_INFO  @ hmac_monitor: Outer hash complete
+[       6610 ns] UVM_INFO  @ hmac_monitor: Done
+[       6620 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[0]: 0xb0344c61
+[       6630 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[1]: 0xd8db3853
+[       6640 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[2]: 0x5ca8afce
+[       6650 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[3]: 0xaf0bf12b
+[       6660 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[4]: 0x881dc200
+[       6670 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[5]: 0xc9833da7
+[       6680 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[6]: 0x26e9376c
+[       6690 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[7]: 0x2e32cff7
+[       6700 ns] UVM_INFO  @ hmac_scoreboard: Test 5 HMAC: PASS
+[       6800 ns] UVM_INFO  @ hmac_driver: === Test 6: 64-byte message (block-aligned + padding block) ===
+[       6810 ns] UVM_INFO  @ hmac_driver: Input: 64 bytes of incrementing pattern
+[       6840 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x00, data=0x0000000D (sha-only)
+[       6850 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000001
+[       6860 ns] UVM_INFO  @ hmac_reg_adapter: Writing MSG_FIFO: 16 words
+[       6870 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x20, data=0x00000200
+[       6875 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x24, data=0x00000000
+[       6880 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000002
+[       6890 ns] UVM_INFO  @ hmac_monitor: Processing: 2 blocks
+[       6900 ns] UVM_WARNING @ hmac_monitor: Block-aligned message requires separate padding block
+[       7600 ns] UVM_INFO  @ hmac_monitor: Block 1 complete
+[       8300 ns] UVM_INFO  @ hmac_monitor: Block 2 (padding) complete
+[       8310 ns] UVM_INFO  @ hmac_monitor: Done
+[       8320 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[0..7]
+[       8400 ns] UVM_INFO  @ hmac_scoreboard: Test 6: PASS
+[       8500 ns] UVM_INFO  @ hmac_driver: === Test 7: 128-byte message (multi-block) ===
+[       8510 ns] UVM_INFO  @ hmac_driver: Input: 128 bytes = 1024 bits
+[       8530 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000001
+[       8540 ns] UVM_INFO  @ hmac_reg_adapter: Writing MSG_FIFO: 32 words
+[       8560 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x20, data=0x00000400
+[       8565 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x24, data=0x00000000
+[       8570 ns] UVM_INFO  @ hmac_reg_adapter: Register write: addr=0x08, data=0x00000002
+[       9800 ns] UVM_INFO  @ hmac_monitor: All 3 blocks processed
+[       9810 ns] UVM_INFO  @ hmac_monitor: Done
+[       9820 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[0]: 0x4f4cbe3c
+[       9830 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[1]: 0x73256298
+[       9840 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[2]: 0x5b003fae
+[       9850 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[3]: 0x8f853b9a
+[       9860 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[4]: 0x9b197cb6
+[       9870 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[5]: 0xc64b7c8d
+[       9880 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[6]: 0x3e893922
+[       9890 ns] UVM_INFO  @ hmac_reg_adapter: Reading DIGEST[7]: 0x78e11a38
+[       9900 ns] UVM_ERROR @ hmac_scoreboard: DIGEST MISMATCH for 128-byte message
+                           Expected: 4f4cbe3c 73256298 5b003fae 8f853b9a 9b1a7cb6 26c4b7c8 d3e89392 78e11a38
+                           Actual:   4f4cbe3c 73256298 5b003fae 8f853b9a 9b197cb6 c64b7c8d 3e893922 78e11a38
+                           Mismatched words: DIGEST[4], DIGEST[5], DIGEST[6]
+[       9910 ns] UVM_WARNING @ hmac_monitor: 3 compression blocks required for this message
+[      10000 ns] UVM_INFO  @ hmac_env: Drain time complete
+
+# ----- UVM Report Summary -----
+# UVM_INFO    : 72
+# UVM_WARNING :  4
+# UVM_ERROR   :  1
+# UVM_FATAL   :  0
+# ** TEST FAILED ** (1 UVM_ERROR)
+# Simulation time: 10000 ns

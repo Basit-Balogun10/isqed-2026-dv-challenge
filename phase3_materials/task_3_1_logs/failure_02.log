@@ -1,0 +1,93 @@
+
+[          0 ns] UVM_INFO  @ tb_top: Reset asserted
+[         10 ns] UVM_INFO  @ tb_top: Clock started, period = 10 ns
+[         50 ns] UVM_INFO  @ tb_top: Reset deasserted
+[         60 ns] UVM_INFO  @ uart_env: Environment build phase complete
+[         70 ns] UVM_INFO  @ uart_agent: Agent configured: baud_divisor=16'd217, parity_mode=2'b00, stop_bits=0
+[         80 ns] UVM_INFO  @ uart_scoreboard: Scoreboard initialized, FIFO depth = 32
+[         90 ns] UVM_INFO  @ uart_reg_adapter: Register write: addr=0x00, data=0x00036407
+[        100 ns] UVM_INFO  @ uart_reg_adapter: Register write complete
+[        120 ns] UVM_INFO  @ uart_reg_adapter: Register write: addr=0x08, data=0x00010001
+[        140 ns] UVM_INFO  @ uart_reg_adapter: Register write: addr=0x10, data=0x0000007F
+[        200 ns] UVM_INFO  @ uart_driver: Starting RX FIFO test: sending 34 bytes without reading
+[        210 ns] UVM_INFO  @ uart_driver: Fill FIFO to 32, then send 2 more
+[        250 ns] UVM_WARNING @ tl_monitor: TL-UL source ID pool utilization > 75% (advisory)
+[        300 ns] UVM_INFO  @ uart_driver: Sending byte 0: 0x01
+[      22300 ns] UVM_INFO  @ uart_monitor: RX frame 0 received: 0x01
+[      22400 ns] UVM_INFO  @ uart_driver: Sending byte 1: 0x02
+[      44400 ns] UVM_INFO  @ uart_monitor: RX frame 1 received: 0x02
+[      44500 ns] UVM_INFO  @ uart_driver: Sending byte 2: 0x03
+[      66500 ns] UVM_INFO  @ uart_monitor: RX frame 2 received: 0x03
+[      66600 ns] UVM_INFO  @ uart_driver: [... bytes 3-28 sent ...]
+[     638600 ns] UVM_INFO  @ uart_monitor: RX frame 28 received: 0x1D
+[     660600 ns] UVM_INFO  @ uart_monitor: RX frame 29 received: 0x1E
+[     682600 ns] UVM_INFO  @ uart_monitor: RX frame 30 received: 0x1F
+[     682700 ns] UVM_WARNING @ uart_monitor: RX FIFO approaching full (31/32)
+[     704600 ns] UVM_INFO  @ uart_monitor: RX frame 31 received: 0x20
+[     704610 ns] UVM_INFO  @ uart_monitor: RX FIFO full
+[     704700 ns] UVM_INFO  @ uart_scoreboard: RX FIFO capacity reached: 32/32
+[     704800 ns] UVM_INFO  @ uart_driver: FIFO full. Sending byte 32: 0x21
+[     726800 ns] UVM_INFO  @ uart_monitor: RX frame 32 received at serial interface: 0x21
+[     726810 ns] UVM_INFO  @ uart_monitor: INTR_STATE[3] = 1
+[     726820 ns] UVM_INFO  @ uart_scoreboard: Overflow detected for byte 32, checking FIFO integrity
+[     726900 ns] UVM_INFO  @ uart_driver: Sending byte 33: 0x22
+[     748900 ns] UVM_INFO  @ uart_monitor: RX frame 33 received at serial interface: 0x22
+[     748910 ns] UVM_INFO  @ uart_monitor: INTR_STATE[3] still asserted
+[     749000 ns] UVM_INFO  @ uart_scoreboard: Reading back all 32 FIFO entries
+[     749100 ns] UVM_INFO  @ uart_reg_adapter: RDATA[0]: 0x01 (expected 0x01) - OK
+[     749200 ns] UVM_INFO  @ uart_reg_adapter: RDATA[1]: 0x02 (expected 0x02) - OK
+[     749300 ns] UVM_INFO  @ uart_reg_adapter: [... entries 2-29 read back correctly ...]
+[     752700 ns] UVM_INFO  @ uart_reg_adapter: RDATA[30]: 0x1F (expected 0x1F) - OK
+[     752800 ns] UVM_INFO  @ uart_reg_adapter: RDATA[31]: got 0x20 (expected 0x20) - OK
+[     752900 ns] UVM_INFO  @ uart_scoreboard: All 32 FIFO entries read back correctly
+[     753000 ns] UVM_INFO  @ uart_scoreboard: Overflow bytes 0x21 and 0x22 were dropped
+[     753100 ns] UVM_INFO  @ uart_driver: Clearing FIFO, sending 2 more bytes for post-overflow check
+[     753200 ns] UVM_INFO  @ uart_reg_adapter: Register write: addr=0x08, data=0x00010003 (FIFO reset)
+[     753300 ns] UVM_INFO  @ uart_monitor: RX FIFO reset
+[     753400 ns] UVM_INFO  @ uart_driver: Sending post-overflow byte: 0xBB
+[     775400 ns] UVM_INFO  @ uart_monitor: RX frame received: 0xBB
+[     775500 ns] UVM_INFO  @ uart_driver: Sending post-overflow byte: 0xCC
+[     797500 ns] UVM_INFO  @ uart_monitor: RX frame received: 0xCC
+[     797600 ns] UVM_INFO  @ uart_reg_adapter: RDATA: 0xBB (expected 0xBB) - OK
+[     797700 ns] UVM_INFO  @ uart_reg_adapter: RDATA: 0xCC (expected 0xCC) - OK
+[     797800 ns] UVM_INFO  @ uart_scoreboard: Post-overflow recovery: PASS
+[     798000 ns] UVM_INFO  @ uart_driver: Testing overflow with no FIFO reset
+[     798100 ns] UVM_INFO  @ uart_driver: Filling FIFO again to 32 entries
+[     798200 ns] UVM_INFO  @ uart_driver: [... refilling FIFO with bytes 0x40-0x5F ...]
+[    1470200 ns] UVM_INFO  @ uart_monitor: RX FIFO full again (32/32)
+[    1470300 ns] UVM_INFO  @ uart_driver: Sending overflow bytes while reading
+[    1470400 ns] UVM_INFO  @ uart_reg_adapter: Reading RDATA to pop one entry (got 0x40)
+[    1470500 ns] UVM_INFO  @ uart_driver: Sending byte 0xEE
+[    1492500 ns] UVM_INFO  @ uart_monitor: RX frame received: 0xEE
+[    1492600 ns] UVM_INFO  @ uart_scoreboard: Reading back FIFO contents to verify order
+[    1492700 ns] UVM_INFO  @ uart_reg_adapter: RDATA[0]: 0x41 (expected 0x41) - OK
+[    1492800 ns] UVM_INFO  @ uart_reg_adapter: [... entries 1-29 correct ...]
+[    1496200 ns] UVM_INFO  @ uart_reg_adapter: RDATA[30]: 0x5F (expected 0x5F) - OK
+[    1496300 ns] UVM_INFO  @ uart_reg_adapter: RDATA[31]: 0xEE (expected 0xEE) - OK
+[    1496400 ns] UVM_INFO  @ uart_scoreboard: FIFO order preserved after pop-then-push: PASS
+[    1497000 ns] UVM_INFO  @ uart_driver: Testing additional overflow scenario
+[    1497100 ns] UVM_INFO  @ uart_driver: Filling FIFO to 32 entries (sequential 0x70-0x8F)
+[    2169100 ns] UVM_INFO  @ uart_monitor: RX FIFO full (32/32)
+[    2169200 ns] UVM_INFO  @ uart_driver: Sending 3 overflow bytes: 0xD1, 0xD2, 0xD3
+[    2169300 ns] UVM_INFO  @ uart_driver: Not popping - these should all be dropped
+[    2191300 ns] UVM_INFO  @ uart_monitor: Overflow byte 0xD1 - INTR_STATE[3]=1
+[    2213300 ns] UVM_INFO  @ uart_monitor: Overflow byte 0xD2 - INTR_STATE[3]=1
+[    2235300 ns] UVM_INFO  @ uart_monitor: Overflow byte 0xD3 - INTR_STATE[3]=1
+[    2235400 ns] UVM_INFO  @ uart_scoreboard: Reading FIFO to verify no corruption
+[    2235500 ns] UVM_INFO  @ uart_reg_adapter: RDATA[0]: 0x70 (expected 0x70) - OK
+[    2235600 ns] UVM_INFO  @ uart_reg_adapter: [... entries 1-30 correct ...]
+[    2239000 ns] UVM_ERROR @ uart_scoreboard: DATA MISMATCH at FIFO entry 31
+                           Expected: 0x8F
+                           Actual:   0xD1
+                           FIFO read address: 31
+                           INTR_STATE: 0x00000008
+[    2239100 ns] UVM_WARNING @ uart_monitor: Remaining FIFO entries not checked
+[    2240000 ns] UVM_INFO  @ uart_env: Drain time complete
+
+# ----- UVM Report Summary -----
+# UVM_INFO    : 60
+# UVM_WARNING :  3
+# UVM_ERROR   :  1
+# UVM_FATAL   :  0
+# ** TEST FAILED ** (1 UVM_ERROR)
+# Simulation time: 2240000 ns

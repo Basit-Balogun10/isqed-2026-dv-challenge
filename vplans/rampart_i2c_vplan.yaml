@@ -1,0 +1,151 @@
+dut: rampart_i2c
+vplan:
+  - id: VP-I2C-001
+    title: "Host write single byte"
+    description: "Enable host mode, write a format FIFO sequence for START + address(W) + data byte + STOP. Verify correct START, address byte with W bit, ACK sampling, data byte, and STOP on SCL/SDA."
+    priority: high
+    coverage_target: "cp_host_write"
+
+  - id: VP-I2C-002
+    title: "Host read single byte"
+    description: "Write format FIFO entries for START + address(R) + read 1 byte + STOP. Verify address is sent, target ACKs, host reads one byte into RX FIFO, sends NACK, then STOP."
+    priority: high
+    coverage_target: "cp_host_read"
+
+  - id: VP-I2C-003
+    title: "Repeated START condition"
+    description: "Issue a write transaction followed by a repeated START and read transaction without an intervening STOP. Verify SDA goes high then low while SCL is high, with proper tsu_sta timing."
+    priority: high
+    coverage_target: "cp_repeated_start"
+
+  - id: VP-I2C-004
+    title: "STOP generation"
+    description: "After a transaction, verify STOP condition: SDA transitions low-to-high while SCL is high, with correct tsu_sto timing. Verify bus_active clears after STOP."
+    priority: high
+    coverage_target: "cp_stop_condition"
+
+  - id: VP-I2C-005
+    title: "ACK handling - target ACKs"
+    description: "Send a valid address to a target that ACKs. Verify the host samples SDA low during the 9th clock and proceeds with the transaction."
+    priority: high
+    coverage_target: "cp_ack"
+
+  - id: VP-I2C-006
+    title: "NACK handling - target NACKs"
+    description: "Send an address that the target NACKs. Verify the nak interrupt fires. Without nakok flag, verify the host FSM halts. With nakok, verify it continues."
+    priority: high
+    coverage_target: "cp_nack cross cp_nakok"
+
+  - id: VP-I2C-007
+    title: "Target address matching"
+    description: "Configure TARGET_ID with a 7-bit address and mask. Send I2C transactions with matching and non-matching addresses. Verify the target ACKs only on matches and ignores non-matches."
+    priority: high
+    coverage_target: "cp_target_addr cross cp_target_mask"
+
+  - id: VP-I2C-008
+    title: "Target clock stretching"
+    description: "In target mode with an empty TX FIFO, verify the target holds SCL low (clock stretching) when the host requests a read. Write to TXDATA and verify SCL is released."
+    priority: high
+    coverage_target: "cp_clock_stretch"
+
+  - id: VP-I2C-009
+    title: "Multi-master arbitration loss"
+    description: "Simulate two masters: have the DUT host start transmitting while an external master drives SDA low. Verify the DUT detects arbitration loss and releases the bus."
+    priority: high
+    coverage_target: "cp_arbitration"
+
+  - id: VP-I2C-010
+    title: "Standard-mode timing (100 kHz)"
+    description: "Program TIMING0-TIMING4 for 100 kHz operation. Measure SCL high/low periods, rise/fall times, setup/hold times on the bus and verify they meet the I2C standard-mode minimums."
+    priority: high
+    coverage_target: "cp_timing.standard"
+
+  - id: VP-I2C-011
+    title: "Fast-mode timing (400 kHz)"
+    description: "Program TIMING0-TIMING4 for 400 kHz. Measure all timing parameters and verify fast-mode compliance."
+    priority: high
+    coverage_target: "cp_timing.fast"
+
+  - id: VP-I2C-012
+    title: "Fast-mode-plus timing (1 MHz)"
+    description: "Program TIMING0-TIMING4 for 1 MHz. Verify timing parameters meet fast-mode-plus requirements."
+    priority: medium
+    coverage_target: "cp_timing.fast_plus"
+
+  - id: VP-I2C-013
+    title: "Format FIFO encoding - write sequence"
+    description: "Encode a multi-byte write transaction (START, address+W, data0, data1, STOP) in the format FIFO. Verify each entry is processed in order and the correct I2C waveform is produced."
+    priority: high
+    coverage_target: "cp_fmt_fifo_write"
+
+  - id: VP-I2C-014
+    title: "Format FIFO encoding - read sequence"
+    description: "Encode a read transaction (START, address+R, readb entries with rcont, final read without rcont + STOP). Verify ACK/NACK generation and RX FIFO population."
+    priority: high
+    coverage_target: "cp_fmt_fifo_read"
+
+  - id: VP-I2C-015
+    title: "SCL/SDA waveform verification"
+    description: "Monitor SCL and SDA for a complete write transaction. Verify START/STOP conditions, bit timing, data/clock alignment, and that no protocol violations occur."
+    priority: high
+    coverage_target: "cp_waveform"
+
+  - id: VP-I2C-016
+    title: "Target FIFO full behavior"
+    description: "In target mode, let the acquire FIFO fill to 64 entries. Verify behavior when a new byte arrives: check whether clock stretching occurs or an ACK is sent despite the full FIFO."
+    priority: high
+    coverage_target: "cp_acq_fifo_full"
+
+  - id: VP-I2C-017
+    title: "Bus override mode"
+    description: "Set OVRD.txovrden=1, write specific sclval and sdaval. Verify SCL and SDA outputs match the override values regardless of FSM state."
+    priority: medium
+    coverage_target: "cp_bus_override"
+
+  - id: VP-I2C-018
+    title: "Host timeout detection"
+    description: "Enable host timeout with a threshold. Have a target hold SCL low beyond the threshold. Verify host_timeout interrupt fires."
+    priority: high
+    coverage_target: "cp_host_timeout"
+
+  - id: VP-I2C-019
+    title: "Collision detection (SDA interference)"
+    description: "While the host drives SDA high, externally pull SDA low. Verify sda_interference or scl_interference interrupt fires."
+    priority: medium
+    coverage_target: "cp_collision"
+
+  - id: VP-I2C-020
+    title: "Mixed host and target operation"
+    description: "Enable both host and target modes. Perform a host write to an external target, then have an external host write to the DUT's target address. Verify both paths work independently."
+    priority: medium
+    coverage_target: "cp_mixed_mode"
+
+  - id: VP-I2C-021
+    title: "Host multi-byte write"
+    description: "Write multiple data bytes in a single transaction (START + addr + N data bytes + STOP). Verify all bytes appear correctly on SDA and each receives ACK."
+    priority: high
+    coverage_target: "cp_host_write_multi"
+
+  - id: VP-I2C-022
+    title: "Host multi-byte read"
+    description: "Read multiple bytes in a single transaction using rcont for intermediate bytes and NACK on the last. Verify all bytes appear in RX FIFO in order."
+    priority: high
+    coverage_target: "cp_host_read_multi"
+
+  - id: VP-I2C-023
+    title: "FIFO reset controls"
+    description: "Fill format, RX, TX, and acquire FIFOs with data. Assert each reset bit in FIFO_CTRL individually. Verify each FIFO flushes independently and levels return to 0."
+    priority: medium
+    coverage_target: "cp_fifo_reset"
+
+  - id: VP-I2C-024
+    title: "Target data transmission"
+    description: "Configure target mode, load TX FIFO with data bytes. Have an external host read from the DUT's target address. Verify data from TX FIFO is transmitted correctly."
+    priority: high
+    coverage_target: "cp_target_tx"
+
+  - id: VP-I2C-025
+    title: "Line loopback self-test"
+    description: "Enable line_loopback in CTRL. With host mode enabled, send a write transaction. Verify the target FSM (if enabled and address matches) sees the looped-back data in the acquire FIFO."
+    priority: medium
+    coverage_target: "cp_loopback"

@@ -1,0 +1,102 @@
+
+[          0 ns] UVM_INFO  @ tb_top: Reset asserted
+[         10 ns] UVM_INFO  @ tb_top: Clock started, period = 10 ns
+[         50 ns] UVM_INFO  @ tb_top: Reset deasserted
+[         60 ns] UVM_INFO  @ i2c_env: Environment build phase complete
+[         70 ns] UVM_INFO  @ i2c_agent: Agent configured for host mode
+[         80 ns] UVM_INFO  @ i2c_scoreboard: Scoreboard initialized
+[        100 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x04, data=0x00000001
+[        120 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x10, data=0x00320032
+[        130 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x14, data=0x00050005
+[        140 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x18, data=0x000A000A
+[        150 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x1C, data=0x00050005
+[        160 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x20, data=0x000A0014
+[        170 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x3C, data=0x00000064
+[        175 ns] UVM_INFO  @ i2c_scoreboard: Timeout configured: 100 cycles
+[        180 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x08, data=0x0000FFFF
+[        200 ns] UVM_INFO  @ i2c_driver: === Test 1: Clock stretch within timeout ===
+[        210 ns] UVM_INFO  @ i2c_driver: Slave will hold SCL low for 80 cycles during ACK
+[        230 ns] UVM_INFO  @ i2c_slave_model: Configured: address=0x48, stretch=80 cycles
+[        240 ns] UVM_INFO  @ i2c_driver: Writing FDATA: START + 0x90
+[        250 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x30, data=0x00000290
+[        260 ns] UVM_INFO  @ i2c_driver: Writing FDATA: data 0xAA
+[        270 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x30, data=0x000000AA
+[        280 ns] UVM_INFO  @ i2c_driver: Writing FDATA: STOP
+[        290 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x30, data=0x00000400
+[        300 ns] UVM_INFO  @ i2c_monitor: Host FSM: IDLE -> START
+[        310 ns] UVM_INFO  @ i2c_monitor: START condition
+[        340 ns] UVM_INFO  @ i2c_monitor: Host FSM: START -> ADDR_BYTE
+[        350 ns] UVM_INFO  @ i2c_monitor: Transmitting address byte: 0x90
+[       1150 ns] UVM_INFO  @ i2c_monitor: Address byte complete
+[       1160 ns] UVM_INFO  @ i2c_monitor: Host FSM: ADDR_BYTE -> ADDR_ACK
+[       1170 ns] UVM_INFO  @ i2c_monitor: Host releases SCL
+[       1175 ns] UVM_INFO  @ i2c_slave_model: Clock stretching started
+[       1175 ns] UVM_INFO  @ i2c_monitor: SCL held low by target
+[       1180 ns] UVM_INFO  @ i2c_monitor: Timeout counter started
+[       1200 ns] UVM_INFO  @ i2c_monitor: Timeout counter: 20/100
+[       1300 ns] UVM_INFO  @ i2c_monitor: Timeout counter: 40/100
+[       1400 ns] UVM_INFO  @ i2c_monitor: Timeout counter: 60/100
+[       1500 ns] UVM_INFO  @ i2c_monitor: Timeout counter: 80/100
+[       1575 ns] UVM_INFO  @ i2c_slave_model: Clock stretch ended (80 cycles)
+[       1580 ns] UVM_INFO  @ i2c_monitor: SCL released, scl_i = 1
+[       1585 ns] UVM_INFO  @ i2c_monitor: Timeout counter stopped at 81/100
+[       1590 ns] UVM_INFO  @ i2c_monitor: ACK: SDA = 0
+[       1600 ns] UVM_INFO  @ i2c_scoreboard: Clock stretch within timeout: PASS
+[       1610 ns] UVM_INFO  @ i2c_monitor: Host FSM: ADDR_ACK -> WRITE_BYTE
+[       1620 ns] UVM_INFO  @ i2c_monitor: Transmitting data byte 0xAA
+[       2400 ns] UVM_INFO  @ i2c_monitor: Data byte complete
+[       2410 ns] UVM_INFO  @ i2c_slave_model: Clock stretching: 80 cycles
+[       2420 ns] UVM_INFO  @ i2c_monitor: SCL stretch detected
+[       2500 ns] UVM_INFO  @ i2c_slave_model: Stretch ended
+[       2510 ns] UVM_INFO  @ i2c_monitor: ACK received
+[       2520 ns] UVM_INFO  @ i2c_monitor: Host FSM: WRITE_ACK -> STOP
+[       2530 ns] UVM_INFO  @ i2c_monitor: STOP condition
+[       2540 ns] UVM_INFO  @ i2c_scoreboard: Transaction with clock stretching: PASS
+[       2600 ns] UVM_INFO  @ i2c_driver: === Test 2: Clock stretch beyond timeout ===
+[       2610 ns] UVM_INFO  @ i2c_driver: Slave will hold SCL low for 150 cycles
+[       2620 ns] UVM_INFO  @ i2c_driver: Timeout = 100 cycles, should trigger timeout interrupt
+[       2630 ns] UVM_INFO  @ i2c_slave_model: Reconfigured: stretch=150 cycles
+[       2640 ns] UVM_INFO  @ i2c_driver: Writing FDATA: START + 0x90
+[       2650 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x30, data=0x00000290
+[       2660 ns] UVM_INFO  @ i2c_driver: Writing FDATA: data 0x55
+[       2670 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x30, data=0x00000055
+[       2680 ns] UVM_INFO  @ i2c_monitor: Host FSM: IDLE -> START
+[       2710 ns] UVM_INFO  @ i2c_monitor: START condition
+[       2740 ns] UVM_INFO  @ i2c_monitor: Host FSM: START -> ADDR_BYTE
+[       3540 ns] UVM_INFO  @ i2c_monitor: Address byte complete
+[       3550 ns] UVM_INFO  @ i2c_monitor: Host FSM: ADDR_BYTE -> ADDR_ACK
+[       3560 ns] UVM_INFO  @ i2c_slave_model: Clock stretching started (150 cycles)
+[       3570 ns] UVM_INFO  @ i2c_monitor: SCL held low, timeout counter started
+[       3580 ns] UVM_INFO  @ i2c_monitor: Timeout counter: 10/100
+[       3670 ns] UVM_INFO  @ i2c_monitor: Timeout counter: 50/100
+[       3770 ns] UVM_INFO  @ i2c_monitor: Timeout counter: 90/100
+[       3800 ns] UVM_WARNING @ i2c_monitor: Timeout counter approaching limit: 95/100
+[       3850 ns] UVM_INFO  @ i2c_monitor: Timeout counter: 100/100
+[       3855 ns] UVM_INFO  @ i2c_monitor: Threshold reached
+[       3870 ns] UVM_WARNING @ tl_monitor: TL-UL response queue depth approaching limit
+[       3880 ns] UVM_INFO  @ i2c_monitor: Checking INTR_STATE[8]: 0 (NOT set)
+[       3890 ns] UVM_WARNING @ i2c_monitor: Timeout interrupt NOT asserted
+[       3900 ns] UVM_INFO  @ i2c_monitor: Continuing to wait...
+[       4000 ns] UVM_INFO  @ i2c_monitor: Timeout counter: 143/100 (past threshold)
+[       4060 ns] UVM_INFO  @ i2c_slave_model: Clock stretch ended (150 cycles)
+[       4070 ns] UVM_INFO  @ i2c_monitor: SCL released
+[       4080 ns] UVM_INFO  @ i2c_monitor: ACK: SDA = 0
+[       4090 ns] UVM_INFO  @ i2c_monitor: Host FSM: ADDR_ACK -> WRITE_BYTE (transaction continued)
+[       4100 ns] UVM_ERROR @ i2c_scoreboard: TIMEOUT NOT DETECTED
+                           HOST_TIMEOUT_CTRL = 0x00000064 (100)
+                           SCL stretch duration: 150 cycles
+                           INTR_STATE[8] (host_timeout): NOT SET
+                           Expected: timeout interrupt at 100 cycles
+                           Actual: no interrupt, transaction continued normally
+[       4120 ns] UVM_WARNING @ i2c_monitor: Transaction continued past expected timeout
+[       4200 ns] UVM_INFO  @ i2c_monitor: Data byte transmitted, STOP issued
+[       4300 ns] UVM_INFO  @ i2c_monitor: Transaction completed
+[       4400 ns] UVM_INFO  @ i2c_env: Drain time complete
+
+# ----- UVM Report Summary -----
+# UVM_INFO    : 52
+# UVM_WARNING :  4
+# UVM_ERROR   :  1
+# UVM_FATAL   :  0
+# ** TEST FAILED ** (1 UVM_ERROR)
+# Simulation time: 4400 ns

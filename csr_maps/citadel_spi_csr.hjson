@@ -1,0 +1,415 @@
+{
+  name: "citadel_spi"
+  base_addr: "0x0"
+  registers: [
+    {
+      name: "CTRL"
+      desc: "SPI host control register"
+      offset: "0x00"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "spien"
+          bits: "0"
+          desc: "Enable SPI host controller"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "output_en"
+          bits: "1"
+          desc: "Enable SPI output"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "STATUS"
+      desc: "SPI host status register"
+      offset: "0x04"
+      reset_val: "0x00008209"
+      access: "RO"
+      fields: [
+        {
+          name: "ready"
+          bits: "0"
+          desc: "SPI host is ready for a new command"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "active"
+          bits: "1"
+          desc: "SPI host is actively processing a command"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "txfull"
+          bits: "2"
+          desc: "TX FIFO is full"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "txempty"
+          bits: "3"
+          desc: "TX FIFO is empty"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "txlvl"
+          bits: "7:4"
+          desc: "Number of entries in TX FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rxfull"
+          bits: "8"
+          desc: "RX FIFO is full"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rxempty"
+          bits: "9"
+          desc: "RX FIFO is empty"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "rxlvl"
+          bits: "13:10"
+          desc: "Number of entries in RX FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "cmdfull"
+          bits: "14"
+          desc: "Command FIFO is full"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "cmdempty"
+          bits: "15"
+          desc: "Command FIFO is empty"
+          access: "RO"
+          reset_val: "0x1"
+        }
+      ]
+    }
+    {
+      name: "CONFIGOPTS"
+      desc: "SPI configuration options register"
+      offset: "0x08"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "cpol"
+          bits: "0"
+          desc: "Clock polarity (0=idle low, 1=idle high)"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "cpha"
+          bits: "1"
+          desc: "Clock phase (0=sample on leading, 1=sample on trailing)"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "clkdiv"
+          bits: "17:2"
+          desc: "SPI clock divisor"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "csn_lead"
+          bits: "21:18"
+          desc: "Chip-select lead time in half clock cycles"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "csn_trail"
+          bits: "25:22"
+          desc: "Chip-select trail time in half clock cycles"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "csn_idle"
+          bits: "29:26"
+          desc: "Minimum chip-select idle time in half clock cycles"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "CSID"
+      desc: "Chip select ID register"
+      offset: "0x0C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "csid"
+          bits: "1:0"
+          desc: "Active chip select target ID"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "COMMAND"
+      desc: "SPI command register"
+      offset: "0x10"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "direction"
+          bits: "1:0"
+          desc: "Transfer direction (00=dummy, 01=RX only, 10=TX only, 11=bidirectional)"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "len"
+          bits: "10:2"
+          desc: "Transfer length in bytes (0=1 byte)"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "csaat"
+          bits: "11"
+          desc: "Chip-select active after transaction"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "speed"
+          bits: "13:12"
+          desc: "SPI speed mode (00=standard, 01=dual, 10=quad)"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "TXDATA"
+      desc: "SPI transmit data register"
+      offset: "0x14"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "data"
+          bits: "7:0"
+          desc: "Transmit data byte"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "RXDATA"
+      desc: "SPI receive data register"
+      offset: "0x18"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "data"
+          bits: "7:0"
+          desc: "Received data byte"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "ERROR_ENABLE"
+      desc: "Error interrupt enable register"
+      offset: "0x1C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "underflow"
+          bits: "0"
+          desc: "Enable TX underflow error reporting"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "overflow"
+          bits: "1"
+          desc: "Enable RX overflow error reporting"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "cmd_invalid"
+          bits: "2"
+          desc: "Enable invalid command error reporting"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "ERROR_STATUS"
+      desc: "Error status register (write 1 to clear)"
+      offset: "0x20"
+      reset_val: "0x00000000"
+      access: "W1C"
+      fields: [
+        {
+          name: "underflow"
+          bits: "0"
+          desc: "TX underflow error occurred"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "overflow"
+          bits: "1"
+          desc: "RX overflow error occurred"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "cmd_invalid"
+          bits: "2"
+          desc: "Invalid command error occurred"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_STATE"
+      desc: "Interrupt state register (write 1 to clear)"
+      offset: "0x24"
+      reset_val: "0x00000000"
+      access: "W1C"
+      fields: [
+        {
+          name: "spi_done"
+          bits: "0"
+          desc: "SPI transaction completed"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_watermark"
+          bits: "1"
+          desc: "RX FIFO above watermark level"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_watermark"
+          bits: "2"
+          desc: "TX FIFO below watermark level"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "error"
+          bits: "3"
+          desc: "Error condition detected"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_ENABLE"
+      desc: "Interrupt enable register"
+      offset: "0x28"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "spi_done"
+          bits: "0"
+          desc: "Enable SPI done interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_watermark"
+          bits: "1"
+          desc: "Enable RX watermark interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_watermark"
+          bits: "2"
+          desc: "Enable TX watermark interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "error"
+          bits: "3"
+          desc: "Enable error interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_TEST"
+      desc: "Interrupt test register"
+      offset: "0x2C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "spi_done"
+          bits: "0"
+          desc: "Test SPI done interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_watermark"
+          bits: "1"
+          desc: "Test RX watermark interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_watermark"
+          bits: "2"
+          desc: "Test TX watermark interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "error"
+          bits: "3"
+          desc: "Test error interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+  ]
+}

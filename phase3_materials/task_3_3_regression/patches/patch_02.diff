@@ -1,0 +1,17 @@
+--- a/duts/warden_timer/warden_timer.sv
++++ b/duts/warden_timer/warden_timer.sv
+@@ -124,10 +124,12 @@
+
+   assign timer0_expired = (mtime_q >= mtimecmp0_q);
+   assign timer1_expired = (mtime_q >= mtimecmp1_q);
+-  assign wd_bark        = wd_enable_q & (wd_count_q >= wd_bark_thresh_q) &
++  // Fix: Use strictly-greater-than to fire after N full cycles, not at N.
++  // With >=, bark fires when count equals threshold (only N-1 intervals).
++  // With >, bark fires when count exceeds threshold (exactly N intervals).
++  assign wd_bark        = wd_enable_q & (wd_count_q > wd_bark_thresh_q) &
+                           (wd_bark_thresh_q != 32'd0);
+-  assign wd_bite        = wd_enable_q & (wd_count_q >= wd_bite_thresh_q) &
++  assign wd_bite        = wd_enable_q & (wd_count_q > wd_bite_thresh_q) &
+                           (wd_bite_thresh_q != 32'd0);
+
+   assign alert_o = wd_bite;

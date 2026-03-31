@@ -1,0 +1,119 @@
+
+[          0 ns] UVM_INFO  @ tb_top: Reset asserted
+[         10 ns] UVM_INFO  @ tb_top: Clock started, period = 10 ns
+[         50 ns] UVM_INFO  @ tb_top: Reset deasserted
+[         60 ns] UVM_INFO  @ aes_env: Environment build phase complete
+[         70 ns] UVM_INFO  @ aes_agent: Agent configured for AES-128 ECB
+[         80 ns] UVM_INFO  @ aes_scoreboard: Scoreboard initialized
+[        100 ns] UVM_INFO  @ aes_driver: === Test 1: NIST FIPS-197 Appendix B vector ===
+[        110 ns] UVM_INFO  @ aes_driver: Key:       128'h2b7e1516_28aed2a6_abf71588_09cf4f3c
+[        120 ns] UVM_INFO  @ aes_driver: Plaintext: 128'h3243f6a8_885a308d_313198a2_e0370734
+[        140 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x04, data=0x00000011
+[        160 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x20, data=0x2b7e1516
+[        170 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x24, data=0x28aed2a6
+[        180 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x28, data=0xabf71588
+[        190 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x2C, data=0x09cf4f3c
+[        200 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x40, data=0x3243f6a8
+[        210 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x44, data=0x885a308d
+[        220 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x48, data=0x313198a2
+[        230 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x4C, data=0xe0370734
+[        240 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x00, data=0x00000001 (trigger)
+[        250 ns] UVM_INFO  @ aes_monitor: AES engine started
+[        300 ns] UVM_INFO  @ aes_monitor: Key expansion round 1 complete
+[        350 ns] UVM_INFO  @ aes_monitor: Key expansion round 2 complete
+[        400 ns] UVM_INFO  @ aes_monitor: Key expansion round 3 complete
+[        450 ns] UVM_INFO  @ aes_monitor: Key expansion round 4 complete
+[        500 ns] UVM_INFO  @ aes_monitor: Key expansion round 5 complete
+[        550 ns] UVM_INFO  @ aes_monitor: Key expansion round 6 complete
+[        600 ns] UVM_INFO  @ aes_monitor: Key expansion round 7 complete
+[        650 ns] UVM_INFO  @ aes_monitor: Key expansion round 8 complete
+[        700 ns] UVM_INFO  @ aes_monitor: Key expansion round 9 complete
+[        750 ns] UVM_INFO  @ aes_monitor: Key expansion round 10 complete
+[        760 ns] UVM_INFO  @ aes_monitor: Starting cipher rounds
+[        770 ns] UVM_WARNING @ aes_monitor: Key expansion took 51 cycles (expected ~44)
+[        830 ns] UVM_INFO  @ aes_monitor: Cipher round 1 complete
+[        880 ns] UVM_INFO  @ aes_monitor: Cipher round 2 complete
+[        930 ns] UVM_INFO  @ aes_monitor: Cipher round 3 complete
+[        980 ns] UVM_INFO  @ aes_monitor: Cipher round 4 complete
+[       1030 ns] UVM_INFO  @ aes_monitor: Cipher round 5 complete
+[       1080 ns] UVM_INFO  @ aes_monitor: Cipher round 6 complete
+[       1130 ns] UVM_INFO  @ aes_monitor: Cipher round 7 complete
+[       1180 ns] UVM_INFO  @ aes_monitor: Cipher round 8 complete
+[       1230 ns] UVM_INFO  @ aes_monitor: Cipher round 9 complete
+[       1280 ns] UVM_INFO  @ aes_monitor: Cipher round 10 complete (final)
+[       1290 ns] UVM_INFO  @ aes_monitor: output_valid = 1
+[       1300 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[0]: 0x3925841d
+[       1310 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[1]: 0x02dc09fb
+[       1320 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[2]: 0xdc118597
+[       1330 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[3]: 0x196a0b32
+[       1350 ns] UVM_INFO  @ aes_scoreboard: NIST Appendix B encrypt: PASS
+[       1400 ns] UVM_INFO  @ aes_driver: === Test 2: Same key, different plaintext ===
+[       1410 ns] UVM_INFO  @ aes_driver: Plaintext: 128'h00112233_44556677_8899aabb_ccddeeff
+[       1430 ns] UVM_INFO  @ aes_reg_adapter: Writing DATA_IN[0..3]
+[       1440 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x00, data=0x00000001
+[       1450 ns] UVM_INFO  @ aes_monitor: AES engine started (reusing key)
+[       1500 ns] UVM_WARNING @ aes_monitor: Stale round key warning: re-expansion skipped
+[       1900 ns] UVM_INFO  @ aes_monitor: output_valid = 1
+[       1910 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[0]: 0x69c4e0d8
+[       1920 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[1]: 0x6a7b0430
+[       1930 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[2]: 0xd8cdb780
+[       1940 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[3]: 0x70b4c55a
+[       1960 ns] UVM_INFO  @ aes_scoreboard: Test 2 encrypt: PASS
+[       2000 ns] UVM_INFO  @ aes_driver: === Test 3: New key, new plaintext ===
+[       2010 ns] UVM_INFO  @ aes_driver: Key:       128'h00010203_04050607_08090a0b_0c0d0e0f
+[       2020 ns] UVM_INFO  @ aes_driver: Plaintext: 128'h00112233_44556677_8899aabb_ccddeeff
+[       2040 ns] UVM_INFO  @ aes_reg_adapter: Writing KEY[0..3]
+[       2060 ns] UVM_INFO  @ aes_reg_adapter: Writing DATA_IN[0..3]
+[       2070 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x00, data=0x00000001
+[       2080 ns] UVM_INFO  @ aes_monitor: AES engine started, new key expansion
+[       2600 ns] UVM_INFO  @ aes_monitor: Key expansion complete
+[       3100 ns] UVM_INFO  @ aes_monitor: output_valid = 1
+[       3110 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[0]: 0x69c4e0d8
+[       3120 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[1]: 0x6a7b0430
+[       3130 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[2]: 0xd8cdb780
+[       3140 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[3]: 0x70b4c55a
+[       3160 ns] UVM_INFO  @ aes_scoreboard: Test 3 encrypt: PASS
+[       3200 ns] UVM_INFO  @ aes_driver: === Test 4: All-zeros key and plaintext ===
+[       3240 ns] UVM_INFO  @ aes_reg_adapter: Writing KEY[0..3] = 0
+[       3250 ns] UVM_INFO  @ aes_reg_adapter: Writing DATA_IN[0..3] = 0
+[       3260 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x00, data=0x00000001
+[       3780 ns] UVM_INFO  @ aes_monitor: output_valid = 1
+[       3790 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[0]: 0x66e94bd4
+[       3800 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[1]: 0xef8a2c3b
+[       3810 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[2]: 0x884cfa59
+[       3820 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[3]: 0xca342b2e
+[       3830 ns] UVM_INFO  @ aes_scoreboard: Test 4 encrypt: PASS
+[       3900 ns] UVM_INFO  @ aes_driver: === Test 5: Encrypt then decrypt roundtrip ===
+[       3910 ns] UVM_INFO  @ aes_driver: Key:       128'hdeadbeef_cafebabe_12345678_9abcdef0
+[       3920 ns] UVM_INFO  @ aes_driver: Plaintext: 128'hfeedface_deadc0de_baadf00d_defec8ed
+[       3930 ns] UVM_INFO  @ aes_reg_adapter: Writing KEY and DATA_IN
+[       3940 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x00, data=0x00000001 (encrypt)
+[       4500 ns] UVM_INFO  @ aes_monitor: Encrypt done
+[       4510 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT: 128'h9a821c7f_35e8b142_60d91f38_a4722b59
+[       4520 ns] UVM_INFO  @ aes_scoreboard: Encrypted result saved for decrypt
+[       4530 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x04, data=0x00000021 (decrypt mode)
+[       4540 ns] UVM_INFO  @ aes_reg_adapter: Writing KEY[0..3] (same key)
+[       4550 ns] UVM_INFO  @ aes_reg_adapter: Writing DATA_IN = encrypted output
+[       4560 ns] UVM_INFO  @ aes_reg_adapter: Register write: addr=0x00, data=0x00000001
+[       5200 ns] UVM_INFO  @ aes_monitor: Decrypt done
+[       5210 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[0]: 0xfeedface
+[       5220 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[1]: 0xdeadc0de
+[       5230 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[2]: 0xbaad700d
+[       5240 ns] UVM_INFO  @ aes_reg_adapter: Reading DATA_OUT[3]: 0xdefec8ed
+[       5250 ns] UVM_ERROR @ aes_scoreboard: DECRYPT ROUNDTRIP MISMATCH
+                           Original plaintext:  128'hfeedface_deadc0de_baadf00d_defec8ed
+                           Decrypted output:    128'hfeedface_deadc0de_baad700d_defec8ed
+                           Mismatch in DATA_OUT[2]:
+                             Expected: 0xbaadf00d
+                             Actual:   0xbaad700d
+[       5270 ns] UVM_WARNING @ aes_monitor: Decrypt took 64 cycles, encrypt took 62
+[       5280 ns] UVM_WARNING @ tl_monitor: DATA_OUT read before explicit STATUS check (benign)
+[       5400 ns] UVM_INFO  @ aes_env: Drain time complete
+
+# ----- UVM Report Summary -----
+# UVM_INFO    : 58
+# UVM_WARNING :  4
+# UVM_ERROR   :  1
+# UVM_FATAL   :  0
+# ** TEST FAILED ** (1 UVM_ERROR)
+# Simulation time: 5400 ns

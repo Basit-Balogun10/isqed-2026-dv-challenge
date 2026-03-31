@@ -1,0 +1,21 @@
+--- a/duts/citadel_spi/citadel_spi.sv
++++ b/duts/citadel_spi/citadel_spi.sv
+@@ -162,12 +162,14 @@
+   logic        sample_edge;
+   logic        output_edge;
+   logic        first_bit_out;
+
++  // Fix: Correct the CPHA mux for sample/output edge assignment.
++  // CPHA=0: sample on leading edge, output on trailing edge.
++  // CPHA=1: output on leading edge, sample on trailing edge.
+   always_comb begin
+     if (reg_cpha == 1'b0) begin
+       sample_edge = leading_edge;
+       output_edge = trailing_edge;
+     end else begin
+-      sample_edge = leading_edge;   // BUG: should be trailing_edge
+-      output_edge = trailing_edge;  // BUG: should be leading_edge
++      sample_edge = trailing_edge;
++      output_edge = leading_edge;
+     end
+   end

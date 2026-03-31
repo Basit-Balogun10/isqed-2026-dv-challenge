@@ -1,0 +1,380 @@
+failure_count: 35
+failures:
+  - test_id: test_007
+    test_name: regr_func_tmr_seed2283
+    dut: warden_timer
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: watchdog bark interrupt asserted at cycle 1000, expected assertion at cycle 1001"
+    error_component: "timer_scoreboard"
+    signal_values:
+      INTR_STATE: "0x00000004"
+      WATCHDOG_COUNT: "0x000003E8"
+      WATCHDOG_BARK_THRESH: "0x000003E8"
+      WATCHDOG_CTRL: "0x00000001"
+
+  - test_id: test_011
+    test_name: regr_func_spi_seed5823
+    dut: citadel_spi
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ spi_scoreboard: RX data mismatch: expected=0xB7, actual=0x5B at time 1710ns"
+    error_component: "spi_scoreboard"
+    signal_values:
+      CONFIGOPTS: "0x20222004"
+      RXDATA: "0x0000005B"
+      STATUS: "0x00000020"
+
+  - test_id: test_171
+    test_name: regr_stress_gpio_l_seed1192
+    dut: bastion_gpio
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: DATA_OUT read 0x00000000, expected 0x0000FFFF after 100 write transactions to addr 0x28"
+    error_component: "gpio_scoreboard"
+    signal_values:
+      DATA_OUT: "0x00000000"
+      DIRECT_OUT: "0x00000000"
+      INTR_STATE: "0x00000000"
+
+  - test_id: test_023
+    test_name: regr_func_tmr_seed3184
+    dut: warden_timer
+    error_type: "UVM_ERROR"
+    error_message: "Timer interrupt timing violation: bark asserted at WATCHDOG_COUNT=500, expected >= 501"
+    error_component: "timer_scoreboard"
+    signal_values:
+      INTR_STATE: "0x00000004"
+      WATCHDOG_COUNT: "0x000001F4"
+      WATCHDOG_BARK_THRESH: "0x000001F4"
+
+  - test_id: test_082
+    test_name: regr_func_gpio_seed5498
+    dut: bastion_gpio
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ gpio_scoreboard: register read mismatch at addr=0x04: expected=0x0000FFFF, actual=0x00000000"
+    error_component: "gpio_scoreboard"
+    signal_values:
+      DATA_OUT: "0x00000000"
+      DIRECT_OUT: "0x00000000"
+
+  - test_id: test_003
+    test_name: regr_func_comm_seed1047
+    dut: nexus_uart
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: RX byte[3] expected=0xA5, actual=0x25 at time 48170ns"
+    error_component: "uart_scoreboard"
+    signal_values:
+      RDATA: "0x00000025"
+      STATUS: "0x00000012"
+      CTRL: "0x0006C807"
+
+  - test_id: test_126
+    test_name: regr_func_hash_seed1122
+    dut: sentinel_hmac
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ hmac_scoreboard: DIGEST[0..7] mismatch, all 8 words differ from reference for 256-byte input"
+    error_component: "hmac_scoreboard"
+    signal_values:
+      STATUS: "0x00000003"
+      MSG_LENGTH_LO: "0x00000800"
+      MSG_LENGTH_HI: "0x00000000"
+      INTR_STATE: "0x00000001"
+
+  - test_id: test_009
+    test_name: regr_func_gpio_seed9351
+    dut: bastion_gpio
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ gpio_scoreboard: gpio_o[0] mismatch: expected=1, actual=0 after write to addr 0x28 with wdata=0x80010000"
+    error_component: "gpio_scoreboard"
+    signal_values:
+      DATA_OUT: "0x00000000"
+      DIRECT_OUT: "0x00000000"
+
+  - test_id: test_056
+    test_name: regr_sweep_tmr_seed9902
+    dut: warden_timer
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: bark interrupt asserted immediately at WATCHDOG_COUNT=1, expected no interrupt until count=2"
+    error_component: "timer_scoreboard"
+    signal_values:
+      INTR_STATE: "0x00000004"
+      WATCHDOG_COUNT: "0x00000001"
+      WATCHDOG_BARK_THRESH: "0x00000001"
+      WATCHDOG_CTRL: "0x00000001"
+
+  - test_id: test_034
+    test_name: regr_func_spi_multi_seed2090
+    dut: citadel_spi
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ spi_scoreboard: multi-byte transfer mismatch: byte[0] expected=0xDE actual=0xBD, byte[1] expected=0xAD actual=0x5B, byte[2] expected=0xBE actual=0x7D, byte[3] expected=0xEF actual=0xDF"
+    error_component: "spi_scoreboard"
+    signal_values:
+      CONFIGOPTS: "0x20222004"
+      STATUS: "0x00000020"
+
+  - test_id: test_015
+    test_name: regr_func_hash_seed8815
+    dut: sentinel_hmac
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ hmac_scoreboard: DIGEST word 4 mismatch: expected=0x9B1A7CB6, actual=0x9B197CB6 for 128-byte message"
+    error_component: "hmac_scoreboard"
+    signal_values:
+      STATUS: "0x00000003"
+      MSG_LENGTH_LO: "0x00000400"
+      MSG_LENGTH_HI: "0x00000000"
+      INTR_STATE: "0x00000001"
+
+  - test_id: test_108
+    test_name: regr_func_gpio_bit_seed1094
+    dut: bastion_gpio
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ gpio_scoreboard: DATA_OUT[5] expected=1, actual=0 after write to addr 0x28"
+    error_component: "gpio_scoreboard"
+    signal_values:
+      DATA_OUT: "0x00000000"
+      DIRECT_OUT: "0x00000000"
+
+  - test_id: test_078
+    test_name: regr_func_tmr_seed7714
+    dut: warden_timer
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: bark interrupt observed at cycle 255, expected at cycle 256"
+    error_component: "timer_scoreboard"
+    signal_values:
+      INTR_STATE: "0x00000004"
+      WATCHDOG_COUNT: "0x00000100"
+      WATCHDOG_BARK_THRESH: "0x00000100"
+
+  - test_id: test_145
+    test_name: regr_rand_spi_seed5596
+    dut: citadel_spi
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: 8 of 8 RX bytes differ from expected values"
+    error_component: "spi_scoreboard"
+    signal_values:
+      CONFIGOPTS: "0x20222004"
+      STATUS: "0x00000020"
+
+  - test_id: test_017
+    test_name: regr_func_comm_seed6907
+    dut: nexus_uart
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ uart_monitor: RX frame error — stop bit expected=1, actual=0 at time 136430ns"
+    error_component: "uart_monitor"
+    signal_values:
+      STATUS: "0x00000016"
+      CTRL: "0x00006C07"
+
+  - test_id: test_195
+    test_name: regr_stress_gpio_u_seed7896
+    dut: bastion_gpio
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: 0 of 50 register write transactions to addr 0x2C reflected in DATA_OUT readback"
+    error_component: "gpio_scoreboard"
+    signal_values:
+      DATA_OUT: "0x00000000"
+
+  - test_id: test_041
+    test_name: regr_func_comm_seed3212
+    dut: nexus_uart
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: RX byte[7] expected=0xFF, actual=0x7F at time 313440ns"
+    error_component: "uart_scoreboard"
+    signal_values:
+      RDATA: "0x0000007F"
+      STATUS: "0x00000012"
+      CTRL: "0x00010407"
+
+  - test_id: test_073
+    test_name: regr_func_hash_3blk_seed5484
+    dut: sentinel_hmac
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ hmac_scoreboard: DIGEST[5..7] mismatch for 96-byte input message"
+    error_component: "hmac_scoreboard"
+    signal_values:
+      STATUS: "0x00000003"
+      MSG_LENGTH_LO: "0x00000300"
+      MSG_LENGTH_HI: "0x00000000"
+      INTR_STATE: "0x00000001"
+
+  - test_id: test_028
+    test_name: regr_func_gpio_u_seed5414
+    dut: bastion_gpio
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ gpio_scoreboard: register readback mismatch at addr 0x2C: expected=0x00010000, actual=0x00000000"
+    error_component: "gpio_scoreboard"
+    signal_values:
+      DATA_OUT: "0x00000000"
+      DIRECT_OUT: "0x00000000"
+
+  - test_id: test_089
+    test_name: regr_func_comm_fast_seed6620
+    dut: nexus_uart
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ uart_monitor: parity error flag asserted unexpectedly — INTR_STATE[5]=1 at time 490470ns"
+    error_component: "uart_monitor"
+    signal_values:
+      STATUS: "0x00002012"
+      CTRL: "0x00002807"
+      INTR_STATE: "0x00000022"
+
+  - test_id: test_099
+    test_name: regr_func_tmr_boundary_seed1080
+    dut: warden_timer
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: bark interrupt asserted at WATCHDOG_COUNT=0xFFFFFFFF, expected after wrap to 0x00000000"
+    error_component: "timer_scoreboard"
+    signal_values:
+      INTR_STATE: "0x00000004"
+      WATCHDOG_COUNT: "0xFFFFFFFF"
+      WATCHDOG_BARK_THRESH: "0xFFFFFFFF"
+
+  - test_id: test_067
+    test_name: regr_func_spi_edge_seed8808
+    dut: citadel_spi
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ spi_monitor: RX bit[7] sampled stale value — expected=1, actual=0 at time 1275ns"
+    error_component: "spi_monitor"
+    signal_values:
+      CONFIGOPTS: "0x20222004"
+      STATUS: "0x00000020"
+
+  - test_id: test_134
+    test_name: regr_func_tmr_count_seed6690
+    dut: warden_timer
+    error_type: "UVM_ERROR"
+    error_message: "Timer scoreboard: bark interrupt at WATCHDOG_COUNT=100, expected at WATCHDOG_COUNT=101"
+    error_component: "timer_scoreboard"
+    signal_values:
+      INTR_STATE: "0x00000004"
+      WATCHDOG_COUNT: "0x00000064"
+      WATCHDOG_BARK_THRESH: "0x00000064"
+      WATCHDOG_CTRL: "0x00000001"
+
+  - test_id: test_055
+    test_name: regr_func_gpio_rb_seed5456
+    dut: bastion_gpio
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ gpio_scoreboard: DATA_OUT[3] expected=1, actual=0 after write to addr 0x28 with wdata=0x00080008"
+    error_component: "gpio_scoreboard"
+    signal_values:
+      DATA_OUT: "0x00000000"
+      DIRECT_OUT: "0x00000000"
+
+  - test_id: test_058
+    test_name: regr_rand_comm_seed8794
+    dut: nexus_uart
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: 4 of 16 RX bytes corrupted — indices [3, 7, 11, 15] differ from expected"
+    error_component: "uart_scoreboard"
+    signal_values:
+      STATUS: "0x00000012"
+      CTRL: "0x00008E07"
+
+  - test_id: test_044
+    test_name: regr_func_hash_long_seed6550
+    dut: sentinel_hmac
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ hmac_scoreboard: DIGEST mismatch starting at word 3 for 200-byte input — first 3 words correct, remaining 5 differ"
+    error_component: "hmac_scoreboard"
+    signal_values:
+      STATUS: "0x00000003"
+      MSG_LENGTH_LO: "0x00000640"
+      MSG_LENGTH_HI: "0x00000000"
+      INTR_STATE: "0x00000001"
+
+  - test_id: test_143
+    test_name: regr_func_gpio_ubit_seed6704
+    dut: bastion_gpio
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ gpio_scoreboard: gpio_o[20] expected=1, actual=0 after write to addr 0x2C with wdata=0x00100010"
+    error_component: "gpio_scoreboard"
+    signal_values:
+      DATA_OUT: "0x00000000"
+      DIRECT_OUT: "0x00000000"
+
+  - test_id: test_167
+    test_name: regr_func_tmr_pet_seed3408
+    dut: warden_timer
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: bark interrupt re-asserted at WATCHDOG_COUNT=50 after pet, expected at WATCHDOG_COUNT=51"
+    error_component: "timer_scoreboard"
+    signal_values:
+      INTR_STATE: "0x00000004"
+      WATCHDOG_COUNT: "0x00000032"
+      WATCHDOG_BARK_THRESH: "0x00000032"
+
+  - test_id: test_025
+    test_name: regr_func_comm_seed2076
+    dut: nexus_uart
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: RX byte expected=0xEC, actual=0x6C at time 216100ns"
+    error_component: "uart_scoreboard"
+    signal_values:
+      RDATA: "0x0000006C"
+      STATUS: "0x00000012"
+      CTRL: "0x00005607"
+
+  - test_id: test_101
+    test_name: regr_func_spi_cpha_seed9972
+    dut: citadel_spi
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ spi_scoreboard: RX data mismatch: expected=0xFF, actual=0x00"
+    error_component: "spi_scoreboard"
+    signal_values:
+      CONFIGOPTS: "0x20222004"
+      RXDATA: "0x00000000"
+      STATUS: "0x00000020"
+
+  - test_id: test_188
+    test_name: regr_iter_tmr_seed6774
+    dut: warden_timer
+    error_type: "UVM_ERROR"
+    error_message: "Timer scoreboard: bark interrupt timing inconsistent across 10 iterations — bark at WATCHDOG_COUNT=200 each time, expected 201"
+    error_component: "timer_scoreboard"
+    signal_values:
+      INTR_STATE: "0x00000004"
+      WATCHDOG_COUNT: "0x000000C8"
+      WATCHDOG_BARK_THRESH: "0x000000C8"
+
+  - test_id: test_112
+    test_name: regr_func_comm_fast_seed8878
+    dut: nexus_uart
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ uart_monitor: start bit detection timeout — expected start condition not detected within 10000ns window"
+    error_component: "uart_monitor"
+    signal_values:
+      STATUS: "0x00000004"
+      CTRL: "0x00002207"
+
+  - test_id: test_098
+    test_name: regr_func_hash_4blk_seed6634
+    dut: sentinel_hmac
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ hmac_scoreboard: DIGEST words 4-7 mismatch for 192-byte input message"
+    error_component: "hmac_scoreboard"
+    signal_values:
+      STATUS: "0x00000003"
+      MSG_LENGTH_LO: "0x00000600"
+      MSG_LENGTH_HI: "0x00000000"
+      INTR_STATE: "0x00000001"
+
+  - test_id: test_178
+    test_name: regr_stress_spi_seed2314
+    dut: citadel_spi
+    error_type: "UVM_ERROR"
+    error_message: "Scoreboard mismatch: 97 of 100 RX bytes differ from expected in bulk transfer"
+    error_component: "spi_scoreboard"
+    signal_values:
+      CONFIGOPTS: "0x20222004"
+      STATUS: "0x00000020"
+
+  - test_id: test_159
+    test_name: regr_rand_hash_seed7840
+    dut: sentinel_hmac
+    error_type: "UVM_ERROR"
+    error_message: "UVM_ERROR @ hmac_scoreboard: DIGEST mismatch — all 8 words differ from reference for 512-byte input"
+    error_component: "hmac_scoreboard"
+    signal_values:
+      STATUS: "0x00000003"
+      MSG_LENGTH_LO: "0x00001000"
+      MSG_LENGTH_HI: "0x00000000"
+      INTR_STATE: "0x00000001"

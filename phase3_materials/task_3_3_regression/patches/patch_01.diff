@@ -1,0 +1,20 @@
+--- a/duts/nexus_uart/nexus_uart.sv
++++ b/duts/nexus_uart/nexus_uart.sv
+@@ -456,9 +456,16 @@
+
+   logic [15:0] rx_os_divisor;
+   always_comb begin
+-    rx_os_divisor = {4'b0, ctrl_baud_divisor[15:4]};
++    // Fix: Use proper rounding for oversampling divisor calculation.
++    // The oversampling clock should divide the baud period into 16 phases.
++    // Simple right-shift by 4 truncates, causing drift. Use rounding instead.
++    rx_os_divisor = ({4'b0, ctrl_baud_divisor[15:4]}) +
++                    {15'b0, ctrl_baud_divisor[3]};  // Round to nearest
+   end
+
+   always_comb begin
+-    rx_os_tick = (rx_baud_cnt == rx_os_divisor) && (ctrl_baud_divisor != 16'h0);
++    // Also ensure minimum divisor of 1 to prevent zero-period oversampling
++    rx_os_tick = (rx_baud_cnt == (rx_os_divisor == 16'h0 ? 16'h1 : rx_os_divisor)) &&
++                 (ctrl_baud_divisor != 16'h0);
+   end

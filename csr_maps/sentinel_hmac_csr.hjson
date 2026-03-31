@@ -1,0 +1,520 @@
+{
+  name: "sentinel_hmac"
+  base_addr: "0x0"
+  registers: [
+    {
+      name: "CFG"
+      desc: "HMAC configuration register"
+      offset: "0x00"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "hmac_en"
+          bits: "0"
+          desc: "Enable HMAC mode (when 0, operates as SHA-256 only)"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "sha_en"
+          bits: "1"
+          desc: "Enable SHA-256 engine"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "endian_swap"
+          bits: "2"
+          desc: "Swap endianness of input message data"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "digest_swap"
+          bits: "3"
+          desc: "Swap endianness of output digest"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "CMD"
+      desc: "HMAC command register (write 1 to set)"
+      offset: "0x04"
+      reset_val: "0x00000000"
+      access: "W1S"
+      fields: [
+        {
+          name: "hash_start"
+          bits: "0"
+          desc: "Write 1 to start hashing operation"
+          access: "W1S"
+          reset_val: "0x0"
+        }
+        {
+          name: "hash_process"
+          bits: "1"
+          desc: "Write 1 to process remaining data in FIFO"
+          access: "W1S"
+          reset_val: "0x0"
+        }
+        {
+          name: "hash_stop"
+          bits: "2"
+          desc: "Write 1 to stop hashing and generate digest"
+          access: "W1S"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "STATUS"
+      desc: "HMAC status register"
+      offset: "0x08"
+      reset_val: "0x00000102"
+      access: "RO"
+      fields: [
+        {
+          name: "fifo_full"
+          bits: "0"
+          desc: "Message FIFO is full"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "fifo_empty"
+          bits: "1"
+          desc: "Message FIFO is empty"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "fifo_depth"
+          bits: "7:2"
+          desc: "Number of entries in the message FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "sha_idle"
+          bits: "8"
+          desc: "SHA-256 engine is idle"
+          access: "RO"
+          reset_val: "0x1"
+        }
+      ]
+    }
+    {
+      name: "WIPE_SECRET"
+      desc: "Wipe secret key register (write 1 to set)"
+      offset: "0x0C"
+      reset_val: "0x00000000"
+      access: "W1S"
+      fields: [
+        {
+          name: "wipe"
+          bits: "0"
+          desc: "Write 1 to wipe secret key from key registers"
+          access: "W1S"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "KEY_0"
+      desc: "HMAC secret key word 0 (bits 31:0)"
+      offset: "0x10"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "HMAC key bits [31:0]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "KEY_1"
+      desc: "HMAC secret key word 1 (bits 63:32)"
+      offset: "0x14"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "HMAC key bits [63:32]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "KEY_2"
+      desc: "HMAC secret key word 2 (bits 95:64)"
+      offset: "0x18"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "HMAC key bits [95:64]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "KEY_3"
+      desc: "HMAC secret key word 3 (bits 127:96)"
+      offset: "0x1C"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "HMAC key bits [127:96]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "KEY_4"
+      desc: "HMAC secret key word 4 (bits 159:128)"
+      offset: "0x20"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "HMAC key bits [159:128]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "KEY_5"
+      desc: "HMAC secret key word 5 (bits 191:160)"
+      offset: "0x24"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "HMAC key bits [191:160]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "KEY_6"
+      desc: "HMAC secret key word 6 (bits 223:192)"
+      offset: "0x28"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "HMAC key bits [223:192]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "KEY_7"
+      desc: "HMAC secret key word 7 (bits 255:224)"
+      offset: "0x2C"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "HMAC key bits [255:224]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "DIGEST_0"
+      desc: "SHA-256/HMAC digest word 0 (bits 31:0)"
+      offset: "0x30"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "digest"
+          bits: "31:0"
+          desc: "Digest bits [31:0]"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "DIGEST_1"
+      desc: "SHA-256/HMAC digest word 1 (bits 63:32)"
+      offset: "0x34"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "digest"
+          bits: "31:0"
+          desc: "Digest bits [63:32]"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "DIGEST_2"
+      desc: "SHA-256/HMAC digest word 2 (bits 95:64)"
+      offset: "0x38"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "digest"
+          bits: "31:0"
+          desc: "Digest bits [95:64]"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "DIGEST_3"
+      desc: "SHA-256/HMAC digest word 3 (bits 127:96)"
+      offset: "0x3C"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "digest"
+          bits: "31:0"
+          desc: "Digest bits [127:96]"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "DIGEST_4"
+      desc: "SHA-256/HMAC digest word 4 (bits 159:128)"
+      offset: "0x40"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "digest"
+          bits: "31:0"
+          desc: "Digest bits [159:128]"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "DIGEST_5"
+      desc: "SHA-256/HMAC digest word 5 (bits 191:160)"
+      offset: "0x44"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "digest"
+          bits: "31:0"
+          desc: "Digest bits [191:160]"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "DIGEST_6"
+      desc: "SHA-256/HMAC digest word 6 (bits 223:192)"
+      offset: "0x48"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "digest"
+          bits: "31:0"
+          desc: "Digest bits [223:192]"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "DIGEST_7"
+      desc: "SHA-256/HMAC digest word 7 (bits 255:224)"
+      offset: "0x4C"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "digest"
+          bits: "31:0"
+          desc: "Digest bits [255:224]"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "MSG_LENGTH_LOWER"
+      desc: "Message length lower 32 bits (in bits)"
+      offset: "0x50"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "msg_length_lower"
+          bits: "31:0"
+          desc: "Lower 32 bits of the processed message length in bits"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "MSG_LENGTH_UPPER"
+      desc: "Message length upper 32 bits (in bits)"
+      offset: "0x54"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "msg_length_upper"
+          bits: "31:0"
+          desc: "Upper 32 bits of the processed message length in bits"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_STATE"
+      desc: "Interrupt state register (write 1 to clear)"
+      offset: "0x58"
+      reset_val: "0x00000000"
+      access: "W1C"
+      fields: [
+        {
+          name: "hmac_done"
+          bits: "0"
+          desc: "HMAC/SHA-256 operation completed"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "fifo_empty"
+          bits: "1"
+          desc: "Message FIFO became empty"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "hmac_err"
+          bits: "2"
+          desc: "HMAC error occurred"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_ENABLE"
+      desc: "Interrupt enable register"
+      offset: "0x5C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "hmac_done"
+          bits: "0"
+          desc: "Enable HMAC done interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "fifo_empty"
+          bits: "1"
+          desc: "Enable FIFO empty interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "hmac_err"
+          bits: "2"
+          desc: "Enable HMAC error interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_TEST"
+      desc: "Interrupt test register"
+      offset: "0x60"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "hmac_done"
+          bits: "0"
+          desc: "Test HMAC done interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "fifo_empty"
+          bits: "1"
+          desc: "Test FIFO empty interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "hmac_err"
+          bits: "2"
+          desc: "Test HMAC error interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "MSG_FIFO"
+      desc: "Message FIFO write port"
+      offset: "0x64"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "Write message data word into FIFO"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+  ]
+}

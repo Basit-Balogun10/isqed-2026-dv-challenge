@@ -1,0 +1,69 @@
+
+[          0 ns] UVM_INFO  @ tb_top: Reset asserted
+[         10 ns] UVM_INFO  @ tb_top: Clock started, period = 10 ns
+[         50 ns] UVM_INFO  @ tb_top: Reset deasserted
+[         60 ns] UVM_INFO  @ gpio_env: Environment build phase complete
+[         70 ns] UVM_INFO  @ gpio_agent: Agent configured
+[         80 ns] UVM_INFO  @ gpio_scoreboard: Scoreboard initialized
+[        100 ns] UVM_INFO  @ gpio_reg_adapter: Register write: addr=0x00, data=0x00000000
+[        120 ns] UVM_INFO  @ gpio_reg_adapter: Register write: addr=0x14, data=0x00000001
+[        140 ns] UVM_INFO  @ gpio_reg_adapter: Register write: addr=0x10, data=0x00000001
+[        160 ns] UVM_INFO  @ gpio_reg_adapter: Register write: addr=0x18, data=0x00000000
+[        180 ns] UVM_INFO  @ gpio_reg_adapter: Register write: addr=0x1C, data=0x00000000
+[        200 ns] UVM_INFO  @ gpio_reg_adapter: Register write: addr=0x20, data=0x00000000
+[        250 ns] UVM_INFO  @ gpio_driver: === Phase 1: Multi-cycle pulse ===
+[        260 ns] UVM_INFO  @ gpio_driver: Driving gpio_i[0] = 0
+[        300 ns] UVM_INFO  @ gpio_driver: Driving gpio_i[0] = 1
+[        330 ns] UVM_INFO  @ gpio_monitor: Edge condition detected on gpio_i[0]
+[        340 ns] UVM_INFO  @ gpio_monitor: INTR_STATE[0] = 1
+[        350 ns] UVM_INFO  @ gpio_scoreboard: Interrupt detected after edge transition: PASS
+[        360 ns] UVM_INFO  @ gpio_reg_adapter: Reading INTR_STATE: 0x00000001
+[        370 ns] UVM_INFO  @ gpio_reg_adapter: Register write: addr=0x0C, data=0x00000001 (W1C clear)
+[        380 ns] UVM_INFO  @ gpio_monitor: INTR_STATE[0] cleared
+[        400 ns] UVM_INFO  @ gpio_driver: Driving gpio_i[0] = 0
+[        500 ns] UVM_WARNING @ gpio_monitor: gpio_i[31:1] floating (not driven) - defaulting to 0
+[        510 ns] UVM_WARNING @ tl_monitor: TL-UL address decode warning: addr 0x24 not in register map (benign)
+[        600 ns] UVM_INFO  @ gpio_driver: === Phase 2: Single-cycle pulse ===
+[        610 ns] UVM_INFO  @ gpio_driver: Driving gpio_i[0] = 1 for 1 clock cycle
+[        620 ns] UVM_INFO  @ gpio_driver: Driving gpio_i[0] = 0
+[        660 ns] UVM_INFO  @ gpio_scoreboard: INTR_STATE[0] = 0 (no interrupt for single-cycle pulse)
+[        700 ns] UVM_WARNING @ clk_monitor: Clock duty cycle deviation: 49.8% (within spec)
+[        800 ns] UVM_INFO  @ gpio_driver: === Phase 3: Sub-cycle glitch ===
+[        810 ns] UVM_INFO  @ gpio_driver: Driving gpio_i[0] = 1 for 5 ns
+[        815 ns] UVM_INFO  @ gpio_driver: Driving gpio_i[0] = 0
+[        840 ns] UVM_INFO  @ gpio_scoreboard: Sub-cycle glitch filtered: PASS
+[        900 ns] UVM_INFO  @ gpio_driver: === Phase 4: Two-cycle pulse ===
+[        910 ns] UVM_INFO  @ gpio_driver: Driving gpio_i[0] = 1 for 2 clock cycles
+[        930 ns] UVM_INFO  @ gpio_driver: Driving gpio_i[0] = 0
+[        960 ns] UVM_INFO  @ gpio_monitor: Edge condition detected on gpio_i[0]
+[        970 ns] UVM_INFO  @ gpio_monitor: INTR_STATE[0] = 1
+[        980 ns] UVM_INFO  @ gpio_scoreboard: Two-cycle pulse detected: PASS
+[        990 ns] UVM_INFO  @ gpio_reg_adapter: Register write: addr=0x0C, data=0x00000001 (W1C clear)
+[       1050 ns] UVM_INFO  @ gpio_driver: === Phase 5: Rapid toggling ===
+[       1060 ns] UVM_INFO  @ gpio_driver: Toggling gpio_i[0] every 2 cycles (3 transitions)
+[       1060 ns] UVM_INFO  @ gpio_driver: Toggle 1: gpio_i[0] = 1
+[       1080 ns] UVM_INFO  @ gpio_driver: Toggle 1: gpio_i[0] = 0
+[       1100 ns] UVM_INFO  @ gpio_driver: Toggle 2: gpio_i[0] = 1
+[       1120 ns] UVM_INFO  @ gpio_driver: Toggle 2: gpio_i[0] = 0
+[       1140 ns] UVM_INFO  @ gpio_driver: Toggle 3: gpio_i[0] = 1
+[       1160 ns] UVM_INFO  @ gpio_driver: Toggle 3: gpio_i[0] = 0
+[       1200 ns] UVM_INFO  @ gpio_scoreboard: Reading INTR_STATE after 3 toggles
+[       1210 ns] UVM_INFO  @ gpio_reg_adapter: INTR_STATE = 0x00000001
+[       1220 ns] UVM_ERROR @ gpio_scoreboard: EDGE COUNT MISMATCH
+                           Expected rising edges detected: 3
+                           Actual interrupts observed: 1
+                           INTR_STATE: 0x00000001
+[       1250 ns] UVM_WARNING @ tl_monitor: TL-UL read data returned with 1-cycle delay variance (within tolerance)
+[       1260 ns] UVM_ERROR @ gpio_scoreboard: INTERRUPT COUNT MISMATCH
+                           3 input transitions occurred, only 1 interrupt event recorded
+                           INTR_STATE: 0x00000001
+[       1270 ns] UVM_WARNING @ clk_monitor: Clock duty cycle deviation: 49.8% (within spec)
+[       1350 ns] UVM_INFO  @ gpio_env: Drain time complete
+
+# ----- UVM Report Summary -----
+# UVM_INFO    : 40
+# UVM_WARNING :  5
+# UVM_ERROR   :  2
+# UVM_FATAL   :  0
+# ** TEST FAILED ** (2 UVM_ERROR)
+# Simulation time: 1350 ns

@@ -1,0 +1,295 @@
+{
+  name: "warden_timer"
+  base_addr: "0x0"
+  registers: [
+    {
+      name: "MTIME_LOW"
+      desc: "Machine timer counter lower 32 bits"
+      offset: "0x00"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "mtime_low"
+          bits: "31:0"
+          desc: "Lower 32 bits of the 64-bit machine timer counter"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "MTIME_HIGH"
+      desc: "Machine timer counter upper 32 bits"
+      offset: "0x04"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "mtime_high"
+          bits: "31:0"
+          desc: "Upper 32 bits of the 64-bit machine timer counter"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "MTIMECMP0_LOW"
+      desc: "Timer 0 compare value lower 32 bits"
+      offset: "0x08"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "mtimecmp0_low"
+          bits: "31:0"
+          desc: "Lower 32 bits of timer 0 compare value"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "MTIMECMP0_HIGH"
+      desc: "Timer 0 compare value upper 32 bits"
+      offset: "0x0C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "mtimecmp0_high"
+          bits: "31:0"
+          desc: "Upper 32 bits of timer 0 compare value"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "MTIMECMP1_LOW"
+      desc: "Timer 1 compare value lower 32 bits"
+      offset: "0x10"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "mtimecmp1_low"
+          bits: "31:0"
+          desc: "Lower 32 bits of timer 1 compare value"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "MTIMECMP1_HIGH"
+      desc: "Timer 1 compare value upper 32 bits"
+      offset: "0x14"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "mtimecmp1_high"
+          bits: "31:0"
+          desc: "Upper 32 bits of timer 1 compare value"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "PRESCALER"
+      desc: "Timer prescaler divisor"
+      offset: "0x18"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "prescaler"
+          bits: "11:0"
+          desc: "Prescaler divisor value for timer clock"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "WATCHDOG_CTRL"
+      desc: "Watchdog timer control register"
+      offset: "0x1C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "wd_enable"
+          bits: "0"
+          desc: "Enable watchdog timer"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "wd_lock"
+          bits: "1"
+          desc: "Lock watchdog configuration (prevents further writes)"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "WATCHDOG_BARK_THRESH"
+      desc: "Watchdog bark threshold (interrupt trigger)"
+      offset: "0x20"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "threshold"
+          bits: "31:0"
+          desc: "Watchdog bark threshold count value"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "WATCHDOG_BITE_THRESH"
+      desc: "Watchdog bite threshold (reset trigger)"
+      offset: "0x24"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "threshold"
+          bits: "31:0"
+          desc: "Watchdog bite threshold count value"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "WATCHDOG_PET"
+      desc: "Watchdog pet register (write to reset watchdog counter)"
+      offset: "0x28"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "pet"
+          bits: "31:0"
+          desc: "Write any value to pet (reset) the watchdog counter"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "WATCHDOG_COUNT"
+      desc: "Current watchdog counter value"
+      offset: "0x2C"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "count"
+          bits: "31:0"
+          desc: "Current watchdog counter value"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_STATE"
+      desc: "Interrupt state register (write 1 to clear)"
+      offset: "0x30"
+      reset_val: "0x00000000"
+      access: "W1C"
+      fields: [
+        {
+          name: "timer0_expired"
+          bits: "0"
+          desc: "Timer 0 compare match interrupt"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "timer1_expired"
+          bits: "1"
+          desc: "Timer 1 compare match interrupt"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "watchdog_bark"
+          bits: "2"
+          desc: "Watchdog bark threshold reached interrupt"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_ENABLE"
+      desc: "Interrupt enable register"
+      offset: "0x34"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "timer0_expired"
+          bits: "0"
+          desc: "Enable timer 0 expired interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "timer1_expired"
+          bits: "1"
+          desc: "Enable timer 1 expired interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "watchdog_bark"
+          bits: "2"
+          desc: "Enable watchdog bark interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_TEST"
+      desc: "Interrupt test register"
+      offset: "0x38"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "timer0_expired"
+          bits: "0"
+          desc: "Test timer 0 expired interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "timer1_expired"
+          bits: "1"
+          desc: "Test timer 1 expired interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "watchdog_bark"
+          bits: "2"
+          desc: "Test watchdog bark interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  name: "nexus_uart"
+  base_addr: "0x0"
+  registers: [
+    {
+      name: "CTRL"
+      desc: "UART control register"
+      offset: "0x00"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "tx_enable"
+          bits: "0"
+          desc: "Enable UART transmitter"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_enable"
+          bits: "1"
+          desc: "Enable UART receiver"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "baud_divisor"
+          bits: "17:2"
+          desc: "Baud rate clock divisor"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "parity_mode"
+          bits: "19:18"
+          desc: "Parity mode: 00=none, 01=even, 10=odd"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "stop_bits"
+          bits: "20"
+          desc: "Number of stop bits: 0=1 bit, 1=2 bits"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "loopback_en"
+          bits: "21"
+          desc: "Enable internal loopback mode"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "STATUS"
+      desc: "UART status register"
+      offset: "0x04"
+      reset_val: "0x00000005"
+      access: "RO"
+      fields: [
+        {
+          name: "tx_fifo_empty"
+          bits: "0"
+          desc: "TX FIFO is empty"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "tx_fifo_full"
+          bits: "1"
+          desc: "TX FIFO is full"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_fifo_empty"
+          bits: "2"
+          desc: "RX FIFO is empty"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "rx_fifo_full"
+          bits: "3"
+          desc: "RX FIFO is full"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_fifo_level"
+          bits: "9:4"
+          desc: "Number of entries in TX FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_fifo_level"
+          bits: "15:10"
+          desc: "Number of entries in RX FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_overrun"
+          bits: "16"
+          desc: "RX FIFO overrun detected"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_parity_err"
+          bits: "17"
+          desc: "RX parity error detected"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_frame_err"
+          bits: "18"
+          desc: "RX framing error detected"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "TXDATA"
+      desc: "UART transmit data register"
+      offset: "0x08"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "data"
+          bits: "7:0"
+          desc: "Transmit data byte"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "RXDATA"
+      desc: "UART receive data register"
+      offset: "0x0C"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "data"
+          bits: "7:0"
+          desc: "Received data byte"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "FIFO_CTRL"
+      desc: "FIFO control register"
+      offset: "0x10"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "tx_watermark"
+          bits: "4:0"
+          desc: "TX FIFO watermark level"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_watermark"
+          bits: "9:5"
+          desc: "RX FIFO watermark level"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_fifo_rst"
+          bits: "30"
+          desc: "Write 1 to reset TX FIFO"
+          access: "W1S"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_fifo_rst"
+          bits: "31"
+          desc: "Write 1 to reset RX FIFO"
+          access: "W1S"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_STATE"
+      desc: "Interrupt state register (write 1 to clear)"
+      offset: "0x14"
+      reset_val: "0x00000000"
+      access: "W1C"
+      fields: [
+        {
+          name: "tx_watermark"
+          bits: "0"
+          desc: "TX FIFO below watermark level"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_watermark"
+          bits: "1"
+          desc: "RX FIFO above watermark level"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_empty"
+          bits: "2"
+          desc: "TX FIFO is empty"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_overflow"
+          bits: "3"
+          desc: "RX FIFO overflow occurred"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_frame_err"
+          bits: "4"
+          desc: "RX framing error detected"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_parity_err"
+          bits: "5"
+          desc: "RX parity error detected"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_timeout"
+          bits: "6"
+          desc: "RX timeout occurred"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_ENABLE"
+      desc: "Interrupt enable register"
+      offset: "0x18"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "tx_watermark"
+          bits: "0"
+          desc: "Enable TX watermark interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_watermark"
+          bits: "1"
+          desc: "Enable RX watermark interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_empty"
+          bits: "2"
+          desc: "Enable TX empty interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_overflow"
+          bits: "3"
+          desc: "Enable RX overflow interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_frame_err"
+          bits: "4"
+          desc: "Enable RX frame error interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_parity_err"
+          bits: "5"
+          desc: "Enable RX parity error interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_timeout"
+          bits: "6"
+          desc: "Enable RX timeout interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_TEST"
+      desc: "Interrupt test register"
+      offset: "0x1C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "tx_watermark"
+          bits: "0"
+          desc: "Test TX watermark interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_watermark"
+          bits: "1"
+          desc: "Test RX watermark interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_empty"
+          bits: "2"
+          desc: "Test TX empty interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_overflow"
+          bits: "3"
+          desc: "Test RX overflow interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_frame_err"
+          bits: "4"
+          desc: "Test RX frame error interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_parity_err"
+          bits: "5"
+          desc: "Test RX parity error interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_timeout"
+          bits: "6"
+          desc: "Test RX timeout interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+--- a/duts/bastion_gpio/bastion_gpio.sv
++++ b/duts/bastion_gpio/bastion_gpio.sv
+@@ -215,13 +215,15 @@
+           end
+           ADDR_MASKED_OUT_LOWER: begin
+             for (int i = 0; i < 16; i++) begin
+-              if (tl_wdata[i + 16]) begin
++              // Fix: The mask bits are in the upper half-word [31:16],
++              // and the data bits are in the lower half-word [15:0].
++              // Each mask bit i+16 controls whether data bit i is written
++              // to reg_data_out[i]. This was correct, but the TL-UL mask
++              // (tl_a_mask_i) must also be checked for byte enables.
++              if (tl_wdata[i + 16] & tl_a_mask_i[((i+16)/8)]) begin
+                 reg_data_out[i] <= tl_wdata[i];
+               end
+             end
+           end
+           ADDR_MASKED_OUT_UPPER: begin
+             for (int i = 0; i < 16; i++) begin
+-              if (tl_wdata[i + 16]) begin
++              if (tl_wdata[i + 16] & tl_a_mask_i[((i+16)/8)]) begin
+                 reg_data_out[i + 16] <= tl_wdata[i];
+               end
+             end

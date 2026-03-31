@@ -1,0 +1,1004 @@
+test_count: 200
+pass_count: 165
+fail_count: 35
+tests:
+  - test_id: test_001
+    test_name: uart_rx_basic_seed4291
+    dut: nexus_uart
+    status: pass
+    seed: "0x1A3F7B2C"
+  - test_id: test_002
+    test_name: uart_tx_loopback_seed8832
+    dut: nexus_uart
+    status: pass
+    seed: "0x2B4E8D3A"
+  - test_id: test_003
+    test_name: uart_rx_oversample_seed1047
+    dut: nexus_uart
+    status: fail
+    seed: "0x3C5F9E4B"
+  - test_id: test_004
+    test_name: uart_parity_even_seed5518
+    dut: nexus_uart
+    status: pass
+    seed: "0x4D6A0F5C"
+  - test_id: test_005
+    test_name: uart_fifo_watermark_seed3962
+    dut: nexus_uart
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_006
+    test_name: uart_baud_sweep_seed7104
+    dut: nexus_uart
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_007
+    test_name: watchdog_bark_basic_seed2283
+    dut: warden_timer
+    status: fail
+    seed: "0x709D3C8F"
+  - test_id: test_008
+    test_name: timer_compare_basic_seed6610
+    dut: warden_timer
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_009
+    test_name: gpio_masked_lower_seed9351
+    dut: bastion_gpio
+    status: fail
+    seed: "0x92BF5EA1"
+  - test_id: test_010
+    test_name: gpio_read_basic_seed4487
+    dut: bastion_gpio
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_011
+    test_name: spi_mode1_txrx_seed5823
+    dut: citadel_spi
+    status: fail
+    seed: "0xB4D170C3"
+  - test_id: test_012
+    test_name: spi_mode0_basic_seed1196
+    dut: citadel_spi
+    status: pass
+    seed: "0xC5E281D4"
+  - test_id: test_013
+    test_name: aes_ecb_enc_nist_seed7742
+    dut: aegis_aes
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_014
+    test_name: aes_cbc_basic_seed3389
+    dut: aegis_aes
+    status: pass
+    seed: "0xE704A3F6"
+  - test_id: test_015
+    test_name: sha256_multiblock_seed8815
+    dut: sentinel_hmac
+    status: fail
+    seed: "0xF815B407"
+  - test_id: test_016
+    test_name: hmac_key_basic_seed2460
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_017
+    test_name: uart_rx_baud_mismatch_seed6907
+    dut: nexus_uart
+    status: fail
+    seed: "0x1A37D629"
+  - test_id: test_018
+    test_name: i2c_host_write_basic_seed4153
+    dut: rampart_i2c
+    status: pass
+    seed: "0x2B48E73A"
+  - test_id: test_019
+    test_name: i2c_host_read_basic_seed8599
+    dut: rampart_i2c
+    status: pass
+    seed: "0x3C59F84B"
+  - test_id: test_020
+    test_name: uart_loopback_seed1846
+    dut: nexus_uart
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_021
+    test_name: uart_intr_all_seed5292
+    dut: nexus_uart
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_022
+    test_name: timer_prescaler_sweep_seed9738
+    dut: warden_timer
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_023
+    test_name: watchdog_bark_threshold_seed3184
+    dut: warden_timer
+    status: fail
+    seed: "0x709D3C8F"
+  - test_id: test_024
+    test_name: timer_mtime_wrap_seed7630
+    dut: warden_timer
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_025
+    test_name: uart_rx_noise_reject_seed2076
+    dut: nexus_uart
+    status: fail
+    seed: "0x92BF5EA1"
+  - test_id: test_026
+    test_name: gpio_write_basic_seed6522
+    dut: bastion_gpio
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_027
+    test_name: gpio_intr_rise_seed1968
+    dut: bastion_gpio
+    status: pass
+    seed: "0xB4D170C3"
+  - test_id: test_028
+    test_name: gpio_masked_upper_seed5414
+    dut: bastion_gpio
+    status: fail
+    seed: "0xC5E281D4"
+  - test_id: test_029
+    test_name: spi_fifo_depth_seed9860
+    dut: citadel_spi
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_030
+    test_name: spi_csaat_basic_seed4306
+    dut: citadel_spi
+    status: pass
+    seed: "0xE704A3F6"
+  - test_id: test_031
+    test_name: aes_ecb_dec_seed8752
+    dut: aegis_aes
+    status: pass
+    seed: "0xF815B407"
+  - test_id: test_032
+    test_name: aes_key128_seed3198
+    dut: aegis_aes
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_033
+    test_name: hmac_rfc4231_v1_seed7644
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x1A37D629"
+  - test_id: test_034
+    test_name: spi_mode1_multibyte_seed2090
+    dut: citadel_spi
+    status: fail
+    seed: "0x2B48E73A"
+  - test_id: test_035
+    test_name: i2c_target_basic_seed6536
+    dut: rampart_i2c
+    status: pass
+    seed: "0x3C59F84B"
+  - test_id: test_036
+    test_name: i2c_stretch_basic_seed1982
+    dut: rampart_i2c
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_037
+    test_name: uart_tx_fifo_full_seed5428
+    dut: nexus_uart
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_038
+    test_name: uart_rx_fifo_full_seed9874
+    dut: nexus_uart
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_039
+    test_name: timer_intr_clear_seed4320
+    dut: warden_timer
+    status: pass
+    seed: "0x709D3C8F"
+  - test_id: test_040
+    test_name: watchdog_lock_seed8766
+    dut: warden_timer
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_041
+    test_name: uart_rx_slow_baud_seed3212
+    dut: nexus_uart
+    status: fail
+    seed: "0x92BF5EA1"
+  - test_id: test_042
+    test_name: gpio_intr_fall_seed7658
+    dut: bastion_gpio
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_043
+    test_name: gpio_dir_toggle_seed2104
+    dut: bastion_gpio
+    status: pass
+    seed: "0xB4D170C3"
+  - test_id: test_044
+    test_name: sha256_long_msg_seed6550
+    dut: sentinel_hmac
+    status: fail
+    seed: "0xC5E281D4"
+  - test_id: test_045
+    test_name: spi_mode2_basic_seed1996
+    dut: citadel_spi
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_046
+    test_name: spi_mode3_basic_seed5442
+    dut: citadel_spi
+    status: pass
+    seed: "0xE704A3F6"
+  - test_id: test_047
+    test_name: aes_roundtrip_seed9888
+    dut: aegis_aes
+    status: pass
+    seed: "0xF815B407"
+  - test_id: test_048
+    test_name: aes_nist_vectors_seed4334
+    dut: aegis_aes
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_049
+    test_name: hmac_sha256_basic_seed8780
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x1A37D629"
+  - test_id: test_050
+    test_name: sha256_empty_seed3226
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x2B48E73A"
+  - test_id: test_051
+    test_name: i2c_nack_detect_seed7672
+    dut: rampart_i2c
+    status: pass
+    seed: "0x3C59F84B"
+  - test_id: test_052
+    test_name: i2c_rstart_basic_seed2118
+    dut: rampart_i2c
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_053
+    test_name: uart_parity_odd_seed6564
+    dut: nexus_uart
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_054
+    test_name: uart_stop_bits_seed1010
+    dut: nexus_uart
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_055
+    test_name: gpio_masked_readback_seed5456
+    dut: bastion_gpio
+    status: fail
+    seed: "0x709D3C8F"
+  - test_id: test_056
+    test_name: watchdog_bark_sweep_seed9902
+    dut: warden_timer
+    status: fail
+    seed: "0x81AE4D90"
+  - test_id: test_057
+    test_name: timer_mtimecmp_seed4348
+    dut: warden_timer
+    status: pass
+    seed: "0x92BF5EA1"
+  - test_id: test_058
+    test_name: uart_rx_random_baud_seed8794
+    dut: nexus_uart
+    status: fail
+    seed: "0xA3C06FB2"
+  - test_id: test_059
+    test_name: gpio_intr_lvlhigh_seed3240
+    dut: bastion_gpio
+    status: pass
+    seed: "0xB4D170C3"
+  - test_id: test_060
+    test_name: spi_multidevice_seed7686
+    dut: citadel_spi
+    status: pass
+    seed: "0xC5E281D4"
+  - test_id: test_061
+    test_name: spi_clkdiv_sweep_seed2132
+    dut: citadel_spi
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_062
+    test_name: aes_cbc_multiblock_seed6578
+    dut: aegis_aes
+    status: pass
+    seed: "0xE704A3F6"
+  - test_id: test_063
+    test_name: aes_ecb_allzero_seed1024
+    dut: aegis_aes
+    status: pass
+    seed: "0xF815B407"
+  - test_id: test_064
+    test_name: hmac_key_long_seed5470
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_065
+    test_name: sha256_55byte_seed9916
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x1A37D629"
+  - test_id: test_066
+    test_name: i2c_timeout_basic_seed4362
+    dut: rampart_i2c
+    status: pass
+    seed: "0x2B48E73A"
+  - test_id: test_067
+    test_name: spi_mode1_edge_case_seed8808
+    dut: citadel_spi
+    status: fail
+    seed: "0x3C59F84B"
+  - test_id: test_068
+    test_name: uart_fifo_reset_seed3254
+    dut: nexus_uart
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_069
+    test_name: uart_intr_watermark_seed7700
+    dut: nexus_uart
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_070
+    test_name: timer_basic_count_seed2146
+    dut: warden_timer
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_071
+    test_name: timer_dual_compare_seed6592
+    dut: warden_timer
+    status: pass
+    seed: "0x709D3C8F"
+  - test_id: test_072
+    test_name: gpio_read_sync_seed1038
+    dut: bastion_gpio
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_073
+    test_name: sha256_3block_msg_seed5484
+    dut: sentinel_hmac
+    status: fail
+    seed: "0x92BF5EA1"
+  - test_id: test_074
+    test_name: spi_error_underflow_seed9930
+    dut: citadel_spi
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_075
+    test_name: aes_ecb_enc_random_seed4376
+    dut: aegis_aes
+    status: pass
+    seed: "0xB4D170C3"
+  - test_id: test_076
+    test_name: aes_cbc_iv_seed8822
+    dut: aegis_aes
+    status: pass
+    seed: "0xC5E281D4"
+  - test_id: test_077
+    test_name: hmac_rfc4231_v2_seed3268
+    dut: sentinel_hmac
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_078
+    test_name: watchdog_bark_precise_seed7714
+    dut: warden_timer
+    status: fail
+    seed: "0xE704A3F6"
+  - test_id: test_079
+    test_name: i2c_host_write_multi_seed2160
+    dut: rampart_i2c
+    status: pass
+    seed: "0xF815B407"
+  - test_id: test_080
+    test_name: i2c_host_read_multi_seed6606
+    dut: rampart_i2c
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_081
+    test_name: uart_tx_basic_seed1052
+    dut: nexus_uart
+    status: pass
+    seed: "0x1A37D629"
+  - test_id: test_082
+    test_name: gpio_masked_write_all_seed5498
+    dut: bastion_gpio
+    status: fail
+    seed: "0x2B48E73A"
+  - test_id: test_083
+    test_name: gpio_intr_lvllow_seed9944
+    dut: bastion_gpio
+    status: pass
+    seed: "0x3C59F84B"
+  - test_id: test_084
+    test_name: spi_mode0_multibyte_seed4390
+    dut: citadel_spi
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_085
+    test_name: spi_csaat_chain_seed8836
+    dut: citadel_spi
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_086
+    test_name: aes_ecb_dec_random_seed3282
+    dut: aegis_aes
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_087
+    test_name: aes_key_change_seed7728
+    dut: aegis_aes
+    status: pass
+    seed: "0x709D3C8F"
+  - test_id: test_088
+    test_name: sha256_56byte_seed2174
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_089
+    test_name: uart_rx_fast_baud_seed6620
+    dut: nexus_uart
+    status: fail
+    seed: "0x92BF5EA1"
+  - test_id: test_090
+    test_name: i2c_target_ack_seed1066
+    dut: rampart_i2c
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_091
+    test_name: i2c_stretch_long_seed5512
+    dut: rampart_i2c
+    status: pass
+    seed: "0xB4D170C3"
+  - test_id: test_092
+    test_name: uart_loopback_parity_seed9958
+    dut: nexus_uart
+    status: pass
+    seed: "0xC5E281D4"
+  - test_id: test_093
+    test_name: uart_baud_divisor_1_seed4404
+    dut: nexus_uart
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_094
+    test_name: timer_intr_enable_seed8850
+    dut: warden_timer
+    status: pass
+    seed: "0xE704A3F6"
+  - test_id: test_095
+    test_name: watchdog_bite_basic_seed3296
+    dut: warden_timer
+    status: pass
+    seed: "0xF815B407"
+  - test_id: test_096
+    test_name: gpio_write_read_seed7742
+    dut: bastion_gpio
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_097
+    test_name: gpio_dir_switch_seed2188
+    dut: bastion_gpio
+    status: pass
+    seed: "0x1A37D629"
+  - test_id: test_098
+    test_name: sha256_4block_msg_seed6634
+    dut: sentinel_hmac
+    status: fail
+    seed: "0x2B48E73A"
+  - test_id: test_099
+    test_name: watchdog_bark_boundary_seed1080
+    dut: warden_timer
+    status: fail
+    seed: "0x3C59F84B"
+  - test_id: test_100
+    test_name: spi_error_overflow_seed5526
+    dut: citadel_spi
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_101
+    test_name: spi_mode1_cpha_verify_seed9972
+    dut: citadel_spi
+    status: fail
+    seed: "0x5E7B1A6D"
+  - test_id: test_102
+    test_name: aes_cbc_enc_nist_seed4418
+    dut: aegis_aes
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_103
+    test_name: aes_cbc_dec_nist_seed8864
+    dut: aegis_aes
+    status: pass
+    seed: "0x709D3C8F"
+  - test_id: test_104
+    test_name: hmac_sha256_long_seed3310
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_105
+    test_name: sha256_basic_abc_seed7756
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x92BF5EA1"
+  - test_id: test_106
+    test_name: i2c_rstart_read_seed2202
+    dut: rampart_i2c
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_107
+    test_name: i2c_timeout_long_seed6648
+    dut: rampart_i2c
+    status: pass
+    seed: "0xB4D170C3"
+  - test_id: test_108
+    test_name: gpio_masked_lower_bit_seed1094
+    dut: bastion_gpio
+    status: fail
+    seed: "0xC5E281D4"
+  - test_id: test_109
+    test_name: uart_rx_parity_err_seed5540
+    dut: nexus_uart
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_110
+    test_name: uart_tx_fifo_empty_seed9986
+    dut: nexus_uart
+    status: pass
+    seed: "0xE704A3F6"
+  - test_id: test_111
+    test_name: timer_compare_64bit_seed4432
+    dut: warden_timer
+    status: pass
+    seed: "0xF815B407"
+  - test_id: test_112
+    test_name: uart_rx_oversample_fast_seed8878
+    dut: nexus_uart
+    status: fail
+    seed: "0x0926C518"
+  - test_id: test_113
+    test_name: gpio_intr_combined_seed3324
+    dut: bastion_gpio
+    status: pass
+    seed: "0x1A37D629"
+  - test_id: test_114
+    test_name: spi_mode0_single_seed7770
+    dut: citadel_spi
+    status: pass
+    seed: "0x2B48E73A"
+  - test_id: test_115
+    test_name: spi_multidevice_cs_seed2216
+    dut: citadel_spi
+    status: pass
+    seed: "0x3C59F84B"
+  - test_id: test_116
+    test_name: aes_ecb_enc_stress_seed6662
+    dut: aegis_aes
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_117
+    test_name: aes_roundtrip_cbc_seed1108
+    dut: aegis_aes
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_118
+    test_name: hmac_key_short_seed5554
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_119
+    test_name: sha256_single_block_seed9900
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x709D3C8F"
+  - test_id: test_120
+    test_name: i2c_host_write_long_seed4446
+    dut: rampart_i2c
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_121
+    test_name: i2c_host_read_long_seed8892
+    dut: rampart_i2c
+    status: pass
+    seed: "0x92BF5EA1"
+  - test_id: test_122
+    test_name: uart_intr_overflow_seed3338
+    dut: nexus_uart
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_123
+    test_name: uart_fifo_level_seed7784
+    dut: nexus_uart
+    status: pass
+    seed: "0xB4D170C3"
+  - test_id: test_124
+    test_name: timer_prescaler_max_seed2230
+    dut: warden_timer
+    status: pass
+    seed: "0xC5E281D4"
+  - test_id: test_125
+    test_name: watchdog_pet_basic_seed6676
+    dut: warden_timer
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_126
+    test_name: sha256_5block_msg_seed1122
+    dut: sentinel_hmac
+    status: fail
+    seed: "0xE704A3F6"
+  - test_id: test_127
+    test_name: gpio_intr_clear_seed5568
+    dut: bastion_gpio
+    status: pass
+    seed: "0xF815B407"
+  - test_id: test_128
+    test_name: spi_fifo_full_seed0014
+    dut: citadel_spi
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_129
+    test_name: spi_mode2_multibyte_seed4460
+    dut: citadel_spi
+    status: pass
+    seed: "0x1A37D629"
+  - test_id: test_130
+    test_name: aes_ecb_dec_stress_seed8906
+    dut: aegis_aes
+    status: pass
+    seed: "0x2B48E73A"
+  - test_id: test_131
+    test_name: aes_cbc_chain_seed3352
+    dut: aegis_aes
+    status: pass
+    seed: "0x3C59F84B"
+  - test_id: test_132
+    test_name: hmac_rfc4231_v3_seed7798
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_133
+    test_name: sha256_64byte_seed2244
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_134
+    test_name: watchdog_bark_count_seed6690
+    dut: warden_timer
+    status: fail
+    seed: "0x6F8C2B7E"
+  - test_id: test_135
+    test_name: i2c_nack_addr_seed1136
+    dut: rampart_i2c
+    status: pass
+    seed: "0x709D3C8F"
+  - test_id: test_136
+    test_name: i2c_rstart_write_seed5582
+    dut: rampart_i2c
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_137
+    test_name: uart_tx_parity_seed0028
+    dut: nexus_uart
+    status: pass
+    seed: "0x92BF5EA1"
+  - test_id: test_138
+    test_name: uart_rx_frame_err_seed4474
+    dut: nexus_uart
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_139
+    test_name: timer_mtime_read_seed8920
+    dut: warden_timer
+    status: pass
+    seed: "0xB4D170C3"
+  - test_id: test_140
+    test_name: timer_compare_match_seed3366
+    dut: warden_timer
+    status: pass
+    seed: "0xC5E281D4"
+  - test_id: test_141
+    test_name: gpio_read_all_seed7812
+    dut: bastion_gpio
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_142
+    test_name: gpio_write_all_seed2258
+    dut: bastion_gpio
+    status: pass
+    seed: "0xE704A3F6"
+  - test_id: test_143
+    test_name: gpio_masked_upper_bit_seed6704
+    dut: bastion_gpio
+    status: fail
+    seed: "0xF815B407"
+  - test_id: test_144
+    test_name: spi_mode3_multibyte_seed1150
+    dut: citadel_spi
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_145
+    test_name: spi_mode1_random_seed5596
+    dut: citadel_spi
+    status: fail
+    seed: "0x1A37D629"
+  - test_id: test_146
+    test_name: aes_ecb_enc_allones_seed0042
+    dut: aegis_aes
+    status: pass
+    seed: "0x2B48E73A"
+  - test_id: test_147
+    test_name: aes_cbc_iv_change_seed4488
+    dut: aegis_aes
+    status: pass
+    seed: "0x3C59F84B"
+  - test_id: test_148
+    test_name: hmac_sha256_rfc_seed8934
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_149
+    test_name: sha256_regression_seed3380
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_150
+    test_name: i2c_target_stretch_seed7826
+    dut: rampart_i2c
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_151
+    test_name: i2c_timeout_precise_seed2272
+    dut: rampart_i2c
+    status: pass
+    seed: "0x709D3C8F"
+  - test_id: test_152
+    test_name: uart_loopback_stress_seed6718
+    dut: nexus_uart
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_153
+    test_name: uart_baud_max_seed1164
+    dut: nexus_uart
+    status: pass
+    seed: "0x92BF5EA1"
+  - test_id: test_154
+    test_name: timer_intr_test_seed5610
+    dut: warden_timer
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_155
+    test_name: watchdog_bite_alert_seed0056
+    dut: warden_timer
+    status: pass
+    seed: "0xB4D170C3"
+  - test_id: test_156
+    test_name: gpio_intr_rise_multi_seed4502
+    dut: bastion_gpio
+    status: pass
+    seed: "0xC5E281D4"
+  - test_id: test_157
+    test_name: gpio_intr_fall_multi_seed8948
+    dut: bastion_gpio
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_158
+    test_name: spi_error_cmd_invalid_seed3394
+    dut: citadel_spi
+    status: pass
+    seed: "0xE704A3F6"
+  - test_id: test_159
+    test_name: sha256_large_random_seed7840
+    dut: sentinel_hmac
+    status: fail
+    seed: "0xF815B407"
+  - test_id: test_160
+    test_name: aes_ecb_enc_sequential_seed2286
+    dut: aegis_aes
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_161
+    test_name: aes_cbc_dec_stress_seed6732
+    dut: aegis_aes
+    status: pass
+    seed: "0x1A37D629"
+  - test_id: test_162
+    test_name: hmac_key_max_seed1178
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x2B48E73A"
+  - test_id: test_163
+    test_name: sha256_benchmark_seed5624
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x3C59F84B"
+  - test_id: test_164
+    test_name: i2c_host_write_page_seed0070
+    dut: rampart_i2c
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_165
+    test_name: i2c_host_read_page_seed4516
+    dut: rampart_i2c
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_166
+    test_name: uart_rx_timeout_seed8962
+    dut: nexus_uart
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_167
+    test_name: watchdog_bark_after_pet_seed3408
+    dut: warden_timer
+    status: fail
+    seed: "0x709D3C8F"
+  - test_id: test_168
+    test_name: timer_prescaler_1_seed7854
+    dut: warden_timer
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_169
+    test_name: gpio_read_sync_delay_seed2300
+    dut: bastion_gpio
+    status: pass
+    seed: "0x92BF5EA1"
+  - test_id: test_170
+    test_name: gpio_write_masked_stress_seed6746
+    dut: bastion_gpio
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_171
+    test_name: gpio_masked_lower_stress_seed1192
+    dut: bastion_gpio
+    status: fail
+    seed: "0xB4D170C3"
+  - test_id: test_172
+    test_name: spi_mode0_stress_seed5638
+    dut: citadel_spi
+    status: pass
+    seed: "0xC5E281D4"
+  - test_id: test_173
+    test_name: spi_fifo_drain_seed0084
+    dut: citadel_spi
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_174
+    test_name: aes_ecb_dec_allzero_seed4530
+    dut: aegis_aes
+    status: pass
+    seed: "0xE704A3F6"
+  - test_id: test_175
+    test_name: aes_cbc_enc_stress_seed8976
+    dut: aegis_aes
+    status: pass
+    seed: "0xF815B407"
+  - test_id: test_176
+    test_name: hmac_rfc4231_v4_seed3422
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_177
+    test_name: sha256_padding_edge_seed7868
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x1A37D629"
+  - test_id: test_178
+    test_name: spi_mode1_stress_seed2314
+    dut: citadel_spi
+    status: fail
+    seed: "0x2B48E73A"
+  - test_id: test_179
+    test_name: i2c_stretch_timeout_seed6760
+    dut: rampart_i2c
+    status: pass
+    seed: "0x3C59F84B"
+  - test_id: test_180
+    test_name: i2c_target_rx_seed1206
+    dut: rampart_i2c
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_181
+    test_name: uart_fifo_watermark_irq_seed5652
+    dut: nexus_uart
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_182
+    test_name: uart_tx_stress_seed0098
+    dut: nexus_uart
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_183
+    test_name: timer_compare_boundary_seed4544
+    dut: warden_timer
+    status: pass
+    seed: "0x709D3C8F"
+  - test_id: test_184
+    test_name: watchdog_lock_stress_seed8990
+    dut: warden_timer
+    status: pass
+    seed: "0x81AE4D90"
+  - test_id: test_185
+    test_name: gpio_intr_combined_lvl_seed3436
+    dut: bastion_gpio
+    status: pass
+    seed: "0x92BF5EA1"
+  - test_id: test_186
+    test_name: gpio_dir_readback_seed7882
+    dut: bastion_gpio
+    status: pass
+    seed: "0xA3C06FB2"
+  - test_id: test_187
+    test_name: spi_csaat_multi_seg_seed2328
+    dut: citadel_spi
+    status: pass
+    seed: "0xB4D170C3"
+  - test_id: test_188
+    test_name: watchdog_bark_pet_cycle_seed6774
+    dut: warden_timer
+    status: fail
+    seed: "0xC5E281D4"
+  - test_id: test_189
+    test_name: aes_nist_sp800_seed1220
+    dut: aegis_aes
+    status: pass
+    seed: "0xD6F392E5"
+  - test_id: test_190
+    test_name: aes_roundtrip_ecb_seed5666
+    dut: aegis_aes
+    status: pass
+    seed: "0xE704A3F6"
+  - test_id: test_191
+    test_name: hmac_sha256_stress_seed0112
+    dut: sentinel_hmac
+    status: pass
+    seed: "0xF815B407"
+  - test_id: test_192
+    test_name: sha256_incremental_seed4558
+    dut: sentinel_hmac
+    status: pass
+    seed: "0x0926C518"
+  - test_id: test_193
+    test_name: i2c_rstart_stress_seed8904
+    dut: rampart_i2c
+    status: pass
+    seed: "0x1A37D629"
+  - test_id: test_194
+    test_name: i2c_nack_data_seed3450
+    dut: rampart_i2c
+    status: pass
+    seed: "0x2B48E73A"
+  - test_id: test_195
+    test_name: gpio_masked_upper_stress_seed7896
+    dut: bastion_gpio
+    status: fail
+    seed: "0x3C59F84B"
+  - test_id: test_196
+    test_name: uart_rx_stress_seed2342
+    dut: nexus_uart
+    status: pass
+    seed: "0x4D6A095C"
+  - test_id: test_197
+    test_name: timer_mtime_high_seed6788
+    dut: warden_timer
+    status: pass
+    seed: "0x5E7B1A6D"
+  - test_id: test_198
+    test_name: spi_mode0_random_seed1234
+    dut: citadel_spi
+    status: pass
+    seed: "0x6F8C2B7E"
+  - test_id: test_199
+    test_name: aes_ecb_enc_back2back_seed5680
+    dut: aegis_aes
+    status: pass
+    seed: "0x709D3C8F"
+  - test_id: test_200
+    test_name: i2c_host_write_stress_seed0126
+    dut: rampart_i2c
+    status: pass
+    seed: "0x81AE4D90"

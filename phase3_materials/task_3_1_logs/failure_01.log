@@ -1,0 +1,100 @@
+
+[          0 ns] UVM_INFO  @ tb_top: Reset asserted
+[         10 ns] UVM_INFO  @ tb_top: Clock started, period = 10 ns
+[         50 ns] UVM_INFO  @ tb_top: Reset deasserted
+[         60 ns] UVM_INFO  @ uart_env: Environment build phase complete
+[         70 ns] UVM_INFO  @ uart_agent: Agent configured: baud_divisor=16'd434, parity_mode=2'b01, stop_bits=1
+[         80 ns] UVM_INFO  @ uart_scoreboard: Scoreboard initialized
+[         90 ns] UVM_INFO  @ uart_reg_adapter: Register write: addr=0x00, data=0x0006C807
+[        100 ns] UVM_INFO  @ uart_reg_adapter: Register write complete
+[        130 ns] UVM_INFO  @ uart_reg_adapter: Register write: addr=0x08, data=0x00040001
+[        150 ns] UVM_INFO  @ uart_reg_adapter: Register write: addr=0x10, data=0x0000007F
+[        200 ns] UVM_INFO  @ uart_driver: Starting TX sequence: 8 bytes
+[        210 ns] UVM_INFO  @ uart_driver: Byte[0] = 0xA5
+[        220 ns] UVM_INFO  @ uart_driver: Driving start bit
+[       4560 ns] UVM_INFO  @ uart_driver: Driving data bits
+[      39280 ns] UVM_INFO  @ uart_driver: Driving parity bit
+[      43720 ns] UVM_INFO  @ uart_driver: Driving stop bit
+[      48160 ns] UVM_INFO  @ uart_monitor: RX frame captured: data=0xA5, parity_bit=0
+[      48170 ns] UVM_INFO  @ uart_scoreboard: RX byte 0 check: PASS
+[      48500 ns] UVM_INFO  @ uart_driver: Byte[1] = 0x3C
+[      48510 ns] UVM_INFO  @ uart_driver: Driving start bit
+[      92830 ns] UVM_INFO  @ uart_driver: Driving data bits
+[     127550 ns] UVM_INFO  @ uart_driver: Driving parity bit
+[     131990 ns] UVM_INFO  @ uart_driver: Driving stop bit
+[     136430 ns] UVM_INFO  @ uart_monitor: RX frame captured: data=0x3C, parity_bit=0
+[     136440 ns] UVM_INFO  @ uart_scoreboard: RX byte 1 check: PASS
+[     137000 ns] UVM_INFO  @ uart_driver: Byte[2] = 0xFF
+[     137010 ns] UVM_INFO  @ uart_driver: Driving start bit
+[     181330 ns] UVM_INFO  @ uart_driver: Driving data bits
+[     216050 ns] UVM_INFO  @ uart_driver: Driving parity bit
+[     220490 ns] UVM_INFO  @ uart_driver: Driving stop bit
+[     224930 ns] UVM_INFO  @ uart_monitor: RX frame captured: data=0xFF, parity_bit=0
+[     224940 ns] UVM_INFO  @ uart_scoreboard: RX byte 2 check: PASS
+[     225500 ns] UVM_INFO  @ uart_driver: Byte[3] = 0x7E
+[     225510 ns] UVM_INFO  @ uart_driver: Driving start bit
+[     269830 ns] UVM_INFO  @ uart_driver: Driving data bits
+[     304550 ns] UVM_INFO  @ uart_driver: Driving parity bit
+[     308990 ns] UVM_INFO  @ uart_driver: Driving stop bit
+[     313430 ns] UVM_INFO  @ uart_monitor: RX frame captured: data=0x7E, parity_bit=0
+[     313440 ns] UVM_INFO  @ uart_scoreboard: RX byte 3 check: PASS
+[     314000 ns] UVM_WARNING @ uart_monitor: Inter-frame gap shorter than 1 baud period (actual: 570 ns)
+[     314010 ns] UVM_INFO  @ uart_driver: Byte[4] = 0x81
+[     314020 ns] UVM_INFO  @ uart_driver: Driving start bit
+[     358340 ns] UVM_INFO  @ uart_driver: Driving data bits
+[     393060 ns] UVM_INFO  @ uart_driver: Driving parity bit
+[     397500 ns] UVM_INFO  @ uart_driver: Driving stop bit
+[     401940 ns] UVM_INFO  @ uart_monitor: RX frame captured: data=0x81, parity_bit=0
+[     401950 ns] UVM_INFO  @ uart_scoreboard: RX byte 4 check: PASS
+[     402500 ns] UVM_INFO  @ uart_driver: Byte[5] = 0xC3
+[     402510 ns] UVM_INFO  @ uart_driver: Driving start bit
+[     446830 ns] UVM_INFO  @ uart_driver: Driving data bits
+[     481550 ns] UVM_INFO  @ uart_driver: Driving parity bit
+[     485990 ns] UVM_INFO  @ uart_driver: Driving stop bit
+[     490430 ns] UVM_INFO  @ uart_monitor: RX frame captured: data=0xC3, parity_bit=1
+[     490440 ns] UVM_INFO  @ uart_scoreboard: Checking byte 5
+[     490450 ns] UVM_WARNING @ tl_monitor: TL-UL response latency exceeded advisory threshold (15 cycles)
+[     490460 ns] UVM_WARNING @ clk_monitor: Clock jitter detected on clk_i: +0.02ns (within tolerance)
+[     490470 ns] UVM_ERROR @ uart_scoreboard: PARITY MISMATCH on byte 5
+                           Data byte: 0xC3
+                           Parity mode: EVEN
+                           Driver sent parity bit: 1
+                           DUT flagged parity error unexpectedly
+                           STATUS register: 0x00002012
+                           INTR_STATE: 0x00000022
+[     490500 ns] UVM_WARNING @ tl_monitor: TL-UL source ID reuse detected (ID=3), previous completed
+[     491000 ns] UVM_INFO  @ uart_driver: Byte[6] = 0x55
+[     491010 ns] UVM_INFO  @ uart_driver: Driving start bit
+[     535330 ns] UVM_INFO  @ uart_driver: Driving data bits
+[     570050 ns] UVM_INFO  @ uart_driver: Driving parity bit
+[     574490 ns] UVM_INFO  @ uart_driver: Driving stop bit
+[     578930 ns] UVM_INFO  @ uart_monitor: RX frame captured: data=0x55, parity_bit=1
+[     578940 ns] UVM_ERROR @ uart_scoreboard: PARITY MISMATCH on byte 6
+                           Data byte: 0x55
+                           DUT flagged parity error unexpectedly
+                           STATUS register: 0x00002012
+[     579500 ns] UVM_INFO  @ uart_driver: Byte[7] = 0x00
+[     579510 ns] UVM_INFO  @ uart_driver: Driving start bit
+[     623830 ns] UVM_INFO  @ uart_driver: Driving data bits
+[     658550 ns] UVM_INFO  @ uart_driver: Driving parity bit
+[     662990 ns] UVM_INFO  @ uart_driver: Driving stop bit
+[     667430 ns] UVM_INFO  @ uart_monitor: RX frame captured: data=0x00, parity_bit=0
+[     667440 ns] UVM_INFO  @ uart_scoreboard: RX byte 7 check: PASS
+[     668000 ns] UVM_INFO  @ uart_scoreboard: ---- SUMMARY ----
+[     668010 ns] UVM_INFO  @ uart_scoreboard: Total bytes received: 8
+[     668020 ns] UVM_INFO  @ uart_scoreboard: Correct: 6, Failed: 2
+[     668030 ns] UVM_INFO  @ uart_scoreboard: Failed byte indices: 5, 6
+[     668050 ns] UVM_WARNING @ uart_monitor: RX FIFO watermark interrupt still pending
+[     670000 ns] UVM_INFO  @ uart_env: Checking register state at end of test
+[     670100 ns] UVM_INFO  @ uart_reg_adapter: Reading STATUS: 0x00002012
+[     670200 ns] UVM_INFO  @ uart_reg_adapter: Reading INTR_STATE: 0x00000022
+[     670300 ns] UVM_WARNING @ tl_monitor: Outstanding TL-UL responses: 0 (clean shutdown)
+[     675000 ns] UVM_INFO  @ uart_env: Drain time complete
+
+# ----- UVM Report Summary -----
+# UVM_INFO    : 40
+# UVM_WARNING :  6
+# UVM_ERROR   :  2
+# UVM_FATAL   :  0
+# ** TEST FAILED ** (2 UVM_ERROR)
+# Simulation time: 675000 ns

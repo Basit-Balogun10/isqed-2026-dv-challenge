@@ -1,0 +1,109 @@
+dut: warden_timer
+vplan:
+  - id: VP-TIMER-001
+    title: "Basic timer0 expiry"
+    description: "Set mtimecmp0 to a small value with prescaler=0, let mtime count up, and verify the timer0_expired interrupt fires when mtime >= mtimecmp0."
+    priority: high
+    coverage_target: "cp_timer0_expired"
+
+  - id: VP-TIMER-002
+    title: "Basic timer1 expiry"
+    description: "Set mtimecmp1 to a small value, let mtime count, and verify timer1_expired interrupt fires independently of timer0."
+    priority: high
+    coverage_target: "cp_timer1_expired"
+
+  - id: VP-TIMER-003
+    title: "Prescaler configuration - divide by 1"
+    description: "Set prescaler to 0 (divide by 1), verify mtime increments every clock cycle by reading MTIME_LOW at known intervals."
+    priority: high
+    coverage_target: "cp_prescaler.min"
+
+  - id: VP-TIMER-004
+    title: "Prescaler configuration - large divisor"
+    description: "Set prescaler to a large value (e.g. 0xFFF), verify mtime increments once every (prescaler+1) clock cycles. Read mtime at intervals and confirm the rate."
+    priority: high
+    coverage_target: "cp_prescaler.max"
+
+  - id: VP-TIMER-005
+    title: "Dual timer simultaneous expiry"
+    description: "Program mtimecmp0 and mtimecmp1 to the same value. Verify both timer0_expired and timer1_expired interrupts fire on the same cycle when mtime reaches the threshold."
+    priority: medium
+    coverage_target: "cp_timer0_expired cross cp_timer1_expired"
+
+  - id: VP-TIMER-006
+    title: "64-bit mtime split read hazard"
+    description: "Let mtime run until MTIME_LOW is near 0xFFFFFFFF. Read MTIME_LOW then MTIME_HIGH and verify software can detect the roll-over hazard (LOW may wrap between reads). Characterize the lack of atomic read."
+    priority: high
+    coverage_target: "cp_mtime_rollover"
+
+  - id: VP-TIMER-007
+    title: "Watchdog bark interrupt"
+    description: "Enable watchdog, set bark threshold to a small value, do not pet, and verify watchdog_bark interrupt fires when the watchdog counter reaches the bark threshold."
+    priority: high
+    coverage_target: "cp_wd_bark"
+
+  - id: VP-TIMER-008
+    title: "Watchdog bite alert"
+    description: "Enable watchdog, set bite threshold, do not pet, and verify alert_o asserts when the watchdog counter reaches the bite threshold."
+    priority: high
+    coverage_target: "cp_wd_bite"
+
+  - id: VP-TIMER-009
+    title: "Watchdog pet - early"
+    description: "Enable watchdog with bark threshold set. Pet the watchdog well before the bark threshold. Verify the counter resets to 0 and no bark interrupt fires."
+    priority: high
+    coverage_target: "cp_wd_pet.early"
+
+  - id: VP-TIMER-010
+    title: "Watchdog pet - just in time"
+    description: "Enable watchdog, let the counter approach (but not reach) the bark threshold, then pet. Verify counter resets and bark does not fire."
+    priority: high
+    coverage_target: "cp_wd_pet.just_in_time"
+
+  - id: VP-TIMER-011
+    title: "Watchdog pet - late (after bark, before bite)"
+    description: "Let watchdog counter exceed bark threshold (bark fires) but pet before bite threshold. Verify bark interrupt fires but alert_o does not assert, and counter resets on pet."
+    priority: medium
+    coverage_target: "cp_wd_pet.late cross cp_wd_bark"
+
+  - id: VP-TIMER-012
+    title: "Watchdog lock mode"
+    description: "Enable watchdog and set wd_lock=1. Attempt to disable wd_enable via a write to WATCHDOG_CTRL. Verify the write is rejected and the watchdog remains enabled. Confirm WATCHDOG_PET still works."
+    priority: high
+    coverage_target: "cp_wd_lock"
+
+  - id: VP-TIMER-013
+    title: "Prescaler change mid-count"
+    description: "Start with prescaler=0, let mtime count several ticks, then change prescaler to a large value. Verify the new prescaler takes effect without resetting the prescale counter and mtime rate changes accordingly."
+    priority: medium
+    coverage_target: "cp_prescaler_change"
+
+  - id: VP-TIMER-014
+    title: "Mtime counter overflow to upper half"
+    description: "Set prescaler=0, let mtime run until MTIME_LOW wraps from 0xFFFFFFFF to 0. Verify MTIME_HIGH increments by 1 at the wrap point."
+    priority: medium
+    coverage_target: "cp_mtime_rollover"
+
+  - id: VP-TIMER-015
+    title: "Mtime atomic read consistency"
+    description: "Repeatedly read MTIME_LOW and MTIME_HIGH near a LOW rollover boundary. Demonstrate the TOCTOU hazard: show that an inconsistent 64-bit value can be observed and verify the workaround (read HIGH, LOW, HIGH, retry if HIGH changed)."
+    priority: high
+    coverage_target: "cp_mtime_atomic_read"
+
+  - id: VP-TIMER-016
+    title: "Mtimecmp split write hazard"
+    description: "Program mtimecmp0 by writing LOW half first, then HIGH half. Verify that the intermediate state (only LOW updated) does not cause a spurious interrupt if the partial value happens to be <= mtime."
+    priority: high
+    coverage_target: "cp_mtimecmp_split_write"
+
+  - id: VP-TIMER-017
+    title: "Interrupt clear and re-arm"
+    description: "Let timer0 expire, clear timer0_expired in INTR_STATE via W1C, then reprogram mtimecmp0 to a future value. Verify the interrupt clears and re-fires when mtime reaches the new threshold."
+    priority: medium
+    coverage_target: "cp_intr_clear_rearm"
+
+  - id: VP-TIMER-018
+    title: "Watchdog counter read-back"
+    description: "Enable watchdog, read WATCHDOG_COUNT at intervals, and verify it increments at the system clock rate. Pet the watchdog and verify WATCHDOG_COUNT returns to 0."
+    priority: medium
+    coverage_target: "cp_wd_count"

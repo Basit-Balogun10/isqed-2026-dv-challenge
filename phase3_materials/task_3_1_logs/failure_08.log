@@ -1,0 +1,67 @@
+
+[          0 ns] UVM_INFO  @ tb_top: Reset asserted
+[         10 ns] UVM_INFO  @ tb_top: Clock started, period = 10 ns
+[         50 ns] UVM_INFO  @ tb_top: Reset deasserted
+[         60 ns] UVM_INFO  @ i2c_env: Environment build phase complete
+[         70 ns] UVM_INFO  @ i2c_agent: Agent configured for host mode
+[         80 ns] UVM_INFO  @ i2c_scoreboard: Scoreboard initialized
+[        100 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x04, data=0x00000001
+[        120 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x10, data=0x00320032
+[        130 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x14, data=0x00050005
+[        140 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x18, data=0x000A000A
+[        150 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x1C, data=0x00050005
+[        160 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x20, data=0x000A0014
+[        170 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x3C, data=0x00001000
+[        180 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x08, data=0x0000FFFF
+[        200 ns] UVM_INFO  @ i2c_driver: === Test: Host write to target address 0x50 ===
+[        210 ns] UVM_INFO  @ i2c_driver: Target address 0x50 not present on bus
+[        230 ns] UVM_INFO  @ i2c_slave_model: No slave at address 0x50
+[        240 ns] UVM_INFO  @ i2c_slave_model: SDA will remain high during ACK phase
+[        250 ns] UVM_INFO  @ i2c_driver: Writing FDATA: START + 0xA0
+[        260 ns] UVM_INFO  @ i2c_reg_adapter: Register write: addr=0x30, data=0x000002A0
+[        270 ns] UVM_INFO  @ i2c_monitor: Host FSM: IDLE -> START
+[        280 ns] UVM_INFO  @ i2c_monitor: START condition
+[        290 ns] UVM_WARNING @ i2c_monitor: Bus idle for 15 cycles before START
+[        320 ns] UVM_INFO  @ i2c_monitor: Host FSM: START -> ADDR_BYTE
+[        330 ns] UVM_INFO  @ i2c_monitor: Transmitting byte: 0xA0
+[        340 ns] UVM_INFO  @ i2c_monitor: Bit 7: SCL rise, SDA=1
+[        440 ns] UVM_INFO  @ i2c_monitor: Bit 6: SCL rise, SDA=0
+[        540 ns] UVM_INFO  @ i2c_monitor: Bit 5: SCL rise, SDA=1
+[        640 ns] UVM_INFO  @ i2c_monitor: Bit 4: SCL rise, SDA=0
+[        740 ns] UVM_INFO  @ i2c_monitor: Bit 3: SCL rise, SDA=0
+[        840 ns] UVM_INFO  @ i2c_monitor: Bit 2: SCL rise, SDA=0
+[        940 ns] UVM_INFO  @ i2c_monitor: Bit 1: SCL rise, SDA=0
+[       1040 ns] UVM_INFO  @ i2c_monitor: Bit 0: SCL rise, SDA=0
+[       1140 ns] UVM_INFO  @ i2c_monitor: Host FSM: ADDR_BYTE -> ADDR_ACK
+[       1150 ns] UVM_INFO  @ i2c_monitor: Host releases SDA for ACK
+[       1160 ns] UVM_INFO  @ i2c_monitor: SCL rise: SDA = 1 (NACK)
+[       1170 ns] UVM_WARNING @ tl_monitor: INTR_STATE read with multiple bits set (benign advisory)
+[       1180 ns] UVM_INFO  @ i2c_monitor: Host FSM: ADDR_ACK -> WRITE_BYTE
+[       1185 ns] UVM_WARNING @ i2c_monitor: Host continued to next FDATA entry after NACK
+[       1190 ns] UVM_INFO  @ i2c_monitor: Transmitting data byte from FDATA
+[       1200 ns] UVM_INFO  @ i2c_monitor: Data byte on bus
+[       1300 ns] UVM_INFO  @ i2c_monitor: Data byte complete
+[       1400 ns] UVM_INFO  @ i2c_monitor: ACK phase: SDA = 1 (NACK)
+[       1410 ns] UVM_INFO  @ i2c_monitor: Host FSM: WRITE_ACK -> STOP
+[       1420 ns] UVM_INFO  @ i2c_monitor: STOP condition
+[       1430 ns] UVM_INFO  @ i2c_monitor: Host FSM: STOP -> IDLE
+[       1450 ns] UVM_INFO  @ i2c_reg_adapter: Reading INTR_STATE: 0x00000200
+[       1460 ns] UVM_INFO  @ i2c_scoreboard: NACK interrupt asserted (bit 9)
+[       1480 ns] UVM_ERROR @ i2c_scoreboard: NACK HANDLING ERROR
+                           After address NACK, host transmitted 1 additional data byte
+                           before issuing STOP condition.
+                           Expected: STOP immediately after address NACK
+                           Actual: 1 data byte transmitted, then STOP
+                           INTR_STATE: 0x00000200
+                           FDATA entries consumed: 2 (expected: 1)
+[       1490 ns] UVM_WARNING @ i2c_monitor: Bus idle (SDA=1, SCL=1)
+[       1550 ns] UVM_WARNING @ tl_monitor: INTR_STATE has bits 9 and 4 set simultaneously
+[       1600 ns] UVM_INFO  @ i2c_env: Drain time complete
+
+# ----- UVM Report Summary -----
+# UVM_INFO    : 40
+# UVM_WARNING :  5
+# UVM_ERROR   :  1
+# UVM_FATAL   :  0
+# ** TEST FAILED ** (1 UVM_ERROR)
+# Simulation time: 1600 ns

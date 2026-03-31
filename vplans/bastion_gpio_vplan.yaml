@@ -1,0 +1,91 @@
+dut: bastion_gpio
+vplan:
+  - id: VP-GPIO-001
+    title: "Basic output per pin"
+    description: "Configure each pin as output (DIR[n]=1), write patterns to DATA_OUT, and verify gpio_o reflects the written value and gpio_oe_o is asserted for each configured pin."
+    priority: high
+    coverage_target: "cp_dir.output cross cp_pin_index"
+
+  - id: VP-GPIO-002
+    title: "Basic input per pin"
+    description: "Configure each pin as input (DIR[n]=0), drive external values on gpio_i, wait for synchronizer latency, and verify DATA_IN reflects the driven values."
+    priority: high
+    coverage_target: "cp_dir.input cross cp_pin_index"
+
+  - id: VP-GPIO-003
+    title: "Direction change from input to output"
+    description: "Start with a pin as input, change DIR[n] to output, write DATA_OUT[n], and verify gpio_o[n] reflects the new output value. Check that gpio_oe_o[n] transitions correctly."
+    priority: high
+    coverage_target: "cp_dir_change"
+
+  - id: VP-GPIO-004
+    title: "Rising edge detection and interrupt"
+    description: "Enable INTR_CTRL_EN_RISING for selected pins, drive a 0-to-1 transition on gpio_i, and verify INTR_STATE sets for those pins. Confirm intr_o asserts when INTR_ENABLE is set."
+    priority: high
+    coverage_target: "cp_intr_mode.rising cross cp_pin_index"
+
+  - id: VP-GPIO-005
+    title: "Falling edge detection and interrupt"
+    description: "Enable INTR_CTRL_EN_FALLING for selected pins, drive a 1-to-0 transition on gpio_i, and verify INTR_STATE sets for those pins."
+    priority: high
+    coverage_target: "cp_intr_mode.falling cross cp_pin_index"
+
+  - id: VP-GPIO-006
+    title: "Both edge detection"
+    description: "Enable both INTR_CTRL_EN_RISING and INTR_CTRL_EN_FALLING for a pin. Drive rising then falling edges and verify INTR_STATE asserts on both transitions."
+    priority: medium
+    coverage_target: "cp_intr_mode.rising cross cp_intr_mode.falling"
+
+  - id: VP-GPIO-007
+    title: "Level-high interrupt mode"
+    description: "Enable INTR_CTRL_EN_LVLHIGH for a pin, drive gpio_i high, and verify INTR_STATE asserts continuously. Clear INTR_STATE via W1C while input remains high and verify re-assertion."
+    priority: high
+    coverage_target: "cp_intr_mode.lvlhigh"
+
+  - id: VP-GPIO-008
+    title: "Level-low interrupt mode"
+    description: "Enable INTR_CTRL_EN_LVLLOW for a pin, drive gpio_i low, and verify INTR_STATE asserts continuously. Clear INTR_STATE via W1C while input remains low and verify it re-asserts."
+    priority: high
+    coverage_target: "cp_intr_mode.lvllow"
+
+  - id: VP-GPIO-009
+    title: "Masked write lower pins"
+    description: "Write to MASKED_OUT_LOWER with specific mask patterns. Verify only pins where mask bit is 1 are updated in DATA_OUT[15:0], and unmasked pins retain their previous values."
+    priority: high
+    coverage_target: "cp_masked_write.lower"
+
+  - id: VP-GPIO-010
+    title: "Masked write upper pins"
+    description: "Write to MASKED_OUT_UPPER with specific mask patterns. Verify only pins where mask bit is 1 are updated in DATA_OUT[31:16], and unmasked pins retain their previous values."
+    priority: high
+    coverage_target: "cp_masked_write.upper"
+
+  - id: VP-GPIO-011
+    title: "Simultaneous multi-pin edge events"
+    description: "Drive rising edges on multiple gpio_i pins simultaneously within the same clock cycle. Verify all corresponding INTR_STATE bits set and all intr_o lines assert."
+    priority: medium
+    coverage_target: "cp_multi_pin_event"
+
+  - id: VP-GPIO-012
+    title: "Input synchronizer latency"
+    description: "Toggle gpio_i and measure the exact number of clock cycles before DATA_IN reflects the change. Verify the 2-cycle synchronizer latency per specification."
+    priority: high
+    coverage_target: "cp_sync_latency"
+
+  - id: VP-GPIO-013
+    title: "DATA_IN read-back accuracy"
+    description: "Drive all 32 gpio_i pins with walking-1 and walking-0 patterns. After synchronizer settling, read DATA_IN and verify bit-exact match with the driven pattern."
+    priority: medium
+    coverage_target: "cp_data_in cross cp_pin_index"
+
+  - id: VP-GPIO-014
+    title: "Interrupt clear and re-fire"
+    description: "Trigger an edge interrupt, clear it via W1C to INTR_STATE, then trigger the same edge again. Verify the interrupt fires a second time, confirming re-arming works correctly."
+    priority: high
+    coverage_target: "cp_intr_clear_refire"
+
+  - id: VP-GPIO-015
+    title: "Pin isolation between adjacent pins"
+    description: "Configure alternating pins as input and output. Drive and toggle pins independently and verify no crosstalk: output pins do not affect neighboring input readings, and input events on one pin do not trigger interrupts on another."
+    priority: medium
+    coverage_target: "cp_pin_isolation"

@@ -1,0 +1,109 @@
+dut: citadel_spi
+vplan:
+  - id: VP-SPI-001
+    title: "SPI Mode 0 (CPOL=0, CPHA=0)"
+    description: "Configure CPOL=0, CPHA=0. Perform a bidirectional transfer and verify MOSI data is driven before the first SCLK rising edge and MISO is sampled on the rising edge. Verify SCLK idles low."
+    priority: high
+    coverage_target: "cp_spi_mode.mode0"
+
+  - id: VP-SPI-002
+    title: "SPI Mode 1 (CPOL=0, CPHA=1)"
+    description: "Configure CPOL=0, CPHA=1. Verify MOSI data is driven on the rising edge and MISO is sampled on the falling edge. SCLK idles low."
+    priority: high
+    coverage_target: "cp_spi_mode.mode1"
+
+  - id: VP-SPI-003
+    title: "SPI Mode 2 (CPOL=1, CPHA=0)"
+    description: "Configure CPOL=1, CPHA=0. Verify MOSI data is driven on the rising edge and MISO is sampled on the falling edge. SCLK idles high."
+    priority: high
+    coverage_target: "cp_spi_mode.mode2"
+
+  - id: VP-SPI-004
+    title: "SPI Mode 3 (CPOL=1, CPHA=1)"
+    description: "Configure CPOL=1, CPHA=1. Verify MOSI data is driven on the falling edge and MISO is sampled on the rising edge. SCLK idles high."
+    priority: high
+    coverage_target: "cp_spi_mode.mode3"
+
+  - id: VP-SPI-005
+    title: "Clock divider minimum"
+    description: "Set clkdiv=0 (f_sclk = f_clk/2). Perform a transfer and verify SCLK frequency is correct and data integrity is maintained at maximum speed."
+    priority: high
+    coverage_target: "cp_clkdiv.min"
+
+  - id: VP-SPI-006
+    title: "Clock divider large value"
+    description: "Set clkdiv to a large value (e.g. 0xFFFF). Verify SCLK frequency is f_clk / (2*(clkdiv+1)) and transfers complete correctly at slow speed."
+    priority: medium
+    coverage_target: "cp_clkdiv.max"
+
+  - id: VP-SPI-007
+    title: "CS setup time (CSN_LEAD)"
+    description: "Program csn_lead to various values. Verify the chip-select asserts the correct number of half-SCLK periods before the first SCLK edge."
+    priority: high
+    coverage_target: "cp_cs_timing.lead"
+
+  - id: VP-SPI-008
+    title: "CS hold time (CSN_TRAIL)"
+    description: "Program csn_trail to various values. Verify chip-select remains asserted for the correct number of half-SCLK periods after the last SCLK edge."
+    priority: high
+    coverage_target: "cp_cs_timing.trail"
+
+  - id: VP-SPI-009
+    title: "CS idle time (CSN_IDLE)"
+    description: "Program csn_idle to various values. Perform back-to-back transactions and verify the minimum idle gap between CS deassertion and next assertion."
+    priority: medium
+    coverage_target: "cp_cs_timing.idle"
+
+  - id: VP-SPI-010
+    title: "TX-only segment"
+    description: "Issue a command with direction=TX-only. Load TX FIFO, verify data is clocked out on MOSI and RX FIFO remains empty (received MISO data is discarded)."
+    priority: high
+    coverage_target: "cp_direction.tx_only"
+
+  - id: VP-SPI-011
+    title: "RX-only segment"
+    description: "Issue a command with direction=RX-only. Verify data is clocked in from MISO and appears in the RX FIFO. TX FIFO is not consumed."
+    priority: high
+    coverage_target: "cp_direction.rx_only"
+
+  - id: VP-SPI-012
+    title: "Bidirectional segment"
+    description: "Issue a command with direction=bidirectional. Verify TX FIFO data goes out on MOSI and MISO data is captured in the RX FIFO simultaneously."
+    priority: high
+    coverage_target: "cp_direction.bidir"
+
+  - id: VP-SPI-013
+    title: "Multi-segment transaction with CSAAT"
+    description: "Issue two segments with CSAAT=1 on the first. Verify CS remains asserted between segments and SCLK continues without an idle gap. The second segment completes normally."
+    priority: high
+    coverage_target: "cp_csaat"
+
+  - id: VP-SPI-014
+    title: "Multi-CS switching"
+    description: "Perform a transaction on CS0, change CSID to CS1, and perform another transaction. Verify each transaction asserts only the selected CS line and the other lines remain high."
+    priority: medium
+    coverage_target: "cp_csid cross cp_cs_timing"
+
+  - id: VP-SPI-015
+    title: "TX FIFO underrun"
+    description: "Start a TX segment with an empty TX FIFO. Verify the TX underflow error is detected and reported in ERROR_STATUS when ERROR_ENABLE.underflow is set."
+    priority: high
+    coverage_target: "cp_error.underflow"
+
+  - id: VP-SPI-016
+    title: "RX FIFO overflow"
+    description: "Fill the 16-entry RX FIFO completely, then start a receive segment. Verify the RX overflow error is detected and reported in ERROR_STATUS."
+    priority: high
+    coverage_target: "cp_error.overflow"
+
+  - id: VP-SPI-017
+    title: "Command FIFO sequencing"
+    description: "Write multiple segment commands to the command FIFO (up to 4 entries). Verify they execute in FIFO order. Write a 5th command when full and verify cmd_invalid error."
+    priority: medium
+    coverage_target: "cp_cmd_fifo cross cp_error.cmd_invalid"
+
+  - id: VP-SPI-018
+    title: "Back-to-back transactions without CSAAT"
+    description: "Issue two separate transactions (CSAAT=0). Verify CS deasserts between them with the proper idle gap (csn_idle), and the second transaction starts cleanly."
+    priority: medium
+    coverage_target: "cp_back_to_back"

@@ -1,0 +1,121 @@
+dut: sentinel_hmac
+vplan:
+  - id: VP-HMAC-001
+    title: "SHA-256 KAT - empty message"
+    description: "Configure SHA-only mode (hmac_en=0, sha_en=1), issue hash_start then hash_stop with no message data. Verify the 256-bit digest matches the known SHA-256 hash of the empty string (e3b0c442...)."
+    priority: high
+    coverage_target: "cp_sha_kat.empty"
+
+  - id: VP-HMAC-002
+    title: "SHA-256 KAT - abc"
+    description: "In SHA-only mode, write the 3-byte message 'abc' to MSG_FIFO, issue hash_stop, and verify digest matches the known SHA-256 value (ba7816bf...)."
+    priority: high
+    coverage_target: "cp_sha_kat.abc"
+
+  - id: VP-HMAC-003
+    title: "SHA-256 KAT - two-block message"
+    description: "Hash a message longer than 55 bytes (requiring two SHA-256 blocks after padding) in SHA-only mode. Verify the digest matches the known-answer value."
+    priority: high
+    coverage_target: "cp_sha_kat.two_block"
+
+  - id: VP-HMAC-004
+    title: "HMAC KAT - RFC 4231 Test Case 1"
+    description: "Configure HMAC mode, load the 20-byte key (0x0b repeated) and message 'Hi There' from RFC 4231 Test Case 1. Verify the HMAC-SHA256 output matches the expected value."
+    priority: high
+    coverage_target: "cp_hmac_kat.rfc4231_tc1"
+
+  - id: VP-HMAC-005
+    title: "HMAC KAT - RFC 4231 Test Case 2"
+    description: "HMAC mode with key='Jefe' and message='what do ya want for nothing?' per RFC 4231 TC2. Verify digest matches expected."
+    priority: high
+    coverage_target: "cp_hmac_kat.rfc4231_tc2"
+
+  - id: VP-HMAC-006
+    title: "HMAC KAT - RFC 4231 Test Case 3"
+    description: "HMAC mode with 20-byte key (0xaa repeated) and 50-byte message (0xdd repeated) per RFC 4231 TC3. Verify HMAC output."
+    priority: high
+    coverage_target: "cp_hmac_kat.rfc4231_tc3"
+
+  - id: VP-HMAC-007
+    title: "Multi-block streaming SHA-256"
+    description: "Write a long message across multiple FIFO fills, using hash_process to trigger intermediate block compression as the FIFO drains. Issue hash_stop after the final data. Verify the final digest."
+    priority: high
+    coverage_target: "cp_streaming cross cp_sha_mode"
+
+  - id: VP-HMAC-008
+    title: "Multi-block streaming HMAC"
+    description: "In HMAC mode, stream a multi-block message through the FIFO with intermediate hash_process commands. Verify the final HMAC digest is correct."
+    priority: high
+    coverage_target: "cp_streaming cross cp_hmac_mode"
+
+  - id: VP-HMAC-009
+    title: "FIFO backpressure"
+    description: "Write to MSG_FIFO until STATUS.fifo_full asserts (32 entries). Verify the engine processes data and fifo_depth decreases. Then continue writing and verify the full message is hashed correctly."
+    priority: medium
+    coverage_target: "cp_fifo_full"
+
+  - id: VP-HMAC-010
+    title: "Endian swap - message input"
+    description: "Set endian_swap=1, write message data, and verify the byte ordering of each 32-bit word is reversed before hashing. Compare digest against a reference computed with swapped input."
+    priority: high
+    coverage_target: "cp_endian_swap"
+
+  - id: VP-HMAC-011
+    title: "Digest swap - output"
+    description: "Set digest_swap=1, compute a hash, and verify each 32-bit word of the digest output has its bytes reversed compared to the canonical big-endian SHA-256 output."
+    priority: high
+    coverage_target: "cp_digest_swap"
+
+  - id: VP-HMAC-012
+    title: "WIPE_SECRET functionality"
+    description: "Complete an HMAC operation, then write 1 to WIPE_SECRET. Verify key registers read as zero. Start a new SHA-only hash and verify no key material leaks into the computation."
+    priority: high
+    coverage_target: "cp_wipe_secret"
+
+  - id: VP-HMAC-013
+    title: "Error - hash_start with no data then stop"
+    description: "Issue hash_start then immediately hash_stop without writing any message data. Verify the engine produces the correct empty-message digest (in SHA mode) or handles HMAC empty message correctly."
+    priority: medium
+    coverage_target: "cp_error.empty_msg"
+
+  - id: VP-HMAC-014
+    title: "Error - hash_stop issued twice"
+    description: "Issue hash_stop, wait for done interrupt, then issue hash_stop again without a new hash_start. Verify hmac_err interrupt fires or the second stop is safely ignored."
+    priority: medium
+    coverage_target: "cp_error.double_stop"
+
+  - id: VP-HMAC-015
+    title: "Error - read digest before done"
+    description: "Start a hash, immediately read DIGEST registers before hmac_done fires. Verify the read returns stale/intermediate data and does not corrupt the in-progress computation."
+    priority: medium
+    coverage_target: "cp_error.early_read"
+
+  - id: VP-HMAC-016
+    title: "Message length tracking"
+    description: "Hash messages of known length (0, 1, 55, 56, 64, 100 bytes). After each, read MSG_LENGTH_LOWER/UPPER and verify they report the correct total message length in bits."
+    priority: high
+    coverage_target: "cp_msg_length"
+
+  - id: VP-HMAC-017
+    title: "HMAC key handling - 256-bit key"
+    description: "Write a full 256-bit key (all 8 KEY registers), perform HMAC, and verify the result. Then change the key and verify a different HMAC output."
+    priority: high
+    coverage_target: "cp_key_handling"
+
+  - id: VP-HMAC-018
+    title: "SHA-only mode (hmac_en=0)"
+    description: "Configure sha_en=1, hmac_en=0. Verify the engine performs bare SHA-256 without HMAC key processing. The key registers should have no effect on the output."
+    priority: high
+    coverage_target: "cp_sha_only_mode"
+
+  - id: VP-HMAC-019
+    title: "Streaming API - start/process/stop sequence"
+    description: "Execute the full streaming sequence: hash_start, write 64 bytes, hash_process, write 32 more bytes, hash_stop. Verify the digest matches hashing the full 96-byte message at once."
+    priority: medium
+    coverage_target: "cp_streaming_api"
+
+  - id: VP-HMAC-020
+    title: "Interrupt test and hmac_done interrupt"
+    description: "Enable hmac_done in INTR_ENABLE, complete a hash, verify intr_o[0] asserts. Clear via W1C. Also inject via INTR_TEST and verify the interrupt path independently."
+    priority: medium
+    coverage_target: "cp_intr_done cross cp_intr_test"

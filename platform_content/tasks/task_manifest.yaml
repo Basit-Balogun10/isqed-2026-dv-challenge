@@ -1,0 +1,332 @@
+# Agentic AI Design Verification Challenge 2026 — Task Manifest
+# Each task has: id, name, short_description, extended_description_file, phase, max_points, evaluation_type
+
+phases:
+  - id: 1
+    name: "Verification Environment Construction"
+    start: "2026-03-31T00:00:00Z"
+    end: "2026-04-03T00:00:00Z"
+    duration_hours: 72
+
+  - id: 2
+    name: "Coverage Closure Campaign"
+    start: "2026-04-02T12:00:00Z"
+    end: "2026-04-05T00:00:00Z"
+    duration_hours: 48
+
+  - id: 3
+    name: "Debug & Root-Cause Analysis"
+    start: "2026-04-04T12:00:00Z"
+    end: "2026-04-06T00:00:00Z"
+    duration_hours: 36
+
+  - id: 4
+    name: "Agentic Verification Pipeline"
+    start: "2026-04-05T12:00:00Z"
+    end: "2026-04-07T00:00:00Z"
+    duration_hours: 36
+
+tasks:
+  # ── Phase 1 ──────────────────────────────────────────────────────────
+  - id: "1.1"
+    phase: 1
+    name: "Interface Agent Generation"
+    description: >
+      Build complete bus and protocol verification agents (driver, monitor,
+      sequencer, scoreboard) for each DUT using its specification and RTL.
+      Includes a reusable TL-UL bus agent and protocol-specific agents
+      (UART, SPI, I2C, GPIO).
+    max_points: 900  # 300 per DUT, up to 3 DUTs
+    per_dut: true
+    max_duts_scored: 3
+    difficulty: "2-4"
+    evaluation:
+      automated_weight: 0.80
+      judge_weight: 0.20
+      automated:
+        - "Compilation check (Verilator + Icarus): 20%"
+        - "Structural completeness (required components present): 30%"
+        - "Functional correctness (scoreboard on reference RTL): 30%"
+      judge:
+        - "Code quality and UVM/cocotb best practices: 20%"
+    extended_file: "task_1_1_interface_agents.md"
+
+  - id: "1.2"
+    phase: 1
+    name: "Verification Plan to Test Suite"
+    description: >
+      Given a structured verification plan (YAML), generate a comprehensive
+      test suite that covers all plan items. Each test must target specific
+      coverage bins and pass on correct RTL.
+    max_points: 1200  # 400 per DUT, up to 3 DUTs
+    per_dut: true
+    max_duts_scored: 3
+    difficulty: "3-4"
+    evaluation:
+      automated_weight: 0.85
+      judge_weight: 0.15
+      automated:
+        - "Tests pass on clean RTL (no false failures): required"
+        - "Per vplan item: matching test exists and hits coverage bins"
+        - "Bonus for tests beyond the plan"
+        - "Penalty for false failures"
+      judge:
+        - "Test quality, readability, and verification intent clarity"
+    extended_file: "task_1_2_vplan_test_suite.md"
+
+  - id: "1.3"
+    phase: 1
+    name: "Register Verification Suite"
+    description: >
+      Generate an automated CSR regression test suite from the Hjson register
+      maps. Tests must verify reset values, read/write behavior, access types
+      (RW, RO, W1C, W1S, W0C, RC), bit isolation, and address uniqueness
+      across all DUTs.
+    max_points: 200  # flat across all DUTs
+    per_dut: false
+    difficulty: "2"
+    evaluation:
+      automated_weight: 0.90
+      judge_weight: 0.10
+      automated:
+        - "Per register: reset value test passes: 2 pts"
+        - "Per register: RW/RO access test passes: 3 pts"
+        - "Full automation (no per-register manual code): 50 pt bonus"
+      judge:
+        - "Quality of the generative pipeline: up to 50 pts"
+    extended_file: "task_1_3_csr_verification.md"
+
+  - id: "1.4"
+    phase: 1
+    name: "Assertion Library"
+    description: >
+      Create a comprehensive assertion library covering protocol compliance,
+      functional behavior, structural properties, and liveness for each DUT.
+      Assertions must catch seeded bugs without false-firing on correct RTL.
+    max_points: 700  # 350 per DUT, up to 2 DUTs
+    per_dut: true
+    max_duts_scored: 2
+    difficulty: "4"
+    evaluation:
+      automated_weight: 0.85
+      judge_weight: 0.15
+      automated:
+        - "No false positives on clean RTL: required"
+        - "Per bug caught on buggy RTL: 10 pts"
+        - "Assertion count >= 20 per DUT: required for full score"
+      judge:
+        - "Assertion quality, temporal sophistication, coverage of spec"
+    extended_file: "task_1_4_assertion_library.md"
+
+  # ── Phase 2 ──────────────────────────────────────────────────────────
+  - id: "2.1"
+    phase: 2
+    name: "Coverage Gap Analysis"
+    description: >
+      Analyze the reference testbench's coverage report. Identify uncovered
+      RTL blocks, unhit functional coverage bins, and produce a prioritized
+      gap analysis with root causes and recommended stimulus.
+    max_points: 200
+    per_dut: false
+    difficulty: "3"
+    evaluation:
+      automated_weight: 0.30
+      judge_weight: 0.70
+      automated:
+        - "Identified gaps match actual uncovered regions in coverage DB"
+      judge:
+        - "Completeness of analysis: 100 pts"
+        - "Accuracy of root causes: 50 pts"
+        - "Prioritization quality: 50 pts"
+    extended_file: "task_2_1_coverage_gap_analysis.md"
+
+  - id: "2.2"
+    phase: 2
+    name: "Stimulus Engineering"
+    description: >
+      Write tests and sequences that close coverage gaps in the reference
+      testbench. Submit new constrained-random sequences and directed tests
+      with updated coverage results showing measurable improvement.
+    max_points: 2000  # 500 per DUT, up to 4 DUTs
+    per_dut: true
+    max_duts_scored: 4
+    difficulty: "4"
+    evaluation:
+      automated_weight: 0.95
+      judge_weight: 0.05
+      automated:
+        - "Line coverage improvement x 5 pts per percentage point"
+        - "Branch coverage improvement x 7 pts per percentage point"
+        - "Toggle coverage improvement x 3 pts per percentage point"
+        - "FSM state coverage 100%: 50 pt bonus"
+        - "FSM transition coverage 100%: 100 pt bonus"
+        - "Functional coverage improvement x 8 pts per percentage point"
+      judge:
+        - "Stimulus design quality"
+    extended_file: "task_2_2_stimulus_engineering.md"
+
+  - id: "2.3"
+    phase: 2
+    name: "Coverage-Directed Test Generation"
+    description: >
+      Build an AI-in-the-loop system that analyzes coverage results and
+      automatically adjusts constraint distributions to bias stimulus
+      toward uncovered regions. Demonstrate improved coverage convergence
+      rate versus baseline random.
+    max_points: 300
+    per_dut: false
+    difficulty: "5"
+    evaluation:
+      automated_weight: 0.80
+      judge_weight: 0.20
+      automated:
+        - "Coverage achieved per simulation cycle (efficiency vs baseline)"
+        - "Convergence rate to 85% coverage (fewer cycles = better)"
+        - "Total coverage at fixed 100k cycle budget"
+      judge:
+        - "Innovation in CDG approach, architecture quality"
+    extended_file: "task_2_3_coverage_directed_generation.md"
+
+  # ── Phase 3 ──────────────────────────────────────────────────────────
+  - id: "3.1"
+    phase: 3
+    name: "The Log Whisperer"
+    description: >
+      Triage 10 simulation failures from logs containing error messages,
+      scoreboard mismatches, assertion failures, and signal traces. Classify
+      each failure, identify root module, describe root cause, and suggest fix.
+    max_points: 300
+    per_dut: false
+    difficulty: "3"
+    evaluation:
+      automated_weight: 0.60
+      judge_weight: 0.40
+      automated:
+        - "Per correct failure classification: 10 pts"
+        - "Per correct root module identification: 10 pts"
+      judge:
+        - "Per correct root cause description: 15 pts"
+        - "Per actionable fix suggestion: 5 pts"
+    extended_file: "task_3_1_log_whisperer.md"
+
+  - id: "3.2"
+    phase: 3
+    name: "The Trace Detective"
+    description: >
+      Given 5 complex failures with VCD waveforms, assertions, and RTL source,
+      trace the root cause backward through the design. Identify the exact
+      failure cycle, produce a signal dependency chain, and write a minimal
+      reproduction test.
+    max_points: 400
+    per_dut: false
+    difficulty: "4"
+    evaluation:
+      automated_weight: 0.45
+      judge_weight: 0.55
+      automated:
+        - "Correct manifestation cycle: 15 pts each"
+        - "Minimal reproduction test triggers the bug: 30 pts each"
+      judge:
+        - "Signal trace to root cause: 30 pts each"
+        - "RTL root cause location: 25 pts each"
+    extended_file: "task_3_2_trace_detective.md"
+
+  - id: "3.3"
+    phase: 3
+    name: "The Regression Medic"
+    description: >
+      Given 200 regression tests (35 failing from 5 unique bugs), bucket
+      failures by root cause, describe each bug, prioritize by severity,
+      and validate proposed patches against the test suite.
+    max_points: 300
+    per_dut: false
+    difficulty: "5"
+    evaluation:
+      automated_weight: 0.65
+      judge_weight: 0.35
+      automated:
+        - "Bucketing accuracy vs ground truth: 100 pts"
+        - "Fix-to-bug mapping: 50 pts"
+        - "Regression detection (patches that break other tests): 50 pts"
+      judge:
+        - "Root cause descriptions: 50 pts"
+        - "Priority ranking rationale: 50 pts"
+    extended_file: "task_3_3_regression_medic.md"
+
+  # ── Phase 4 ──────────────────────────────────────────────────────────
+  - id: "4.1"
+    phase: 4
+    name: "The AutoVerifier"
+    description: >
+      Build an autonomous AI agent that takes RTL + spec + CSR map for an
+      unseen DUT and produces a complete verification environment, runs
+      tests, measures coverage, and reports bugs — with zero human
+      intervention.
+    max_points: 1000
+    per_dut: false
+    difficulty: "5"
+    evaluation:
+      automated_weight: 0.65
+      judge_weight: 0.35
+      automated:
+        - "Environment compiles and runs: 75 pts per DUT"
+        - "Scoreboard correctly identifies transactions: 100 pts per DUT"
+        - "Code coverage achieved: 0-125 pts (scaled)"
+        - "Functional coverage achieved: 0-125 pts (scaled)"
+        - "Bugs detected: 50 pts per bug found"
+        - "False positives: -25 pts each"
+        - "Execution time <= 30 min: 25 pt bonus per DUT"
+      judge:
+        - "Agent architecture innovation: 0-75 pts"
+        - "Generalizability: 0-50 pts"
+        - "Report quality: 0-25 pts"
+    extended_file: "task_4_1_autoverifier.md"
+
+  - id: "4.2"
+    phase: 4
+    name: "The Regression Agent"
+    description: >
+      Build a CI/CD verification agent that receives a stream of RTL commits,
+      assesses impact, runs appropriate tests, and delivers per-commit
+      verdicts (PASS/FAIL/COVERAGE_REGRESSION) with bug details.
+    max_points: 600
+    per_dut: false
+    difficulty: "5"
+    evaluation:
+      automated_weight: 0.80
+      judge_weight: 0.20
+      automated:
+        - "Per correct PASS verdict on benign change: 20 pts"
+        - "Per correct FAIL verdict with bug details: 50 pts"
+        - "Per correctly identified bug-fix: 30 pts"
+        - "Per correctly identified coverage regression: 30 pts"
+        - "False positive (benign flagged FAIL): -20 pts"
+        - "False negative (bug passed): -40 pts"
+        - "Average decision time < 3 min: 50 pt bonus"
+      judge:
+        - "Architecture sophistication and design"
+    extended_file: "task_4_2_regression_agent.md"
+
+  - id: "4.3"
+    phase: 4
+    name: "The Spec Interpreter"
+    description: >
+      Build an agent that takes ONLY a natural-language specification (no RTL)
+      and produces a verification plan, test stubs, functional coverage model,
+      and behavioral assertions — performing the spec-interpretation step
+      that precedes RTL availability.
+    max_points: 500
+    per_dut: false
+    difficulty: "5"
+    evaluation:
+      automated_weight: 0.20
+      judge_weight: 0.80
+      automated:
+        - "Output structure validation"
+        - "YAML/code syntax correctness"
+      judge:
+        - "Verification plan completeness vs expert: 0-100 pts"
+        - "Verification plan accuracy: 0-100 pts"
+        - "Coverage model quality: 0-100 pts"
+        - "Assertion quality: 0-100 pts"
+    extended_file: "task_4_3_spec_interpreter.md"

@@ -1,0 +1,30 @@
+--- a/duts/sentinel_hmac/sentinel_hmac.sv
++++ b/duts/sentinel_hmac/sentinel_hmac.sv
+@@ -310,15 +310,21 @@
+   // Padding block construction: append 1-bit, zeros, and 64-bit length
+   always_comb begin
+     pad_block = 512'b0;
++    // Fix: Correct the 64-bit message length field byte order in padding.
++    // SHA-256 (FIPS 180-4 Section 5.1.1) requires the length to be
++    // appended as a 64-bit big-endian integer at the end of the final block.
++    //
++    // Previous code swapped the upper and lower 32-bit words of the length
++    // when the message spanned 3+ blocks. The length should always be:
++    //   pad_block[63:32] = msg_length[63:32]  (upper word, big-endian)
++    //   pad_block[31:0]  = msg_length[31:0]   (lower word, big-endian)
+     if (pad_state == PAD_LENGTH) begin
+-      // Length field at end of block (big-endian 64-bit)
+-      pad_block[63:32] = {msg_length_q[7:0], msg_length_q[15:8],
+-                          msg_length_q[23:16], msg_length_q[31:24]};
+-      pad_block[31:0]  = {msg_length_q[39:32], msg_length_q[47:40],
+-                          msg_length_q[55:48], msg_length_q[63:56]};
++      // Correct big-endian byte order for both 32-bit halves
++      pad_block[63:32] = {msg_length_q[63:56], msg_length_q[55:48],
++                          msg_length_q[47:40], msg_length_q[39:32]};
++      pad_block[31:0]  = {msg_length_q[31:24], msg_length_q[23:16],
++                          msg_length_q[15:8], msg_length_q[7:0]};
+     end
+     if (pad_state == PAD_ONE_BIT) begin
+       pad_block[511] = 1'b1;
+     end
+   end
