@@ -53,3 +53,13 @@ xcelium.d/
 # OS
 .DS_Store
 Thumbs.db
+
+# Python virtual environment
+venv/
+.venv
+
+# Verilator
+obj_dir/
+
+#DVT
+.dvt/
