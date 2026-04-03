@@ -1,0 +1,7 @@
+team_name: "AI-Assisted-DV-Team"
+task_id: "1.1"
+dut_id: "sentinel_hmac"
+simulator: "icarus"
+path: "A"
+timestamp: "2026-04-03T01:24:56Z"
+framework: "cocotb"

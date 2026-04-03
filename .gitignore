@@ -15,8 +15,15 @@ novas.*
 
 # Build artifacts
 sim_build/
+obj_dir/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+*.egg
+*.so
 *.vcd
 *.fst
 *.vpd
@@ -43,6 +50,9 @@ transcript
 modelsim.ini
 xrun.log
 xcelium.d/
+.venv/
+venv/
+env/
 
 # Editor
 .vscode/

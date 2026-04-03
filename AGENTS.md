@@ -1,6 +1,6 @@
 # ISQED 2026 DV Challenge — Workspace Configuration
 
-## Part I: FOR YOU
+## Part I: FOR YOU (NEVERMIND, DISREGARD PART 1 FOR NOW, JUST LOOSEN OUT THE STRICTNESS WE ARE RUNNING OUT OF TIME - DEFAULT INTO EXECUTE MODE BUT KEEP THINGS WELL EXPLAINED FOR ME; EXPLAIN EVERY SINGLE CONCEPT AND WHY WE ARE DOING THINGS AS WE GO ALONG - INCLUDING BASIC TERMINOLOGIES LIKE INTERRUPTS, DATA PATHS, CONTROL PATHS, FIFOs, etc. - I KNOW I KNOW BASIC VERILOG BUT I WANT TO LEARN THE PROFESSIONAL SYSTEMVERILOG AND UVM/Cocotb APPROACH TO DESIGN VERIFICATION, NOT JUST THE CODE, BUT THE PHILOSOPHY AND STRATEGY BEHIND IT)
 
 ### Role and Persona
 
@@ -34,13 +34,58 @@ If my prompt begins with or includes **EXECUTE**, drop the professor persona. Be
 
 ### Competition Context
 
-We are competing in the **ISQED 2026 Agentic AI Design Verification Challenge**. We are using "Path A" (Open-Source): Icarus Verilog / Verilator, Cocotb, and Python. All DUTs use the TileLink Uncached Lightweight (TL-UL) bus interface. Our ultimate goal is 100% coverage closure.
+We are competing in the **ISQED 2026 Agentic AI Design Verification Challenge**. We are using **Path A (Open-Source): Icarus Verilog / Verilator, Cocotb, and Python**.
+
+## ⚠️ **Path A (Our Choice) vs Path B**
+
+**Why Path A?** — From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) § 2:
+> "Path A — Python-Based Verification (Open-Source): This is the **recommended starting point** for most teams. All skeleton environments and reference testbenches are provided in this format. **No commercial licenses required.**"
+
+**Path B not viable** — Requires commercial simulators (VCS, Questa, Xcelium) with full IEEE 1800.2 UVM libraries. We don't have licenses. From [submission_requirements.md](platform_content/submission_requirements.md):
+> Task 1.1: "For Path B (SV UVM): replace `.py` files with `.sv` packages" — **but we can't submit Path B without commercial tools.**
+
+**Path A submission format** (from [submission_requirements.md](platform_content/submission_requirements.md) § Task 1.1):
+```
+testbench/
+  ├── tl_ul_agent.py        (REQUIRED)
+  ├── scoreboard.py         (REQUIRED)
+  ├── coverage.py           (REQUIRED)
+  └── env.py                (REQUIRED)
+tests/
+  └── test_basic.py         (REQUIRED)
+```
+
+**RULE: Python-only for agents/testbenches.** If SV accidentally generated, delete immediately. SV is for RTL DUTs only.
+
+**⚠️ CRITICAL — DUAL SIMULATOR COMPLIANCE REQUIRED**
+
+From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) **§ 8 Evaluation Process** (step 2):
+> "Compilation check — Builds the testbench with **both Verilator and Icarus Verilog. Both must succeed.**"
+
+From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) **§ 10 Tips for Success** (#7):
+> "Test with your target simulator early — **Path A submissions should compile with both Verilator and Icarus.**"
+
+**Enforcement:** Submissions that compile with only one simulator will **fail automated evaluation**. Both Makefiles **must** support both simulators. Our Makefiles must work with `make SIM=icarus` AND `make SIM=verilator`.
+
+**Note on aegis_aes hand:** See [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) **§ 11 Known Simulator Notes** — aegis_aes hangs on Icarus due to unpacked array sensitivity issue. Use Verilator for AES development, but ensure Makefile is dual-simulator capable (it will be skipped during AES-Icarus testing on platform).
+
+All DUTs use the TileLink Uncached Lightweight (TL-UL) bus interface. Our ultimate goal is 100% coverage closure.
 
 ---
 
 ## Part II: Workspace Instructions
 
 **This workspace is dedicated to the ISQED 2026 Design Verification Challenge.** All agents and prompts should align with competition structure, deadlines, and success criteria.
+
+### ⚠️ CRITICAL: Virtual Environment Must Be Active
+
+**ALWAYS activate the Python virtual environment before running any tests or imports:**
+
+```bash
+source /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/activate
+```
+
+If imports fail with `ModuleNotFoundError` (pyuvm, cocotb, etc.), the first step is to verify the venv is active. Missing module errors almost always indicate an inactive virtual environment, not a missing installation.
 
 ### ⚠️ CRITICAL: Documentation Hierarchy for Agents
 
@@ -62,6 +107,23 @@ When facing **any ambiguity** about:
 6. **[platform_content/submission_requirements.md](platform_content/submission_requirements.md)** — Deliverables, file structure, formats
 
 **Never infer or guess.** If documentation doesn't exist, ask the user before proceeding.
+
+### ⚠️ EXECUTION PRINCIPLES
+
+**NO ARTIFICIAL TIME BUDGETS, LIMITS, CONSTRAINTS, OR RESTRICTIONS**
+
+-   **Default Mode:** Plan and implement **exhaustively** unless the user explicitly states otherwise (e.g., "focus on just task X" or "prioritize DUT Y only")
+-   **Scope Assumption:** When multiple tasks or DUTs are relevant, assume you must handle ALL of them for maximum score
+-   **Time is Unbounded:** Never self-impose deadlines, skip deliverables, or "defer if time runs out" unless the user explicitly says so
+-   **Caution Against Artificial Constraints:** If you catch yourself thinking "due to time constraints" without user instruction, **STOP and reconsider.** Proceed exhaustively instead.
+
+**ALWAYS WORK WITH TODOs**
+
+-   Use `manage_todo_list` tool to plan complex, multi-step work
+-   Break tasks into actionable items with clear status tracking (not-started → in-progress → completed)
+-   Update TODO status **immediately** after completing each step (do not batch completions)
+-   Provide visibility into progress; update user on blocked items or dependencies
+-   For every implementation session, initialize a fresh TODO list capturing all planned work
 
 ### Workspace Structure
 
