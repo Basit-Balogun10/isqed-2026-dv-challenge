@@ -1,0 +1,24 @@
+# Task 1.2 Makefile for nexus_uart - Cocotb 2.0+ Verification Plan Tests
+# Supports Verilator and Icarus Verilog - Dual-simulator compliant
+TOPLEVEL_LANG = verilog
+SIM ?= icarus
+
+DUT_NAME := $(shell grep 'dut_id:' metadata.yaml | awk '{print $$2}')
+
+# Path detection: handles both nested (project/submissions/task-1.2/) and flat (eval/submission-1.2/) structures
+DUT_PATH ?= $(if $(wildcard ../../../../duts),../../../../duts,$(if $(wildcard ../../../duts),../../../duts,$(if $(wildcard ../../duts),../../duts,.)))
+ifneq (,$(wildcard $(DUT_PATH)))
+  VERILOG_SOURCES = $(shell find $(DUT_PATH)/common -name "*.sv") $(shell find $(DUT_PATH)/$(DUT_NAME) -name "*.sv")
+else
+  $(error "ERROR: Could not find DUTs directory. Set DUT_PATH=/custom/path if needed.")
+endif
+
+TOPLEVEL = $(DUT_NAME)
+MODULE = tests.test_vplan_items
+export PYTHONPATH := .:$(PWD)/testbench:$(PYTHONPATH)
+
+ifeq ($(SIM),icarus)
+  COMPILE_ARGS = -g2012
+endif
+
+include $(shell cocotb-config --makefiles)/Makefile.sim
