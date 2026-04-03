@@ -1,0 +1,5 @@
+team_name: "GitHub Copilot (Agentic AI)"
+task_id: "1.2"
+dut_id: "sentinel_hmac"
+simulator: "icarus"
+timestamp: "2026-04-03T14:00:00Z"

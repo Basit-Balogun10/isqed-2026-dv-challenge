@@ -117,6 +117,16 @@ When facing **any ambiguity** about:
 -   **Time is Unbounded:** Never self-impose deadlines, skip deliverables, or "defer if time runs out" unless the user explicitly says so
 -   **Caution Against Artificial Constraints:** If you catch yourself thinking "due to time constraints" without user instruction, **STOP and reconsider.** Proceed exhaustively instead.
 
+### Task 1.2 Scoring Strategy
+
+**Target:** 2600 points via optimal tier selection
+- **Tier 4 (rampart_i2c):** 2.5x weight = 1000 pts
+- **Tier 3 (aegis_aes):** 2x weight = 800 pts  
+- **Tier 3 (sentinel_hmac):** 2x weight = 800 pts
+- **Total from top 3 DUTs: 2600 pts** (vs 1400 pts with only 2)
+
+**Approach:** Generate tests for all 7 DUTs using automated pipeline, then submit only the top 3 by points. Remove non-submission DUT directories before final packaging.
+
 **ALWAYS WORK WITH TODOs**
 
 -   Use `manage_todo_list` tool to plan complex, multi-step work

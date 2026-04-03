@@ -1,5 +1,5 @@
 team_name: "GitHub Copilot (Agentic AI)"
 task_id: "1.2"
-dut_id: "nexus_uart"
+dut_id: "aegis_aes"
 simulator: "icarus"
 timestamp: "2026-04-03T14:00:00Z"

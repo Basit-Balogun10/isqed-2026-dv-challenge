@@ -1,4 +1,4 @@
-# Task 1.2 Makefile for nexus_uart - Cocotb 2.0+ Verification Plan Tests
+# Task 1.2 Makefile for rampart_i2c - Cocotb 2.0+ Verification Plan Tests
 # Supports Verilator and Icarus Verilog - Dual-simulator compliant
 TOPLEVEL_LANG = verilog
 SIM ?= icarus

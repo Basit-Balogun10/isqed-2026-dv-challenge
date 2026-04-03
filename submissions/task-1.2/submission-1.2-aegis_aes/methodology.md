@@ -7,7 +7,7 @@ Task 1.2 converts a structured verification plan (YAML) into a comprehensive coc
 ## AI Tools Used
 
 - **GitHub Copilot (Agentic Mode)**: Multi-turn assistant for test generation planning, vplan parsing, and test function generation
-- **ChatGPT/Claude**: Reference for cocotb best practices, TL-UL protocol specifics, and test parametrization patterns
+- **ChatGPT/Claude**: Reference for cocotb best practices, I2C protocol specifics, and test parametrization patterns
 
 ## Prompt Engineering Strategies
 

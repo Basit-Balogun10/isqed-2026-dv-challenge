@@ -192,10 +192,19 @@ def create_vplan_mapping(dut_name: str, vplan_data: dict, output_dir: str):
     return mapping_file
 
 def main():
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='Generate Task 1.2 tests from vplans')
+    parser.add_argument('--dut', type=str, help='Specific DUT to generate (or all if omitted)', default=None)
+    args = parser.parse_args()
+    
     project_root = '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge'
     
-    # DUTs to generate
-    duts_to_process = ['nexus_uart', 'rampart_i2c']
+    # All 7 DUTs
+    all_duts = ['nexus_uart', 'bastion_gpio', 'warden_timer', 'citadel_spi', 'aegis_aes', 'sentinel_hmac', 'rampart_i2c']
+    
+    # Determine which DUTs to process
+    duts_to_process = [args.dut] if args.dut else all_duts
     
     for dut in duts_to_process:
         vplan_file = os.path.join(project_root, 'vplans', f'{dut}_vplan.yaml')
