@@ -1,4 +1,4 @@
-# Task 1.2 Makefile for rampart_i2c - Cocotb 2.0+ Verification Plan Tests
+# Task 1.2 Makefile for sentinel_hmac - Cocotb 2.0+ Verification Plan Tests
 # Supports Verilator and Icarus Verilog - Dual-simulator compliant
 TOPLEVEL_LANG = verilog
 SIM ?= icarus
@@ -14,11 +14,18 @@ else
 endif
 
 TOPLEVEL = $(DUT_NAME)
-MODULE = tests.test_vplan_items
-export PYTHONPATH := .:$(PWD)/testbench:$(PYTHONPATH)
+
+# Cocotb 2.0+ test discovery
+COCOTB_TEST_MODULES = tests
+export PYTHONPATH := .:./tests:./testbench:$(PYTHONPATH)
 
 ifeq ($(SIM),icarus)
   COMPILE_ARGS = -g2012
+endif
+
+ifeq ($(SIM),verilator)
+  # Suppress vendor RTL warnings in sentinel_hmac (width truncation, unsigned comparison)
+  COMPILE_ARGS = -Wno-WIDTHTRUNC -Wno-WIDTHEXPAND -Wno-UNSIGNED
 endif
 
 include $(shell cocotb-config --makefiles)/Makefile.sim

@@ -39,12 +39,15 @@ We are competing in the **ISQED 2026 Agentic AI Design Verification Challenge**.
 ## ⚠️ **Path A (Our Choice) vs Path B**
 
 **Why Path A?** — From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) § 2:
+
 > "Path A — Python-Based Verification (Open-Source): This is the **recommended starting point** for most teams. All skeleton environments and reference testbenches are provided in this format. **No commercial licenses required.**"
 
 **Path B not viable** — Requires commercial simulators (VCS, Questa, Xcelium) with full IEEE 1800.2 UVM libraries. We don't have licenses. From [submission_requirements.md](platform_content/submission_requirements.md):
+
 > Task 1.1: "For Path B (SV UVM): replace `.py` files with `.sv` packages" — **but we can't submit Path B without commercial tools.**
 
 **Path A submission format** (from [submission_requirements.md](platform_content/submission_requirements.md) § Task 1.1):
+
 ```
 testbench/
   ├── tl_ul_agent.py        (REQUIRED)
@@ -60,9 +63,11 @@ tests/
 **⚠️ CRITICAL — DUAL SIMULATOR COMPLIANCE REQUIRED**
 
 From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) **§ 8 Evaluation Process** (step 2):
+
 > "Compilation check — Builds the testbench with **both Verilator and Icarus Verilog. Both must succeed.**"
 
 From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) **§ 10 Tips for Success** (#7):
+
 > "Test with your target simulator early — **Path A submissions should compile with both Verilator and Icarus.**"
 
 **Enforcement:** Submissions that compile with only one simulator will **fail automated evaluation**. Both Makefiles **must** support both simulators. Our Makefiles must work with `make SIM=icarus` AND `make SIM=verilator`.
@@ -70,6 +75,20 @@ From [instructions_and_documentation.md](platform_content/instructions_and_docum
 **Note on aegis_aes hand:** See [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) **§ 11 Known Simulator Notes** — aegis_aes hangs on Icarus due to unpacked array sensitivity issue. Use Verilator for AES development, but ensure Makefile is dual-simulator capable (it will be skipped during AES-Icarus testing on platform).
 
 All DUTs use the TileLink Uncached Lightweight (TL-UL) bus interface. Our ultimate goal is 100% coverage closure.
+
+**TL-UL Reusability Finding (from instructions_and_documentation.md § 4 & § 10):**
+
+> "Building a reusable TL-UL agent is strongly recommended -- it works for every DUT in the competition."
+> "A well-built TL-UL bus agent, register abstraction layer, and scoreboard base class work for every DUT. Invest time in these once, then reuse across all submissions."
+
+**STATUS: ALREADY COMPLETED IN TASK 1.1**
+
+-   The `tl_ul_agent.py` from each Task 1.1 submission contains a generic `TlUlDriver` class
+-   This class is NOT DUT-specific — uses `getattr()` for dynamic signal lookup (`clk_signal`, `rst_signal`)
+-   Each 1.1 submission (aegis_aes, sentinel_hmac, rampart_i2c) has identical, reusable TlUlDriver
+-   **For Task 1.2:** Copy `tl_ul_agent.py` from 1.1 submission to shared location or import directly
+-   **For 1.2 helpers.py:** Refactor to use `TlUlDriver` instead of inlining TL-UL logic
+-   **For Phase 2:** This reusable agent is ready to copy to all remaining DUTs (works with any TL-UL interface)
 
 ---
 
@@ -120,10 +139,11 @@ When facing **any ambiguity** about:
 ### Task 1.2 Scoring Strategy
 
 **Target:** 2600 points via optimal tier selection
-- **Tier 4 (rampart_i2c):** 2.5x weight = 1000 pts
-- **Tier 3 (aegis_aes):** 2x weight = 800 pts  
-- **Tier 3 (sentinel_hmac):** 2x weight = 800 pts
-- **Total from top 3 DUTs: 2600 pts** (vs 1400 pts with only 2)
+
+-   **Tier 4 (rampart_i2c):** 2.5x weight = 1000 pts
+-   **Tier 3 (aegis_aes):** 2x weight = 800 pts
+-   **Tier 3 (sentinel_hmac):** 2x weight = 800 pts
+-   **Total from top 3 DUTs: 2600 pts** (vs 1400 pts with only 2)
 
 **Approach:** Generate tests for all 7 DUTs using automated pipeline, then submit only the top 3 by points. Remove non-submission DUT directories before final packaging.
 

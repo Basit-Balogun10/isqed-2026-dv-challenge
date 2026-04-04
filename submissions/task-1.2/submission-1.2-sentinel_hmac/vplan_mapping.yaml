@@ -2,104 +2,104 @@ dut: sentinel_hmac
 total_tests: 20
 mappings:
 - vp_id: VP-HMAC-001
-  test_name: tests.test_vplan_items::test_vp_hmac_001
+  test_name: test_vp_001::test_vp_hmac_001
   coverage_bins:
   - cp_sha_kat.empty
   priority: high
 - vp_id: VP-HMAC-002
-  test_name: tests.test_vplan_items::test_vp_hmac_002
+  test_name: test_vp_002::test_vp_hmac_002
   coverage_bins:
   - cp_sha_kat.abc
   priority: high
 - vp_id: VP-HMAC-003
-  test_name: tests.test_vplan_items::test_vp_hmac_003
+  test_name: test_vp_003::test_vp_hmac_003
   coverage_bins:
   - cp_sha_kat.two_block
   priority: high
 - vp_id: VP-HMAC-004
-  test_name: tests.test_vplan_items::test_vp_hmac_004
+  test_name: test_vp_004::test_vp_hmac_004
   coverage_bins:
   - cp_hmac_kat.rfc4231_tc1
   priority: high
 - vp_id: VP-HMAC-005
-  test_name: tests.test_vplan_items::test_vp_hmac_005
+  test_name: test_vp_005::test_vp_hmac_005
   coverage_bins:
   - cp_hmac_kat.rfc4231_tc2
   priority: high
 - vp_id: VP-HMAC-006
-  test_name: tests.test_vplan_items::test_vp_hmac_006
+  test_name: test_vp_006::test_vp_hmac_006
   coverage_bins:
   - cp_hmac_kat.rfc4231_tc3
   priority: high
 - vp_id: VP-HMAC-007
-  test_name: tests.test_vplan_items::test_vp_hmac_007
+  test_name: test_vp_007::test_vp_hmac_007
   coverage_bins:
   - cp_streaming
   - cp_sha_mode
   priority: high
 - vp_id: VP-HMAC-008
-  test_name: tests.test_vplan_items::test_vp_hmac_008
+  test_name: test_vp_008::test_vp_hmac_008
   coverage_bins:
   - cp_streaming
   - cp_hmac_mode
   priority: high
 - vp_id: VP-HMAC-009
-  test_name: tests.test_vplan_items::test_vp_hmac_009
+  test_name: test_vp_009::test_vp_hmac_009
   coverage_bins:
   - cp_fifo_full
   priority: medium
 - vp_id: VP-HMAC-010
-  test_name: tests.test_vplan_items::test_vp_hmac_010
+  test_name: test_vp_010::test_vp_hmac_010
   coverage_bins:
   - cp_endian_swap
   priority: high
 - vp_id: VP-HMAC-011
-  test_name: tests.test_vplan_items::test_vp_hmac_011
+  test_name: test_vp_011::test_vp_hmac_011
   coverage_bins:
   - cp_digest_swap
   priority: high
 - vp_id: VP-HMAC-012
-  test_name: tests.test_vplan_items::test_vp_hmac_012
+  test_name: test_vp_012::test_vp_hmac_012
   coverage_bins:
   - cp_wipe_secret
   priority: high
 - vp_id: VP-HMAC-013
-  test_name: tests.test_vplan_items::test_vp_hmac_013
+  test_name: test_vp_013::test_vp_hmac_013
   coverage_bins:
   - cp_error.empty_msg
   priority: medium
 - vp_id: VP-HMAC-014
-  test_name: tests.test_vplan_items::test_vp_hmac_014
+  test_name: test_vp_014::test_vp_hmac_014
   coverage_bins:
   - cp_error.double_stop
   priority: medium
 - vp_id: VP-HMAC-015
-  test_name: tests.test_vplan_items::test_vp_hmac_015
+  test_name: test_vp_015::test_vp_hmac_015
   coverage_bins:
   - cp_error.early_read
   priority: medium
 - vp_id: VP-HMAC-016
-  test_name: tests.test_vplan_items::test_vp_hmac_016
+  test_name: test_vp_016::test_vp_hmac_016
   coverage_bins:
   - cp_msg_length
   priority: high
 - vp_id: VP-HMAC-017
-  test_name: tests.test_vplan_items::test_vp_hmac_017
+  test_name: test_vp_017::test_vp_hmac_017
   coverage_bins:
   - cp_key_handling
   priority: high
 - vp_id: VP-HMAC-018
-  test_name: tests.test_vplan_items::test_vp_hmac_018
+  test_name: test_vp_018::test_vp_hmac_018
   coverage_bins:
   - cp_sha_only_mode
   priority: high
 - vp_id: VP-HMAC-019
-  test_name: tests.test_vplan_items::test_vp_hmac_019
+  test_name: test_vp_019::test_vp_hmac_019
   coverage_bins:
   - cp_streaming_api
   priority: medium
 - vp_id: VP-HMAC-020
-  test_name: tests.test_vplan_items::test_vp_hmac_020
+  test_name: test_vp_020::test_vp_hmac_020
   coverage_bins:
   - cp_intr_done
   - cp_intr_test

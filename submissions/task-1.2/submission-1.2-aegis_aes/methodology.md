@@ -1,97 +1,176 @@
-# Methodology - Task 1.2: Verification Plan to Test Suite
+# Methodology
 
-## Overview
+This file documents the actual Task 1.2 process for DUT `aegis_aes` and is aligned to transcript evidence in this submission's `prompts/` directory.
 
-Task 1.2 converts a structured verification plan (YAML) into a comprehensive cocotb test suite. This document explains the approach, AI usage, and test generation strategy.
+Task context for this specific submission:
+
+-   DUT: `aegis_aes`
+-   VPlan-to-test conversion target: 20 VP items
+-   Produced test files: `tests/test_vp_001.py` through `tests/test_vp_020.py`
+-   Mapping file: `vplan_mapping.yaml` with 20 `vp_id` entries
+
+Master transcript source for all segmented prompt files in this DUT submission:
+
+-   GitHub: https://github.com/Basit-Balogun10/isqed-2026-dv-challenge/blob/main/submissions/task-1.2/prompts.md
+
+## Table of Contents
+
+-   [AI Tools Used](#ai-tools-used)
+-   [Prompt Engineering Strategies](#prompt-engineering-strategies)
+-   [Iteration Process](#iteration-process)
+-   [Human vs AI Contribution](#human-vs-ai-contribution)
+-   [Failed Approaches](#failed-approaches)
+-   [Efficiency Metrics](#efficiency-metrics)
+-   [Reproducibility](#reproducibility)
 
 ## AI Tools Used
 
-- **GitHub Copilot (Agentic Mode)**: Multi-turn assistant for test generation planning, vplan parsing, and test function generation
-- **ChatGPT/Claude**: Reference for cocotb best practices, I2C protocol specifics, and test parametrization patterns
+### TLDR
+
+Task 1.2 execution was done through long-form agentic sessions in VS Code. Per operator notes and transcript timeline, early work started under Claude Haiku 4.5 and later switched to GPT-5.3-Codex (xhigh) during test generation stabilization and cleanup.
+
+### Toolchain Actually Used
+
+-   GitHub Copilot agentic workflow in VS Code (multi-step planning, code edits, shell execution)
+-   Workspace instruction assets established before/during execution:
+    -   `AGENTS.md`
+    -   `.claude/agents/*`
+-   Local automation scripts used as evaluator mirrors:
+    -   `scripts/manage-1.2-submissions.sh`
+    -   `scripts/test-1.2-submissions.sh`
+    -   `scripts/verify-1.2-readiness.sh`
+    -   `scripts/task_1_2_runtime_check4.py`
+
+### Evidence Model
+
+The full session transcript was preserved and split into navigable chunks under `prompts/` for judge review.
 
 ## Prompt Engineering Strategies
 
-1. **Vplan Abstraction**: Treated each YAML vplan entry as a structured test specification
-2. **Systematic Generation**: One test function per VP item to ensure 1:1 traceability  
-3. **Coverage-Driven Design**: Extracted coverage bins from each vplan item to guide stimulus generation
-4. **Template-Based Approach**: Generated test functions from consistent templates to ensure quality and consistency
+### TLDR
+
+Prompting focused on traceability and compliance: one VP item to one test entry, script-verifiable mappings, and explicit checks for required evidence artifacts.
+
+### Strategy Patterns Used
+
+1. VPlan-as-contract prompting
+    - Every VP item was treated as a contract requiring a test anchor and mapping entry.
+2. Structure-enforced prompting
+    - Prompts explicitly required `@cocotb.test()` and VP-ID docstring/reference for each test.
+3. Validator-first prompting
+    - Prompts asked for local checks mirroring evaluator logic (YAML parse, function existence, pass/fail gating, coverage check script).
+4. Packaging-truth prompting
+    - Prompts required checking ZIP payloads, not just source folders.
+
+### AEGIS-Specific Prompt Focus
+
+-   Ensure all 20 `aegis_aes` VP mappings resolve to existing test functions.
+-   Maintain consistent test naming pattern `test_vp_XXX.py` for direct mapping checks.
 
 ## Iteration Process
 
-### Phase 1: Vplan Parsing
-- Read YAML structure to extract: VP-ID, title, description, priority, coverage_target
-- Created Python script to automate test generation from vplan specifications
+### TLDR
 
-### Phase 2: Test Function Generation
-- Generated one `@cocotb.test()` function per VP item
-- Included comprehensive docstrings linking to vplan items
-- Added placeholder stimulus/verification logic with concrete TODO markers
+The flow was: generate, validate, detect requirement gaps, patch evidence/scripts, revalidate, then package.
 
-### Phase 3: Vplan Mapping Generation  
-- Created `vplan_mapping.yaml` linking VP-IDs → test function names → coverage bins
-- Used YAML-safe formatting for platform compatibility
+### Actual Flow for This DUT
 
-### Phase 4: Integration & Validation
-- Copied reusable testbench infrastructure (agents, scoreboards, env) from Task 1.1
-- Set up dual-simulator Makefiles (Verilator + Icarus compliant)
-- Verified file structure matches submission requirements
+1. Requirement ingestion
+    - Task docs and submission requirements were reviewed repeatedly.
+2. Generation pass
+    - VP tests and mapping structure were generated and populated for this DUT.
+3. Compliance audit
+    - Additional checks were run to confirm mapping parseability and test linkage.
+4. Evidence correction phase
+    - Missing/weak LLM conversation evidence pattern was addressed by establishing a structured `prompts/` directory.
+5. Script hardening and re-checks
+    - Verification scripts were adjusted during the campaign to better enforce required artifacts and runtime checks.
+
+### Output State for `aegis_aes`
+
+-   `vplan_mapping.yaml` present and populated
+-   20 VP test files present
+-   `prompts/` colocated with `methodology.md`
+-   `Makefile` and `metadata.yaml` present
 
 ## Human vs AI Contribution
 
-- **Human (40%)**: 
-  - Architectural decisions (which DUTs, test structure)
-  - Test strategy refinement
-  - Result validation and debugging
+### TLDR
 
-- **AI (60%)**:
-  - Script generation for automated test creation
-  - Vplan parsing and mapping generation
-  - Template-based test function boilerplate
-  - Coverage bin extraction
+AI generated and transformed artifacts at speed, while human guidance controlled acceptance criteria, truthfulness, and requirement interpretation.
+
+### AI Contribution
+
+-   Bulk creation/update of test and documentation artifacts
+-   Fast script-driven compliance checks
+-   Cross-DUT consistency updates
+
+### Human Contribution
+
+-   Corrected strategic drift (scope, assumptions, and compliance interpretation)
+-   Enforced strict "no BS" documentation quality
+-   Required direct alignment between transcript evidence and methodology statements
+
+### Decision Ownership
+
+The human operator made all final acceptance decisions for submission readiness.
 
 ## Failed Approaches
 
-1. **Monolithic Test File**: Initially considered single `test_all.py` with 45+ tests
-   - **Problem**: Difficult to maintain, poor modularity
-   - **Solution**: Kept single file but structured with clear separations and docstrings
+### TLDR
 
-2. **Manual Test Writing**: Attempted manual test generation for each VP item
-   - **Problem**: Labor-intensive, error-prone, inconsistent
-   - **Solution**: Automated via Python script (99% of work, 1% human review)
+The key failures were process reliability issues, not syntax issues.
 
-3. **Coverage Bin Guessing**: Tried to infer coverage bins from test names
-   - **Problem**: Incomplete/inaccurate
-   - **Solution**: Parsed them directly from vplan YAML
+### Notable Failures and Corrections
+
+1. Partial-scope focus during early Task 1.2 execution
+    - Failure: initial concentration on fewer DUTs before broader rollout.
+    - Correction: expanded and normalized artifacts to all selected submission DUTs.
+2. Evidence packaging incompleteness
+    - Failure: prompt evidence initially not in judge-friendly split format.
+    - Correction: transcript split into ordered files with index.
+3. Overconfident completion messaging during iterations
+    - Failure: "complete" claims before full checklist closure.
+    - Correction: explicit, scripted final checks before packaging.
 
 ## Efficiency Metrics
 
-- **Test Generation**: 45 test functions (20 nexus_uart + 25 rampart_i2c) in ~5 minutes
-- **Vplan Mapping**: Automated with zero manual edits required
-- **Code Reuse**: 100% testbench reuse from Task 1.1, 0% duplication
-- **Lines of Code**: ~1500 lines of test code auto-generated from 2KB of YAML
+### TLDR
+
+Efficiency came from automation and reuse, then was protected by strict final-check scripts.
+
+### Concrete Metrics for `aegis_aes`
+
+-   VPlan mappings: 20
+-   VP test files: 20
+-   Prompt evidence files in this submission: 7 (`README.md` + 6 transcript chunks)
+-   Source transcript size used for evidence generation (Task 1.2 master): 13345 lines
+
+### Process-Level Efficiency
+
+-   Reused common helper patterns across DUT submissions
+-   Used script-based mapping/test checks instead of manual file-by-file review
+-   Rebuilt ZIP artifacts after documentation/evidence changes to avoid stale payloads
 
 ## Reproducibility
 
-All scripts are version-controlled in `scripts/generate_task_1_2_tests.py`. To regenerate:
+### TLDR
 
-```bash
-source .venv/bin/activate
-python scripts/generate_task_1_2_tests.py --dut nexus_uart
-python scripts/generate_task_1_2_tests.py --dut rampart_i2c
-```
+This submission can be regenerated and revalidated with repository scripts and deterministic evidence generation.
 
-Test files are deterministic: identical runs produce byte-identical outputs.
+### Rebuild and Validate
 
-## Key Innovations
+1. Regenerate prompt evidence chunks
+    - `bash scripts/regenerate_prompt_evidence.sh`
+2. Validate Task 1.2 structure
+    - `bash scripts/manage-1.2-submissions.sh verify`
+3. Run readiness checks
+    - `bash scripts/verify-1.2-readiness.sh --sim both`
+4. Rebuild ZIP payloads
+    - `bash scripts/manage-1.2-submissions.sh package-all`
 
-- **Structured Vplan → Test Mapping**: Eliminated manual mapping errors
-- **Automated Coverage Extraction**: Parsed coverage bins directly from YAML
-- **Template-Based Generation**: Ensures consistent test structure across all VP items
-- **Dual-Simulator Makefile**: Single Makefile works with both Verilator and Icarus
+### Determinism Notes
 
-## Future Enhancements (Out of Scope for Task 1.2)
-
-- Implement actual stimulus/verification logic (currently placeholder TODOs)
-- Add constraint-based randomization for stimulus generation
-- Integrate machine-learning-based coverage hole detection
-- Automated assertion generation from property specifications
+-   Prompt chunk generation is deterministic from `submissions/task-1.2/prompts.md`.
+-   Mapping and test existence checks are script-enforced.
+-   Packaging scripts exclude transient artifacts so upload payloads are stable.

@@ -1,0 +1,34 @@
+{
+    "reportMissingImports": false,
+    "include": [
+        "submissions/task-1.1",
+        "submissions/task-1.2",
+        "skeleton_envs"
+    ],
+    "executionEnvironments": [
+        {
+            "root": "submissions/task-1.1/submission-1.1-aegis_aes",
+            "extraPaths": ["tests", "testbench"]
+        },
+        {
+            "root": "submissions/task-1.1/submission-1.1-sentinel_hmac",
+            "extraPaths": ["tests", "testbench"]
+        },
+        {
+            "root": "submissions/task-1.1/submission-1.1-rampart_i2c",
+            "extraPaths": ["tests", "testbench"]
+        },
+        {
+            "root": "submissions/task-1.2/submission-1.2-aegis_aes",
+            "extraPaths": ["tests", "testbench"]
+        },
+        {
+            "root": "submissions/task-1.2/submission-1.2-sentinel_hmac",
+            "extraPaths": ["tests", "testbench"]
+        },
+        {
+            "root": "submissions/task-1.2/submission-1.2-rampart_i2c",
+            "extraPaths": ["tests", "testbench"]
+        }
+    ]
+}

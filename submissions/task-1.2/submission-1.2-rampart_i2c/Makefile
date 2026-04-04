@@ -14,8 +14,10 @@ else
 endif
 
 TOPLEVEL = $(DUT_NAME)
-MODULE = tests.test_vplan_items
-export PYTHONPATH := .:$(PWD)/testbench:$(PYTHONPATH)
+
+# Cocotb 2.0+ test discovery
+COCOTB_TEST_MODULES = tests
+export PYTHONPATH := .:./tests:./testbench:$(PYTHONPATH)
 
 ifeq ($(SIM),icarus)
   COMPILE_ARGS = -g2012

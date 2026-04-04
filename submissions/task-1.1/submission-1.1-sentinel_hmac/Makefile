@@ -22,4 +22,9 @@ ifeq ($(SIM),icarus)
   COMPILE_ARGS = -g2012
 endif
 
+ifeq ($(SIM),verilator)
+  # Suppress known width/unsigned lint warnings in provided sentinel_hmac RTL.
+  COMPILE_ARGS = -Wno-WIDTHTRUNC -Wno-WIDTHEXPAND -Wno-UNSIGNED
+endif
+
 include $(shell cocotb-config --makefiles)/Makefile.sim
