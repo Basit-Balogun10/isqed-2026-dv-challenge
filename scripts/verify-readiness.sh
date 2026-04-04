@@ -11,8 +11,8 @@
 #
 # Usage:
 #   bash scripts/verify-readiness.sh
-#   bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3 --sim both
-#   bash scripts/verify-readiness.sh 1.1 1.2 1.3 --quick
+#   bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4 --sim both
+#   bash scripts/verify-readiness.sh 1.1 1.2 1.3 1.4 --quick
 #
 # Options:
 #   --tasks LIST                  Comma-separated tasks (e.g. 1.1,1.2)
@@ -82,7 +82,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ ${#TASKS[@]} -eq 0 ]]; then
-  TASKS=("1.1" "1.2" "1.3")
+  TASKS=("1.1" "1.2" "1.3" "1.4")
 fi
 
 if [[ "$SIM" != "icarus" && "$SIM" != "verilator" && "$SIM" != "both" ]]; then
@@ -117,9 +117,10 @@ for task in "${TASKS[@]}"; do
     if [[ "$RUN_TASK_1_2_STATUS" != "true" ]]; then
       task_args+=(--skip-task-1.2-status)
     fi
-    if [[ -n "$TIMEOUT" ]]; then
-      task_args+=(--timeout "$TIMEOUT")
-    fi
+  fi
+
+  if [[ -n "$TIMEOUT" && ( "$task" == "1.2" || "$task" == "1.3" || "$task" == "1.4" ) ]]; then
+    task_args+=(--timeout "$TIMEOUT")
   fi
 
   bash "$task_script" "${task_args[@]}"

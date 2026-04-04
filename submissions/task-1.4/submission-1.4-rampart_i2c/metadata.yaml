@@ -1,0 +1,5 @@
+team_name: "GitHub Copilot (Agentic AI)"
+task_id: "1.4"
+dut_id: "rampart_i2c"
+simulator: "icarus"
+timestamp: "2026-04-04T18:00:00Z"

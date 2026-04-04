@@ -72,6 +72,23 @@ This directory contains the maintained automation scripts for submission packagi
         -   `source .venv/bin/activate`
         -   `bash scripts/verify-1.3-readiness.sh --sim both`
 
+## Task 1.4 Scripts
+
+-   `manage-1.4-submissions.sh`
+
+    -   Package, extract, verify, and report status for Task 1.4 per-DUT submissions.
+    -   Typical usage:
+        -   `bash scripts/manage-1.4-submissions.sh status`
+        -   `bash scripts/manage-1.4-submissions.sh package-all`
+        -   `bash scripts/manage-1.4-submissions.sh test-all`
+
+-   `verify-1.4-readiness.sh`
+    -   ZIP-first Task 1.4 readiness verification.
+    -   Packages and extracts per-DUT ZIPs, validates required files and manifest quality checks, then runs dual-simulator smoke checks from extracted submissions.
+    -   Typical usage:
+        -   `source .venv/bin/activate`
+        -   `bash scripts/verify-1.4-readiness.sh --sim both`
+
 ## Unified Workflow
 
 -   `verify-readiness.sh`
@@ -80,7 +97,7 @@ This directory contains the maintained automation scripts for submission packagi
     -   Runs one or more per-task readiness scripts in sequence.
     -   Typical usage:
         -   `source .venv/bin/activate`
-        -   `bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3 --sim both`
+        -   `bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4 --sim both`
         -   `bash scripts/verify-readiness.sh 1.2 --sim icarus --quick`
 
 -   `docs/VERIFY_1_1_1_2_WORKFLOW.md`

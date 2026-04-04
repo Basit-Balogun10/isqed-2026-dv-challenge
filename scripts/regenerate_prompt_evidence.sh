@@ -20,22 +20,33 @@ if [[ -n "$REPO_PATH" ]]; then
   MASTER_TASK11_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-1.1/prompts.md"
   MASTER_TASK12_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-1.2/prompts.md"
   MASTER_TASK13_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-1.3/prompts.md"
+  MASTER_TASK14_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-1.4/prompts.md"
 else
   MASTER_TASK11_URL="(unable to derive from origin remote)"
   MASTER_TASK12_URL="(unable to derive from origin remote)"
   MASTER_TASK13_URL="(unable to derive from origin remote)"
+  MASTER_TASK14_URL="(unable to derive from origin remote)"
 fi
 
 TMP11="/tmp/task11-prompt-chunks"
 TMP12="/tmp/task12-prompt-chunks"
 TMP13="/tmp/task13-prompt-chunks"
-rm -rf "$TMP11" "$TMP12" "$TMP13"
-mkdir -p "$TMP11/raw" "$TMP12/raw" "$TMP13/raw"
+TMP14="/tmp/task14-prompt-chunks"
+rm -rf "$TMP11" "$TMP12" "$TMP13" "$TMP14"
+mkdir -p "$TMP11/raw" "$TMP12/raw" "$TMP13/raw" "$TMP14/raw"
 
 # Split full transcripts into six readable chunks each.
 split -l 1500 -d -a 2 submissions/task-1.1/prompts.md "$TMP11/raw/chunk_"
 split -l 2300 -d -a 2 submissions/task-1.2/prompts.md "$TMP12/raw/chunk_"
 split -l 350 -d -a 2 submissions/task-1.3/prompts.md "$TMP13/raw/chunk_"
+
+# Task 1.4 uses dynamic chunk sizing to guarantee six equally distributed chunks.
+TASK14_LINES="$(wc -l < submissions/task-1.4/prompts.md)"
+TASK14_CHUNK_SIZE=$(( (TASK14_LINES + 5) / 6 ))
+split -l "$TASK14_CHUNK_SIZE" -d -a 2 submissions/task-1.4/prompts.md "$TMP14/raw/chunk_"
+for i in 00 01 02 03 04 05; do
+  [[ -f "$TMP14/raw/chunk_${i}" ]] || : > "$TMP14/raw/chunk_${i}"
+done
 
 # Task 1.1 chunk labels.
 cp "$TMP11/raw/chunk_00" "$TMP11/01_beginning_and_context_discovery.md"
@@ -127,6 +138,36 @@ Why the original file is not duplicated here:
 6. 06_final_questions_and_signoff.md
 EOF
 
+# Task 1.4 chunk labels.
+cp "$TMP14/raw/chunk_00" "$TMP14/01_task14_audit_and_planning.md"
+cp "$TMP14/raw/chunk_01" "$TMP14/02_scaffolding_and_initial_assertions.md"
+cp "$TMP14/raw/chunk_02" "$TMP14/03_simulator_compatibility_rework.md"
+cp "$TMP14/raw/chunk_03" "$TMP14/04_temporal_debug_and_dual_sim_pass.md"
+cp "$TMP14/raw/chunk_04" "$TMP14/05_packaging_and_readiness_automation.md"
+cp "$TMP14/raw/chunk_05" "$TMP14/06_final_verification_and_signoff.md"
+
+cat > "$TMP14/README.md" <<EOF
+# Prompt Evidence Index - Task 1.4
+
+This directory contains the full contents of submissions/task-1.4/prompts.md,
+split into six files for easier judge navigation.
+
+Master/original transcript source:
+- submissions/task-1.4/prompts.md
+- ${MASTER_TASK14_URL}
+
+Why the original file is not duplicated here:
+- These six chunk files already contain the entire transcript content.
+- Avoiding a second full copy keeps submission payloads minimal.
+
+1. 01_task14_audit_and_planning.md
+2. 02_scaffolding_and_initial_assertions.md
+3. 03_simulator_compatibility_rework.md
+4. 04_temporal_debug_and_dual_sim_pass.md
+5. 05_packaging_and_readiness_automation.md
+6. 06_final_verification_and_signoff.md
+EOF
+
 # Replace prompts for all Task 1.1 DUT submissions.
 for dut in aegis_aes rampart_i2c sentinel_hmac; do
   dst="submissions/task-1.1/submission-1.1-${dut}/prompts"
@@ -149,4 +190,12 @@ mkdir -p "$dst"
 find "$dst" -mindepth 1 -maxdepth 1 -type f -delete
 cp "$TMP13"/*.md "$dst"/
 
-echo "Prompt evidence regenerated for Task 1.1, Task 1.2, and Task 1.3 submissions."
+# Replace prompts for all Task 1.4 DUT submissions.
+for dut in rampart_i2c sentinel_hmac; do
+  dst="submissions/task-1.4/submission-1.4-${dut}/prompts"
+  mkdir -p "$dst"
+  find "$dst" -mindepth 1 -maxdepth 1 -type f -delete
+  cp "$TMP14"/*.md "$dst"/
+done
+
+echo "Prompt evidence regenerated for Task 1.1, Task 1.2, Task 1.3, and Task 1.4 submissions."
