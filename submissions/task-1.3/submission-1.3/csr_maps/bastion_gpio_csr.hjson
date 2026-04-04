@@ -1,0 +1,212 @@
+{
+  name: "bastion_gpio"
+  base_addr: "0x0"
+  registers: [
+    {
+      name: "DATA_IN"
+      desc: "GPIO input data register (one bit per pin)"
+      offset: "0x00"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "Input value of GPIO pins"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "DATA_OUT"
+      desc: "GPIO output data register (one bit per pin)"
+      offset: "0x04"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "Output value of GPIO pins"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "DIR"
+      desc: "GPIO direction register (1=output, 0=input per pin)"
+      offset: "0x08"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "dir"
+          bits: "31:0"
+          desc: "Direction control for each GPIO pin"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_STATE"
+      desc: "Interrupt state register (write 1 to clear)"
+      offset: "0x0C"
+      reset_val: "0x00000000"
+      access: "W1C"
+      fields: [
+        {
+          name: "gpio"
+          bits: "31:0"
+          desc: "Interrupt pending state for each GPIO pin"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_ENABLE"
+      desc: "Interrupt enable register (one bit per pin)"
+      offset: "0x10"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "gpio"
+          bits: "31:0"
+          desc: "Interrupt enable for each GPIO pin"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_TEST"
+      desc: "Interrupt test register (one bit per pin)"
+      offset: "0x14"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "gpio"
+          bits: "31:0"
+          desc: "Interrupt test for each GPIO pin"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_CTRL_EN_RISING"
+      desc: "Rising edge interrupt enable (one bit per pin)"
+      offset: "0x18"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "gpio"
+          bits: "31:0"
+          desc: "Enable rising edge interrupt for each GPIO pin"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_CTRL_EN_FALLING"
+      desc: "Falling edge interrupt enable (one bit per pin)"
+      offset: "0x1C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "gpio"
+          bits: "31:0"
+          desc: "Enable falling edge interrupt for each GPIO pin"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_CTRL_EN_LVLHIGH"
+      desc: "Level high interrupt enable (one bit per pin)"
+      offset: "0x20"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "gpio"
+          bits: "31:0"
+          desc: "Enable level high interrupt for each GPIO pin"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_CTRL_EN_LVLLOW"
+      desc: "Level low interrupt enable (one bit per pin)"
+      offset: "0x24"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "gpio"
+          bits: "31:0"
+          desc: "Enable level low interrupt for each GPIO pin"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "MASKED_OUT_LOWER"
+      desc: "Masked output register for lower 16 GPIO pins"
+      offset: "0x28"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "data"
+          bits: "15:0"
+          desc: "Output data for lower 16 pins"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "mask"
+          bits: "31:16"
+          desc: "Write mask for lower 16 pins (1=update)"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "MASKED_OUT_UPPER"
+      desc: "Masked output register for upper 16 GPIO pins"
+      offset: "0x2C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "data"
+          bits: "15:0"
+          desc: "Output data for upper 16 pins"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "mask"
+          bits: "31:16"
+          desc: "Write mask for upper 16 pins (1=update)"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+  ]
+}

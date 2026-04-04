@@ -38,7 +38,7 @@ We are competing in the **ISQED 2026 Agentic AI Design Verification Challenge**.
 
 ## ⚠️ **Path A (Our Choice) vs Path B**
 
-**Why Path A?** — From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) § 2:
+**Why Path A?** — From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md), Section 2:
 
 > "Path A — Python-Based Verification (Open-Source): This is the **recommended starting point** for most teams. All skeleton environments and reference testbenches are provided in this format. **No commercial licenses required.**"
 
@@ -46,7 +46,7 @@ We are competing in the **ISQED 2026 Agentic AI Design Verification Challenge**.
 
 > Task 1.1: "For Path B (SV UVM): replace `.py` files with `.sv` packages" — **but we can't submit Path B without commercial tools.**
 
-**Path A submission format** (from [submission_requirements.md](platform_content/submission_requirements.md) § Task 1.1):
+**Path A submission format** (from [submission_requirements.md](platform_content/submission_requirements.md), Task 1.1):
 
 ```
 testbench/
@@ -62,21 +62,21 @@ tests/
 
 **⚠️ CRITICAL — DUAL SIMULATOR COMPLIANCE REQUIRED**
 
-From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) **§ 8 Evaluation Process** (step 2):
+From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md), **Section 8 Evaluation Process** (step 2):
 
 > "Compilation check — Builds the testbench with **both Verilator and Icarus Verilog. Both must succeed.**"
 
-From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) **§ 10 Tips for Success** (#7):
+From [instructions_and_documentation.md](platform_content/instructions_and_documentation.md), **Section 10 Tips for Success** (#7):
 
 > "Test with your target simulator early — **Path A submissions should compile with both Verilator and Icarus.**"
 
 **Enforcement:** Submissions that compile with only one simulator will **fail automated evaluation**. Both Makefiles **must** support both simulators. Our Makefiles must work with `make SIM=icarus` AND `make SIM=verilator`.
 
-**Note on aegis_aes hand:** See [instructions_and_documentation.md](platform_content/instructions_and_documentation.md) **§ 11 Known Simulator Notes** — aegis_aes hangs on Icarus due to unpacked array sensitivity issue. Use Verilator for AES development, but ensure Makefile is dual-simulator capable (it will be skipped during AES-Icarus testing on platform).
+**Note on aegis_aes hand:** See [instructions_and_documentation.md](platform_content/instructions_and_documentation.md), **Section 11 Known Simulator Notes** — aegis_aes hangs on Icarus due to unpacked array sensitivity issue. Use Verilator for AES development, but ensure Makefile is dual-simulator capable (it will be skipped during AES-Icarus testing on platform).
 
 All DUTs use the TileLink Uncached Lightweight (TL-UL) bus interface. Our ultimate goal is 100% coverage closure.
 
-**TL-UL Reusability Finding (from instructions_and_documentation.md § 4 & § 10):**
+**TL-UL Reusability Finding (from instructions_and_documentation.md, Sections 4 and 10):**
 
 > "Building a reusable TL-UL agent is strongly recommended -- it works for every DUT in the competition."
 > "A well-built TL-UL bus agent, register abstraction layer, and scoreboard base class work for every DUT. Invest time in these once, then reuse across all submissions."
@@ -135,6 +135,10 @@ When facing **any ambiguity** about:
 -   **Scope Assumption:** When multiple tasks or DUTs are relevant, assume you must handle ALL of them for maximum score
 -   **Time is Unbounded:** Never self-impose deadlines, skip deliverables, or "defer if time runs out" unless the user explicitly says so
 -   **Caution Against Artificial Constraints:** If you catch yourself thinking "due to time constraints" without user instruction, **STOP and reconsider.** Proceed exhaustively instead.
+
+### ⚠️ RESPONSE FORMATTING
+
+-   Use clean Markdown when answering: short headings, bullets, and tables when useful.
 
 ### Task 1.2 Scoring Strategy
 

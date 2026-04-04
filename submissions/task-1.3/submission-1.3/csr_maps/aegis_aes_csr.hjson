@@ -1,0 +1,400 @@
+{
+  name: "aegis_aes"
+  base_addr: "0x0"
+  registers: [
+    {
+      name: "AES_KEY_0"
+      desc: "AES key word 0 (bits 31:0)"
+      offset: "0x00"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "AES key bits [31:0]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_KEY_1"
+      desc: "AES key word 1 (bits 63:32)"
+      offset: "0x04"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "AES key bits [63:32]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_KEY_2"
+      desc: "AES key word 2 (bits 95:64)"
+      offset: "0x08"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "AES key bits [95:64]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_KEY_3"
+      desc: "AES key word 3 (bits 127:96)"
+      offset: "0x0C"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "key"
+          bits: "31:0"
+          desc: "AES key bits [127:96]"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_IV_0"
+      desc: "AES initialization vector word 0 (bits 31:0)"
+      offset: "0x10"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "iv"
+          bits: "31:0"
+          desc: "AES IV bits [31:0]"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_IV_1"
+      desc: "AES initialization vector word 1 (bits 63:32)"
+      offset: "0x14"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "iv"
+          bits: "31:0"
+          desc: "AES IV bits [63:32]"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_IV_2"
+      desc: "AES initialization vector word 2 (bits 95:64)"
+      offset: "0x18"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "iv"
+          bits: "31:0"
+          desc: "AES IV bits [95:64]"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_IV_3"
+      desc: "AES initialization vector word 3 (bits 127:96)"
+      offset: "0x1C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "iv"
+          bits: "31:0"
+          desc: "AES IV bits [127:96]"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_DATA_IN_0"
+      desc: "AES data input word 0"
+      offset: "0x20"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "AES input data word 0"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_DATA_IN_1"
+      desc: "AES data input word 1"
+      offset: "0x24"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "AES input data word 1"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_DATA_IN_2"
+      desc: "AES data input word 2"
+      offset: "0x28"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "AES input data word 2"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_DATA_IN_3"
+      desc: "AES data input word 3"
+      offset: "0x2C"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "AES input data word 3"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_DATA_OUT_0"
+      desc: "AES data output word 0"
+      offset: "0x30"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "AES output data word 0"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_DATA_OUT_1"
+      desc: "AES data output word 1"
+      offset: "0x34"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "AES output data word 1"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_DATA_OUT_2"
+      desc: "AES data output word 2"
+      offset: "0x38"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "AES output data word 2"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_DATA_OUT_3"
+      desc: "AES data output word 3"
+      offset: "0x3C"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "data"
+          bits: "31:0"
+          desc: "AES output data word 3"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_CTRL"
+      desc: "AES control register"
+      offset: "0x40"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "mode"
+          bits: "0"
+          desc: "AES mode selection (0=ECB, 1=CBC)"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "operation"
+          bits: "1"
+          desc: "AES operation (0=encrypt, 1=decrypt)"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_TRIGGER"
+      desc: "AES trigger register (write 1 to set)"
+      offset: "0x44"
+      reset_val: "0x00000000"
+      access: "W1S"
+      fields: [
+        {
+          name: "start"
+          bits: "0"
+          desc: "Write 1 to start AES operation"
+          access: "W1S"
+          reset_val: "0x0"
+        }
+        {
+          name: "key_iv_data_in_clear"
+          bits: "1"
+          desc: "Write 1 to clear key, IV, and input data registers"
+          access: "W1S"
+          reset_val: "0x0"
+        }
+        {
+          name: "data_out_clear"
+          bits: "2"
+          desc: "Write 1 to clear output data registers"
+          access: "W1S"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "AES_STATUS"
+      desc: "AES status register"
+      offset: "0x48"
+      reset_val: "0x00000005"
+      access: "RO"
+      fields: [
+        {
+          name: "idle"
+          bits: "0"
+          desc: "AES engine is idle"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "output_valid"
+          bits: "1"
+          desc: "AES output data is valid"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "input_ready"
+          bits: "2"
+          desc: "AES engine is ready to accept input data"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "stall"
+          bits: "3"
+          desc: "AES engine is stalled"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_STATE"
+      desc: "Interrupt state register (write 1 to clear)"
+      offset: "0x4C"
+      reset_val: "0x00000000"
+      access: "W1C"
+      fields: [
+        {
+          name: "aes_done"
+          bits: "0"
+          desc: "AES operation completed interrupt"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_ENABLE"
+      desc: "Interrupt enable register"
+      offset: "0x50"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "aes_done"
+          bits: "0"
+          desc: "Enable AES done interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_TEST"
+      desc: "Interrupt test register"
+      offset: "0x54"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "aes_done"
+          bits: "0"
+          desc: "Test AES done interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+  ]
+}

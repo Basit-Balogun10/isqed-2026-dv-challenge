@@ -1,0 +1,849 @@
+{
+  name: "rampart_i2c"
+  base_addr: "0x0"
+  registers: [
+    {
+      name: "CTRL"
+      desc: "I2C control register"
+      offset: "0x00"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "host_enable"
+          bits: "0"
+          desc: "Enable I2C host (master) mode"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "target_enable"
+          bits: "1"
+          desc: "Enable I2C target (slave) mode"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "line_loopback"
+          bits: "2"
+          desc: "Enable I2C line loopback for testing"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "STATUS"
+      desc: "I2C status register"
+      offset: "0x04"
+      reset_val: "0x000000EA"
+      access: "RO"
+      fields: [
+        {
+          name: "fmtfull"
+          bits: "0"
+          desc: "FMT FIFO is full"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "fmtempty"
+          bits: "1"
+          desc: "FMT FIFO is empty"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "txfull"
+          bits: "2"
+          desc: "TX FIFO is full"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "txempty"
+          bits: "3"
+          desc: "TX FIFO is empty"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "rxfull"
+          bits: "4"
+          desc: "RX FIFO is full"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rxempty"
+          bits: "5"
+          desc: "RX FIFO is empty"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "host_idle"
+          bits: "6"
+          desc: "I2C host state machine is idle"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "target_idle"
+          bits: "7"
+          desc: "I2C target state machine is idle"
+          access: "RO"
+          reset_val: "0x1"
+        }
+        {
+          name: "bus_active"
+          bits: "8"
+          desc: "I2C bus is active (transaction in progress)"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "ack_ctrl_stretch"
+          bits: "9"
+          desc: "Target is stretching clock for ACK/NACK control"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "RDATA"
+      desc: "I2C receive data register"
+      offset: "0x08"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "data"
+          bits: "7:0"
+          desc: "Received data byte from RX FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "FDATA"
+      desc: "I2C format data register for host mode"
+      offset: "0x0C"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "data"
+          bits: "7:0"
+          desc: "Data byte to transmit or number of bytes to read"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "start"
+          bits: "8"
+          desc: "Issue START condition before transmitting byte"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "stop"
+          bits: "9"
+          desc: "Issue STOP condition after transmitting byte"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "read"
+          bits: "10"
+          desc: "Read data from target (data field = byte count)"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rcont"
+          bits: "11"
+          desc: "Continue reading after current read operation"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "nakok"
+          bits: "12"
+          desc: "Do not signal an error for NAK responses"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "FIFO_CTRL"
+      desc: "FIFO control register (write to reset FIFOs)"
+      offset: "0x10"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "fmt_rst"
+          bits: "0"
+          desc: "Write 1 to reset FMT FIFO"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_rst"
+          bits: "1"
+          desc: "Write 1 to reset RX FIFO"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_rst"
+          bits: "2"
+          desc: "Write 1 to reset TX FIFO"
+          access: "WO"
+          reset_val: "0x0"
+        }
+        {
+          name: "acq_rst"
+          bits: "3"
+          desc: "Write 1 to reset ACQ FIFO"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "FIFO_STATUS"
+      desc: "FIFO level status register"
+      offset: "0x14"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "fmtlvl"
+          bits: "6:0"
+          desc: "Number of entries in FMT FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "rxlvl"
+          bits: "13:7"
+          desc: "Number of entries in RX FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "txlvl"
+          bits: "20:14"
+          desc: "Number of entries in TX FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "acqlvl"
+          bits: "27:21"
+          desc: "Number of entries in ACQ FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "OVRD"
+      desc: "I2C bus line override register"
+      offset: "0x18"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "sclval"
+          bits: "0"
+          desc: "Override value for SCL line"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "sdaval"
+          bits: "1"
+          desc: "Override value for SDA line"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "txovrden"
+          bits: "2"
+          desc: "Enable bus line override"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "TIMING0"
+      desc: "I2C timing parameter register 0 (SCL high/low periods)"
+      offset: "0x1C"
+      reset_val: "0x00F000F0"
+      access: "RW"
+      fields: [
+        {
+          name: "thigh"
+          bits: "15:0"
+          desc: "SCL high period in clock cycles"
+          access: "RW"
+          reset_val: "0xF0"
+        }
+        {
+          name: "tlow"
+          bits: "31:16"
+          desc: "SCL low period in clock cycles"
+          access: "RW"
+          reset_val: "0xF0"
+        }
+      ]
+    }
+    {
+      name: "TIMING1"
+      desc: "I2C timing parameter register 1 (rise/fall times)"
+      offset: "0x20"
+      reset_val: "0x00080008"
+      access: "RW"
+      fields: [
+        {
+          name: "t_r"
+          bits: "15:0"
+          desc: "SCL/SDA rise time in clock cycles"
+          access: "RW"
+          reset_val: "0x8"
+        }
+        {
+          name: "t_f"
+          bits: "31:16"
+          desc: "SCL/SDA fall time in clock cycles"
+          access: "RW"
+          reset_val: "0x8"
+        }
+      ]
+    }
+    {
+      name: "TIMING2"
+      desc: "I2C timing parameter register 2 (START condition setup/hold)"
+      offset: "0x24"
+      reset_val: "0x00180018"
+      access: "RW"
+      fields: [
+        {
+          name: "tsu_sta"
+          bits: "15:0"
+          desc: "Setup time for repeated START condition in clock cycles"
+          access: "RW"
+          reset_val: "0x18"
+        }
+        {
+          name: "thd_sta"
+          bits: "31:16"
+          desc: "Hold time for START condition in clock cycles"
+          access: "RW"
+          reset_val: "0x18"
+        }
+      ]
+    }
+    {
+      name: "TIMING3"
+      desc: "I2C timing parameter register 3 (data setup/hold)"
+      offset: "0x28"
+      reset_val: "0x00060006"
+      access: "RW"
+      fields: [
+        {
+          name: "tsu_dat"
+          bits: "15:0"
+          desc: "Data setup time in clock cycles"
+          access: "RW"
+          reset_val: "0x6"
+        }
+        {
+          name: "thd_dat"
+          bits: "31:16"
+          desc: "Data hold time in clock cycles"
+          access: "RW"
+          reset_val: "0x6"
+        }
+      ]
+    }
+    {
+      name: "TIMING4"
+      desc: "I2C timing parameter register 4 (STOP condition setup/bus free)"
+      offset: "0x2C"
+      reset_val: "0x00180018"
+      access: "RW"
+      fields: [
+        {
+          name: "tsu_sto"
+          bits: "15:0"
+          desc: "Setup time for STOP condition in clock cycles"
+          access: "RW"
+          reset_val: "0x18"
+        }
+        {
+          name: "t_buf"
+          bits: "31:16"
+          desc: "Bus free time between STOP and START in clock cycles"
+          access: "RW"
+          reset_val: "0x18"
+        }
+      ]
+    }
+    {
+      name: "TARGET_ID"
+      desc: "I2C target address and mask register"
+      offset: "0x30"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "address"
+          bits: "6:0"
+          desc: "I2C target device address"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "mask"
+          bits: "13:7"
+          desc: "I2C target address mask (1=compare, 0=ignore)"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "ACQDATA"
+      desc: "I2C acquired data register (target mode)"
+      offset: "0x34"
+      reset_val: "0x00000000"
+      access: "RO"
+      fields: [
+        {
+          name: "data"
+          bits: "7:0"
+          desc: "Acquired data byte from ACQ FIFO"
+          access: "RO"
+          reset_val: "0x0"
+        }
+        {
+          name: "signal"
+          bits: "9:8"
+          desc: "Bus signal associated with data (00=none, 01=start, 10=stop, 11=restart)"
+          access: "RO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "TXDATA"
+      desc: "I2C transmit data register (target mode)"
+      offset: "0x38"
+      reset_val: "0x00000000"
+      access: "WO"
+      fields: [
+        {
+          name: "data"
+          bits: "7:0"
+          desc: "Data byte to transmit in target mode"
+          access: "WO"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "HOST_TIMEOUT_CTRL"
+      desc: "I2C host timeout control register"
+      offset: "0x3C"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "timeout"
+          bits: "30:0"
+          desc: "Timeout count value in clock cycles"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "enable"
+          bits: "31"
+          desc: "Enable host timeout detection"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_STATE"
+      desc: "Interrupt state register (write 1 to clear)"
+      offset: "0x40"
+      reset_val: "0x00000000"
+      access: "W1C"
+      fields: [
+        {
+          name: "fmt_threshold"
+          bits: "0"
+          desc: "FMT FIFO depth below threshold"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_threshold"
+          bits: "1"
+          desc: "RX FIFO depth above threshold"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "fmt_overflow"
+          bits: "2"
+          desc: "FMT FIFO overflow"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_overflow"
+          bits: "3"
+          desc: "RX FIFO overflow"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "nak"
+          bits: "4"
+          desc: "NAK received from target"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "scl_interference"
+          bits: "5"
+          desc: "SCL line interference detected"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "sda_interference"
+          bits: "6"
+          desc: "SDA line interference detected"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "stretch_timeout"
+          bits: "7"
+          desc: "Clock stretching timeout"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "sda_unstable"
+          bits: "8"
+          desc: "SDA line unstable during SCL high"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "trans_complete"
+          bits: "9"
+          desc: "Transaction completed"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_empty"
+          bits: "10"
+          desc: "TX FIFO is empty (target mode)"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_nonempty"
+          bits: "11"
+          desc: "TX FIFO is non-empty (target mode)"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_overflow"
+          bits: "12"
+          desc: "TX FIFO overflow (target mode)"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "acq_full"
+          bits: "13"
+          desc: "ACQ FIFO is full"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "ack_stop"
+          bits: "14"
+          desc: "ACK followed by STOP condition"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+        {
+          name: "host_timeout"
+          bits: "15"
+          desc: "Host timeout threshold reached"
+          access: "W1C"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_ENABLE"
+      desc: "Interrupt enable register"
+      offset: "0x44"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "fmt_threshold"
+          bits: "0"
+          desc: "Enable FMT threshold interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_threshold"
+          bits: "1"
+          desc: "Enable RX threshold interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "fmt_overflow"
+          bits: "2"
+          desc: "Enable FMT overflow interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_overflow"
+          bits: "3"
+          desc: "Enable RX overflow interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "nak"
+          bits: "4"
+          desc: "Enable NAK interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "scl_interference"
+          bits: "5"
+          desc: "Enable SCL interference interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "sda_interference"
+          bits: "6"
+          desc: "Enable SDA interference interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "stretch_timeout"
+          bits: "7"
+          desc: "Enable stretch timeout interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "sda_unstable"
+          bits: "8"
+          desc: "Enable SDA unstable interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "trans_complete"
+          bits: "9"
+          desc: "Enable transaction complete interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_empty"
+          bits: "10"
+          desc: "Enable TX empty interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_nonempty"
+          bits: "11"
+          desc: "Enable TX non-empty interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_overflow"
+          bits: "12"
+          desc: "Enable TX overflow interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "acq_full"
+          bits: "13"
+          desc: "Enable ACQ full interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "ack_stop"
+          bits: "14"
+          desc: "Enable ACK stop interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "host_timeout"
+          bits: "15"
+          desc: "Enable host timeout interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+    {
+      name: "INTR_TEST"
+      desc: "Interrupt test register"
+      offset: "0x48"
+      reset_val: "0x00000000"
+      access: "RW"
+      fields: [
+        {
+          name: "fmt_threshold"
+          bits: "0"
+          desc: "Test FMT threshold interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_threshold"
+          bits: "1"
+          desc: "Test RX threshold interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "fmt_overflow"
+          bits: "2"
+          desc: "Test FMT overflow interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "rx_overflow"
+          bits: "3"
+          desc: "Test RX overflow interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "nak"
+          bits: "4"
+          desc: "Test NAK interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "scl_interference"
+          bits: "5"
+          desc: "Test SCL interference interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "sda_interference"
+          bits: "6"
+          desc: "Test SDA interference interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "stretch_timeout"
+          bits: "7"
+          desc: "Test stretch timeout interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "sda_unstable"
+          bits: "8"
+          desc: "Test SDA unstable interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "trans_complete"
+          bits: "9"
+          desc: "Test transaction complete interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_empty"
+          bits: "10"
+          desc: "Test TX empty interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_nonempty"
+          bits: "11"
+          desc: "Test TX non-empty interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "tx_overflow"
+          bits: "12"
+          desc: "Test TX overflow interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "acq_full"
+          bits: "13"
+          desc: "Test ACQ full interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "ack_stop"
+          bits: "14"
+          desc: "Test ACK stop interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+        {
+          name: "host_timeout"
+          bits: "15"
+          desc: "Test host timeout interrupt"
+          access: "RW"
+          reset_val: "0x0"
+        }
+      ]
+    }
+  ]
+}
