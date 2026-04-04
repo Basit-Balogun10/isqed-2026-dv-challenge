@@ -13,18 +13,21 @@ ifneq (,$(wildcard $(DUT_PATH)))
                     assertions/functional_assertions.sv \
                     assertions/structural_assertions.sv \
                     assertions/liveness_assertions.sv \
+                    icarus_assert_wrapper.sv \
                     bind_file.sv
 else
   $(error "ERROR: Could not find DUTs directory. Set DUT_PATH=/custom/path if needed.")
 endif
 
 TOPLEVEL = $(DUT_NAME)
+ICARUS_TOPLEVEL = icarus_assert_wrapper
 MODULE = tests.test_with_assertions
 export PYTHONPATH := .:./tests:./testbench:$(PYTHONPATH)
 USER_COMPILE_ARGS ?=
 
 ifeq ($(SIM),icarus)
   COMPILE_ARGS = -g2012
+  TOPLEVEL = $(ICARUS_TOPLEVEL)
 endif
 
 ifeq ($(SIM),verilator)
