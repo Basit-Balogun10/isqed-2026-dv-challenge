@@ -1,0 +1,117 @@
+dut: aegis_aes
+total_tests: 20
+mappings:
+- vp_id: VP-AES-001
+  test_name: test_vp_001::test_vp_aes_001
+  coverage_bins:
+  - cp_mode.ecb
+  - cp_op.encrypt
+  - cp_kat
+  priority: high
+- vp_id: VP-AES-002
+  test_name: test_vp_002::test_vp_aes_002
+  coverage_bins:
+  - cp_mode.ecb
+  - cp_op.decrypt
+  - cp_kat
+  priority: high
+- vp_id: VP-AES-003
+  test_name: test_vp_003::test_vp_aes_003
+  coverage_bins:
+  - cp_mode.cbc
+  - cp_op.encrypt
+  - cp_kat
+  priority: high
+- vp_id: VP-AES-004
+  test_name: test_vp_004::test_vp_aes_004
+  coverage_bins:
+  - cp_mode.cbc
+  - cp_op.decrypt
+  - cp_kat
+  priority: high
+- vp_id: VP-AES-005
+  test_name: test_vp_005::test_vp_aes_005
+  coverage_bins:
+  - cp_key_pattern
+  - cp_mode.ecb
+  priority: high
+- vp_id: VP-AES-006
+  test_name: test_vp_006::test_vp_aes_006
+  coverage_bins:
+  - cp_back_to_back
+  - cp_mode.ecb
+  priority: high
+- vp_id: VP-AES-007
+  test_name: test_vp_007::test_vp_aes_007
+  coverage_bins:
+  - cp_back_to_back
+  - cp_mode.cbc
+  priority: high
+- vp_id: VP-AES-008
+  test_name: test_vp_008::test_vp_aes_008
+  coverage_bins:
+  - cp_iv_update
+  priority: high
+- vp_id: VP-AES-009
+  test_name: test_vp_009::test_vp_aes_009
+  coverage_bins:
+  - cp_clear
+  priority: medium
+- vp_id: VP-AES-010
+  test_name: test_vp_010::test_vp_aes_010
+  coverage_bins:
+  - cp_partial_write
+  priority: low
+- vp_id: VP-AES-011
+  test_name: test_vp_011::test_vp_aes_011
+  coverage_bins:
+  - cp_status.output_valid
+  priority: medium
+- vp_id: VP-AES-012
+  test_name: test_vp_012::test_vp_aes_012
+  coverage_bins:
+  - cp_roundtrip
+  - cp_mode.ecb
+  priority: high
+- vp_id: VP-AES-013
+  test_name: test_vp_013::test_vp_aes_013
+  coverage_bins:
+  - cp_roundtrip
+  - cp_mode.cbc
+  priority: high
+- vp_id: VP-AES-014
+  test_name: test_vp_014::test_vp_aes_014
+  coverage_bins:
+  - cp_mode_switch
+  priority: medium
+- vp_id: VP-AES-015
+  test_name: test_vp_015::test_vp_aes_015
+  coverage_bins:
+  - cp_trigger_busy
+  priority: medium
+- vp_id: VP-AES-016
+  test_name: test_vp_016::test_vp_aes_016
+  coverage_bins:
+  - cp_status
+  priority: high
+- vp_id: VP-AES-017
+  test_name: test_vp_017::test_vp_aes_017
+  coverage_bins:
+  - cp_data_pattern.all_zero
+  priority: medium
+- vp_id: VP-AES-018
+  test_name: test_vp_018::test_vp_aes_018
+  coverage_bins:
+  - cp_data_pattern.all_one
+  priority: medium
+- vp_id: VP-AES-019
+  test_name: test_vp_019::test_vp_aes_019
+  coverage_bins:
+  - cp_data_pattern.walking_one
+  priority: medium
+- vp_id: VP-AES-020
+  test_name: test_vp_020::test_vp_aes_020
+  coverage_bins:
+  - cp_intr_done
+  - cp_intr_test
+  priority: medium

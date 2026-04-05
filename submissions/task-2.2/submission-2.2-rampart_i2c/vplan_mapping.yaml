@@ -1,0 +1,130 @@
+dut: rampart_i2c
+total_tests: 25
+mappings:
+- vp_id: VP-I2C-001
+  test_name: test_vp_001::test_vp_i2c_001
+  coverage_bins:
+  - cp_host_write
+  priority: high
+- vp_id: VP-I2C-002
+  test_name: test_vp_002::test_vp_i2c_002
+  coverage_bins:
+  - cp_host_read
+  priority: high
+- vp_id: VP-I2C-003
+  test_name: test_vp_003::test_vp_i2c_003
+  coverage_bins:
+  - cp_repeated_start
+  priority: high
+- vp_id: VP-I2C-004
+  test_name: test_vp_004::test_vp_i2c_004
+  coverage_bins:
+  - cp_stop_condition
+  priority: high
+- vp_id: VP-I2C-005
+  test_name: test_vp_005::test_vp_i2c_005
+  coverage_bins:
+  - cp_ack
+  priority: high
+- vp_id: VP-I2C-006
+  test_name: test_vp_006::test_vp_i2c_006
+  coverage_bins:
+  - cp_nack
+  - cp_nakok
+  priority: high
+- vp_id: VP-I2C-007
+  test_name: test_vp_007::test_vp_i2c_007
+  coverage_bins:
+  - cp_target_addr
+  - cp_target_mask
+  priority: high
+- vp_id: VP-I2C-008
+  test_name: test_vp_008::test_vp_i2c_008
+  coverage_bins:
+  - cp_clock_stretch
+  priority: high
+- vp_id: VP-I2C-009
+  test_name: test_vp_009::test_vp_i2c_009
+  coverage_bins:
+  - cp_arbitration
+  priority: high
+- vp_id: VP-I2C-010
+  test_name: test_vp_010::test_vp_i2c_010
+  coverage_bins:
+  - cp_timing.standard
+  priority: high
+- vp_id: VP-I2C-011
+  test_name: test_vp_011::test_vp_i2c_011
+  coverage_bins:
+  - cp_timing.fast
+  priority: high
+- vp_id: VP-I2C-012
+  test_name: test_vp_012::test_vp_i2c_012
+  coverage_bins:
+  - cp_timing.fast_plus
+  priority: medium
+- vp_id: VP-I2C-013
+  test_name: test_vp_013::test_vp_i2c_013
+  coverage_bins:
+  - cp_fmt_fifo_write
+  priority: high
+- vp_id: VP-I2C-014
+  test_name: test_vp_014::test_vp_i2c_014
+  coverage_bins:
+  - cp_fmt_fifo_read
+  priority: high
+- vp_id: VP-I2C-015
+  test_name: test_vp_015::test_vp_i2c_015
+  coverage_bins:
+  - cp_waveform
+  priority: high
+- vp_id: VP-I2C-016
+  test_name: test_vp_016::test_vp_i2c_016
+  coverage_bins:
+  - cp_acq_fifo_full
+  priority: high
+- vp_id: VP-I2C-017
+  test_name: test_vp_017::test_vp_i2c_017
+  coverage_bins:
+  - cp_bus_override
+  priority: medium
+- vp_id: VP-I2C-018
+  test_name: test_vp_018::test_vp_i2c_018
+  coverage_bins:
+  - cp_host_timeout
+  priority: high
+- vp_id: VP-I2C-019
+  test_name: test_vp_019::test_vp_i2c_019
+  coverage_bins:
+  - cp_collision
+  priority: medium
+- vp_id: VP-I2C-020
+  test_name: test_vp_020::test_vp_i2c_020
+  coverage_bins:
+  - cp_mixed_mode
+  priority: medium
+- vp_id: VP-I2C-021
+  test_name: test_vp_021::test_vp_i2c_021
+  coverage_bins:
+  - cp_host_write_multi
+  priority: high
+- vp_id: VP-I2C-022
+  test_name: test_vp_022::test_vp_i2c_022
+  coverage_bins:
+  - cp_host_read_multi
+  priority: high
+- vp_id: VP-I2C-023
+  test_name: test_vp_023::test_vp_i2c_023
+  coverage_bins:
+  - cp_fifo_reset
+  priority: medium
+- vp_id: VP-I2C-024
+  test_name: test_vp_024::test_vp_i2c_024
+  coverage_bins:
+  - cp_target_tx
+  priority: high
+- vp_id: VP-I2C-025
+  test_name: test_vp_025::test_vp_i2c_025
+  coverage_bins:
+  - cp_loopback
+  priority: medium

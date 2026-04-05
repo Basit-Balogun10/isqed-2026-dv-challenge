@@ -72,7 +72,7 @@ From [instructions_and_documentation.md](platform_content/instructions_and_docum
 
 **Enforcement:** Submissions that compile with only one simulator will **fail automated evaluation**. Both Makefiles **must** support both simulators. Our Makefiles must work with `make SIM=icarus` AND `make SIM=verilator`.
 
-**Note on aegis_aes hand:** See [instructions_and_documentation.md](platform_content/instructions_and_documentation.md), **Section 11 Known Simulator Notes** — aegis_aes hangs on Icarus due to unpacked array sensitivity issue. Use Verilator for AES development, but ensure Makefile is dual-simulator capable (it will be skipped during AES-Icarus testing on platform).
+**Update on prior aegis_aes caveat:** Treat the old Icarus-runtime warning as a false positive for this workspace. Execute and validate aegis_aes with the same dual-simulator expectations as every other DUT (`make SIM=icarus` and `make SIM=verilator`).
 
 All DUTs use the TileLink Uncached Lightweight (TL-UL) bus interface. Our ultimate goal is 100% coverage closure.
 
