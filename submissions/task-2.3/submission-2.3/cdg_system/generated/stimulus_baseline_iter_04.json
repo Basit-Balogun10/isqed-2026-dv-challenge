@@ -1,0 +1,38 @@
+{
+  "seed": 390231087,
+  "iteration": 4,
+  "target_cycles": 8333,
+  "focus_target": "baseline:uniform_random",
+  "selected_knobs": {
+    "msg_len_profile": "medium",
+    "intr_pattern": "none",
+    "burst_count": "3",
+    "chunking": "4"
+  },
+  "transactions": [
+    {
+      "id": 0,
+      "msg_len": 24,
+      "intr_pattern": "none",
+      "chunking": 4,
+      "tx_seed": 262012823,
+      "pattern": "all_ff"
+    },
+    {
+      "id": 1,
+      "msg_len": 40,
+      "intr_pattern": "none",
+      "chunking": 4,
+      "tx_seed": 576946092,
+      "pattern": "incremental"
+    },
+    {
+      "id": 2,
+      "msg_len": 40,
+      "intr_pattern": "none",
+      "chunking": 4,
+      "tx_seed": 824783466,
+      "pattern": "all_ff"
+    }
+  ]
+}

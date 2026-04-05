@@ -1,0 +1,6 @@
+line_coverage: 51.53
+branch_coverage: 76.43
+toggle_coverage: 52.98
+functional_coverage: 100.00
+combined_coverage: 75.98
+cycles_used: 99996

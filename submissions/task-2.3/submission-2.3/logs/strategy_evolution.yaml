@@ -1,0 +1,495 @@
+- iteration: 1
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: short
+    intr_pattern: enable
+    burst_count: '2'
+    chunking: '16'
+  coverage:
+    line: 53.559322033898304
+    branch: 78.57142857142857
+    functional: 83.33
+    combined: 71.82025020177564
+  delta:
+    line: 53.559322033898304
+    branch: 78.57142857142857
+    functional: 83.33
+  reward: 0.7076890556900727
+  reward_clamped: 0.7076890556900727
+  policy_after:
+    msg_len_profile:
+      zero: 0.08234954651750963
+      short: 0.5131343143796772
+      medium: 0.2742031833717449
+      long: 0.13031295573106844
+    intr_pattern:
+      none: 0.3304732158918415
+      enable: 0.24403327527846705
+      test: 0.21274675441484575
+      both: 0.21274675441484575
+    burst_count:
+      '1': 0.35094463811343896
+      '2': 0.3692440867390007
+      '3': 0.17827636494462726
+      '4': 0.10153491020293313
+    chunking:
+      '1': 0.32216659258530367
+      '4': 0.2742031833717449
+      '8': 0.17827636494462726
+      '16': 0.22535385909832434
+  focus_targets_after:
+  - hmac.func.intr_write_kind:1/2
+  - covered_bins:5/6
+- iteration: 2
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: short
+    intr_pattern: both
+    burst_count: '3'
+    chunking: '4'
+  coverage:
+    line: 53.559322033898304
+    branch: 79.28571428571429
+    functional: 100.0
+    combined: 77.61501210653753
+  delta:
+    line: 0.0
+    branch: 0.7142857142857224
+    functional: 16.67
+  reward: 0.036554285714285754
+  reward_clamped: 0.036554285714285754
+  policy_after:
+    msg_len_profile:
+      zero: 0.08143984228741388
+      short: 0.5163882564334812
+      medium: 0.27287361565083573
+      long: 0.12929828562826934
+    intr_pattern:
+      none: 0.3290205036078714
+      enable: 0.24276973311296182
+      test: 0.21155168146410547
+      both: 0.21665808181506144
+    burst_count:
+      '1': 0.34944712499620434
+      '2': 0.36770652605995874
+      '3': 0.18226312932008076
+      '4': 0.10058321962375602
+    chunking:
+      '1': 0.3207320589916911
+      '4': 0.2779800160017916
+      '8': 0.17715672896912477
+      '16': 0.22413119603739246
+  focus_targets_after: []
+- iteration: 3
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: zero
+    intr_pattern: both
+    burst_count: '2'
+    chunking: '1'
+  coverage:
+    line: 50.50847457627118
+    branch: 70.71428571428571
+    functional: 66.67
+    combined: 62.6309200968523
+  delta:
+    line: 0.0
+    branch: 0.0
+    functional: 0.0
+  reward: 0.0
+  reward_clamped: 0.0
+  policy_after:
+    msg_len_profile:
+      zero: 0.07271414489947668
+      short: 0.4967752289584653
+      medium: 0.279351442545389
+      long: 0.15115918359666905
+    intr_pattern:
+      none: 0.3290205036078714
+      enable: 0.24276973311296182
+      test: 0.21155168146410547
+      both: 0.21665808181506144
+    burst_count:
+      '1': 0.3494471249962044
+      '2': 0.3677065260599588
+      '3': 0.1822631293200808
+      '4': 0.10058321962375603
+    chunking:
+      '1': 0.3207320589916911
+      '4': 0.2779800160017916
+      '8': 0.17715672896912477
+      '16': 0.22413119603739246
+  focus_targets_after:
+  - hmac.func.msg_len_bucket:0/1
+  - hmac.func.msg_len_nonzero:0/1
+  - covered_bins:4/6
+- iteration: 4
+  focus_target: hmac.func.msg_len_bucket:0/1
+  selected_knobs:
+    msg_len_profile: short
+    intr_pattern: test
+    burst_count: '2'
+    chunking: '8'
+  coverage:
+    line: 51.52542372881356
+    branch: 75.71428571428571
+    functional: 83.33
+    combined: 70.18990314769975
+  delta:
+    line: 1.0169491525423737
+    branch: 5.0
+    functional: 16.659999999999997
+  reward: 0.059379322033898306
+  reward_clamped: 0.059379322033898306
+  policy_after:
+    msg_len_profile:
+      zero: 0.07127263122748709
+      short: 0.5021118439497974
+      medium: 0.27717634350304826
+      long: 0.14943918131966732
+    intr_pattern:
+      none: 0.29166881596340244
+      enable: 0.21493259214683053
+      test: 0.24812577834471478
+      both: 0.24527281354505218
+    burst_count:
+      '1': 0.34702317849139436
+      '2': 0.3735013492900512
+      '3': 0.1804327045791636
+      '4': 0.09904276763939078
+    chunking:
+      '1': 0.3184100541623171
+      '4': 0.27580978567608805
+      '8': 0.1836280251547857
+      '16': 0.22215213500680928
+  focus_targets_after:
+  - hmac.func.intr_write_kind:1/2
+  - covered_bins:5/6
+- iteration: 5
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: long
+    intr_pattern: test
+    burst_count: '2'
+    chunking: '1'
+  coverage:
+    line: 53.559322033898304
+    branch: 78.57142857142857
+    functional: 83.33
+    combined: 71.82025020177564
+  delta:
+    line: 2.0338983050847474
+    branch: 2.857142857142861
+    functional: 0.0
+  reward: 0.019975786924939492
+  reward_clamped: 0.019975786924939492
+  policy_after:
+    msg_len_profile:
+      zero: 0.07078827240221083
+      short: 0.5011117221520606
+      medium: 0.27644549478653657
+      long: 0.15165451065919203
+    intr_pattern:
+      none: 0.2597505519001033
+      enable: 0.19131808589117724
+      test: 0.27698479351185623
+      both: 0.2719465686968631
+    burst_count:
+      '1': 0.3462087152612387
+      '2': 0.3754484510255049
+      '3': 0.17981766887433845
+      '4': 0.09852516483891799
+    chunking:
+      '1': 0.32042310637138766
+      '4': 0.27508057288292326
+      '8': 0.1830091642920144
+      '16': 0.2214871564536747
+  focus_targets_after:
+  - hmac.func.intr_write_kind:1/2
+  - covered_bins:5/6
+- iteration: 6
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: medium
+    intr_pattern: test
+    burst_count: '1'
+    chunking: '4'
+  coverage:
+    line: 53.559322033898304
+    branch: 77.14285714285714
+    functional: 83.33
+    combined: 71.34405972558515
+  delta:
+    line: 0.0
+    branch: 0.0
+    functional: 0.0
+  reward: 0.0
+  reward_clamped: 0.0
+  policy_after:
+    msg_len_profile:
+      zero: 0.07078827240221083
+      short: 0.5011117221520606
+      medium: 0.27644549478653657
+      long: 0.15165451065919203
+    intr_pattern:
+      none: 0.23192013562509228
+      enable: 0.17081971954569397
+      test: 0.3008792799213002
+      both: 0.29638086490791354
+    burst_count:
+      '1': 0.3462087152612387
+      '2': 0.3754484510255049
+      '3': 0.17981766887433845
+      '4': 0.09852516483891799
+    chunking:
+      '1': 0.32042310637138766
+      '4': 0.27508057288292326
+      '8': 0.1830091642920144
+      '16': 0.2214871564536747
+  focus_targets_after:
+  - hmac.func.intr_write_kind:1/2
+  - covered_bins:5/6
+- iteration: 7
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: short
+    intr_pattern: both
+    burst_count: '2'
+    chunking: '4'
+  coverage:
+    line: 51.52542372881356
+    branch: 76.42857142857143
+    functional: 100.0
+    combined: 75.98466505246166
+  delta:
+    line: 0.0
+    branch: 0.0
+    functional: 16.67
+  reward: 0.03334
+  reward_clamped: 0.03334
+  policy_after:
+    msg_len_profile:
+      zero: 0.06998148144672481
+      short: 0.504104112285844
+      medium: 0.2752281284384083
+      long: 0.15068627782902286
+    intr_pattern:
+      none: 0.2307916599884514
+      enable: 0.16981322517006378
+      test: 0.2996131338084298
+      both: 0.29978198103305503
+    burst_count:
+      '1': 0.3448520731740613
+      '2': 0.3786917161165853
+      '3': 0.17879321093518372
+      '4': 0.09766299977416974
+    chunking:
+      '1': 0.31911794283853345
+      '4': 0.27852421304714375
+      '8': 0.1819783348310184
+      '16': 0.22037950928330438
+  focus_targets_after: []
+- iteration: 8
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: medium
+    intr_pattern: both
+    burst_count: '1'
+    chunking: '8'
+  coverage:
+    line: 53.559322033898304
+    branch: 77.85714285714286
+    functional: 100.0
+    combined: 77.13882163034705
+  delta:
+    line: 2.0338983050847474
+    branch: 1.4285714285714306
+    functional: 0.0
+  reward: 0.013547215496368052
+  reward_clamped: 0.013547215496368052
+  policy_after:
+    msg_len_profile:
+      zero: 0.06965392013682183
+      short: 0.5034239683967622
+      medium: 0.27662894118524634
+      long: 0.15029317028116962
+    intr_pattern:
+      none: 0.23033349303055706
+      enable: 0.16940458323642585
+      test: 0.2990990719235757
+      both: 0.30116285180944136
+    burst_count:
+      '1': 0.3461963392489139
+      '2': 0.3781134287605686
+      '3': 0.17837727570164125
+      '4': 0.09731295628887635
+    chunking:
+      '1': 0.31858803967892035
+      '4': 0.2780272790094598
+      '8': 0.18345488252094025
+      '16': 0.21992979879067961
+  focus_targets_after: []
+- iteration: 9
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: short
+    intr_pattern: both
+    burst_count: '2'
+    chunking: '4'
+  coverage:
+    line: 53.559322033898304
+    branch: 79.28571428571429
+    functional: 100.0
+    combined: 77.61501210653753
+  delta:
+    line: 0.0
+    branch: 1.4285714285714306
+    functional: 0.0
+  reward: 0.006428571428571438
+  reward_clamped: 0.006428571428571438
+  policy_after:
+    msg_len_profile:
+      zero: 0.06949854212771543
+      short: 0.5040009965837942
+      medium: 0.27639376073467725
+      long: 0.15010670055381317
+    intr_pattern:
+      none: 0.23011616251073153
+      enable: 0.1692107448062863
+      test: 0.29885522776429524
+      both: 0.30181786491868706
+    burst_count:
+      '1': 0.3459343360050262
+      '2': 0.3787387723769374
+      '3': 0.17817997771023872
+      '4': 0.09714691390779762
+    chunking:
+      '1': 0.31833668124472597
+      '4': 0.27869121239896305
+      '8': 0.18325562677918258
+      '16': 0.21971647957712845
+  focus_targets_after: []
+- iteration: 10
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: medium
+    intr_pattern: test
+    burst_count: '2'
+    chunking: '16'
+  coverage:
+    line: 53.559322033898304
+    branch: 78.57142857142857
+    functional: 83.33
+    combined: 71.82025020177564
+  delta:
+    line: 0.0
+    branch: 0.0
+    functional: 0.0
+  reward: 0.0
+  reward_clamped: 0.0
+  policy_after:
+    msg_len_profile:
+      zero: 0.06949854212771543
+      short: 0.5040009965837942
+      medium: 0.27639376073467725
+      long: 0.15010670055381317
+    intr_pattern:
+      none: 0.2054608593845817
+      enable: 0.1510810221484699
+      test: 0.3204064533609779
+      both: 0.32305166510597055
+    burst_count:
+      '1': 0.3459343360050262
+      '2': 0.3787387723769374
+      '3': 0.17817997771023872
+      '4': 0.09714691390779762
+    chunking:
+      '1': 0.31833668124472597
+      '4': 0.27869121239896305
+      '8': 0.18325562677918258
+      '16': 0.21971647957712845
+  focus_targets_after:
+  - hmac.func.intr_write_kind:1/2
+  - covered_bins:5/6
+- iteration: 11
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: medium
+    intr_pattern: test
+    burst_count: '2'
+    chunking: '4'
+  coverage:
+    line: 53.559322033898304
+    branch: 78.57142857142857
+    functional: 83.33
+    combined: 71.82025020177564
+  delta:
+    line: 0.0
+    branch: 0.0
+    functional: 0.0
+  reward: 0.0
+  reward_clamped: 0.0
+  policy_after:
+    msg_len_profile:
+      zero: 0.06949854212771543
+      short: 0.5040009965837942
+      medium: 0.27639376073467725
+      long: 0.15010670055381317
+    intr_pattern:
+      none: 0.18344719587909078
+      enable: 0.13489376977541956
+      test: 0.33964861907230165
+      both: 0.342010415273188
+    burst_count:
+      '1': 0.3459343360050262
+      '2': 0.3787387723769374
+      '3': 0.17817997771023872
+      '4': 0.09714691390779762
+    chunking:
+      '1': 0.31833668124472597
+      '4': 0.27869121239896305
+      '8': 0.18325562677918258
+      '16': 0.21971647957712845
+  focus_targets_after:
+  - hmac.func.intr_write_kind:1/2
+  - covered_bins:5/6
+- iteration: 12
+  focus_target: hmac.func.intr_write_kind:1/2
+  selected_knobs:
+    msg_len_profile: short
+    intr_pattern: both
+    burst_count: '3'
+    chunking: '4'
+  coverage:
+    line: 51.52542372881356
+    branch: 76.42857142857143
+    functional: 100.0
+    combined: 75.98466505246166
+  delta:
+    line: 0.0
+    branch: 0.0
+    functional: 16.67
+  reward: 0.03334
+  reward_clamped: 0.03334
+  policy_after:
+    msg_len_profile:
+      zero: 0.06869432599798905
+      short: 0.5069876185516434
+      medium: 0.2751764976687407
+      long: 0.1491415577816268
+    intr_pattern:
+      none: 0.18241549192903594
+      enable: 0.13395899819542942
+      test: 0.33830507360306605
+      both: 0.34532043627246856
+    burst_count:
+      '1': 0.3445782416903488
+      '2': 0.3773171870759107
+      '3': 0.18181707084172694
+      '4': 0.09628750039201343
+    chunking:
+      '1': 0.31703568306432406
+      '4': 0.2821276442593866
+      '8': 0.18222430527890268
+      '16': 0.2186123673973867
+  focus_targets_after: []

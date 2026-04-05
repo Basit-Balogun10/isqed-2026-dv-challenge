@@ -1,0 +1,22 @@
+{
+  "seed": 283680779,
+  "iteration": 5,
+  "target_cycles": 8333,
+  "focus_target": "baseline:uniform_random",
+  "selected_knobs": {
+    "msg_len_profile": "short",
+    "intr_pattern": "none",
+    "burst_count": "1",
+    "chunking": "4"
+  },
+  "transactions": [
+    {
+      "id": 0,
+      "msg_len": 1,
+      "intr_pattern": "none",
+      "chunking": 4,
+      "tx_seed": 181489190,
+      "pattern": "incremental"
+    }
+  ]
+}

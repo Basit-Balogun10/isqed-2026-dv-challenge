@@ -1,0 +1,7 @@
+functional_coverage: 100.00
+covered_bins: 6/6
+hmac.func.cfg_sha_enabled: 1/1
+hmac.func.cfg_hmac_disabled: 1/1
+hmac.func.intr_write_kind: 2/2
+hmac.func.msg_len_nonzero: 1/1
+hmac.func.msg_len_bucket: 1/1

@@ -22,12 +22,14 @@ if [[ -n "$REPO_PATH" ]]; then
   MASTER_TASK13_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-1.3/prompts.md"
   MASTER_TASK14_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-1.4/prompts.md"
   MASTER_TASK22_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-2.2/prompts.md"
+  MASTER_TASK23_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-2.3/prompts.md"
 else
   MASTER_TASK11_URL="(unable to derive from origin remote)"
   MASTER_TASK12_URL="(unable to derive from origin remote)"
   MASTER_TASK13_URL="(unable to derive from origin remote)"
   MASTER_TASK14_URL="(unable to derive from origin remote)"
   MASTER_TASK22_URL="(unable to derive from origin remote)"
+  MASTER_TASK23_URL="(unable to derive from origin remote)"
 fi
 
 TMP11="/tmp/task11-prompt-chunks"
@@ -35,8 +37,9 @@ TMP12="/tmp/task12-prompt-chunks"
 TMP13="/tmp/task13-prompt-chunks"
 TMP14="/tmp/task14-prompt-chunks"
 TMP22="/tmp/task22-prompt-chunks"
-rm -rf "$TMP11" "$TMP12" "$TMP13" "$TMP14" "$TMP22"
-mkdir -p "$TMP11/raw" "$TMP12/raw" "$TMP13/raw" "$TMP14/raw" "$TMP22/raw"
+TMP23="/tmp/task23-prompt-chunks"
+rm -rf "$TMP11" "$TMP12" "$TMP13" "$TMP14" "$TMP22" "$TMP23"
+mkdir -p "$TMP11/raw" "$TMP12/raw" "$TMP13/raw" "$TMP14/raw" "$TMP22/raw" "$TMP23/raw"
 
 # Split full transcripts into six readable chunks each.
 split -l 1500 -d -a 2 submissions/task-1.1/prompts.md "$TMP11/raw/chunk_"
@@ -57,6 +60,14 @@ TASK22_CHUNK_SIZE=$(( (TASK22_LINES + 5) / 6 ))
 split -l "$TASK22_CHUNK_SIZE" -d -a 2 submissions/task-2.2/prompts.md "$TMP22/raw/chunk_"
 for i in 00 01 02 03 04 05; do
   [[ -f "$TMP22/raw/chunk_${i}" ]] || : > "$TMP22/raw/chunk_${i}"
+done
+
+# Task 2.3 dynamic chunking into six segments.
+TASK23_LINES="$(wc -l < submissions/task-2.3/prompts.md)"
+TASK23_CHUNK_SIZE=$(( (TASK23_LINES + 5) / 6 ))
+split -l "$TASK23_CHUNK_SIZE" -d -a 2 submissions/task-2.3/prompts.md "$TMP23/raw/chunk_"
+for i in 00 01 02 03 04 05; do
+  [[ -f "$TMP23/raw/chunk_${i}" ]] || : > "$TMP23/raw/chunk_${i}"
 done
 
 # Task 1.1 chunk labels.
@@ -209,6 +220,36 @@ Why the original file is not duplicated here:
 6. 06_final_audit_and_submission_signoff.md
 EOF
 
+# Task 2.3 chunk labels.
+cp "$TMP23/raw/chunk_00" "$TMP23/01_task23_audit_and_requirements.md"
+cp "$TMP23/raw/chunk_01" "$TMP23/02_strategy_selection_b_plus_c.md"
+cp "$TMP23/raw/chunk_02" "$TMP23/03_cdg_architecture_and_interfaces.md"
+cp "$TMP23/raw/chunk_03" "$TMP23/04_loop_execution_and_coverage_parsing.md"
+cp "$TMP23/raw/chunk_04" "$TMP23/05_packaging_and_compliance_automation.md"
+cp "$TMP23/raw/chunk_05" "$TMP23/06_validation_and_signoff.md"
+
+cat > "$TMP23/README.md" <<EOF
+# Prompt Evidence Index - Task 2.3
+
+This directory contains the full contents of submissions/task-2.3/prompts.md,
+split into six files for easier judge navigation.
+
+Master/original transcript source:
+- submissions/task-2.3/prompts.md
+- ${MASTER_TASK23_URL}
+
+Why the original file is not duplicated here:
+- These six chunk files already contain the entire transcript content.
+- Avoiding a second full copy keeps submission payloads minimal.
+
+1. 01_task23_audit_and_requirements.md
+2. 02_strategy_selection_b_plus_c.md
+3. 03_cdg_architecture_and_interfaces.md
+4. 04_loop_execution_and_coverage_parsing.md
+5. 05_packaging_and_compliance_automation.md
+6. 06_validation_and_signoff.md
+EOF
+
 # Replace prompts for all Task 1.1 DUT submissions.
 for dut in aegis_aes rampart_i2c sentinel_hmac; do
   dst="submissions/task-1.1/submission-1.1-${dut}/prompts"
@@ -247,4 +288,10 @@ for dut in aegis_aes sentinel_hmac rampart_i2c warden_timer; do
   cp "$TMP22"/*.md "$dst"/
 done
 
-echo "Prompt evidence regenerated for Task 1.1, Task 1.2, Task 1.3, Task 1.4, and Task 2.2 submissions."
+# Replace prompts for Task 2.3 submission.
+dst="submissions/task-2.3/submission-2.3/prompts"
+mkdir -p "$dst"
+find "$dst" -mindepth 1 -maxdepth 1 -type f -delete
+cp "$TMP23"/*.md "$dst"/
+
+echo "Prompt evidence regenerated for Task 1.1, Task 1.2, Task 1.3, Task 1.4, Task 2.2, and Task 2.3 submissions."

@@ -1,0 +1,22 @@
+{
+  "seed": 1899032998,
+  "iteration": 7,
+  "target_cycles": 8333,
+  "focus_target": "hmac.func.intr_write_kind:1/2",
+  "selected_knobs": {
+    "msg_len_profile": "medium",
+    "intr_pattern": "both",
+    "burst_count": "1",
+    "chunking": "8"
+  },
+  "transactions": [
+    {
+      "id": 0,
+      "msg_len": 48,
+      "intr_pattern": "both",
+      "chunking": 8,
+      "tx_seed": 305828639,
+      "pattern": "alternating"
+    }
+  ]
+}

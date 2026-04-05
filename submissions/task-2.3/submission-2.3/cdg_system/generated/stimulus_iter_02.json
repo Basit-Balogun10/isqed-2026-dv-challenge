@@ -1,0 +1,30 @@
+{
+  "seed": 1729016177,
+  "iteration": 2,
+  "target_cycles": 8333,
+  "focus_target": "hmac.func.intr_write_kind:1/2",
+  "selected_knobs": {
+    "msg_len_profile": "zero",
+    "intr_pattern": "both",
+    "burst_count": "2",
+    "chunking": "1"
+  },
+  "transactions": [
+    {
+      "id": 0,
+      "msg_len": 0,
+      "intr_pattern": "both",
+      "chunking": 1,
+      "tx_seed": 853017879,
+      "pattern": "alternating"
+    },
+    {
+      "id": 1,
+      "msg_len": 0,
+      "intr_pattern": "both",
+      "chunking": 1,
+      "tx_seed": 746589541,
+      "pattern": "alternating"
+    }
+  ]
+}
