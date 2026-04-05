@@ -1,0 +1,25 @@
+priority:
+  - rank: 1
+    bucket_id: 5
+    severity: "critical"
+    rationale: "Digest corruption invalidates cryptographic outputs for multi-block messages; this is a functional correctness blocker for security use-cases and can propagate silent trust failures."
+
+  - rank: 2
+    bucket_id: 1
+    severity: "critical"
+    rationale: "RX path corruption in nexus_uart affects data integrity, framing, and parity behavior across multiple receive scenarios, making serial communication unreliable."
+
+  - rank: 3
+    bucket_id: 4
+    severity: "high"
+    rationale: "Masked GPIO writes failing to update outputs break pin-control determinism in both lower and upper banks, impacting many board-level control functions."
+
+  - rank: 4
+    bucket_id: 3
+    severity: "high"
+    rationale: "SPI CPHA edge misselection causes stale-bit capture and multi-byte RX mismatches in affected mode configurations, degrading protocol interoperability."
+
+  - rank: 5
+    bucket_id: 2
+    severity: "medium"
+    rationale: "Watchdog bark/bite off-by-one is a timing-precision defect; impactful for strict timeout semantics but less catastrophic than data corruption classes above."

@@ -1,0 +1,6 @@
+team_name: "GitHub Copilot (Agentic AI)"
+task_id: "3.3"
+simulator: "verilator"
+timestamp: "2026-04-05T23:30:00Z"
+python_version: "3.11"
+cocotb_version: "1.9+"

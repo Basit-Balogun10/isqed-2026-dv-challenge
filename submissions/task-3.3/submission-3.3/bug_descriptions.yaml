@@ -1,0 +1,44 @@
+bugs:
+  - bucket_id: 1
+    root_cause: |
+      RX oversampling in nexus_uart computes the oversampling divisor by truncating
+      ctrl_baud_divisor via right-shift without proper rounding/minimum handling.
+      The resulting phase error accumulates and shifts sampling points, producing
+      data-bit corruption, stop-bit failures, and spurious parity/monitor errors in
+      high-speed and mismatch baud scenarios.
+    affected_module: "nexus_uart"
+    affected_lines: "456-466"
+
+  - bucket_id: 2
+    root_cause: |
+      Watchdog bark/bite expiration logic compares wd_count_q against thresholds
+      using >=, so bark/bite triggers when count equals threshold rather than after
+      the intended full interval. This creates a systematic one-cycle early interrupt
+      across threshold and boundary tests.
+    affected_module: "warden_timer"
+    affected_lines: "124-131"
+
+  - bucket_id: 3
+    root_cause: |
+      In CPHA=1 mode, citadel_spi assigns sample_edge/output_edge to the wrong clock
+      edges (sample on leading instead of trailing). This causes stale or misaligned
+      bit capture and propagates into full-byte and burst RX mismatches.
+    affected_module: "citadel_spi"
+    affected_lines: "162-171"
+
+  - bucket_id: 4
+    root_cause: |
+      bastion_gpio masked output write paths (ADDR_MASKED_OUT_LOWER/UPPER) gate each
+      per-bit update with TL-UL byte-enable checks in a way that suppresses valid
+      masked writes. As a result, DATA_OUT and gpio_o fail to reflect intended
+      transactions under masked-write stress.
+    affected_module: "bastion_gpio"
+    affected_lines: "215-230"
+
+  - bucket_id: 5
+    root_cause: |
+      sentinel_hmac padding logic places the 64-bit message length field with incorrect
+      byte/word ordering during PAD_LENGTH construction. For multi-block messages this
+      breaks final block semantics and produces deterministic digest mismatches.
+    affected_module: "sentinel_hmac"
+    affected_lines: "310-323"
