@@ -1,0 +1,177 @@
+{
+  "nexus_uart": {
+    "line_coverage": 60.08,
+    "branch_coverage": 14.49,
+    "line_total": 471,
+    "line_hit": 283,
+    "branch_total": 2470,
+    "branch_hit": 358,
+    "top_uncovered": [
+      {
+        "file": "duts/nexus_uart/nexus_uart.sv",
+        "uncovered_lines": 188,
+        "ranges": [
+          "523-533",
+          "587-595",
+          "110-116",
+          "92-97",
+          "401-406",
+          "545-550",
+          "61-65",
+          "422-426"
+        ]
+      }
+    ],
+    "status": "ok"
+  },
+  "bastion_gpio": {
+    "line_coverage": 73.21,
+    "branch_coverage": 13.77,
+    "line_total": 209,
+    "line_hit": 153,
+    "branch_total": 2287,
+    "branch_hit": 315,
+    "top_uncovered": [
+      {
+        "file": "duts/bastion_gpio/bastion_gpio.sv",
+        "uncovered_lines": 56,
+        "ranges": [
+          "42-48",
+          "57-61",
+          "18-21",
+          "217-220",
+          "224-227",
+          "50-52",
+          "23-24",
+          "54-55"
+        ]
+      }
+    ],
+    "status": "ok"
+  },
+  "warden_timer": {
+    "line_coverage": 71.28,
+    "branch_coverage": 20.66,
+    "line_total": 289,
+    "line_hit": 206,
+    "branch_total": 2246,
+    "branch_hit": 464,
+    "top_uncovered": [
+      {
+        "file": "duts/warden_timer/warden_timer.sv",
+        "uncovered_lines": 83,
+        "ranges": [
+          "56-65",
+          "49-54",
+          "293-297",
+          "69-72",
+          "92-95",
+          "250-253",
+          "257-260",
+          "316-319"
+        ]
+      }
+    ],
+    "status": "ok"
+  },
+  "citadel_spi": {
+    "line_coverage": 57.17,
+    "branch_coverage": 22.08,
+    "line_total": 614,
+    "line_hit": 351,
+    "branch_total": 2197,
+    "branch_hit": 485,
+    "top_uncovered": [
+      {
+        "file": "duts/citadel_spi/citadel_spi.sv",
+        "uncovered_lines": 263,
+        "ranges": [
+          "126-141",
+          "105-114",
+          "757-765",
+          "96-103",
+          "452-459",
+          "773-780",
+          "788-795",
+          "659-664"
+        ]
+      }
+    ],
+    "status": "ok"
+  },
+  "aegis_aes": {
+    "line_coverage": 34.33,
+    "branch_coverage": 8.11,
+    "line_total": 533,
+    "line_hit": 183,
+    "branch_total": 4278,
+    "branch_hit": 347,
+    "top_uncovered": [
+      {
+        "file": "duts/aegis_aes/aegis_aes.sv",
+        "uncovered_lines": 350,
+        "ranges": [
+          "96-162",
+          "28-92",
+          "530-546",
+          "384-398",
+          "269-280",
+          "456-466",
+          "211-219",
+          "237-245"
+        ]
+      }
+    ],
+    "status": "ok"
+  },
+  "sentinel_hmac": {
+    "line_coverage": 47.49,
+    "branch_coverage": 6.58,
+    "line_total": 537,
+    "line_hit": 255,
+    "branch_total": 5001,
+    "branch_hit": 329,
+    "top_uncovered": [
+      {
+        "file": "duts/sentinel_hmac/sentinel_hmac.sv",
+        "uncovered_lines": 282,
+        "ranges": [
+          "45-77",
+          "542-558",
+          "730-741",
+          "29-39",
+          "307-315",
+          "346-353",
+          "746-753",
+          "764-771"
+        ]
+      }
+    ],
+    "status": "ok"
+  },
+  "rampart_i2c": {
+    "line_coverage": 49.33,
+    "branch_coverage": 23.49,
+    "line_total": 973,
+    "line_hit": 480,
+    "branch_total": 2375,
+    "branch_hit": 558,
+    "top_uncovered": [
+      {
+        "file": "duts/rampart_i2c/rampart_i2c.sv",
+        "uncovered_lines": 493,
+        "ranges": [
+          "748-775",
+          "953-970",
+          "851-867",
+          "1118-1133",
+          "1090-1103",
+          "1205-1218",
+          "793-805",
+          "1062-1072"
+        ]
+      }
+    ],
+    "status": "ok"
+  }
+}

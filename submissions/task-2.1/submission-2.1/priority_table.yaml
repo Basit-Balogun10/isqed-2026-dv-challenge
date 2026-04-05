@@ -1,0 +1,222 @@
+priorities:
+- rank: 1
+  dut: aegis_aes
+  gap: GAP-018:sbox_inverse_lookup_space
+  severity: critical
+  difficulty: hard
+  estimated_coverage_gain: 6-10% line + branch in module
+  test_intent: Expand CBC/ECB decrypt regressions with randomized ciphertext/key sets to drive inverse
+    substitution diversity.
+- rank: 2
+  dut: aegis_aes
+  gap: GAP-017:sbox_forward_lookup_space
+  severity: critical
+  difficulty: hard
+  estimated_coverage_gain: 6-10% line + branch in module
+  test_intent: Use coverage-directed plaintext/key generation to maximize S-box input diversity during
+    encryption rounds.
+- rank: 3
+  dut: rampart_i2c
+  gap: GAP-025:host_addr_shift_and_arbitration
+  severity: critical
+  difficulty: hard
+  estimated_coverage_gain: 6-10% line + branch in module
+  test_intent: Run multi-master contention scenarios to trigger host arbitration loss during address transmission.
+- rank: 4
+  dut: sentinel_hmac
+  gap: GAP-021:sha_done_transition_mux
+  severity: critical
+  difficulty: hard
+  estimated_coverage_gain: 6-10% line + branch in module
+  test_intent: Create directed sequences for every ST_SHA_DONE_BLOCK return path (plain SHA, HMAC inner,
+    HMAC outer).
+- rank: 5
+  dut: rampart_i2c
+  gap: GAP-028:target_clock_stretch_release
+  severity: critical
+  difficulty: hard
+  estimated_coverage_gain: 6-10% line + branch in module
+  test_intent: 'Force target clock stretching and validate both release paths: TX data arrival and ACQ
+    space availability.'
+- rank: 6
+  dut: rampart_i2c
+  gap: GAP-027:host_repeated_start_timing
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Generate repeated-start command sequences and validate timing counters for tsu_sta/thd_sta
+    transitions.
+- rank: 7
+  dut: aegis_aes
+  gap: GAP-019:key_expansion_roundkey_cases
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Drive full key expansion through all round-key indices and validate generated keys against
+    software model.
+- rank: 8
+  dut: rampart_i2c
+  gap: GAP-026:host_write_ack_command_chaining
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Exercise write-ack branch fanout including restart, read-command follow-up, and additional
+    write commands.
+- rank: 9
+  dut: citadel_spi
+  gap: GAP-013:active_command_context
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Issue command segments across TX/RX/BIDIR directions, speed modes, and CSAAT settings to
+    validate active command bookkeeping.
+- rank: 10
+  dut: sentinel_hmac
+  gap: GAP-022:block_source_select_hmac_paths
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Exercise all SHA block source selections and verify injected block contents for each HMAC
+    stage.
+- rank: 11
+  dut: nexus_uart
+  gap: GAP-001:rx_oversample_start_path
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Drive randomized baud divisors with phase-offset start bits and verify RX state transitions
+    and sampled data alignment.
+- rank: 12
+  dut: aegis_aes
+  gap: GAP-020:cbc_iv_control_programming
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Exercise mode/op/control permutations and verify IV updates for CBC encrypt/decrypt across
+    consecutive blocks.
+- rank: 13
+  dut: nexus_uart
+  gap: GAP-002:rx_stop2_and_error_latch
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Exercise 2-stop-bit mode with bad stop levels and near-full RX FIFO to validate frame-error
+    and overflow behavior.
+- rank: 14
+  dut: citadel_spi
+  gap: GAP-015:data_transfer_bit_edge_logic
+  severity: high
+  difficulty: hard
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Execute transfers in all SPI modes and verify sample/output edge behavior at bit boundaries.
+- rank: 15
+  dut: citadel_spi
+  gap: GAP-014:command_decode_write_path
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Drive command writes that exercise valid and invalid direction/length combinations under
+    FIFO pressure.
+- rank: 16
+  dut: sentinel_hmac
+  gap: GAP-023:sha_round_pipeline_update
+  severity: high
+  difficulty: hard
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Stress SHA round pipeline with varied message block patterns and verify state register
+    evolution per round.
+- rank: 17
+  dut: warden_timer
+  gap: GAP-009:watchdog_lock_gating
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Lock watchdog control and verify subsequent writes cannot disable lock or mutate protected
+    control fields.
+- rank: 18
+  dut: bastion_gpio
+  gap: GAP-006:masked_out_lower_update
+  severity: high
+  difficulty: easy
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Validate masked lower-half writes with sparse and dense mask patterns while preserving
+    untouched bits.
+- rank: 19
+  dut: bastion_gpio
+  gap: GAP-007:masked_out_upper_update
+  severity: high
+  difficulty: easy
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Exercise MASKED_OUT_UPPER with mixed masks and verify independent control of upper 16 output
+    bits.
+- rank: 20
+  dut: warden_timer
+  gap: GAP-010:watchdog_bark_threshold_bytes
+  severity: high
+  difficulty: medium
+  estimated_coverage_gain: 4-7% line + branch in module
+  test_intent: Use partial TL-UL masks to program bark threshold bytes and check bark interrupt timing
+    consistency.
+- rank: 21
+  dut: sentinel_hmac
+  gap: GAP-024:status_and_error_read_decode
+  severity: medium
+  difficulty: easy
+  estimated_coverage_gain: 2-4% line in module
+  test_intent: Issue valid and invalid CSR reads during idle/busy states and validate returned data plus
+    error flag behavior.
+- rank: 22
+  dut: citadel_spi
+  gap: GAP-016:segment_chaining_csaat
+  severity: medium
+  difficulty: medium
+  estimated_coverage_gain: 2-4% line in module
+  test_intent: Run long CSAAT command chains and verify continuous chip-select behavior across segment
+    boundaries.
+- rank: 23
+  dut: bastion_gpio
+  gap: GAP-005:interrupt_mode_register_bank
+  severity: medium
+  difficulty: easy
+  estimated_coverage_gain: 2-4% line in module
+  test_intent: Program all edge/level interrupt control banks and confirm each mode can independently
+    assert per-pin interrupts.
+- rank: 24
+  dut: nexus_uart
+  gap: GAP-003:tx_parity_branch_select
+  severity: medium
+  difficulty: easy
+  estimated_coverage_gain: 2-4% line in module
+  test_intent: Run directed TX bursts in parity disabled/even/odd modes and verify transmitted parity
+    bit policy.
+- rank: 25
+  dut: nexus_uart
+  gap: GAP-004:tx_stop_bit_mode_select
+  severity: medium
+  difficulty: easy
+  estimated_coverage_gain: 2-4% line in module
+  test_intent: Toggle stop-bit configuration and confirm stop-bit count on the serial line for consecutive
+    frames.
+- rank: 26
+  dut: warden_timer
+  gap: GAP-011:mtimecmp1_low_partial_write
+  severity: medium
+  difficulty: easy
+  estimated_coverage_gain: 2-4% line in module
+  test_intent: Program MTIMECMP1 low word via masked writes and verify timer1 expiry behavior follows
+    merged value.
+- rank: 27
+  dut: warden_timer
+  gap: GAP-012:mtimecmp1_high_partial_write
+  severity: medium
+  difficulty: easy
+  estimated_coverage_gain: 2-4% line in module
+  test_intent: Apply partial high-word writes and validate 64-bit compare behavior around rollover boundaries.
+- rank: 28
+  dut: bastion_gpio
+  gap: GAP-008:input_synchronizer_pipeline
+  severity: medium
+  difficulty: medium
+  estimated_coverage_gain: 2-4% line in module
+  test_intent: Create back-to-back asynchronous GPIO transitions to validate q1/q2/prev synchronization
+    and edge detection latency.

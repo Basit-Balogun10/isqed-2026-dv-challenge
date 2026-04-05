@@ -11,15 +11,15 @@
 #
 # Usage:
 #   bash scripts/verify-readiness.sh
-#   bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4 --sim both
-#   bash scripts/verify-readiness.sh 1.1 1.2 1.3 1.4 --quick
+#   bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4,2.1 --sim both
+#   bash scripts/verify-readiness.sh 1.1 1.2 1.3 1.4 2.1 --quick
 #
 # Options:
 #   --tasks LIST                  Comma-separated tasks (e.g. 1.1,1.2)
 #   --sim {icarus|verilator|both} Simulator selection (default: both)
 #   --quick                       Skip long simulation checks where supported
 #   --skip-task-1.2-status        Skip optional task_1_2_status.py report for Task 1.2
-#   --timeout SECONDS             Forward timeout to Task 1.2 verifier
+#   --timeout SECONDS             Forward timeout to Task 1.2/1.3/1.4/2.1 verifiers
 #   -k, --keep-workdir            Keep temporary verification workdirs
 #   -h, --help                    Show usage
 
@@ -35,7 +35,25 @@ TIMEOUT=""
 TASKS=()
 
 usage() {
-  sed -n '1,45p' "$0" | sed 's/^# \{0,1\}//'
+  cat <<'EOF'
+verify-readiness.sh
+
+Generic task-driven readiness runner.
+
+Usage:
+  bash scripts/verify-readiness.sh
+  bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4,2.1 --sim both
+  bash scripts/verify-readiness.sh 1.1 1.2 1.3 1.4 2.1 --quick
+
+Options:
+  --tasks LIST                  Comma-separated tasks (e.g. 1.1,1.2)
+  --sim {icarus|verilator|both} Simulator selection (default: both)
+  --quick                       Skip long simulation checks where supported
+  --skip-task-1.2-status        Skip optional task_1_2_status.py report for Task 1.2
+  --timeout SECONDS             Forward timeout to Task 1.2/1.3/1.4/2.1 verifiers
+  -k, --keep-workdir            Keep temporary verification workdirs
+  -h, --help                    Show usage
+EOF
   exit "${1:-0}"
 }
 
@@ -82,7 +100,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ ${#TASKS[@]} -eq 0 ]]; then
-  TASKS=("1.1" "1.2" "1.3" "1.4")
+  TASKS=("1.1" "1.2" "1.3" "1.4" "2.1")
 fi
 
 if [[ "$SIM" != "icarus" && "$SIM" != "verilator" && "$SIM" != "both" ]]; then
@@ -119,7 +137,7 @@ for task in "${TASKS[@]}"; do
     fi
   fi
 
-  if [[ -n "$TIMEOUT" && ( "$task" == "1.2" || "$task" == "1.3" || "$task" == "1.4" ) ]]; then
+  if [[ -n "$TIMEOUT" && ( "$task" == "1.2" || "$task" == "1.3" || "$task" == "1.4" || "$task" == "2.1" ) ]]; then
     task_args+=(--timeout "$TIMEOUT")
   fi
 

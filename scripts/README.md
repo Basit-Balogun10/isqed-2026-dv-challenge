@@ -89,6 +89,24 @@ This directory contains the maintained automation scripts for submission packagi
         -   `source .venv/bin/activate`
         -   `bash scripts/verify-1.4-readiness.sh --sim both`
 
+## Task 2.1 Scripts
+
+-   `manage-2.1-submissions.sh`
+
+    -   Package, extract, verify, and report status for the Task 2.1 report submission.
+    -   Typical usage:
+        -   `bash scripts/manage-2.1-submissions.sh status`
+        -   `bash scripts/manage-2.1-submissions.sh package`
+        -   `bash scripts/manage-2.1-submissions.sh test-all`
+
+-   `verify-2.1-readiness.sh`
+    -   ZIP-first Task 2.1 readiness verification.
+    -   Packages and extracts the report ZIP, validates required report/evidence structure, checks YAML integrity, and (unless `--quick`) runs `make reports` from extracted content.
+    -   Typical usage:
+        -   `source .venv/bin/activate`
+        -   `bash scripts/verify-2.1-readiness.sh`
+        -   `bash scripts/verify-2.1-readiness.sh --quick`
+
 ## Unified Workflow
 
 -   `verify-readiness.sh`
@@ -97,8 +115,9 @@ This directory contains the maintained automation scripts for submission packagi
     -   Runs one or more per-task readiness scripts in sequence.
     -   Typical usage:
         -   `source .venv/bin/activate`
-        -   `bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4 --sim both`
+        -   `bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4,2.1 --sim both`
         -   `bash scripts/verify-readiness.sh 1.2 --sim icarus --quick`
+        -   `bash scripts/verify-readiness.sh 2.1 --quick`
 
 -   `docs/VERIFY_1_1_1_2_WORKFLOW.md`
     -   Manual command checklist version of the same flow.
