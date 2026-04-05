@@ -1,0 +1,15 @@
+failure_id: 10
+classification: "configuration_error"
+root_module: "i2c_driver"
+root_line_range: "N/A"
+root_cause: |
+  HOST_TIMEOUT_CTRL is programmed as 0x00000064, which sets timeout_val=100 but leaves
+  timeout_en=0 (bit 20), so timeout detection is not enabled by configuration. The checker then
+  expects a timeout interrupt and also inspects INTR_STATE[8] as host_timeout, while spec mapping
+  defines host_timeout at bit 15. This is a setup/expectation mismatch in verification flow,
+  not a confirmed DUT protocol violation from this log.
+suggested_fix: |
+  Program HOST_TIMEOUT_CTRL with timeout_en set (e.g., 0x00100064) before running stretch-timeout
+  checks, and align checker bit mapping to documented INTR_STATE definitions. Keep timeout test
+  assertions tied to the correct interrupt bit and enabled-state precondition.
+confidence: 0.96

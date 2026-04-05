@@ -23,6 +23,7 @@ if [[ -n "$REPO_PATH" ]]; then
   MASTER_TASK14_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-1.4/prompts.md"
   MASTER_TASK22_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-2.2/prompts.md"
   MASTER_TASK23_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-2.3/prompts.md"
+  MASTER_TASK31_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-3.1/prompts.md"
 else
   MASTER_TASK11_URL="(unable to derive from origin remote)"
   MASTER_TASK12_URL="(unable to derive from origin remote)"
@@ -30,6 +31,7 @@ else
   MASTER_TASK14_URL="(unable to derive from origin remote)"
   MASTER_TASK22_URL="(unable to derive from origin remote)"
   MASTER_TASK23_URL="(unable to derive from origin remote)"
+  MASTER_TASK31_URL="(unable to derive from origin remote)"
 fi
 
 TMP11="/tmp/task11-prompt-chunks"
@@ -38,8 +40,9 @@ TMP13="/tmp/task13-prompt-chunks"
 TMP14="/tmp/task14-prompt-chunks"
 TMP22="/tmp/task22-prompt-chunks"
 TMP23="/tmp/task23-prompt-chunks"
-rm -rf "$TMP11" "$TMP12" "$TMP13" "$TMP14" "$TMP22" "$TMP23"
-mkdir -p "$TMP11/raw" "$TMP12/raw" "$TMP13/raw" "$TMP14/raw" "$TMP22/raw" "$TMP23/raw"
+TMP31="/tmp/task31-prompt-chunks"
+rm -rf "$TMP11" "$TMP12" "$TMP13" "$TMP14" "$TMP22" "$TMP23" "$TMP31"
+mkdir -p "$TMP11/raw" "$TMP12/raw" "$TMP13/raw" "$TMP14/raw" "$TMP22/raw" "$TMP23/raw" "$TMP31/raw"
 
 # Split full transcripts into six readable chunks each.
 split -l 1500 -d -a 2 submissions/task-1.1/prompts.md "$TMP11/raw/chunk_"
@@ -68,6 +71,14 @@ TASK23_CHUNK_SIZE=$(( (TASK23_LINES + 5) / 6 ))
 split -l "$TASK23_CHUNK_SIZE" -d -a 2 submissions/task-2.3/prompts.md "$TMP23/raw/chunk_"
 for i in 00 01 02 03 04 05; do
   [[ -f "$TMP23/raw/chunk_${i}" ]] || : > "$TMP23/raw/chunk_${i}"
+done
+
+# Task 3.1 dynamic chunking into six segments.
+TASK31_LINES="$(wc -l < submissions/task-3.1/prompts.md)"
+TASK31_CHUNK_SIZE=$(( (TASK31_LINES + 5) / 6 ))
+split -l "$TASK31_CHUNK_SIZE" -d -a 2 submissions/task-3.1/prompts.md "$TMP31/raw/chunk_"
+for i in 00 01 02 03 04 05; do
+  [[ -f "$TMP31/raw/chunk_${i}" ]] || : > "$TMP31/raw/chunk_${i}"
 done
 
 # Task 1.1 chunk labels.
@@ -250,6 +261,36 @@ Why the original file is not duplicated here:
 6. 06_validation_and_signoff.md
 EOF
 
+# Task 3.1 chunk labels.
+cp "$TMP31/raw/chunk_00" "$TMP31/01_task31_audit_and_requirements.md"
+cp "$TMP31/raw/chunk_01" "$TMP31/02_log_taxonomy_and_triage_strategy.md"
+cp "$TMP31/raw/chunk_02" "$TMP31/03_root_cause_mapping_and_classification.md"
+cp "$TMP31/raw/chunk_03" "$TMP31/04_yaml_authoring_and_evidence_binding.md"
+cp "$TMP31/raw/chunk_04" "$TMP31/05_packaging_and_readiness_automation.md"
+cp "$TMP31/raw/chunk_05" "$TMP31/06_final_validation_and_signoff.md"
+
+cat > "$TMP31/README.md" <<EOF
+# Prompt Evidence Index - Task 3.1
+
+This directory contains the full contents of submissions/task-3.1/prompts.md,
+split into six files for easier judge navigation.
+
+Master/original transcript source:
+- submissions/task-3.1/prompts.md
+- ${MASTER_TASK31_URL}
+
+Why the original file is not duplicated here:
+- These six chunk files already contain the entire transcript content.
+- Avoiding a second full copy keeps submission payloads minimal.
+
+1. 01_task31_audit_and_requirements.md
+2. 02_log_taxonomy_and_triage_strategy.md
+3. 03_root_cause_mapping_and_classification.md
+4. 04_yaml_authoring_and_evidence_binding.md
+5. 05_packaging_and_readiness_automation.md
+6. 06_final_validation_and_signoff.md
+EOF
+
 # Replace prompts for all Task 1.1 DUT submissions.
 for dut in aegis_aes rampart_i2c sentinel_hmac; do
   dst="submissions/task-1.1/submission-1.1-${dut}/prompts"
@@ -294,4 +335,10 @@ mkdir -p "$dst"
 find "$dst" -mindepth 1 -maxdepth 1 -type f -delete
 cp "$TMP23"/*.md "$dst"/
 
-echo "Prompt evidence regenerated for Task 1.1, Task 1.2, Task 1.3, Task 1.4, Task 2.2, and Task 2.3 submissions."
+# Replace prompts for Task 3.1 submission.
+dst="submissions/task-3.1/submission-3.1/prompts"
+mkdir -p "$dst"
+find "$dst" -mindepth 1 -maxdepth 1 -type f -delete
+cp "$TMP31"/*.md "$dst"/
+
+echo "Prompt evidence regenerated for Task 1.1, Task 1.2, Task 1.3, Task 1.4, Task 2.2, Task 2.3, and Task 3.1 submissions."

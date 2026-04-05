@@ -1,0 +1,14 @@
+failure_id: 9
+classification: "testbench_bug"
+root_module: "timer_scoreboard"
+root_line_range: "N/A"
+root_cause: |
+  The spec defines bark interrupt assertion when watchdog counter reaches the configured bark
+  threshold (inclusive compare). The log shows bark at count 100 with threshold 100, which is
+  consistent with spec behavior. The failure is caused by scoreboard expectation of bark at 101,
+  i.e., an off-by-one checker expectation, not an RTL malfunction.
+suggested_fix: |
+  Correct scoreboard timing expectation to inclusive threshold semantics: bark should assert at
+  count == WATCHDOG_BARK_THRESH. Add a boundary regression that checks both threshold-1 and
+  threshold cycles explicitly.
+confidence: 0.99

@@ -1,0 +1,15 @@
+failure_id: 3
+classification: "testbench_bug"
+root_module: "gpio_scoreboard"
+root_line_range: "N/A"
+root_cause: |
+  The checker interprets INTR_STATE as an edge counter instead of a sticky interrupt-state bit.
+  In this DUT, INTR_STATE[0] latches once and remains set until software clears it (W1C).
+  During rapid toggling, expecting three separate interrupt counts without intermediate clears
+  over-constrains behavior and produces a false failure.
+suggested_fix: |
+  Update scoreboard intent: either clear INTR_STATE between expected edge events or count
+  edges from monitored GPIO transitions instead of reusing the sticky state bit as an event
+  counter. Keep DUT checks as level/sticky semantics for INTR_STATE and pulse semantics for
+  edge detector observability.
+confidence: 0.94

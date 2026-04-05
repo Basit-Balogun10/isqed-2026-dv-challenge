@@ -1,0 +1,15 @@
+failure_id: 2
+classification: "functional_bug"
+root_module: "nexus_uart"
+root_line_range: "316-333,577-610"
+root_cause: |
+  RX FIFO overflow protection fails at the full boundary in a sustained overflow scenario.
+  During the final scenario, entry 31 is expected to remain 0x8F but is replaced by 0xD1,
+  proving a drop-only overflow path is not consistently enforced. The issue is in the
+  RX_STOP/RX_STOP2 push decision versus full-detection boundary handling.
+suggested_fix: |
+  Add a saturating overflow guard at the exact push point so writes are blocked once full,
+  independent of transient state ordering. Add assertions that when rx_fifo_full is true,
+  rx_wptr and rx_fifo_mem are unchanged on overflow frames, and include a targeted
+  full+N-overflow regression to prevent recurrence.
+confidence: 0.80
