@@ -24,6 +24,7 @@ if [[ -n "$REPO_PATH" ]]; then
   MASTER_TASK22_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-2.2/prompts.md"
   MASTER_TASK23_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-2.3/prompts.md"
   MASTER_TASK31_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-3.1/prompts.md"
+  MASTER_TASK32_URL="https://github.com/${REPO_PATH}/blob/${BRANCH}/submissions/task-3.2/prompts.md"
 else
   MASTER_TASK11_URL="(unable to derive from origin remote)"
   MASTER_TASK12_URL="(unable to derive from origin remote)"
@@ -32,6 +33,7 @@ else
   MASTER_TASK22_URL="(unable to derive from origin remote)"
   MASTER_TASK23_URL="(unable to derive from origin remote)"
   MASTER_TASK31_URL="(unable to derive from origin remote)"
+  MASTER_TASK32_URL="(unable to derive from origin remote)"
 fi
 
 TMP11="/tmp/task11-prompt-chunks"
@@ -41,8 +43,9 @@ TMP14="/tmp/task14-prompt-chunks"
 TMP22="/tmp/task22-prompt-chunks"
 TMP23="/tmp/task23-prompt-chunks"
 TMP31="/tmp/task31-prompt-chunks"
-rm -rf "$TMP11" "$TMP12" "$TMP13" "$TMP14" "$TMP22" "$TMP23" "$TMP31"
-mkdir -p "$TMP11/raw" "$TMP12/raw" "$TMP13/raw" "$TMP14/raw" "$TMP22/raw" "$TMP23/raw" "$TMP31/raw"
+TMP32="/tmp/task32-prompt-chunks"
+rm -rf "$TMP11" "$TMP12" "$TMP13" "$TMP14" "$TMP22" "$TMP23" "$TMP31" "$TMP32"
+mkdir -p "$TMP11/raw" "$TMP12/raw" "$TMP13/raw" "$TMP14/raw" "$TMP22/raw" "$TMP23/raw" "$TMP31/raw" "$TMP32/raw"
 
 # Split full transcripts into six readable chunks each.
 split -l 1500 -d -a 2 submissions/task-1.1/prompts.md "$TMP11/raw/chunk_"
@@ -79,6 +82,14 @@ TASK31_CHUNK_SIZE=$(( (TASK31_LINES + 5) / 6 ))
 split -l "$TASK31_CHUNK_SIZE" -d -a 2 submissions/task-3.1/prompts.md "$TMP31/raw/chunk_"
 for i in 00 01 02 03 04 05; do
   [[ -f "$TMP31/raw/chunk_${i}" ]] || : > "$TMP31/raw/chunk_${i}"
+done
+
+# Task 3.2 dynamic chunking into six segments.
+TASK32_LINES="$(wc -l < submissions/task-3.2/prompts.md)"
+TASK32_CHUNK_SIZE=$(( (TASK32_LINES + 5) / 6 ))
+split -l "$TASK32_CHUNK_SIZE" -d -a 2 submissions/task-3.2/prompts.md "$TMP32/raw/chunk_"
+for i in 00 01 02 03 04 05; do
+  [[ -f "$TMP32/raw/chunk_${i}" ]] || : > "$TMP32/raw/chunk_${i}"
 done
 
 # Task 1.1 chunk labels.
@@ -291,6 +302,36 @@ Why the original file is not duplicated here:
 6. 06_final_validation_and_signoff.md
 EOF
 
+# Task 3.2 chunk labels.
+cp "$TMP32/raw/chunk_00" "$TMP32/01_task32_audit_and_requirements.md"
+cp "$TMP32/raw/chunk_01" "$TMP32/02_trace_inventory_and_signal_windows.md"
+cp "$TMP32/raw/chunk_02" "$TMP32/03_root_cause_mapping_and_cycle_alignment.md"
+cp "$TMP32/raw/chunk_03" "$TMP32/04_reproduction_test_authoring.md"
+cp "$TMP32/raw/chunk_04" "$TMP32/05_packaging_and_readiness_automation.md"
+cp "$TMP32/raw/chunk_05" "$TMP32/06_final_validation_and_signoff.md"
+
+cat > "$TMP32/README.md" <<EOF
+# Prompt Evidence Index - Task 3.2
+
+This directory contains the full contents of submissions/task-3.2/prompts.md,
+split into six files for easier judge navigation.
+
+Master/original transcript source:
+- submissions/task-3.2/prompts.md
+- ${MASTER_TASK32_URL}
+
+Why the original file is not duplicated here:
+- These six chunk files already contain the entire transcript content.
+- Avoiding a second full copy keeps submission payloads minimal.
+
+1. 01_task32_audit_and_requirements.md
+2. 02_trace_inventory_and_signal_windows.md
+3. 03_root_cause_mapping_and_cycle_alignment.md
+4. 04_reproduction_test_authoring.md
+5. 05_packaging_and_readiness_automation.md
+6. 06_final_validation_and_signoff.md
+EOF
+
 # Replace prompts for all Task 1.1 DUT submissions.
 for dut in aegis_aes rampart_i2c sentinel_hmac; do
   dst="submissions/task-1.1/submission-1.1-${dut}/prompts"
@@ -341,4 +382,10 @@ mkdir -p "$dst"
 find "$dst" -mindepth 1 -maxdepth 1 -type f -delete
 cp "$TMP31"/*.md "$dst"/
 
-echo "Prompt evidence regenerated for Task 1.1, Task 1.2, Task 1.3, Task 1.4, Task 2.2, Task 2.3, and Task 3.1 submissions."
+# Replace prompts for Task 3.2 submission.
+dst="submissions/task-3.2/submission-3.2/prompts"
+mkdir -p "$dst"
+find "$dst" -mindepth 1 -maxdepth 1 -type f -delete
+cp "$TMP32"/*.md "$dst"/
+
+echo "Prompt evidence regenerated for Task 1.1, Task 1.2, Task 1.3, Task 1.4, Task 2.2, Task 2.3, Task 3.1, and Task 3.2 submissions."

@@ -1,0 +1,31 @@
+failure_id: 5
+manifestation_cycle: 400
+root_cause_cycle: 397
+root_cause_file: "rampart_i2c.sv"
+root_cause_line: 961
+signal_trace:
+  - cycle: 400
+    signal: "assert_rstart_no_stop"
+    value: "FAIL"
+    note: "Property detects intermediate STOP between START pulses"
+  - cycle: 399
+    signal: "host_state"
+    value: "1"
+    note: "FSM continues transaction after glitchy bus transition"
+  - cycle: 398
+    signal: "start_det"
+    value: "1"
+    note: "Repeated START is detected one cycle after STOP glitch"
+  - cycle: 397
+    signal: "stop_det / start_det"
+    value: "1 / 0"
+    note: "Illegal STOP pattern appears before repeated START is formed"
+  - cycle: 396
+    signal: "host_state / rstart_pending"
+    value: "9 / 1"
+    note: "Host FSM is in repeated-START setup sequence"
+root_cause_description: |
+  In HOST_RSTART_SETUP, SDA/SCL release ordering allows an SDA rising event while SCL is high,
+  which is decoded by bus monitors as STOP (`stop_det`). The repeated START transition then
+  occurs one cycle later (`start_det`), meaning the sequence contains an unintended STOP-like
+  pulse. The bug is timing/order control in repeated-start setup, not the final START itself.

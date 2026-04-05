@@ -1,0 +1,28 @@
+failure_id: 1
+manifestation_cycle: 150
+root_cause_cycle: 142
+root_cause_file: "warden_timer.sv"
+root_cause_line: 125
+signal_trace:
+  - cycle: 150
+    signal: "timer0_expired, intr_state_0, intr_o_0"
+    value: "1, 1, 1"
+    note: "Spurious interrupt is visible before full 64-bit target is committed"
+  - cycle: 150
+    signal: "tl_is_write / tl_addr / tl_wdata"
+    value: "1 / 0x0000000C / 0x00000001"
+    note: "HIGH half write arrives after the stale-HIGH compare already fired"
+  - cycle: 146
+    signal: "mtime_q vs mtimecmp0_q"
+    value: "0x00000092 vs 0x00000000_00000050"
+    note: "Comparator sees stale HIGH half and evaluates as expired"
+  - cycle: 142
+    signal: "tl_is_write / tl_addr / tl_wdata"
+    value: "1 / 0x00000008 / 0x00000050"
+    note: "LOW half of mtimecmp0 is written first during split update"
+root_cause_description: |
+  The compare path is continuously active (`timer0_expired = (mtime_q >= mtimecmp0_q)`),
+  so writing only MTIMECMP0_LOW creates a transient mixed 64-bit compare value using the
+  new LOW half and stale HIGH half. When mtime already exceeds that transient value,
+  interrupt state is set before MTIMECMP0_HIGH is written, producing a spurious timer
+  interrupt during split writes.

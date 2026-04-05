@@ -1,0 +1,27 @@
+failure_id: 3
+manifestation_cycle: 300
+root_cause_cycle: 300
+root_cause_file: "citadel_spi.sv"
+root_cause_line: 734
+signal_trace:
+  - cycle: 300
+    signal: "assert_csn_hold_time"
+    value: "FAIL"
+    note: "CSn hold interval is shorter than configured csn_trail"
+  - cycle: 300
+    signal: "timing_done / timing_cnt / reg_csn_trail"
+    value: "1 / 3 / 4"
+    note: "Hold-complete condition fires one SCLK period early"
+  - cycle: 299
+    signal: "timing_cnt / reg_csn_trail"
+    value: "3 / 4"
+    note: "Hold counter is still one tick short of configured trail"
+  - cycle: 296
+    signal: "fsm_state / csn_o_0 / timing_cnt"
+    value: "3 / 0 / 1"
+    note: "Controller is in CS_HOLD with CS asserted"
+root_cause_description: |
+  The CS hold completion logic is off by one in the buggy variant. `timing_done` can assert
+  before the full `reg_csn_trail` number of SCLK periods has elapsed, so FSM_CS_HOLD exits
+  early and CSn is released one clock period too soon. The fault is in the timing counter/
+  completion relationship for the CS hold phase.
