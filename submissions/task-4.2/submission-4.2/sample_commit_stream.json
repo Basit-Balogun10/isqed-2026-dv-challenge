@@ -1,0 +1,182 @@
+[
+  {
+    "commit_id": "c0001",
+    "timestamp": "2026-04-07T00:00:00Z",
+    "author": "dev_alpha",
+    "message": "Refactor comments in uart tx module",
+    "diff": "--- a/rtl/nexus_uart_tx.sv\n+++ b/rtl/nexus_uart_tx.sv\n@@ -10,2 +10,2 @@\n-// old comment\n+// updated comment\n",
+    "files_changed": ["rtl/nexus_uart_tx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0002",
+    "timestamp": "2026-04-07T00:05:00Z",
+    "author": "dev_beta",
+    "message": "Rename local counter alias for readability",
+    "diff": "--- a/rtl/nexus_uart_rx.sv\n+++ b/rtl/nexus_uart_rx.sv\n@@ -55,4 +55,4 @@\n-  logic [3:0] sample_cnt;\n+  logic [3:0] sample_count;\n",
+    "files_changed": ["rtl/nexus_uart_rx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0003",
+    "timestamp": "2026-04-07T00:10:00Z",
+    "author": "dev_gamma",
+    "message": "Update interrupt block comments",
+    "diff": "--- a/rtl/nexus_uart_ctrl.sv\n+++ b/rtl/nexus_uart_ctrl.sv\n@@ -120,3 +120,3 @@\n-// irq behavior\n+// interrupt behavior and timing\n",
+    "files_changed": ["rtl/nexus_uart_ctrl.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0004",
+    "timestamp": "2026-04-07T00:15:00Z",
+    "author": "dev_delta",
+    "message": "Whitespace cleanup in rx path",
+    "diff": "--- a/rtl/nexus_uart_rx.sv\n+++ b/rtl/nexus_uart_rx.sv\n@@ -84,2 +84,2 @@\n-    rx_data <= shift_reg;\n+    rx_data <= shift_reg;\n",
+    "files_changed": ["rtl/nexus_uart_rx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0005",
+    "timestamp": "2026-04-07T00:20:00Z",
+    "author": "dev_epsilon",
+    "message": "Reword baud divider comments",
+    "diff": "--- a/rtl/nexus_uart_ctrl.sv\n+++ b/rtl/nexus_uart_ctrl.sv\n@@ -40,2 +40,2 @@\n-// divider step\n+// baud divider step\n",
+    "files_changed": ["rtl/nexus_uart_ctrl.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0006",
+    "timestamp": "2026-04-07T00:25:00Z",
+    "author": "dev_zeta",
+    "message": "Add clarifying tx fifo comments",
+    "diff": "--- a/rtl/nexus_uart_tx.sv\n+++ b/rtl/nexus_uart_tx.sv\n@@ -132,2 +132,2 @@\n-// push when valid\n+// push into fifo when valid\n",
+    "files_changed": ["rtl/nexus_uart_tx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0007",
+    "timestamp": "2026-04-07T00:30:00Z",
+    "author": "dev_eta",
+    "message": "Reorder declarations in tlul adapter",
+    "diff": "--- a/rtl/nexus_uart_tlul.sv\n+++ b/rtl/nexus_uart_tlul.sv\n@@ -22,4 +22,4 @@\n-logic req_valid;\n-logic rsp_valid;\n+logic rsp_valid;\n+logic req_valid;\n",
+    "files_changed": ["rtl/nexus_uart_tlul.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0008",
+    "timestamp": "2026-04-07T00:35:00Z",
+    "author": "dev_theta",
+    "message": "Fix typo in module header comments",
+    "diff": "--- a/rtl/nexus_uart.sv\n+++ b/rtl/nexus_uart.sv\n@@ -3,2 +3,2 @@\n-// recevier\n+// receiver\n",
+    "files_changed": ["rtl/nexus_uart.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0009",
+    "timestamp": "2026-04-07T00:40:00Z",
+    "author": "dev_iota",
+    "message": "Optimize tx path write condition",
+    "diff": "--- a/rtl/nexus_uart_tx.sv\n+++ b/rtl/nexus_uart_tx.sv\n@@ -145,6 +145,5 @@\n-    if (!tx_fifo_full && tx_valid_i) begin\n+    if (tx_valid_i) begin\n       tx_fifo_mem[tx_wptr] <= tx_data_i;\n       tx_wptr <= tx_wptr + 1'b1;\n     end\n",
+    "files_changed": ["rtl/nexus_uart_tx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0010",
+    "timestamp": "2026-04-07T00:45:00Z",
+    "author": "dev_kappa",
+    "message": "Adjust parity check condition",
+    "diff": "--- a/rtl/nexus_uart_rx.sv\n+++ b/rtl/nexus_uart_rx.sv\n@@ -210,3 +210,3 @@\n-  parity_err <= (rx_parity_bit != expected_parity);\n+  parity_err <= (rx_parity_bit == expected_parity);\n",
+    "files_changed": ["rtl/nexus_uart_rx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0011",
+    "timestamp": "2026-04-07T00:50:00Z",
+    "author": "dev_lambda",
+    "message": "Tighten rx bit counter threshold",
+    "diff": "--- a/rtl/nexus_uart_rx.sv\n+++ b/rtl/nexus_uart_rx.sv\n@@ -176,3 +176,3 @@\n-    if (bit_cnt == 4'd7) begin\n+    if (bit_cnt == 4'd6) begin\n       rx_done <= 1'b1;\n     end\n",
+    "files_changed": ["rtl/nexus_uart_rx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0012",
+    "timestamp": "2026-04-07T00:55:00Z",
+    "author": "dev_mu",
+    "message": "Simplify reset logic in rx valid flag",
+    "diff": "--- a/rtl/nexus_uart_rx.sv\n+++ b/rtl/nexus_uart_rx.sv\n@@ -64,4 +64,3 @@\n-  if (!rst_ni) begin\n-    rx_valid_o <= 1'b0;\n-  end else begin\n+  if (!rst_ni) begin\n+  end else begin\n     rx_valid_o <= rx_done;\n",
+    "files_changed": ["rtl/nexus_uart_rx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0013",
+    "timestamp": "2026-04-07T01:00:00Z",
+    "author": "dev_nu",
+    "message": "Refactor tlul response error logic",
+    "diff": "--- a/rtl/nexus_uart_tlul.sv\n+++ b/rtl/nexus_uart_tlul.sv\n@@ -98,3 +98,3 @@\n-  tl_d_error_o <= access_error;\n+  tl_d_error_o <= 1'b0;\n",
+    "files_changed": ["rtl/nexus_uart_tlul.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0014",
+    "timestamp": "2026-04-07T01:05:00Z",
+    "author": "dev_xi",
+    "message": "Optimize control FSM transition",
+    "diff": "--- a/rtl/nexus_uart_ctrl.sv\n+++ b/rtl/nexus_uart_ctrl.sv\n@@ -88,3 +88,3 @@\n-      if (tx_done) state <= IDLE;\n+      if (tx_done) state <= SEND;\n",
+    "files_changed": ["rtl/nexus_uart_ctrl.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0015",
+    "timestamp": "2026-04-07T01:10:00Z",
+    "author": "dev_omicron",
+    "message": "Fix tx fifo overflow guard bug",
+    "diff": "--- a/rtl/nexus_uart_tx.sv\n+++ b/rtl/nexus_uart_tx.sv\n@@ -145,5 +145,6 @@\n-    if (tx_valid_i) begin\n+    if (!tx_fifo_full && tx_valid_i) begin\n       tx_fifo_mem[tx_wptr] <= tx_data_i;\n       tx_wptr <= tx_wptr + 1'b1;\n     end\n",
+    "files_changed": ["rtl/nexus_uart_tx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0016",
+    "timestamp": "2026-04-07T01:15:00Z",
+    "author": "dev_pi",
+    "message": "Fix parity comparison polarity",
+    "diff": "--- a/rtl/nexus_uart_rx.sv\n+++ b/rtl/nexus_uart_rx.sv\n@@ -210,3 +210,3 @@\n-  parity_err <= (rx_parity_bit == expected_parity);\n+  parity_err <= (rx_parity_bit != expected_parity);\n",
+    "files_changed": ["rtl/nexus_uart_rx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0017",
+    "timestamp": "2026-04-07T01:20:00Z",
+    "author": "dev_rho",
+    "message": "Fix off-by-one in rx bit counter",
+    "diff": "--- a/rtl/nexus_uart_rx.sv\n+++ b/rtl/nexus_uart_rx.sv\n@@ -176,3 +176,3 @@\n-    if (bit_cnt == 4'd6) begin\n+    if (bit_cnt == 4'd7) begin\n       rx_done <= 1'b1;\n     end\n",
+    "files_changed": ["rtl/nexus_uart_rx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0018",
+    "timestamp": "2026-04-07T01:25:00Z",
+    "author": "dev_sigma",
+    "message": "Fix reset behavior for rx valid",
+    "diff": "--- a/rtl/nexus_uart_rx.sv\n+++ b/rtl/nexus_uart_rx.sv\n@@ -64,3 +64,4 @@\n-  if (!rst_ni) begin\n+  if (!rst_ni) begin\n+    rx_valid_o <= 1'b0;\n   end else begin\n     rx_valid_o <= rx_done;\n",
+    "files_changed": ["rtl/nexus_uart_rx.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0019",
+    "timestamp": "2026-04-07T01:30:00Z",
+    "author": "dev_tau",
+    "message": "Remove unreachable branch for coverage cleanup",
+    "diff": "--- a/rtl/nexus_uart_ctrl.sv\n+++ b/rtl/nexus_uart_ctrl.sv\n@@ -199,5 +199,2 @@\n-    default: begin\n-      state <= IDLE;\n-    end\n+    // unreachable default removed\n",
+    "files_changed": ["rtl/nexus_uart_ctrl.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  },
+  {
+    "commit_id": "c0020",
+    "timestamp": "2026-04-07T01:35:00Z",
+    "author": "dev_upsilon",
+    "message": "Refactor fsm case tree and remove dead code",
+    "diff": "--- a/rtl/nexus_uart_ctrl.sv\n+++ b/rtl/nexus_uart_ctrl.sv\n@@ -182,8 +182,5 @@\n-    if (state == SEND && tx_done) begin\n-      state <= IDLE;\n-    end\n+    if (state == SEND && tx_done) state <= IDLE;\n",
+    "files_changed": ["rtl/nexus_uart_ctrl.sv"],
+    "rtl_snapshot_dir": "duts/nexus_uart"
+  }
+]
