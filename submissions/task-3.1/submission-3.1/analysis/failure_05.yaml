@@ -3,13 +3,13 @@ classification: "timing_issue"
 root_module: "citadel_spi"
 root_line_range: "511-516,784-804"
 root_cause: |
-  After dynamic CPHA reconfiguration, the second transfer samples MISO one edge out of phase,
-  producing a one-bit right-shifted receive value (expected 0xB7, actual 0x5B). The edge
-  selection logic (sample_edge/output_edge) combined with first_bit_out and shift sequencing
-  creates a timing-sensitive race at command start.
+    After dynamic CPHA reconfiguration, the second transfer samples MISO one edge out of phase,
+    producing a one-bit right-shifted receive value (expected 0xB7, actual 0x5B). The edge
+    selection logic (sample_edge/output_edge) combined with first_bit_out and shift sequencing
+    creates a timing-sensitive race at command start.
 suggested_fix: |
-  Latch CPOL/CPHA per command at dequeue time and use that latched mode for the full transfer.
-  Reset and align first-bit/sample pipelines explicitly at CS setup so no phase residue from
-  prior mode updates can influence the next segment. Add directed tests for mode toggles between
-  back-to-back transfers.
+    Latch CPOL/CPHA per command at dequeue time and use that latched mode for the full transfer.
+    Reset and align first-bit/sample pipelines explicitly at CS setup so no phase residue from
+    prior mode updates can influence the next segment. Add directed tests for mode toggles between
+    back-to-back transfers.
 confidence: 0.78

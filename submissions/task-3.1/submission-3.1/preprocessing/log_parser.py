@@ -80,7 +80,9 @@ def validate_analysis(analysis_dir: pathlib.Path) -> int:
         if not class_match:
             failures.append(f"{file_name}: invalid classification value")
 
-        confidence_match = re.search(r"^confidence:\s*([0-9]*\.?[0-9]+)\s*$", text, flags=re.MULTILINE)
+        confidence_match = re.search(
+            r"^confidence:\s*([0-9]*\.?[0-9]+)\s*$", text, flags=re.MULTILINE
+        )
         if not confidence_match:
             failures.append(f"{file_name}: confidence missing or not numeric")
         else:
@@ -100,9 +102,22 @@ def validate_analysis(analysis_dir: pathlib.Path) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Task 3.1 log parser and validator")
-    parser.add_argument("--log", type=pathlib.Path, help="Path to a failure log for error-context extraction")
-    parser.add_argument("--context", type=int, default=3, help="Context lines before/after each UVM_ERROR")
-    parser.add_argument("--validate", type=pathlib.Path, help="Validate Task 3.1 analysis YAML directory")
+    parser.add_argument(
+        "--log",
+        type=pathlib.Path,
+        help="Path to a failure log for error-context extraction",
+    )
+    parser.add_argument(
+        "--context",
+        type=int,
+        default=3,
+        help="Context lines before/after each UVM_ERROR",
+    )
+    parser.add_argument(
+        "--validate",
+        type=pathlib.Path,
+        help="Validate Task 3.1 analysis YAML directory",
+    )
 
     args = parser.parse_args()
 

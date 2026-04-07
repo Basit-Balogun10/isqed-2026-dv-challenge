@@ -1,0 +1,46 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/tests/random/test_gap_iter_1.py",
+      "scenario": "multi_segment_fsm_off_by_one",
+      "functional_before": 52.73,
+      "updated_functional_coverage": 52.73,
+      "coverage_delta": 0.0,
+      "simulation_passed": true,
+      "failing_runs": 0,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/tests/random/test_repair_iter_1_1.py",
+          "coverage_before": 52.73,
+          "coverage_after": 52.73,
+          "simulation_passed": true,
+          "failing_runs": 0
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/tests/random/test_gap_iter_2.py",
+      "scenario": "fifo_overflow_underflow_edges",
+      "functional_before": 52.73,
+      "updated_functional_coverage": 52.73,
+      "coverage_delta": 0.0,
+      "simulation_passed": true,
+      "failing_runs": 0,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/tests/random/test_repair_iter_2_1.py",
+          "coverage_before": 52.73,
+          "coverage_after": 52.73,
+          "simulation_passed": true,
+          "failing_runs": 0
+        }
+      ]
+    }
+  ]
+}

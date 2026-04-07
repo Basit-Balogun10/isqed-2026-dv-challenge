@@ -1,0 +1,26 @@
+{
+  "code_coverage": {
+    "line_percent": 0.0,
+    "branch_percent": 10.36,
+    "toggle_percent": 0.0,
+    "fsm_percent": 0.0,
+    "source": "verilator_lcov",
+    "toggle_source": "unavailable",
+    "fsm_source": "unavailable"
+  },
+  "functional_coverage": {
+    "percent": 42.03,
+    "bins_hit": 29,
+    "bins_total": 69,
+    "source": "functional_bins_from_test_snapshots"
+  },
+  "assertions": {
+    "passed": true,
+    "failed": 0
+  },
+  "simulation": {
+    "total_runs": 12,
+    "passed_runs": 12,
+    "failed_runs": 0
+  }
+}

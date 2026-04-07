@@ -1,10 +1,10 @@
 # Task 4.2 Submission Checklist Snapshot
 
-Generated at: 2026-04-07T02:14:53Z
+Generated at: 2026-04-07T02:36:02Z
 
 ## Artifact
 
-- Zip path: submissions/task-4.2/submission-4.2.zip
+- Zip path: submissions/zips-4.2/submission-4.2.zip
 - SHA256: 22de02384971dfdc4e3ca498f2d0317d9198fc39dee04f68d42846278ea0e17b
 - Size (bytes): 86896
 
@@ -25,4 +25,4 @@ Generated at: 2026-04-07T02:14:53Z
 
 ## Submit This File
 
-- submissions/task-4.2/submission-4.2.zip
+- submissions/zips-4.2/submission-4.2.zip

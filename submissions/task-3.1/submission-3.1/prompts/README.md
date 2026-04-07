@@ -4,12 +4,14 @@ This directory contains the full contents of submissions/task-3.1/prompts.md,
 split into six files for easier judge navigation.
 
 Master/original transcript source:
-- submissions/task-3.1/prompts.md
-- https://github.com/Basit-Balogun10/isqed-2026-dv-challenge/blob/main/submissions/task-3.1/prompts.md
+
+-   submissions/task-3.1/prompts.md
+-   https://github.com/Basit-Balogun10/isqed-2026-dv-challenge/blob/main/submissions/task-3.1/prompts.md
 
 Why the original file is not duplicated here:
-- These six chunk files already contain the entire transcript content.
-- Avoiding a second full copy keeps submission payloads minimal.
+
+-   These six chunk files already contain the entire transcript content.
+-   Avoiding a second full copy keeps submission payloads minimal.
 
 1. 01_task31_audit_and_requirements.md
 2. 02_log_taxonomy_and_triage_strategy.md

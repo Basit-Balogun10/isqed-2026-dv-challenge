@@ -1,0 +1,8 @@
+code_coverage_summary
+line_percent: 0.0
+branch_percent: 5.61
+toggle_percent: 0.0
+fsm_percent: 0.0
+source: verilator_lcov
+toggle_source: unavailable
+fsm_source: unavailable

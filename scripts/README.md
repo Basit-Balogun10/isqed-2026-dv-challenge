@@ -197,6 +197,54 @@ This directory contains the maintained automation scripts for submission packagi
         -   `bash scripts/verify-3.3-readiness.sh --sim both`
         -   `bash scripts/verify-3.3-readiness.sh --quick`
 
+## Task 4.1 Scripts
+
+-   `verify-4.1-readiness.sh`
+    -   ZIP-first Task 4.1 readiness verification.
+    -   Validates required files, checks prompt evidence, runs smoke checks, and validates canonical zip payload contents.
+    -   Typical usage:
+        -   `source .venv/bin/activate`
+        -   `bash scripts/verify-4.1-readiness.sh`
+
+## Task 4.2 Scripts
+
+-   `manage-4.2-submissions.sh`
+
+    -   Package, extract, verify, and report status for the Task 4.2 submission.
+    -   Typical usage:
+        -   `bash scripts/manage-4.2-submissions.sh status`
+        -   `bash scripts/manage-4.2-submissions.sh package`
+        -   `bash scripts/manage-4.2-submissions.sh test-all`
+
+-   `verify-4.2-readiness.sh`
+    -   ZIP-first Task 4.2 readiness verification.
+    -   Validates required files, checks prompt evidence, performs optional API-backed dry run, and validates canonical zip payload contents.
+    -   Typical usage:
+        -   `source .venv/bin/activate`
+        -   `NO_API_SPEND=1 bash scripts/verify-4.2-readiness.sh`
+        -   `NO_API_SPEND=0 bash scripts/verify-4.2-readiness.sh --keep-workdir`
+
+-   `run-4.2-monitored.sh`
+    -   Monitored Task 4.2 execution wrapper for progress, verdict counts, and spend telemetry during long runs.
+
+## Task 4.3 Scripts
+
+-   `manage-4.3-submissions.sh`
+
+    -   Package, extract, verify, and report status for the Task 4.3 submission.
+    -   Typical usage:
+        -   `bash scripts/manage-4.3-submissions.sh status`
+        -   `bash scripts/manage-4.3-submissions.sh package`
+        -   `bash scripts/manage-4.3-submissions.sh test-all`
+
+-   `verify-4.3-readiness.sh`
+    -   ZIP-first Task 4.3 readiness verification.
+    -   Validates required files, checks prompt evidence, performs optional API-backed dry run, and validates canonical zip payload contents.
+    -   Typical usage:
+        -   `source .venv/bin/activate`
+        -   `NO_API_SPEND=1 bash scripts/verify-4.3-readiness.sh`
+        -   `NO_API_SPEND=0 bash scripts/verify-4.3-readiness.sh --keep-workdir`
+
 ## Unified Workflow
 
 -   `verify-readiness.sh`
@@ -205,9 +253,9 @@ This directory contains the maintained automation scripts for submission packagi
     -   Runs one or more per-task readiness scripts in sequence.
     -   Typical usage:
         -   `source .venv/bin/activate`
-        -   `bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4,2.1,2.2,2.3,3.1,3.2,3.3 --sim both`
+        -   `bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4,2.1,2.2,2.3,3.1,3.2,3.3,4.1,4.2,4.3 --sim both`
         -   `bash scripts/verify-readiness.sh 1.2 --sim icarus --quick`
-        -   `bash scripts/verify-readiness.sh 3.3 --quick`
+        -   `bash scripts/verify-readiness.sh 4.3 --quick`
 
 -   `docs/VERIFY_1_1_1_2_WORKFLOW.md`
     -   Manual command checklist version of the same flow.

@@ -1,0 +1,112 @@
+{
+  "features": [
+    "TL-UL CSR access with single-cycle response",
+    "UART full-duplex TX/RX datapaths",
+    "32-byte TX FIFO and 32-byte RX FIFO",
+    "Programmable baud divisor, parity, stop bits, and loopback",
+    "Status register with sticky error reporting",
+    "FIFO flush control and watermark-based interrupts",
+    "Interrupt state/enable/clear behavior",
+    "Reset behavior and reserved-bit handling",
+    "Unmapped address error response",
+    "Basic alert observation for fatal integrity conditions"
+  ],
+  "coverage_goals": {
+    "line_percent": 85,
+    "branch_percent": 75,
+    "functional_percent": 85
+  },
+  "directed_tests": [
+    {
+      "name": "reset_smoke_csr_map",
+      "intent": "Verify reset values, TL-UL read/write access, unmapped address error response, and reserved-bit read-as-zero behavior across the 8 CSRs."
+    },
+    {
+      "name": "ctrl_programming_and_loopback_smoke",
+      "intent": "Program CTRL fields for TX/RX enable, baud divisor, parity, stop bits, and loopback; confirm register readback and basic loopback data transfer."
+    },
+    {
+      "name": "tx_fifo_basic_push_and_status",
+      "intent": "Write a small burst to TXDATA, confirm TX FIFO level/empty/full status transitions, and ensure writes to reserved TXDATA bits are ignored."
+    },
+    {
+      "name": "rx_fifo_basic_receive_and_status",
+      "intent": "Drive uart_rx_i with a valid frame, confirm RXDATA readout, RX FIFO level/empty status transitions, and basic receive enable gating."
+    },
+    {
+      "name": "fifo_flush_controls",
+      "intent": "Assert TX and RX FIFO reset bits in FIFO_CTRL, verify self-clearing behavior, FIFO emptying, and clearing of sticky RX error bits via RX FIFO reset."
+    },
+    {
+      "name": "watermark_interrupts",
+      "intent": "Program TX/RX watermarks, exercise FIFO level crossings, and verify INTR_STATE/INTR_ENABLE/INTR_TEST behavior for watermark interrupts."
+    },
+    {
+      "name": "sticky_error_capture",
+      "intent": "Inject parity and framing errors on RX, verify STATUS sticky bits set correctly, and confirm they persist until RX FIFO reset or full reset."
+    },
+    {
+      "name": "fifo_boundary_conditions",
+      "intent": "Fill TX and RX FIFOs to capacity, verify full flags, overrun handling on RX overflow, and safe behavior when writing TXDATA while full."
+    }
+  ],
+  "random_tests": [
+    {
+      "name": "tlul_csr_fuzzer",
+      "intent": "Constrained-random TL-UL reads/writes across valid CSR addresses, reserved bits, and unmapped addresses with scoreboard checking of readback, side effects, and error responses."
+    },
+    {
+      "name": "uart_loopback_stream_random",
+      "intent": "Enable loopback and run randomized byte streams with varying parity, stop bits, and baud divisors to stress TX/RX alignment and FIFO interactions."
+    },
+    {
+      "name": "rx_protocol_noise_injection",
+      "intent": "Randomly inject malformed UART frames, parity mismatches, and stop-bit violations to exercise sticky error paths and RX FSM recovery."
+    },
+    {
+      "name": "watermark_and_interrupt_stress",
+      "intent": "Randomize FIFO watermark settings and traffic patterns to validate interrupt assertion, clearing, and re-arming behavior under load."
+    },
+    {
+      "name": "reset_during_activity",
+      "intent": "Apply asynchronous reset during active TX/RX and TL-UL traffic to verify clean recovery, FIFO flush, and no stuck interrupts or alerts."
+    }
+  ],
+  "risk_areas": [
+    {
+      "area": "UART baud timing and oversampling",
+      "reason": "Most likely source of functional mismatch due to divisor interpretation, 16x sampling, and undefined divisor-zero behavior.",
+      "priority": "high"
+    },
+    {
+      "area": "FIFO boundary and overflow/underflow behavior",
+      "reason": "32-byte FIFOs with full/empty flags, overrun sticky status, and write-while-full behavior are common defect points.",
+      "priority": "high"
+    },
+    {
+      "area": "Interrupt generation and W1C handling",
+      "reason": "Watermark interrupts, state/enable/clear semantics, and re-arming behavior are implementation-sensitive and high risk.",
+      "priority": "high"
+    },
+    {
+      "area": "Sticky error reporting and reset clearing",
+      "reason": "Parity and framing error bits must persist correctly and clear only via FIFO reset or full reset.",
+      "priority": "medium"
+    },
+    {
+      "area": "TL-UL protocol compliance",
+      "reason": "Single-cycle response, unmapped address errors, and reserved-bit handling are straightforward but essential for integration.",
+      "priority": "medium"
+    },
+    {
+      "area": "Loopback mode data path coupling",
+      "reason": "Internal routing between TX and RX can hide issues in external pin handling or create unintended combinational paths.",
+      "priority": "medium"
+    },
+    {
+      "area": "Alert output behavior",
+      "reason": "Fatal alert conditions are likely rare and may be difficult to fully characterize within the 60-minute budget.",
+      "priority": "low"
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "rtl_files": [
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+  ],
+  "total_rtl_lines": 1360,
+  "modules": [
+    "rampart_i2c"
+  ],
+  "top_modules": [
+    "rampart_i2c"
+  ],
+  "selected_top": "rampart_i2c",
+  "port_count": 24,
+  "ports": [
+    {
+      "direction": "input",
+      "width": "",
+      "name": "clk_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "rst_ni",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_a_valid_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_a_ready_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[2:0]",
+      "name": "tl_a_opcode_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_address_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_data_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[3:0]",
+      "name": "tl_a_mask_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "tl_a_source_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[1:0]",
+      "name": "tl_a_size_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_valid_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_d_ready_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[2:0]",
+      "name": "tl_d_opcode_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[31:0]",
+      "name": "tl_d_data_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[7:0]",
+      "name": "tl_d_source_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_error_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "scl_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "scl_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "scl_oe_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "sda_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "sda_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "sda_oe_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[15:0]",
+      "name": "intr_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "alert_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    }
+  ],
+  "tlul_detected": true,
+  "tlul_ports": [
+    "tl_a_address_i",
+    "tl_a_data_i",
+    "tl_a_mask_i",
+    "tl_a_opcode_i",
+    "tl_a_ready_o",
+    "tl_a_size_i",
+    "tl_a_source_i",
+    "tl_a_valid_i",
+    "tl_d_data_o",
+    "tl_d_error_o",
+    "tl_d_opcode_o",
+    "tl_d_ready_i",
+    "tl_d_source_o",
+    "tl_d_valid_o"
+  ],
+  "protocol_hints": [
+    "i2c"
+  ],
+  "clock_candidates": [
+    "clk_i"
+  ],
+  "reset_candidates": [
+    "rst_ni"
+  ],
+  "interface_hints": {
+    "interrupt_candidates": [
+      "intr_o"
+    ],
+    "alert_candidates": [
+      "alert_o"
+    ]
+  },
+  "enum_state_sets": [],
+  "fsm_candidates": [
+    {
+      "state_expression": "tl_req_addr",
+      "states": [
+        "ADDR_INTR_TEST",
+        "default"
+      ],
+      "state_count": 2,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "state_expression": "tl_req_addr",
+      "states": [
+        "ADDR_ACQDATA",
+        "ADDR_CTRL",
+        "ADDR_FDATA",
+        "ADDR_FIFO_CTRL",
+        "ADDR_FIFO_STATUS",
+        "ADDR_HOST_TIMEOUT_CTRL",
+        "ADDR_INTR_ENABLE",
+        "ADDR_INTR_STATE",
+        "ADDR_INTR_TEST",
+        "ADDR_OVRD",
+        "ADDR_RDATA",
+        "ADDR_STATUS",
+        "ADDR_TARGET_ID",
+        "ADDR_TIMING0",
+        "ADDR_TIMING1",
+        "ADDR_TIMING2",
+        "ADDR_TIMING3",
+        "ADDR_TIMING4",
+        "ADDR_TXDATA",
+        "default"
+      ],
+      "state_count": 20,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "state_expression": "tl_req_addr",
+      "states": [
+        "ADDR_TIMING0",
+        "ADDR_TIMING1",
+        "ADDR_TIMING2",
+        "ADDR_TIMING3",
+        "ADDR_TIMING4",
+        "default"
+      ],
+      "state_count": 6,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "state_expression": "host_state",
+      "states": [
+        "HOST_ADDR_ACK",
+        "HOST_ADDR_BYTE",
+        "HOST_IDLE",
+        "HOST_READ_ACK",
+        "HOST_READ_BYTE",
+        "HOST_RSTART_SETUP",
+        "HOST_START",
+        "HOST_STOP",
+        "HOST_WAIT_BUS_FREE",
+        "HOST_WRITE_ACK",
+        "HOST_WRITE_BYTE",
+        "default"
+      ],
+      "state_count": 12,
+      "next_state_values": [
+        "HOST_ADDR_ACK",
+        "HOST_ADDR_BYTE",
+        "HOST_IDLE",
+        "HOST_READ_ACK",
+        "HOST_READ_BYTE",
+        "HOST_RSTART_SETUP",
+        "HOST_START",
+        "HOST_STOP",
+        "HOST_WAIT_BUS_FREE",
+        "HOST_WRITE_ACK",
+        "HOST_WRITE_BYTE"
+      ],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    },
+    {
+      "state_expression": "tgt_state",
+      "states": [
+        "TGT_ADDR_ACK",
+        "TGT_ADDR_RECV",
+        "TGT_DATA_RX",
+        "TGT_DATA_RX_ACK",
+        "TGT_DATA_TX",
+        "TGT_DATA_TX_ACK",
+        "TGT_IDLE",
+        "TGT_STOP_DET",
+        "TGT_STRETCH",
+        "default"
+      ],
+      "state_count": 10,
+      "next_state_values": [
+        "TGT_ADDR_ACK",
+        "TGT_ADDR_RECV",
+        "TGT_DATA_RX",
+        "TGT_DATA_RX_ACK",
+        "TGT_DATA_TX",
+        "TGT_DATA_TX_ACK",
+        "TGT_IDLE",
+        "TGT_STRETCH"
+      ],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/rampart_i2c/rampart_i2c.sv"
+    }
+  ],
+  "estimated_fsm_blocks": 5,
+  "csr_summary": {
+    "register_count": 19,
+    "top_keys": [
+      "name",
+      "base_addr",
+      "registers"
+    ]
+  },
+  "spec_excerpt": "# RAMPART_I2C -- I2C Host/Target Controller\n\n> **Disclaimer:** This RTL design is a modified version of an open-source IP block, created exclusively for this competition. It is not production-quality, not security-reviewed, and must not be used outside of this competition context.\n\n---\n\n## 1. Overview\n\nRAMPART_I2C is a dual-role I2C controller capable of operating as both a bus host (master) and a bus target (slave). It supports standard-mode (100 kHz), fast-mode (400 kHz), and fast-mode-plus (1 MHz) operation, with all timing parameters exposed as programmable CSRs to accommodate a range of system clock frequencies.\n\nThe controller connects to the system fabric through a TileLink-UL (TL-UL) bus interface and drives the I2C bus using open-drain signaling. Two independent FSMs manage host-initiated and target-initiated transactions. FIFOs decouple software from real-time bus activity: a 64-entry format FIFO queues host-mode bus commands, a 64-entry RX FIFO captures data received in host mode, a 64-entry TX FIFO holds data for target-mode transmissions, and a 64-entry acquire FIFO captures data received in target mode.\n\nMulti-master arbitration is supported per the I2C specification. The controller monitors the bus for arbitration loss and responds accordingly.\n\n---\n\n## 2. Block-Level Architecture\n\n```\n                   TL-UL Bus\n                      |\n               +------+------+\n               |  CSR Block  |\n               +--+--+--+--+-+\n                  |  |  |  |\n          +-------+  |  |  +--------+\n          |          |  |            |\n     +----+----+ +--+--+--+ +------+------+\n     |Format   | | RX     | | TX   | ACQ  |\n     |FIFO(64) | | FIFO   | | FIFO | FIFO |\n     |         | | (64)   | | (64) | (64) |\n     +----+----+ +--+-----+ +--+---+--+---+\n          |          |          |       |\n     +----+----------+----+ +--+-------+--+\n     |   Host FSM         | | Target FSM  |\n     +--------+-----------+ +------+------+\n              |                    |\n         +----+--------------------+----+\n         |     SCL/SDA Open-Drain       |\n         |     Bus Interface            |\n         +------------------------------+\n```\n\nThe host and target FSMs share the physical SCL and SDA lines. Only one role actively drives the bus at any time; the controller arbitrates internally based on which mode is enabled and the current bus state.\n\n---\n\n## 3. Signal Interface\n\n| Signal       | Direction | Width  | Description                                 |\n|--------------|-----------|--------|---------------------------------------------|\n| `clk_i`      | Input     | 1      | System clock                                |\n| `rst_ni`     | Input     | 1      | Active-low asynchronous reset               |\n| `tl_i`       | Input     | packed | TL-UL A-channel request (tl_a_pkt_t)       |\n| `tl_i_ready` | Output    | 1      | Backpressure for A-channel                  |\n| `tl_o`       | Output    | packed | TL-UL D-channel response (tl_d_pkt_t)      |\n| `tl_o_ready` | Input     | 1      | Downstream ready for D-channel              |\n| `scl_i`      | Input     | 1      | SCL line input (active state)               |\n| `scl_o`      | Output    | 1      | SCL output value (always 0)                 |\n| `scl_oe_o`   | Output    | 1      | SCL output enable (1 = pull low)            |\n| `sda_i`      | Input     | 1      | SDA line input (active state)               |\n| `sda_o`      | Output    | 1      | SDA output value (always 0)                 |\n| `sda_oe_o`   | Output    | 1      | SDA output enable (1 = pull low)            |\n| `intr_o`     | Output    | 16     | Interrupt vector (active-high)              |\n| `alert_o`    | Output    | 1      | Fatal alert                                 |\n\n### 3.1 Open-Drain Bus Model\n\nThe I2C bus uses open-drain signaling. The controller never drives a line high; it either releases the line (output enable deasserted, allowing an external pull-up to bring the line high) or actively pulls it l",
+  "rtl_bytes": 43548
+}

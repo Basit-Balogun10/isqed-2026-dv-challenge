@@ -3,12 +3,12 @@ classification: "protocol_violation"
 root_module: "rampart_i2c"
 root_line_range: "782-804,1296-1298"
 root_cause: |
-  On address NACK, host flow should terminate transaction immediately, but the FSM proceeds to
-  transmit one additional data byte before STOP. This violates expected host-side I2C handling
-  for NACK-at-address in the configured mode. The decision path in HOST_ADDR_ACK is coupled to
-  command-field handling and allows continuation when STOP should be immediate.
+    On address NACK, host flow should terminate transaction immediately, but the FSM proceeds to
+    transmit one additional data byte before STOP. This violates expected host-side I2C handling
+    for NACK-at-address in the configured mode. The decision path in HOST_ADDR_ACK is coupled to
+    command-field handling and allows continuation when STOP should be immediate.
 suggested_fix: |
-  In HOST_ADDR_ACK, force an unconditional transition to HOST_STOP on address NACK whenever
-  NAKOK is not enabled for that command, and isolate that decision from concurrent command-pop
-  side effects by using latched command control bits.
+    In HOST_ADDR_ACK, force an unconditional transition to HOST_STOP on address NACK whenever
+    NAKOK is not enabled for that command, and isolate that decision from concurrent command-pop
+    side effects by using latched command control bits.
 confidence: 0.86

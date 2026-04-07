@@ -148,3 +148,4 @@ I confirmed the Task 3.1 tree and scripts exist; now I’m auditing file content
 Ran terminal command:  cd /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge && find submissions/task-3.1/submission-3.1 -type f | sort
 
 Read [](file:///home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/scripts/manage-3.1-submissions.sh)
+```

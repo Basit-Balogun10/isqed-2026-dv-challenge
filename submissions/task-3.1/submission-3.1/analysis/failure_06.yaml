@@ -3,13 +3,13 @@ classification: "functional_bug"
 root_module: "aegis_aes"
 root_line_range: "263-299,594-623"
 root_cause: |
-  Decrypt roundtrip fails in one data word while encryption vectors pass, indicating the bug is
-  isolated to the decrypt datapath (inverse round transformation) rather than key scheduling or
-  forward rounds. The failing path traverses dec_round and inverse MixColumns logic, where a
-  subtle byte transform error can corrupt one column/word.
+    Decrypt roundtrip fails in one data word while encryption vectors pass, indicating the bug is
+    isolated to the decrypt datapath (inverse round transformation) rather than key scheduling or
+    forward rounds. The failing path traverses dec_round and inverse MixColumns logic, where a
+    subtle byte transform error can corrupt one column/word.
 suggested_fix: |
-  Re-derive and validate inverse round math against a known-good AES inverse implementation,
-  especially mix_single_column_inv and its integration in dec_round. Add per-round decrypt
-  intermediate-state assertions and KAT regressions that compare encrypt/decrypt internal states,
-  not only final outputs.
+    Re-derive and validate inverse round math against a known-good AES inverse implementation,
+    especially mix_single_column_inv and its integration in dec_round. Add per-round decrypt
+    intermediate-state assertions and KAT regressions that compare encrypt/decrypt internal states,
+    not only final outputs.
 confidence: 0.81

@@ -1,0 +1,27 @@
+{
+  "dut": "aegis_aes",
+  "exit_code": 0,
+  "duration_seconds": 142,
+  "status": "pass",
+  "simulator_mode": "both",
+  "retention_mode": "full",
+  "simulation_passed": false,
+  "simulators_tested": [
+    "icarus",
+    "verilator"
+  ],
+  "simulators_requested": [
+    "icarus",
+    "verilator"
+  ],
+  "dual_simulator_compliant": true,
+  "directed_test_count": 1,
+  "random_test_count": 5,
+  "line_percent": 0.0,
+  "branch_percent": 2.88,
+  "toggle_percent": 0.0,
+  "fsm_percent": 0.0,
+  "functional_percent": 33.33,
+  "toggle_source": "unavailable",
+  "fsm_source": "unavailable"
+}

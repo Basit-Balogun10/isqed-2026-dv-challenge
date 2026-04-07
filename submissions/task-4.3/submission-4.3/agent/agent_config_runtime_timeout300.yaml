@@ -1,0 +1,15 @@
+llm:
+  mode: online
+  provider: openai
+  primary_model: gpt-5.4-mini
+  primary_reasoning_effort: xhigh
+  max_total_calls: 20
+  temperature: 0.1
+  timeout_seconds: 300
+  input_cost_per_1m_tokens_usd: 0.25
+  output_cost_per_1m_tokens_usd: 2.0
+agent:
+  max_features: 18
+  max_covergroups: 8
+  max_assertions: 32
+  max_test_stubs: 8

@@ -33,4 +33,6 @@ async def test_coverage_mode_sweep(dut):
 
         status = await read_aes_csr(dut, 0x48)
         input_ready = (status >> 2) & 0x1
-        assert input_ready == 1, f"Input-ready must recover after mode {ctrl_mode}, STATUS={status:#010x}"
+        assert (
+            input_ready == 1
+        ), f"Input-ready must recover after mode {ctrl_mode}, STATUS={status:#010x}"

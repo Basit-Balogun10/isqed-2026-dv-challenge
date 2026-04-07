@@ -42,13 +42,17 @@ async def test_coverage_watchdog_lock(dut):
     # Set wd_enable and wd_lock bits to visit lock-gated write behavior.
     await tl.write_reg(ADDR_WATCHDOG_CTRL, 0x3)
     ctrl_locked = await tl.read_reg(ADDR_WATCHDOG_CTRL)
-    assert (ctrl_locked & 0x3) == 0x3, f"WATCHDOG_CTRL expected enable+lock set: {ctrl_locked:#010x}"
+    assert (
+        ctrl_locked & 0x3
+    ) == 0x3, f"WATCHDOG_CTRL expected enable+lock set: {ctrl_locked:#010x}"
     sample_wd_ctrl_value(ctrl_locked)
 
     # Try to disable after lock; implementation should keep lock asserted.
     await tl.write_reg(ADDR_WATCHDOG_CTRL, 0x0)
     ctrl_after = await tl.read_reg(ADDR_WATCHDOG_CTRL)
-    assert (ctrl_after & 0x2) == 0x2, f"wd_lock must remain asserted after lock: {ctrl_after:#010x}"
+    assert (
+        ctrl_after & 0x2
+    ) == 0x2, f"wd_lock must remain asserted after lock: {ctrl_after:#010x}"
     sample_wd_ctrl_value(ctrl_after)
 
     # Pet path should be executable under enabled watchdog mode.

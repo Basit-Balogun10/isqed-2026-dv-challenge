@@ -1,0 +1,832 @@
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:137: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:172: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:310: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:342: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:459: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492505
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+82000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+82000000000.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                                 Directed boundary/error probe on out-of-range-like addresses.
+111000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+111000000000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                              ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *******************************************************************************************************
+                                                              ** test_directed_smoke.test_directed_csr_smoke     PASS   82000000000.00           0.01   8795338788870.70  **
+                                                              ** test_directed_smoke.test_directed_error_probe   PASS   28000000000.00           0.00   9379483427841.23  **
+                                                              *******************************************************************************************************
+                                                              ** TESTS=2 PASS=2 FAIL=0 SKIP=0                           111000000000.00           0.01   7570084128713.35  **
+                                                              *******************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492506
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+110000000000.00ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+110000000000.00ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                              ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *****************************************************************************************************
+                                                              ** test_random_csr.test_randomized_csr_traffic   PASS   110000000000.00           0.01   8747576740041.33  **
+                                                              *****************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                         110000000000.00           0.01   8056532383397.07  **
+                                                              *****************************************************************************************************
+- V e r i l a t i o n   R e p o r t: Verilator 5.045 devel rev v5.044-259-g6a5d3b0b7
+- Verilator: Built from 0.072 MB sources in 3 modules, into 0.499 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.044 s (elab=0.002, cvt=0.028, bld=0.000); cpu 0.041 s on 1 threads; allocated 33.461 MB
+make: Entering directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_nexus_uart/sim_build/verilator'
+ccache g++  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /home/abdulbasit/open-source/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /home/abdulbasit/open-source/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /home/abdulbasit/open-source/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_cov.o /home/abdulbasit/open-source/verilator/include/verilated_cov.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /home/abdulbasit/open-source/verilator/include/verilated_threads.cpp
+python3 /home/abdulbasit/open-source/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop_dv_common_pkg__Slow.cpp Vtop_dv_common_pkg__0__Slow.cpp Vtop__Syms__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -L/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o nexus_uart
+rm Vtop__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_nexus_uart/sim_build/verilator'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492506
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+     0.08ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+     0.08ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                            Directed boundary/error probe on out-of-range-like addresses.
+     0.11ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+     0.11ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_directed_smoke.test_directed_csr_smoke     PASS           0.08           0.00         23.52  **
+                                                        ** test_directed_smoke.test_directed_error_probe   PASS           0.03           0.00         18.07  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0                                   0.11           0.01         15.52  **
+                                                        *******************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492507
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+     0.11ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+     0.11ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                        ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *****************************************************************************************************
+                                                        ** test_random_csr.test_randomized_csr_traffic   PASS           0.11           0.01         20.69  **
+                                                        *****************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                 0.11           0.01         16.59  **
+                                                        *****************************************************************************************************
+- :0: Verilog $finish
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:137: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:172: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:310: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:342: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:459: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492512
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+82000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+82000000000.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                                 Directed boundary/error probe on out-of-range-like addresses.
+111000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+111000000000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                              ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *******************************************************************************************************
+                                                              ** test_directed_smoke.test_directed_csr_smoke     PASS   82000000000.00           0.01   10144017932458.34  **
+                                                              ** test_directed_smoke.test_directed_error_probe   PASS   28000000000.00           0.00   9595597025900.81  **
+                                                              *******************************************************************************************************
+                                                              ** TESTS=2 PASS=2 FAIL=0 SKIP=0                           111000000000.00           0.01   8742727859986.48  **
+                                                              *******************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492512
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: loopback_tx_rx_integrity_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.01   7019886190352.21  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.01   6433749083905.71  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492513
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+110000000000.00ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+110000000000.00ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                              ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *****************************************************************************************************
+                                                              ** test_random_csr.test_randomized_csr_traffic   PASS   110000000000.00           0.01   8400980352883.34  **
+                                                              *****************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                         110000000000.00           0.01   7733120579263.18  **
+                                                              *****************************************************************************************************
+- V e r i l a t i o n   R e p o r t: Verilator 5.045 devel rev v5.044-259-g6a5d3b0b7
+- Verilator: Built from 0.072 MB sources in 3 modules, into 0.499 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.045 s (elab=0.002, cvt=0.029, bld=0.000); cpu 0.043 s on 1 threads; allocated 33.461 MB
+make: Entering directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_nexus_uart/sim_build/verilator'
+ccache g++  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /home/abdulbasit/open-source/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /home/abdulbasit/open-source/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /home/abdulbasit/open-source/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_cov.o /home/abdulbasit/open-source/verilator/include/verilated_cov.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /home/abdulbasit/open-source/verilator/include/verilated_threads.cpp
+python3 /home/abdulbasit/open-source/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop_dv_common_pkg__Slow.cpp Vtop_dv_common_pkg__0__Slow.cpp Vtop__Syms__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -L/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o nexus_uart
+rm Vtop__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_nexus_uart/sim_build/verilator'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492514
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+     0.08ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+     0.08ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                            Directed boundary/error probe on out-of-range-like addresses.
+     0.11ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+     0.11ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_directed_smoke.test_directed_csr_smoke     PASS           0.08           0.00         23.73  **
+                                                        ** test_directed_smoke.test_directed_error_probe   PASS           0.03           0.00         20.42  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0                                   0.11           0.01         16.63  **
+                                                        *******************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492514
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: loopback_tx_rx_integrity_gap.
+     0.09ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+     0.09ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_1.test_gap_iteration_1   PASS           0.09           0.00         23.54  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.09           0.01         17.80  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492514
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+     0.11ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+     0.11ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                        ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *****************************************************************************************************
+                                                        ** test_random_csr.test_randomized_csr_traffic   PASS           0.11           0.01         19.94  **
+                                                        *****************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                 0.11           0.01         14.94  **
+                                                        *****************************************************************************************************
+- :0: Verilog $finish
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:137: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:172: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:310: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:342: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:459: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492526
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+82000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+82000000000.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                                 Directed boundary/error probe on out-of-range-like addresses.
+111000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+111000000000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                              ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *******************************************************************************************************
+                                                              ** test_directed_smoke.test_directed_csr_smoke     PASS   82000000000.00           0.02   4559872298676.85  **
+                                                              ** test_directed_smoke.test_directed_error_probe   PASS   28000000000.00           0.01   4893966412468.23  **
+                                                              *******************************************************************************************************
+                                                              ** TESTS=2 PASS=2 FAIL=0 SKIP=0                           111000000000.00           0.03   4109086723976.63  **
+                                                              *******************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492527
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: loopback_tx_rx_integrity_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.02   4368510490562.54  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.02   3958093760157.70  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492528
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+110000000000.00ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+110000000000.00ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                              ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *****************************************************************************************************
+                                                              ** test_random_csr.test_randomized_csr_traffic   PASS   110000000000.00           0.04   3029531689123.53  **
+                                                              *****************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                         110000000000.00           0.04   2760566265781.13  **
+                                                              *****************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492528
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS   174000000000.00           0.04   4748454045050.55  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.04   4504687311355.40  **
+                                                              ********************************************************************************************************
+- V e r i l a t i o n   R e p o r t: Verilator 5.045 devel rev v5.044-259-g6a5d3b0b7
+- Verilator: Built from 0.072 MB sources in 3 modules, into 0.499 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.077 s (elab=0.004, cvt=0.048, bld=0.000); cpu 0.072 s on 1 threads; allocated 33.453 MB
+make: Entering directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_nexus_uart/sim_build/verilator'
+ccache g++  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /home/abdulbasit/open-source/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /home/abdulbasit/open-source/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /home/abdulbasit/open-source/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_cov.o /home/abdulbasit/open-source/verilator/include/verilated_cov.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /home/abdulbasit/open-source/verilator/include/verilated_threads.cpp
+python3 /home/abdulbasit/open-source/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop_dv_common_pkg__Slow.cpp Vtop_dv_common_pkg__0__Slow.cpp Vtop__Syms__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -L/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o nexus_uart
+rm Vtop__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_nexus_uart/sim_build/verilator'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492530
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+     0.08ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+     0.08ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                            Directed boundary/error probe on out-of-range-like addresses.
+     0.11ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+     0.11ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_directed_smoke.test_directed_csr_smoke     PASS           0.08           0.01          9.83  **
+                                                        ** test_directed_smoke.test_directed_error_probe   PASS           0.03           0.00          8.89  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0                                   0.11           0.02          7.15  **
+                                                        *******************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492531
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: loopback_tx_rx_integrity_gap.
+     0.09ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+     0.09ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_1.test_gap_iteration_1   PASS           0.09           0.01         17.18  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.09           0.01         13.12  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492531
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+     0.11ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+     0.11ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                        ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *****************************************************************************************************
+                                                        ** test_random_csr.test_randomized_csr_traffic   PASS           0.11           0.01         12.32  **
+                                                        *****************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                 0.11           0.01          9.97  **
+                                                        *****************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492532
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+     0.17ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+     0.17ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                        ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************
+                                                        ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS           0.17           0.01         16.12  **
+                                                        ********************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                    0.17           0.01         13.66  **
+                                                        ********************************************************************************************************
+- :0: Verilog $finish
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:137: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:172: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:310: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:342: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:459: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492538
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+82000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+82000000000.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                                 Directed boundary/error probe on out-of-range-like addresses.
+111000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+111000000000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                              ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *******************************************************************************************************
+                                                              ** test_directed_smoke.test_directed_csr_smoke     PASS   82000000000.00           0.01   6151765901123.27  **
+                                                              ** test_directed_smoke.test_directed_error_probe   PASS   28000000000.00           0.00   6309257118298.06  **
+                                                              *******************************************************************************************************
+                                                              ** TESTS=2 PASS=2 FAIL=0 SKIP=0                           111000000000.00           0.02   5259226243730.51  **
+                                                              *******************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492539
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: loopback_tx_rx_integrity_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.01   6027934784344.41  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.02   5452183257265.01  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492539
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_2.test_gap_iteration_2 (1/1)
+                                                            Coverage-gap iteration test: fifo_overrun_boundary_gap.
+106000000000.00ns INFO     cocotb.regression                  test_gap_iter_2.test_gap_iteration_2 passed
+106000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                              ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              **********************************************************************************************
+                                                              ** test_gap_iter_2.test_gap_iteration_2   PASS   106000000000.00           0.02   6767374826856.63  **
+                                                              **********************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  106000000000.00           0.02   6228582572149.06  **
+                                                              **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492540
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+110000000000.00ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+110000000000.00ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                              ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *****************************************************************************************************
+                                                              ** test_random_csr.test_randomized_csr_traffic   PASS   110000000000.00           0.02   5836993029110.74  **
+                                                              *****************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                         110000000000.00           0.02   5394603215434.08  **
+                                                              *****************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492541
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS   174000000000.00           0.03   6294223287824.82  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.03   5953055581839.24  **
+                                                              ********************************************************************************************************
+- V e r i l a t i o n   R e p o r t: Verilator 5.045 devel rev v5.044-259-g6a5d3b0b7
+- Verilator: Built from 0.072 MB sources in 3 modules, into 0.499 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.054 s (elab=0.003, cvt=0.035, bld=0.000); cpu 0.051 s on 1 threads; allocated 33.453 MB
+make: Entering directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_nexus_uart/sim_build/verilator'
+ccache g++  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /home/abdulbasit/open-source/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /home/abdulbasit/open-source/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /home/abdulbasit/open-source/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_cov.o /home/abdulbasit/open-source/verilator/include/verilated_cov.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /home/abdulbasit/open-source/verilator/include/verilated_threads.cpp
+python3 /home/abdulbasit/open-source/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop_dv_common_pkg__Slow.cpp Vtop_dv_common_pkg__0__Slow.cpp Vtop__Syms__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -L/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o nexus_uart
+rm Vtop__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_nexus_uart/sim_build/verilator'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492542
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+     0.08ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+     0.08ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                            Directed boundary/error probe on out-of-range-like addresses.
+     0.11ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+     0.11ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_directed_smoke.test_directed_csr_smoke     PASS           0.08           0.00         22.73  **
+                                                        ** test_directed_smoke.test_directed_error_probe   PASS           0.03           0.00         18.38  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0                                   0.11           0.01         15.37  **
+                                                        *******************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492542
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: loopback_tx_rx_integrity_gap.
+     0.09ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+     0.09ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_1.test_gap_iteration_1   PASS           0.09           0.00         22.42  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.09           0.01         16.85  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492542
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_2.test_gap_iteration_2 (1/1)
+                                                            Coverage-gap iteration test: fifo_overrun_boundary_gap.
+     0.11ns INFO     cocotb.regression                  test_gap_iter_2.test_gap_iteration_2 passed
+     0.11ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_2.test_gap_iteration_2   PASS           0.11           0.00         23.49  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.11           0.01         18.45  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492542
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+     0.11ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+     0.11ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                        ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *****************************************************************************************************
+                                                        ** test_random_csr.test_randomized_csr_traffic   PASS           0.11           0.00         22.33  **
+                                                        *****************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                 0.11           0.01         17.80  **
+                                                        *****************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492542
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+     0.17ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+     0.17ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                        ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************
+                                                        ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS           0.17           0.02          8.17  **
+                                                        ********************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                    0.17           0.02          7.18  **
+                                                        ********************************************************************************************************
+- :0: Verilog $finish
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:137: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:172: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:282: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:310: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:314: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:342: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv:459: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492554
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+82000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+82000000000.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                                 Directed boundary/error probe on out-of-range-like addresses.
+111000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+111000000000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                              ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *******************************************************************************************************
+                                                              ** test_directed_smoke.test_directed_csr_smoke     PASS   82000000000.00           0.01   9488851956077.91  **
+                                                              ** test_directed_smoke.test_directed_error_probe   PASS   28000000000.00           0.00   9512434148712.13  **
+                                                              *******************************************************************************************************
+                                                              ** TESTS=2 PASS=2 FAIL=0 SKIP=0                           111000000000.00           0.01   8414838035678.78  **
+                                                              *******************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492554
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: loopback_tx_rx_integrity_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.02   5995383955656.50  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.02   5476943255517.03  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492554
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_2.test_gap_iteration_2 (1/1)
+                                                            Coverage-gap iteration test: fifo_overrun_boundary_gap.
+106000000000.00ns INFO     cocotb.regression                  test_gap_iter_2.test_gap_iteration_2 passed
+106000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                              ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              **********************************************************************************************
+                                                              ** test_gap_iter_2.test_gap_iteration_2   PASS   106000000000.00           0.02   6574533065183.96  **
+                                                              **********************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  106000000000.00           0.02   6006352575620.43  **
+                                                              **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492555
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+110000000000.00ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+110000000000.00ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                              ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *****************************************************************************************************
+                                                              ** test_random_csr.test_randomized_csr_traffic   PASS   110000000000.00           0.02   6115442447378.19  **
+                                                              *****************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                         110000000000.00           0.02   5673345056134.18  **
+                                                              *****************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492555
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS   174000000000.00           0.03   6198426172701.10  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.03   5867244133229.36  **
+                                                              ********************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492556
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_2_1.test_repair_iteration_2_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_2_1.test_repair_iteration_2_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_2_1.test_repair_iteration_2_1   PASS   174000000000.00           0.06   2822633765992.67  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.06   2715224477647.48  **
+                                                              ********************************************************************************************************
+- V e r i l a t i o n   R e p o r t: Verilator 5.045 devel rev v5.044-259-g6a5d3b0b7
+- Verilator: Built from 0.072 MB sources in 3 modules, into 0.499 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.070 s (elab=0.004, cvt=0.044, bld=0.000); cpu 0.065 s on 1 threads; allocated 33.461 MB
+make: Entering directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_nexus_uart/sim_build/verilator'
+ccache g++  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /home/abdulbasit/open-source/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /home/abdulbasit/open-source/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /home/abdulbasit/open-source/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_cov.o /home/abdulbasit/open-source/verilator/include/verilated_cov.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /home/abdulbasit/open-source/verilator/include/verilated_threads.cpp
+python3 /home/abdulbasit/open-source/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop_dv_common_pkg__Slow.cpp Vtop_dv_common_pkg__0__Slow.cpp Vtop__Syms__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -L/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o nexus_uart
+rm Vtop__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_nexus_uart/sim_build/verilator'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492557
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+     0.08ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+     0.08ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                            Directed boundary/error probe on out-of-range-like addresses.
+     0.11ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+     0.11ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_directed_smoke.test_directed_csr_smoke     PASS           0.08           0.00         17.59  **
+                                                        ** test_directed_smoke.test_directed_error_probe   PASS           0.03           0.00         13.12  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0                                   0.11           0.01         11.35  **
+                                                        *******************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492558
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: loopback_tx_rx_integrity_gap.
+     0.09ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+     0.09ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_1.test_gap_iteration_1   PASS           0.09           0.00         20.85  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.09           0.01         15.52  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492558
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_2.test_gap_iteration_2 (1/1)
+                                                            Coverage-gap iteration test: fifo_overrun_boundary_gap.
+     0.11ns INFO     cocotb.regression                  test_gap_iter_2.test_gap_iteration_2 passed
+     0.11ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_2.test_gap_iteration_2   PASS           0.11           0.01         14.28  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.11           0.01         11.38  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492559
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+     0.11ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+     0.11ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                        ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *****************************************************************************************************
+                                                        ** test_random_csr.test_randomized_csr_traffic   PASS           0.11           0.01         11.16  **
+                                                        *****************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                 0.11           0.01          8.96  **
+                                                        *****************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492560
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+     0.17ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+     0.17ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                        ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************
+                                                        ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS           0.17           0.01         18.70  **
+                                                        ********************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                    0.17           0.01         15.99  **
+                                                        ********************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775492560
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_2_1.test_repair_iteration_2_1 (1/1)
+     0.17ns INFO     cocotb.regression                  test_repair_iter_2_1.test_repair_iteration_2_1 passed
+     0.17ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                        ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************
+                                                        ** test_repair_iter_2_1.test_repair_iteration_2_1   PASS           0.17           0.01         22.19  **
+                                                        ********************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                    0.17           0.01         18.70  **
+                                                        ********************************************************************************************************
+- :0: Verilog $finish

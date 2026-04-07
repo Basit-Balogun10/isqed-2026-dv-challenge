@@ -119,7 +119,9 @@ class CoverageAnalyzer:
             return ratio
         return self._parse_lcov_ratio(info_path, data_prefix="DA:")
 
-    def rank_focus_targets(self, uncovered_targets: Iterable[str], max_targets: int = 4) -> list[str]:
+    def rank_focus_targets(
+        self, uncovered_targets: Iterable[str], max_targets: int = 4
+    ) -> list[str]:
         """Return a stable, priority-ordered list of uncovered targets."""
         targets = list(uncovered_targets)
 

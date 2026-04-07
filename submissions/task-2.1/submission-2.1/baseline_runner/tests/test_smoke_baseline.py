@@ -8,14 +8,14 @@ from testbench.tl_ul_agent import TlUlDriver
 def _set_optional_inputs(dut):
     # Keep optional protocol-side inputs at benign defaults so the DUT remains deterministic.
     for signal, value in [
-        ('rx_i', 1),
-        ('scl_i', 1),
-        ('sda_i', 1),
-        ('cio_gpio_i', 0),
-        ('cs_i', 0),
-        ('sck_i', 0),
-        ('mosi_i', 0),
-        ('alert_rx_i', 0),
+        ("rx_i", 1),
+        ("scl_i", 1),
+        ("sda_i", 1),
+        ("cio_gpio_i", 0),
+        ("cs_i", 0),
+        ("sck_i", 0),
+        ("mosi_i", 0),
+        ("alert_rx_i", 0),
     ]:
         if hasattr(dut, signal):
             getattr(dut, signal).value = value
@@ -24,7 +24,7 @@ def _set_optional_inputs(dut):
 @cocotb.test()
 async def test_smoke_baseline(dut):
     """Generic low-stimulus baseline run to create reference-like coverage artifacts."""
-    cocotb.start_soon(Clock(dut.clk_i, 10, unit='ns').start())
+    cocotb.start_soon(Clock(dut.clk_i, 10, unit="ns").start())
 
     _set_optional_inputs(dut)
 

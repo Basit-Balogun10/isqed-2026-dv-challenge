@@ -5,11 +5,11 @@ from cocotb.triggers import RisingEdge
 class TlUlDriver:
     """Flat-signal TileLink-UL driver for broad simulator compatibility."""
 
-    def __init__(self, dut, clk_signal='clk_i'):
+    def __init__(self, dut, clk_signal="clk_i"):
         self.dut = dut
         self.clk = getattr(dut, clk_signal)
 
-    async def reset(self, rst_signal='rst_ni', cycles=5):
+    async def reset(self, rst_signal="rst_ni", cycles=5):
         rst = getattr(self.dut, rst_signal)
         rst.value = 0
         for _ in range(cycles):

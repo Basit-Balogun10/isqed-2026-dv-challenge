@@ -150,11 +150,13 @@ def parse_lcov(path: Path) -> dict:
         uncovered = stats["line_total"] - stats["line_hit"]
         if uncovered <= 0:
             continue
-        top_uncovered.append({
-            "file": file_path,
-            "uncovered_lines": uncovered,
-            "ranges": largest_ranges(stats["uncovered_lines"], limit=8),
-        })
+        top_uncovered.append(
+            {
+                "file": file_path,
+                "uncovered_lines": uncovered,
+                "ranges": largest_ranges(stats["uncovered_lines"], limit=8),
+            }
+        )
 
     top_uncovered.sort(key=lambda x: x["uncovered_lines"], reverse=True)
 
@@ -219,7 +221,9 @@ def main() -> int:
         for item in top_uncovered[:5]:
             ranges_list = cast(list[str], item["ranges"])
             ranges = ", ".join(ranges_list) if ranges_list else "n/a"
-            md_lines.append(f"- {item['file']} | uncovered={item['uncovered_lines']} | ranges={ranges}")
+            md_lines.append(
+                f"- {item['file']} | uncovered={item['uncovered_lines']} | ranges={ranges}"
+            )
 
     OUT_MD.write_text("\n".join(md_lines) + "\n", encoding="utf-8")
     return 0

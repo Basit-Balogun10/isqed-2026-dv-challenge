@@ -1,0 +1,46 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_rampart_i2c/tests/random/test_gap_iter_1.py",
+      "scenario": "simultaneous_fsm_arbitration_gap",
+      "functional_before": 36.23,
+      "updated_functional_coverage": 36.23,
+      "coverage_delta": 0.0,
+      "simulation_passed": false,
+      "failing_runs": 2,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_rampart_i2c/tests/random/test_repair_iter_1_1.py",
+          "coverage_before": 36.23,
+          "coverage_after": 36.23,
+          "simulation_passed": false,
+          "failing_runs": 2
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_rampart_i2c/tests/random/test_gap_iter_2.py",
+      "scenario": "fifo_reset_boundary_gap",
+      "functional_before": 36.23,
+      "updated_functional_coverage": 36.23,
+      "coverage_delta": 0.0,
+      "simulation_passed": false,
+      "failing_runs": 4,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_rampart_i2c/tests/random/test_repair_iter_2_1.py",
+          "coverage_before": 36.23,
+          "coverage_after": 36.23,
+          "simulation_passed": false,
+          "failing_runs": 4
+        }
+      ]
+    }
+  ]
+}

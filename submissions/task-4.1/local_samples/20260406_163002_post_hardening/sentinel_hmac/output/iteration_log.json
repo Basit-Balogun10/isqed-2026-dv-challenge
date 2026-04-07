@@ -1,0 +1,46 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/tests/random/test_gap_iter_1.py",
+      "scenario": "cmd_sequence_race_gap",
+      "functional_before": 30.12,
+      "updated_functional_coverage": 30.12,
+      "coverage_delta": 0.0,
+      "simulation_passed": false,
+      "failing_runs": 2,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/tests/random/test_repair_iter_1_1.py",
+          "coverage_before": 30.12,
+          "coverage_after": 30.12,
+          "simulation_passed": false,
+          "failing_runs": 2
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/tests/random/test_gap_iter_2.py",
+      "scenario": "hmac_double_pass_gap",
+      "functional_before": 30.12,
+      "updated_functional_coverage": 30.12,
+      "coverage_delta": 0.0,
+      "simulation_passed": false,
+      "failing_runs": 3,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/tests/random/test_repair_iter_2_1.py",
+          "coverage_before": 30.12,
+          "coverage_after": 30.12,
+          "simulation_passed": false,
+          "failing_runs": 3
+        }
+      ]
+    }
+  ]
+}

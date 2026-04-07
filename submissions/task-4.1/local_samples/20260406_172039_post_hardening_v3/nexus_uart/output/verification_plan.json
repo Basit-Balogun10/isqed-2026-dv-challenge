@@ -1,0 +1,124 @@
+{
+  "features": [
+    "TL-UL CSR access with single-cycle response",
+    "UART full-duplex TX/RX datapaths",
+    "32-byte TX FIFO and 32-byte RX FIFO behavior",
+    "CTRL register programming for tx_enable, rx_enable, baud_divisor, parity_mode, stop_bits, loopback_en",
+    "STATUS register readback including FIFO levels and sticky error bits",
+    "TXDATA write path into TX FIFO",
+    "RXDATA read path from RX FIFO",
+    "FIFO_CTRL watermark programming and FIFO reset behavior",
+    "Interrupt generation and W1C handling for watermark/status conditions",
+    "Loopback mode functional self-test",
+    "Parity and stop-bit configuration coverage",
+    "RX overrun, parity error, and frame error characterization",
+    "Unmapped address error response",
+    "Reset behavior and register reset values",
+    "Reserved field read-zero/write-ignore behavior"
+  ],
+  "coverage_goals": {
+    "line_percent": 85,
+    "branch_percent": 75,
+    "functional_percent": 85
+  },
+  "directed_tests": [
+    {
+      "name": "reset_smoke_csr_map",
+      "intent": "Apply reset, verify all documented reset values, reserved bits read as zero, and basic TL-UL read/write access to CTRL, STATUS, TXDATA, RXDATA, FIFO_CTRL, and interrupt state registers."
+    },
+    {
+      "name": "tlul_unmapped_address_error",
+      "intent": "Issue reads and writes to unmapped addresses and confirm error response behavior without side effects on valid CSRs."
+    },
+    {
+      "name": "ctrl_programming_sanity",
+      "intent": "Program tx_enable, rx_enable, baud_divisor, parity_mode, stop_bits, and loopback_en individually and in combination, then read back CTRL to confirm writable fields and reserved-bit masking."
+    },
+    {
+      "name": "tx_fifo_push_level_status",
+      "intent": "Write a small sequence of bytes to TXDATA, verify TX FIFO level increments, empty/full flags update correctly, and TXDATA reserved bits are ignored."
+    },
+    {
+      "name": "rx_fifo_pop_level_status",
+      "intent": "Inject receive bytes on uart_rx_i, verify RX FIFO level increments, read RXDATA to pop bytes, and confirm empty/full flags update correctly."
+    },
+    {
+      "name": "loopback_basic_data_path",
+      "intent": "Enable loopback with TX and RX enabled, transmit a byte stream, and verify received data matches transmitted data across multiple byte values."
+    },
+    {
+      "name": "parity_modes_even_odd_none",
+      "intent": "Run loopback transfers under no parity, even parity, and odd parity settings to confirm successful reception in supported modes and characterize reserved parity mode behavior if exercised."
+    },
+    {
+      "name": "stop_bits_1_and_2",
+      "intent": "Verify transmit/receive operation with 1 stop bit and 2 stop bits, ensuring no functional regression in loopback and external receive stimulus."
+    },
+    {
+      "name": "fifo_watermark_interrupts",
+      "intent": "Program TX and RX watermarks, drive FIFO levels across thresholds, and verify interrupt assertion, W1C clearing, and re-arming behavior."
+    },
+    {
+      "name": "fifo_reset_and_sticky_error_clear",
+      "intent": "Assert TX and RX FIFO reset bits, confirm FIFOs flush, and verify STATUS sticky error bits clear only via RX FIFO reset or full reset."
+    },
+    {
+      "name": "rx_overrun_characterization",
+      "intent": "Overfill RX FIFO with external stimulus to provoke overrun, then confirm STATUS.rx_overrun sets and remains sticky until RX FIFO reset."
+    },
+    {
+      "name": "rx_parity_and_frame_error_characterization",
+      "intent": "Inject malformed UART frames to provoke parity and stop-bit errors, then confirm STATUS sticky error bits set and are observable through CSR reads."
+    }
+  ],
+  "random_tests": [
+    {
+      "name": "tlul_csr_fuzz_smoke",
+      "intent": "Run constrained-random TL-UL reads and writes across valid CSR addresses with scoreboarding for readback, write-ignore, and error responses, keeping runtime bounded to a short smoke window."
+    },
+    {
+      "name": "uart_loopback_random_payloads",
+      "intent": "Randomize payload bytes, burst lengths, and inter-byte gaps in loopback mode to stress TX/RX FIFOs, FSM transitions, and data ordering."
+    },
+    {
+      "name": "uart_random_config_matrix",
+      "intent": "Randomly sweep baud_divisor, parity_mode, stop_bits, and enable combinations within legal ranges while performing short loopback transfers to catch configuration-dependent issues."
+    },
+    {
+      "name": "fifo_pressure_random",
+      "intent": "Apply randomized TX writes and RX injections near FIFO capacity to exercise full/empty transitions, watermark interrupts, and overrun handling under pressure."
+    }
+  ],
+  "risk_areas": [
+    {
+      "area": "Loopback TX-to-RX data integrity",
+      "reason": "Highest functional value and likely integration risk because it spans both datapaths, FIFOs, FSMs, and configuration control.",
+      "priority": "high"
+    },
+    {
+      "area": "FIFO boundary behavior and overrun handling",
+      "reason": "32-byte FIFO depth, full/empty transitions, and sticky overrun behavior are common bug sources and directly impact data loss.",
+      "priority": "high"
+    },
+    {
+      "area": "Interrupt generation and W1C semantics",
+      "reason": "Watermark and status interrupts are often implemented with edge/level ambiguities and require careful verification of clear/re-arm behavior.",
+      "priority": "high"
+    },
+    {
+      "area": "Parity and stop-bit configuration",
+      "reason": "Protocol-format options affect FSM timing and error detection; mis-implementation can silently break interoperability.",
+      "priority": "medium"
+    },
+    {
+      "area": "TL-UL register access and unmapped address errors",
+      "reason": "Bus correctness is essential but lower risk than core UART functionality given the simplified single-cycle response model.",
+      "priority": "medium"
+    },
+    {
+      "area": "Reserved field masking and reset values",
+      "reason": "Important for CSR compliance and software robustness, but typically lower functional risk than datapath and interrupt logic.",
+      "priority": "low"
+    }
+  ]
+}

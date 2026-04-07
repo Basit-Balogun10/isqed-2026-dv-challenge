@@ -1,0 +1,8 @@
+dut,status,exit_code,duration_seconds,simulator_mode,simulation_passed,dual_simulator_compliant,line_percent,branch_percent,toggle_percent,fsm_percent,functional_percent,simulators_tested,toggle_source,fsm_source
+aegis_aes,pass,0,143,both,True,True,0.0,3.25,0.0,0.0,38.67,icarus;verilator,unavailable,unavailable
+bastion_gpio,pass,0,228,both,True,True,0.0,3.72,0.0,0.0,52.73,icarus;verilator,unavailable,unavailable
+citadel_spi,fail,1,110,both,,,,,,,,,,
+nexus_uart,pass,0,128,both,True,True,0.0,5.22,0.0,0.0,61.7,icarus;verilator,unavailable,unavailable
+rampart_i2c,pass,0,238,both,True,True,0.0,10.36,0.0,0.0,42.03,icarus;verilator,unavailable,unavailable
+sentinel_hmac,pass,0,112,both,True,True,0.0,3.08,0.0,0.0,34.94,icarus;verilator,unavailable,unavailable
+warden_timer,pass,0,88,both,False,False,0.0,0.0,0.0,0.0,0.0,,unknown,unknown

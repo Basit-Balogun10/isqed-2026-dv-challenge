@@ -1,0 +1,6 @@
+{
+  "timestamp": "20260406_172039",
+  "simulator": "both",
+  "retention_mode": "full",
+  "duts": ["nexus_uart"bastion_gpio"citadel_spi"rampart_i2c"sentinel_hmac"aegis_aes"warden_timer"]
+}

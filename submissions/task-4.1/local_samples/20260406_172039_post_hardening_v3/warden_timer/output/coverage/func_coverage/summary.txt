@@ -1,0 +1,5 @@
+functional_coverage_summary
+percent: 0.0
+bins_hit: 0
+bins_total: 0
+source: no_functional_data

@@ -146,7 +146,11 @@ def get_functional_coverage_percent() -> float:
 
 def write_functional_coverage_report(report_path: Optional[str] = None) -> float:
     """Write a text report that includes measured functional coverage percentage."""
-    out_path = report_path if report_path is not None else (os.getenv("FUNC_COV_OUT") or _DEFAULT_REPORT_PATH)
+    out_path = (
+        report_path
+        if report_path is not None
+        else (os.getenv("FUNC_COV_OUT") or _DEFAULT_REPORT_PATH)
+    )
     out_dir = os.path.dirname(out_path)
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)

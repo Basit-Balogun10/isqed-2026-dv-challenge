@@ -71,5 +71,19 @@ venv/
 # Verilator
 obj_dir/
 
-#DVT
+# DVT
 .dvt/
+
+# Environment variables
+.env
+
+# Task 4.1 local sample retention (allow examples in git, prune heavy artifacts)
+submissions/task-4.1/local_samples/**/output/sim_build/
+submissions/task-4.1/local_samples/**/output/**/__pycache__/
+submissions/task-4.1/local_samples/**/output/**/*.pyc
+
+# Re-include sample logs/reports despite global *.log ignore
+!submissions/task-4.1/local_samples/**/*.log
+!submissions/task-4.1/local_samples/**/*.md
+!submissions/task-4.1/local_samples/**/*.json
+!submissions/task-4.1/local_samples/**/*.csv

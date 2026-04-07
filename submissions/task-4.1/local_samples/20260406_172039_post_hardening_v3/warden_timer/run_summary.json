@@ -1,0 +1,21 @@
+{
+  "dut": "warden_timer",
+  "exit_code": 0,
+  "duration_seconds": 88,
+  "status": "pass",
+  "simulator_mode": "both",
+  "retention_mode": "full",
+  "simulation_passed": false,
+  "simulators_tested": [],
+  "simulators_requested": [],
+  "dual_simulator_compliant": false,
+  "directed_test_count": 10,
+  "random_test_count": 4,
+  "line_percent": 0.0,
+  "branch_percent": 0.0,
+  "toggle_percent": 0.0,
+  "fsm_percent": 0.0,
+  "functional_percent": 0.0,
+  "toggle_source": "unknown",
+  "fsm_source": "unknown"
+}

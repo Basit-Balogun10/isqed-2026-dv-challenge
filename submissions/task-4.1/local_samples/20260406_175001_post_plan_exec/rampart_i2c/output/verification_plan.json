@@ -1,0 +1,118 @@
+{
+  "features": [
+    "TL-UL CSR read/write access with byte/word integrity checks",
+    "Reset behavior and CSR default value validation",
+    "Host mode enable/disable sequencing",
+    "Target mode enable/disable sequencing",
+    "Open-drain SCL/SDA output-enable behavior",
+    "CTRL line_loopback functional path",
+    "Timing CSR programming and readback",
+    "Format FIFO write path and status flags",
+    "Host RX FIFO read path and status flags",
+    "Target TX FIFO write path and status flags",
+    "Target ACQ FIFO read path and status flags",
+    "Interrupt state/enable/test behavior",
+    "W1C interrupt clearing",
+    "Bus override register behavior",
+    "Host timeout configuration and timeout indication",
+    "Arbitration loss and bus conflict handling",
+    "I2C START/STOP and basic byte transfer sequencing",
+    "Multi-role coexistence and role arbitration",
+    "TL-UL backpressure and response integrity",
+    "Alert pin sanity on fatal/illegal conditions"
+  ],
+  "coverage_goals": {
+    "line_percent": 85,
+    "branch_percent": 75,
+    "functional_percent": 85
+  },
+  "directed_tests": [
+    {
+      "name": "reset_and_csr_smoke",
+      "intent": "Apply reset, verify all readable CSRs return documented defaults, confirm write-only registers ignore reads, and exercise basic TL-UL read/write handshakes on CTRL, TIMING, TARGET_ID, INTR_ENABLE, and INTR_TEST."
+    },
+    {
+      "name": "open_drain_and_loopback_sanity",
+      "intent": "Program CTRL.line_loopback and verify SCL/SDA output enables only ever drive low or release, then confirm internal loopback reflects driven bus state back into inputs."
+    },
+    {
+      "name": "host_basic_start_stop",
+      "intent": "Enable host mode, push a minimal format FIFO command sequence, and verify START/STOP generation, bus busy/idle status transitions, and no unexpected alert."
+    },
+    {
+      "name": "host_fifo_status_and_readback",
+      "intent": "Fill and drain the format FIFO to hit empty/full boundaries, check STATUS and FIFO_STATUS flags, and verify RDATA returns host RX data when loopback or stimulus provides incoming bytes."
+    },
+    {
+      "name": "target_tx_acq_paths",
+      "intent": "Enable target mode, write TXDATA entries, stimulate target receive activity, and verify ACQDATA reads back captured bytes while TX FIFO status reflects occupancy."
+    },
+    {
+      "name": "interrupt_w1c_and_test_injection",
+      "intent": "Enable selected interrupts, inject them through INTR_TEST, confirm INTR_STATE sets, then clear via W1C writes and verify masking behavior with INTR_ENABLE."
+    },
+    {
+      "name": "timeout_and_arbitration_loss",
+      "intent": "Program a short HOST_TIMEOUT_CTRL, hold the bus in a non-progressing state to trigger timeout indication, and create a multi-master conflict to observe arbitration loss handling and recovery."
+    },
+    {
+      "name": "simultaneous_host_target_enable",
+      "intent": "Enable both host and target modes together, drive representative bus activity, and verify the DUT resolves role ownership without illegal simultaneous drive on SCL/SDA."
+    }
+  ],
+  "random_tests": [
+    {
+      "name": "csr_fuzz_smoke",
+      "intent": "Randomize legal TL-UL reads and writes across all 19 CSRs with constrained field masks, checking for stable readback, no protocol errors, and correct handling of reserved bits."
+    },
+    {
+      "name": "fifo_pressure_random",
+      "intent": "Randomly push host format commands, target TX data, and read RX/ACQ paths under backpressure to stress FIFO boundary conditions, empty/full transitions, and data ordering."
+    },
+    {
+      "name": "i2c_role_mix_random",
+      "intent": "Randomly toggle host_enable, target_enable, and line_loopback while generating I2C bus activity to explore FSM interactions, arbitration edges, and unexpected state combinations."
+    },
+    {
+      "name": "timing_register_randomization",
+      "intent": "Sweep timing CSRs across representative legal values to ensure programming does not corrupt operation and that bus activity remains coherent across timing configurations."
+    }
+  ],
+  "risk_areas": [
+    {
+      "area": "Host/target FSM interaction",
+      "reason": "Two independent FSMs share SCL/SDA and can be enabled simultaneously; this is the highest functional risk for deadlock, illegal drive, or missed arbitration.",
+      "priority": "high"
+    },
+    {
+      "area": "FIFO boundary behavior",
+      "reason": "Four 64-entry FIFOs plus status flags create common off-by-one and underflow/overflow risks, especially around empty/full transitions and read/write ordering.",
+      "priority": "high"
+    },
+    {
+      "area": "Open-drain bus control",
+      "reason": "SCL/SDA must never be actively driven high; incorrect output-enable behavior can break bus correctness and is easy to miss without explicit checks.",
+      "priority": "high"
+    },
+    {
+      "area": "Interrupt and alert signaling",
+      "reason": "INTR_STATE, INTR_ENABLE, INTR_TEST, and alert_o are often partially implemented or miswired; these are high-value checks with low test cost.",
+      "priority": "medium"
+    },
+    {
+      "area": "Timeout and arbitration loss",
+      "reason": "These are protocol corner cases that depend on bus timing and external stimulus; they are important but may require careful stimulus to observe reliably within the time budget.",
+      "priority": "medium"
+    },
+    {
+      "area": "Timing CSR programming",
+      "reason": "Multiple programmable timing registers increase configuration space, but most bugs will be caught by a small representative sweep rather than exhaustive exploration.",
+      "priority": "medium"
+    },
+    {
+      "area": "Reserved field and write-only register handling",
+      "reason": "Lower functional risk, but useful for confirming CSR robustness and TL-UL compliance.",
+      "priority": "low"
+    }
+  ]
+}

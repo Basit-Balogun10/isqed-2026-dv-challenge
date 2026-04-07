@@ -1,0 +1,27 @@
+{
+  "dut": "bastion_gpio",
+  "exit_code": 0,
+  "duration_seconds": 180,
+  "status": "pass",
+  "simulator_mode": "both",
+  "retention_mode": "full",
+  "simulation_passed": false,
+  "simulators_tested": [
+    "icarus",
+    "verilator"
+  ],
+  "simulators_requested": [
+    "icarus",
+    "verilator"
+  ],
+  "dual_simulator_compliant": true,
+  "directed_test_count": 1,
+  "random_test_count": 5,
+  "line_percent": 0.0,
+  "branch_percent": 3.72,
+  "toggle_percent": 0.0,
+  "fsm_percent": 0.0,
+  "functional_percent": 45.45,
+  "toggle_source": "unavailable",
+  "fsm_source": "unavailable"
+}

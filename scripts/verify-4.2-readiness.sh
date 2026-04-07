@@ -203,32 +203,30 @@ if ! command -v unzip >/dev/null 2>&1; then
   exit 1
 fi
 
-ZIP_FILE="${ROOT_DIR}/submissions/task-4.2/submission-4.2.zip"
-TEMP_ZIP=""
+ZIP_DIR="${ROOT_DIR}/submissions/zips-4.2"
+ZIP_FILE="${ZIP_DIR}/submission-4.2.zip"
+mkdir -p "${ZIP_DIR}"
 
 if [[ -f "${ZIP_FILE}" ]]; then
   ZIP_TO_CHECK="${ZIP_FILE}"
   echo "[INFO] Using existing zip: ${ZIP_TO_CHECK}"
 else
   if ! command -v zip >/dev/null 2>&1; then
-    echo "[FAIL] zip is required to create a temporary archive for validation" >&2
+    echo "[FAIL] zip is required to create canonical archive for validation" >&2
     exit 1
   fi
-  TEMP_ZIP="$(mktemp /tmp/submission-4.2.XXXXXX.zip)"
-  rm -f "${TEMP_ZIP}"
   (
     cd "${ROOT_DIR}/submissions/task-4.2"
-    zip -qr "${TEMP_ZIP}" "submission-4.2"
+    zip -qr "${ZIP_FILE}" "submission-4.2"
   )
-  ZIP_TO_CHECK="${TEMP_ZIP}"
-  echo "[INFO] Created temporary zip for validation: ${ZIP_TO_CHECK}"
+  ZIP_TO_CHECK="${ZIP_FILE}"
+  echo "[INFO] Created canonical zip for validation: ${ZIP_TO_CHECK}"
 fi
 
 for prompt_file in "${expected_prompt_files[@]}"; do
   zip_path="submission-4.2/prompts/${prompt_file}"
   if ! unzip -Z1 "${ZIP_TO_CHECK}" | grep -Fxq "${zip_path}"; then
     echo "[FAIL] Zip payload missing prompt evidence file: ${zip_path}" >&2
-    [[ -n "${TEMP_ZIP}" ]] && rm -f "${TEMP_ZIP}"
     exit 1
   fi
   echo "[PASS] zip contains ${zip_path}"
@@ -243,14 +241,9 @@ extra_expected=(
 for zip_path in "${extra_expected[@]}"; do
   if ! unzip -Z1 "${ZIP_TO_CHECK}" | grep -Fxq "${zip_path}"; then
     echo "[FAIL] Zip payload missing expected file: ${zip_path}" >&2
-    [[ -n "${TEMP_ZIP}" ]] && rm -f "${TEMP_ZIP}"
     exit 1
   fi
   echo "[PASS] zip contains ${zip_path}"
 done
-
-if [[ -n "${TEMP_ZIP}" ]]; then
-  rm -f "${TEMP_ZIP}"
-fi
 
 echo "[PASS] Task 4.2 readiness checks completed"

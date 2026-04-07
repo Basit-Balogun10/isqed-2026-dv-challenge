@@ -46,7 +46,9 @@ async def test_repro_01(dut):
             reached_window = True
             break
         await RisingEdge(dut.clk_i)
-    assert reached_window, "Timeout waiting for mtime to reach split-write stress window"
+    assert (
+        reached_window
+    ), "Timeout waiting for mtime to reach split-write stress window"
 
     # Split write: low-half first, then high-half (classic TOCTOU hazard).
     await tl.write_reg(ADDR_MTIMECMP0_LOW, 0x00000050)

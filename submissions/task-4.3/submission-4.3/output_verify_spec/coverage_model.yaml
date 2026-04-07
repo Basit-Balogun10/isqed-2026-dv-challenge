@@ -1,0 +1,210 @@
+covergroups: &id001
+- name: cg_cg_request_acceptance_and_ordering
+  description: Coverage model for request admission gating, response generation, and
+    in-order completion.
+  sample_event: On request acceptance or response completion
+  coverpoints:
+  - name: cp_processing_enable
+    description: Processing enable state at request or response sampling point
+    bins:
+    - enabled
+    - disabled
+  - name: cp_request_result
+    description: Observed request attempt outcome
+    bins:
+    - accepted
+    - rejected
+  - name: cp_burst_length
+    description: Request burst size under test
+    bins:
+    - single
+    - back_to_back
+    - burst
+  - name: cp_response_order
+    description: Response order relative to request acceptance order
+    bins:
+    - in_order
+    - out_of_order
+  crosses:
+  - name: cx_enable_x_result
+    coverpoints:
+    - cp_processing_enable
+    - cp_request_result
+  - name: cx_burst_x_order
+    coverpoints:
+    - cp_burst_length
+    - cp_response_order
+- name: cg_cg_processing_enable_and_mode_control
+  description: Coverage model for processing enable/disable behavior and legal/illegal
+    mode selection.
+  sample_event: On control register write
+  coverpoints:
+  - name: cp_processing_enable
+    description: Processing enable bit value after write
+    bins:
+    - enabled
+    - disabled
+  - name: cp_mode_select
+    description: Selected legal operating mode
+    bins:
+    - normal
+    - diagnostic
+    - low_power
+  - name: cp_mode_encoding
+    description: Legality of the written mode encoding
+    bins:
+    - legal
+    - illegal
+  crosses:
+  - name: cx_enable_x_mode
+    coverpoints:
+    - cp_processing_enable
+    - cp_mode_select
+- name: cg_cg_queue_capacity_and_idle
+  description: Coverage model for finite queue occupancy, overflow rejection, and
+    idle indication.
+  sample_event: On enqueue, dequeue, or queue-status update
+  coverpoints:
+  - name: cp_queue_level
+    description: Current queue occupancy class
+    bins:
+    - empty
+    - partial
+    - full
+  - name: cp_enqueue_result
+    description: Observed enqueue outcome
+    bins:
+    - accepted
+    - overflow_reject
+  - name: cp_idle_indication
+    description: Idle indication derived from queue-empty status
+    bins:
+    - idle
+    - busy
+  - name: cp_overflow_status
+    description: Overflow status visibility after enqueue attempts
+    bins:
+    - clear
+    - set
+  crosses:
+  - name: cx_queue_level_x_idle
+    coverpoints:
+    - cp_queue_level
+    - cp_idle_indication
+  - name: cx_queue_level_x_enqueue_result
+    coverpoints:
+    - cp_queue_level
+    - cp_enqueue_result
+  - name: cx_enqueue_result_x_overflow_status
+    coverpoints:
+    - cp_enqueue_result
+    - cp_overflow_status
+- name: cg_cg_interrupt_and_event_signaling
+  description: Coverage model for completion and error interrupt assertion and clear-bit
+    deassertion.
+  sample_event: On interrupt source change or clear-bit write
+  coverpoints:
+  - name: cp_source_type
+    description: Interrupt source type under test
+    bins:
+    - completion
+    - error
+  - name: cp_int_enable
+    description: Interrupt-enable state for the sampled source
+    bins:
+    - enabled
+    - disabled
+  - name: cp_interrupt_state
+    description: Observed interrupt output state
+    bins:
+    - asserted
+    - deasserted
+  - name: cp_clear_action
+    description: Clear-bit write activity
+    bins:
+    - clear_write
+    - no_clear
+  crosses:
+  - name: cx_source_x_enable
+    coverpoints:
+    - cp_source_type
+    - cp_int_enable
+  - name: cx_source_x_clear
+    coverpoints:
+    - cp_source_type
+    - cp_clear_action
+  - name: cx_clear_x_state
+    coverpoints:
+    - cp_clear_action
+    - cp_interrupt_state
+- name: cg_cg_error_status_reporting_and_integrity
+  description: Coverage model for protocol-error and overflow-error reporting plus
+    protection of accepted requests.
+  sample_event: On error status update or post-error integrity check
+  coverpoints:
+  - name: cp_error_type
+    description: Observed error class
+    bins:
+    - protocol_error
+    - overflow_error
+  - name: cp_status_update
+    description: Whether the error status bit becomes visible
+    bins:
+    - set
+    - not_set
+  - name: cp_integrity_result
+    description: Integrity of previously accepted requests after an error
+    bins:
+    - preserved
+    - corrupted
+  crosses:
+  - name: cx_error_type_x_status_update
+    coverpoints:
+    - cp_error_type
+    - cp_status_update
+  - name: cx_error_type_x_integrity
+    coverpoints:
+    - cp_error_type
+    - cp_integrity_result
+- name: cg_cg_reset_and_safe_initialization
+  description: Coverage model for reset convergence to defaults, empty queue, and
+    safe idle outputs.
+  sample_event: On reset assertion or post-reset settle check
+  coverpoints:
+  - name: cp_reset_context
+    description: State of the controller when reset is applied
+    bins:
+    - idle_state
+    - during_activity
+  - name: cp_defaults_restored
+    description: Whether documented control and status defaults are restored after
+      reset
+    bins:
+    - restored
+    - not_restored
+  - name: cp_queue_after_reset
+    description: Queue occupancy after reset settles
+    bins:
+    - empty
+    - not_empty
+  - name: cp_output_state_after_reset
+    description: Externally visible output state after reset settles
+    bins:
+    - safe_idle
+    - active
+  crosses:
+  - name: cx_reset_context_x_defaults
+    coverpoints:
+    - cp_reset_context
+    - cp_defaults_restored
+  - name: cx_reset_context_x_queue_state
+    coverpoints:
+    - cp_reset_context
+    - cp_queue_after_reset
+  - name: cx_reset_context_x_output_state
+    coverpoints:
+    - cp_reset_context
+    - cp_output_state_after_reset
+functional_coverage:
+  dut_name: generic_peripheral_controller
+  covergroups: *id001

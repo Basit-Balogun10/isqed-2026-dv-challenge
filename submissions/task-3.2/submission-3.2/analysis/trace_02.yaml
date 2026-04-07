@@ -4,29 +4,29 @@ root_cause_cycle: 490
 root_cause_file: "nexus_uart.sv"
 root_cause_line: 295
 signal_trace:
-  - cycle: 500
-    signal: "assert_tx_fifo_data_integrity"
-    value: "FAIL"
-    note: "Transmitted byte sequence diverges from expected write order"
-  - cycle: 498
-    signal: "tx_rptr / tx_fifo_rdata"
-    value: "0x01 / 0x01"
-    note: "Read pointer advances after transmitting corrupted first entry"
-  - cycle: 492
-    signal: "tx_fifo_wdata / tx_fifo_rdata"
-    value: "0x82 / 0x80"
-    note: "Additional overflow writes keep aliasing index 0 data"
-  - cycle: 491
-    signal: "tx_wptr / tx_fifo_rdata"
-    value: "0x20 / 0x80"
-    note: "Write pointer does not advance, but FIFO head data is already corrupted"
-  - cycle: 490
-    signal: "tx_fifo_full / tx_fifo_push / tx_fifo_wdata"
-    value: "1 / 1 / 0x80"
-    note: "Overflow write is attempted while FIFO is full"
+    - cycle: 500
+      signal: "assert_tx_fifo_data_integrity"
+      value: "FAIL"
+      note: "Transmitted byte sequence diverges from expected write order"
+    - cycle: 498
+      signal: "tx_rptr / tx_fifo_rdata"
+      value: "0x01 / 0x01"
+      note: "Read pointer advances after transmitting corrupted first entry"
+    - cycle: 492
+      signal: "tx_fifo_wdata / tx_fifo_rdata"
+      value: "0x82 / 0x80"
+      note: "Additional overflow writes keep aliasing index 0 data"
+    - cycle: 491
+      signal: "tx_wptr / tx_fifo_rdata"
+      value: "0x20 / 0x80"
+      note: "Write pointer does not advance, but FIFO head data is already corrupted"
+    - cycle: 490
+      signal: "tx_fifo_full / tx_fifo_push / tx_fifo_wdata"
+      value: "1 / 1 / 0x80"
+      note: "Overflow write is attempted while FIFO is full"
 root_cause_description: |
-  During overflow traffic, `tx_fifo_push` remains asserted even when `tx_fifo_full` is set.
-  In the buggy behavior, the memory write path is not fully gated by `!tx_fifo_full`, so
-  `tx_fifo_mem[0]` is overwritten by overflow data while `tx_wptr` stays at 0x20. That
-  creates a silent data-corruption bug: pointer bookkeeping looks correct, but payload
-  integrity is broken at the FIFO head.
+    During overflow traffic, `tx_fifo_push` remains asserted even when `tx_fifo_full` is set.
+    In the buggy behavior, the memory write path is not fully gated by `!tx_fifo_full`, so
+    `tx_fifo_mem[0]` is overwritten by overflow data while `tx_wptr` stays at 0x20. That
+    creates a silent data-corruption bug: pointer bookkeeping looks correct, but payload
+    integrity is broken at the FIFO head.

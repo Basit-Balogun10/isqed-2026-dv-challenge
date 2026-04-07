@@ -5,21 +5,21 @@ The workflow followed the real conversation timeline: requirement audit, impleme
 
 ## AI Tools Used
 
-- GitHub Copilot (GPT-5.3-Codex) for scripting, gap extraction logic, and report generation.
-- Local shell tooling (`make`, `verilator_coverage`, Python in `.venv`) for baseline execution and artifact generation.
-- Workspace search/read tooling for RTL/spec/vplan cross-references and compliance checks.
+-   GitHub Copilot (GPT-5.3-Codex) for scripting, gap extraction logic, and report generation.
+-   Local shell tooling (`make`, `verilator_coverage`, Python in `.venv`) for baseline execution and artifact generation.
+-   Workspace search/read tooling for RTL/spec/vplan cross-references and compliance checks.
 
-- Prompt evidence sources:
-  - Master transcript: `submissions/task-2.1/prompts.md`
-  - Split judge-friendly transcript chunks: `submissions/task-2.1/submission-2.1/prompts/`
-  - Repository conversation URL: `https://github.com/Basit-Balogun10/isqed-2026-dv-challenge/blob/main/submissions/task-2.1/prompts.md`
+-   Prompt evidence sources:
+    -   Master transcript: `submissions/task-2.1/prompts.md`
+    -   Split judge-friendly transcript chunks: `submissions/task-2.1/submission-2.1/prompts/`
+    -   Repository conversation URL: `https://github.com/Basit-Balogun10/isqed-2026-dv-challenge/blob/main/submissions/task-2.1/prompts.md`
 
 ## Prompt Engineering Strategies
 
-- Audit-first prompting: started from Task 2.1 and submission-requirement sections before implementation.
-- Evidence-constrained prompting: only accepted gaps with concrete `file` and `line_range` anchors tied to uncovered coverage data.
-- Compatibility prompting: generated both primary Task 2.1 outputs and compatibility-format outputs to satisfy differing documentation expectations.
-- Hardening prompts: repeatedly audited packaging/readiness outputs and patched mismatches until checks were green.
+-   Audit-first prompting: started from Task 2.1 and submission-requirement sections before implementation.
+-   Evidence-constrained prompting: only accepted gaps with concrete `file` and `line_range` anchors tied to uncovered coverage data.
+-   Compatibility prompting: generated both primary Task 2.1 outputs and compatibility-format outputs to satisfy differing documentation expectations.
+-   Hardening prompts: repeatedly audited packaging/readiness outputs and patched mismatches until checks were green.
 
 ## Iteration Process
 
@@ -36,38 +36,38 @@ The workflow followed the real conversation timeline: requirement audit, impleme
 
 Coverpoint/Bin mapping note (judge-margin clarification):
 
-- For per-DUT functional-bin tables, `Coverpoint` is represented as `vp_scenario_id`, and `Bin Name` is the corresponding VP scenario ID token.
-- This mapping was used because the available baseline artifacts did not include richer native functional coverage bin exports; VP scenario IDs were the most traceable and reproducible functional intent anchors.
+-   For per-DUT functional-bin tables, `Coverpoint` is represented as `vp_scenario_id`, and `Bin Name` is the corresponding VP scenario ID token.
+-   This mapping was used because the available baseline artifacts did not include richer native functional coverage bin exports; VP scenario IDs were the most traceable and reproducible functional intent anchors.
 
 ## Human vs AI Contribution
 
-- Human-led: objective setting (Path A, all-DUT scope), acceptance criteria, and final packaging decisions.
-- AI-led: implementation of automation scripts, coverage parsing logic, structured report generation, and iterative compliance fixes.
-- Joint: prioritization quality checks, root-cause sanity review, and final go/no-go readiness decisions.
+-   Human-led: objective setting (Path A, all-DUT scope), acceptance criteria, and final packaging decisions.
+-   AI-led: implementation of automation scripts, coverage parsing logic, structured report generation, and iterative compliance fixes.
+-   Joint: prioritization quality checks, root-cause sanity review, and final go/no-go readiness decisions.
 
 ## Failed Approaches
 
-- Initial direct reuse of raw skeleton reference tests was unreliable in this workspace due interface/API mismatches; replaced with a self-contained baseline runner.
-- Early coverage summaries used less reviewer-friendly source paths; canonicalization to `duts/<dut>/<dut>.sv` anchors was added.
-- An intermediate bulk table edit accidentally touched non-target markdown sections; fixed with section-scoped correction and generator-level schema updates.
-- Inline heredoc audit command flow was unreliable in this terminal wrapper; switched to deterministic temporary script execution for the strict audit pass.
+-   Initial direct reuse of raw skeleton reference tests was unreliable in this workspace due interface/API mismatches; replaced with a self-contained baseline runner.
+-   Early coverage summaries used less reviewer-friendly source paths; canonicalization to `duts/<dut>/<dut>.sv` anchors was added.
+-   An intermediate bulk table edit accidentally touched non-target markdown sections; fixed with section-scoped correction and generator-level schema updates.
+-   Inline heredoc audit command flow was unreliable in this terminal wrapper; switched to deterministic temporary script execution for the strict audit pass.
 
 ## Efficiency Metrics
 
-- DUTs analyzed: 7/7
-- Structured major gaps reported: 28
-- Primary required outputs generated: 3
-- Compatibility outputs generated: per-DUT gap markdowns + summary + priority table
-- Prompt evidence files in submission package: 7 markdown files (6 chunks + README)
-- Readiness status: Task 2.1 verifier green (`--quick` and full)
-- Final package includes no DUT RTL/annotated HDL files
+-   DUTs analyzed: 7/7
+-   Structured major gaps reported: 28
+-   Primary required outputs generated: 3
+-   Compatibility outputs generated: per-DUT gap markdowns + summary + priority table
+-   Prompt evidence files in submission package: 7 markdown files (6 chunks + README)
+-   Readiness status: Task 2.1 verifier green (`--quick` and full)
+-   Final package includes no DUT RTL/annotated HDL files
 
 ## Reproducibility
 
 Environment:
 
-- Path A (cocotb + open-source flow)
-- Python virtual environment: `.venv`
+-   Path A (cocotb + open-source flow)
+-   Python virtual environment: `.venv`
 
 Core commands:
 
@@ -80,6 +80,6 @@ Core commands:
 
 Output set:
 
-- Primary: `gap_analysis.yaml`, `gap_summary.md`, `closure_plan.md`
-- Compatibility: `gap_analysis/*.md`, `summary.md`, `priority_table.yaml`
-- Evidence: `prompts/README.md` + six split transcript files sourced from `submissions/task-2.1/prompts.md`
+-   Primary: `gap_analysis.yaml`, `gap_summary.md`, `closure_plan.md`
+-   Compatibility: `gap_analysis/*.md`, `summary.md`, `priority_table.yaml`
+-   Evidence: `prompts/README.md` + six split transcript files sourced from `submissions/task-2.1/prompts.md`

@@ -3,13 +3,13 @@ classification: "functional_bug"
 root_module: "sentinel_hmac"
 root_line_range: "403-405,755-757,784-786"
 root_cause: |
-  Multi-block SHA/HMAC digest generation is corrupted only on the larger 128-byte case, while
-  shorter vectors pass. This pattern is consistent with a late-round message-schedule/window
-  issue (W[t] update path) or block-boundary state carry interaction, not a global initialization
-  failure. The mismatch concentrated in digest words 4-6 further suggests schedule-state drift
-  in later rounds.
+    Multi-block SHA/HMAC digest generation is corrupted only on the larger 128-byte case, while
+    shorter vectors pass. This pattern is consistent with a late-round message-schedule/window
+    issue (W[t] update path) or block-boundary state carry interaction, not a global initialization
+    failure. The mismatch concentrated in digest words 4-6 further suggests schedule-state drift
+    in later rounds.
 suggested_fix: |
-  Replace or formally validate the rolling 16-word schedule update mechanism for rounds >= 16.
-  Ensure block-boundary context handoff cannot reuse stale schedule words. Add dedicated
-  regressions for 2-block and 3-block messages with intermediate round-checkpoints.
+    Replace or formally validate the rolling 16-word schedule update mechanism for rounds >= 16.
+    Ensure block-boundary context handoff cannot reuse stale schedule words. Add dedicated
+    regressions for 2-block and 3-block messages with intermediate round-checkpoints.
 confidence: 0.74

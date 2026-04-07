@@ -4,28 +4,28 @@ root_cause_cycle: 173
 root_cause_file: "aegis_aes.sv"
 root_cause_line: 445
 signal_trace:
-  - cycle: 200
-    signal: "assert_cbc_iv_chain"
-    value: "FAIL"
-    note: "CBC chaining check fails at scoreboard/assertion compare point"
-  - cycle: 184
-    signal: "output_valid / data_out_w0..w3"
-    value: "1 / 0xF3A81C4A 0x920BC14E 0x7D5E205C 0x1B90F321"
-    note: "Second-block ciphertext is generated from stale chaining value"
-  - cycle: 173
-    signal: "state_xor_w0"
-    value: "0xAE2C8854"
-    note: "Observed XOR corresponds to P1 XOR initial IV, not P1 XOR C0"
-  - cycle: 173
-    signal: "iv_reg_w0..w3"
-    value: "0x00010203 0x04050607 0x08090A0B 0x0C0D0E0F"
-    note: "IV register still holds initial IV instead of prior ciphertext C0"
-  - cycle: 172
-    signal: "trigger / block_cnt"
-    value: "1 / 1"
-    note: "Second CBC block launch begins"
+    - cycle: 200
+      signal: "assert_cbc_iv_chain"
+      value: "FAIL"
+      note: "CBC chaining check fails at scoreboard/assertion compare point"
+    - cycle: 184
+      signal: "output_valid / data_out_w0..w3"
+      value: "1 / 0xF3A81C4A 0x920BC14E 0x7D5E205C 0x1B90F321"
+      note: "Second-block ciphertext is generated from stale chaining value"
+    - cycle: 173
+      signal: "state_xor_w0"
+      value: "0xAE2C8854"
+      note: "Observed XOR corresponds to P1 XOR initial IV, not P1 XOR C0"
+    - cycle: 173
+      signal: "iv_reg_w0..w3"
+      value: "0x00010203 0x04050607 0x08090A0B 0x0C0D0E0F"
+      note: "IV register still holds initial IV instead of prior ciphertext C0"
+    - cycle: 172
+      signal: "trigger / block_cnt"
+      value: "1 / 1"
+      note: "Second CBC block launch begins"
 root_cause_description: |
-  CBC encryption requires automatic IV update: after block N, IV must become C[N].
-  In the buggy flow, block1 uses the original IV again, so the XOR pre-round state is wrong
-  before round processing even begins. That stale IV propagates through all AES rounds and
-  produces incorrect block1 ciphertext, triggering the CBC chain assertion.
+    CBC encryption requires automatic IV update: after block N, IV must become C[N].
+    In the buggy flow, block1 uses the original IV again, so the XOR pre-round state is wrong
+    before round processing even begins. That stale IV propagates through all AES rounds and
+    produces incorrect block1 ciphertext, triggering the CBC chain assertion.

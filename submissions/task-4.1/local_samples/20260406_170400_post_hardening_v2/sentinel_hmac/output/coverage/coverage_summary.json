@@ -1,0 +1,26 @@
+{
+  "code_coverage": {
+    "line_percent": 0.0,
+    "branch_percent": 0.0,
+    "toggle_percent": 0.0,
+    "fsm_percent": 0.0,
+    "source": "no_coverage_database",
+    "toggle_source": "unknown",
+    "fsm_source": "unknown"
+  },
+  "functional_coverage": {
+    "percent": 34.94,
+    "bins_hit": 29,
+    "bins_total": 83,
+    "source": "functional_bins_from_test_snapshots"
+  },
+  "assertions": {
+    "passed": true,
+    "failed": 1
+  },
+  "simulation": {
+    "total_runs": 7,
+    "passed_runs": 6,
+    "failed_runs": 1
+  }
+}

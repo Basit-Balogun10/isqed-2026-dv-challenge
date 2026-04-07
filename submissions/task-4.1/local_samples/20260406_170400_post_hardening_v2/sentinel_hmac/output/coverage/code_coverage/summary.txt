@@ -1,0 +1,8 @@
+code_coverage_summary
+line_percent: 0.0
+branch_percent: 0.0
+toggle_percent: 0.0
+fsm_percent: 0.0
+source: no_coverage_database
+toggle_source: unknown
+fsm_source: unknown

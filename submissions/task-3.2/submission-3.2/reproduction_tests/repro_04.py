@@ -65,8 +65,8 @@ async def test_repro_04(dut):
     await write_128(tl, ADDR_KEY_BASE, NIST_CBC_KEY)
     await write_128(tl, ADDR_IV_BASE, NIST_CBC_IV)
     await write_128(tl, ADDR_DATA_IN_BASE, NIST_CBC_PT1)
-    await tl.write_reg(ADDR_CTRL, 0x1)      # CBC encrypt
-    await tl.write_reg(ADDR_TRIGGER, 0x1)   # start
+    await tl.write_reg(ADDR_CTRL, 0x1)  # CBC encrypt
+    await tl.write_reg(ADDR_TRIGGER, 0x1)  # start
 
     await wait_output_valid(tl)
     c0 = await read_128(tl, ADDR_DATA_OUT_BASE)

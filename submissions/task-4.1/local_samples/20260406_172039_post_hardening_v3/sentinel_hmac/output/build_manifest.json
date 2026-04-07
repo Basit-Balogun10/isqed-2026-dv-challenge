@@ -1,0 +1,23 @@
+{
+  "generated_python_files": [
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/assertions/python_assertions.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/__init__.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/agents/__init__.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/agents/protocol_agent.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/agents/tl_ul_agent.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/coverage/__init__.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/coverage/coverage.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/env.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/ref_model/__init__.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/ref_model/reference_model.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/scoreboard/__init__.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/testbench/scoreboard/scoreboard.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/tests/directed/test_directed_smoke.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/tests/random/test_random_csr.py",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_sentinel_hmac/tests/test_intent_manifest.py"
+  ],
+  "register_count": 26,
+  "clock_name": "clk_i",
+  "reset_name": "rst_ni",
+  "protocol_hint": "hmac"
+}

@@ -41,7 +41,9 @@ class ReinforcementConstraintTuner:
     - Uses uncovered target hints to bias knobs toward likely useful values.
     """
 
-    def __init__(self, learning_rate: float = 0.12, floor: float = 0.03, ceiling: float = 0.92):
+    def __init__(
+        self, learning_rate: float = 0.12, floor: float = 0.03, ceiling: float = 0.92
+    ):
         self.learning_rate = learning_rate
         self.floor = floor
         self.ceiling = ceiling
@@ -72,7 +74,12 @@ class ReinforcementConstraintTuner:
                     delta = self.learning_rate * reward_clamped
                 else:
                     # Slight opposite move for competing bins.
-                    delta = -0.5 * self.learning_rate * reward_clamped / max(len(knob_probs) - 1, 1)
+                    delta = (
+                        -0.5
+                        * self.learning_rate
+                        * reward_clamped
+                        / max(len(knob_probs) - 1, 1)
+                    )
                 knob_probs[value_name] = self._bounded(current + delta)
 
             policy[knob_name] = _renormalize(knob_probs)

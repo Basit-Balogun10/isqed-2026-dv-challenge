@@ -27,7 +27,9 @@ class CoverageReport:
 
     @property
     def combined_coverage(self) -> float:
-        return (self.line_coverage + self.branch_coverage + self.functional_coverage) / 3.0
+        return (
+            self.line_coverage + self.branch_coverage + self.functional_coverage
+        ) / 3.0
 
 
 @dataclass
@@ -49,7 +51,12 @@ class CDGSystem:
         self.generator = StimulusGenerator(seed=int(config.get("seed", 2026)))
 
         self.policy: dict[str, dict[str, float]] = {
-            "msg_len_profile": {"zero": 0.10, "short": 0.45, "medium": 0.30, "long": 0.15},
+            "msg_len_profile": {
+                "zero": 0.10,
+                "short": 0.45,
+                "medium": 0.30,
+                "long": 0.15,
+            },
             "intr_pattern": {"none": 0.40, "enable": 0.20, "test": 0.20, "both": 0.20},
             "burst_count": {"1": 0.38, "2": 0.30, "3": 0.20, "4": 0.12},
             "chunking": {"1": 0.35, "4": 0.30, "8": 0.20, "16": 0.15},
@@ -73,7 +80,9 @@ class CDGSystem:
             if ranked:
                 self.focus_queue = ranked
 
-        focus_target = self.focus_queue[0] if self.focus_queue else "global:coverage_efficiency"
+        focus_target = (
+            self.focus_queue[0] if self.focus_queue else "global:coverage_efficiency"
+        )
         target_cycles = int(self.config.get("cycles_per_iteration", 8000))
 
         stimulus = self.generator.generate(
@@ -95,7 +104,11 @@ class CDGSystem:
         if self.last_stimulus is None:
             return
 
-        prev = cumulative_coverage.history[-2] if len(cumulative_coverage.history) >= 2 else None
+        prev = (
+            cumulative_coverage.history[-2]
+            if len(cumulative_coverage.history) >= 2
+            else None
+        )
         prev_line = prev.line_coverage if prev else 0.0
         prev_branch = prev.branch_coverage if prev else 0.0
         prev_func = prev.functional_coverage if prev else 0.0
@@ -114,7 +127,9 @@ class CDGSystem:
             policy=self.policy,
             selected_knobs=self.last_stimulus.selected_knobs,
             reward=reward,
-            focus_targets=self.analyzer.rank_focus_targets(new_coverage.uncovered_targets),
+            focus_targets=self.analyzer.rank_focus_targets(
+                new_coverage.uncovered_targets
+            ),
         )
 
         self.strategy_evolution.append(
@@ -141,7 +156,9 @@ class CDGSystem:
         )
 
 
-def to_report(iteration: int, cycles_used: int, metrics: CoverageMetrics) -> CoverageReport:
+def to_report(
+    iteration: int, cycles_used: int, metrics: CoverageMetrics
+) -> CoverageReport:
     """Convert analyzer metrics to CoverageReport."""
     return CoverageReport(
         iteration=iteration,

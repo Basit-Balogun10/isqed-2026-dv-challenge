@@ -1,0 +1,97 @@
+Traceback (most recent call last):
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1005, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/agent/src/llm_provider.py", line 163, in generate
+    result = self._call_openai(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/agent/src/llm_provider.py", line 354, in _call_openai
+    raise last_error
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/agent/src/llm_provider.py", line 329, in _call_openai
+    chat = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1037, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/agent/run_agent.py", line 99, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/agent/run_agent.py", line 88, in main
+    orchestrator.run(
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/agent/src/orchestrator.py", line 79, in run
+    plan = self._stage_plan(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/agent/src/orchestrator.py", line 184, in _stage_plan
+    llm_result, judge_score, escalated = self.llm.generate_with_quality_gate(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/agent/src/llm_provider.py", line 75, in generate_with_quality_gate
+    primary = self.generate(
+              ^^^^^^^^^^^^^^
+  File "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/agent/src/llm_provider.py", line 206, in generate
+    raise RuntimeError(
+RuntimeError: OpenAI API call failed at stage PLAN: Connection error.

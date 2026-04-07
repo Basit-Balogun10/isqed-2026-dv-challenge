@@ -1,0 +1,5 @@
+functional_coverage_summary
+percent: 30.12
+bins_hit: 25
+bins_total: 83
+source: functional_bins_from_test_snapshots

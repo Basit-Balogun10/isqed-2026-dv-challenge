@@ -3,14 +3,14 @@ classification: "testbench_bug"
 root_module: "uart_driver"
 root_line_range: "N/A"
 root_cause: |
-  The log itself shows the transmitted parity bit is wrong for an even-parity configuration.
-  For byte 0xC3 and 0x55 (both with an even number of 1s), even parity should drive parity=0,
-  but the captured frames show parity_bit=1 and the log states "Driver sent parity bit: 1".
-  The DUT then reports parity error, which is expected behavior when parity is injected wrong.
-  This indicates a stimulus/parity-generation issue in the testbench driver rather than RTL RX
-  parity-check logic.
+    The log itself shows the transmitted parity bit is wrong for an even-parity configuration.
+    For byte 0xC3 and 0x55 (both with an even number of 1s), even parity should drive parity=0,
+    but the captured frames show parity_bit=1 and the log states "Driver sent parity bit: 1".
+    The DUT then reports parity error, which is expected behavior when parity is injected wrong.
+    This indicates a stimulus/parity-generation issue in the testbench driver rather than RTL RX
+    parity-check logic.
 suggested_fix: |
-  Fix parity generation in the UART stimulus path: for even parity, drive parity bit equal to
-  XOR-reduction(data[7:0]); for odd parity, drive its inversion. Add a driver self-check that
-  logs computed parity and asserts consistency before driving each frame.
+    Fix parity generation in the UART stimulus path: for even parity, drive parity bit equal to
+    XOR-reduction(data[7:0]); for odd parity, drive its inversion. Add a driver self-check that
+    logs computed parity and asserts consistency before driving each frame.
 confidence: 0.93

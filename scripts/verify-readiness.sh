@@ -11,15 +11,15 @@
 #
 # Usage:
 #   bash scripts/verify-readiness.sh
-#   bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4,2.1,2.2,2.3,3.1,3.2,3.3 --sim both
-#   bash scripts/verify-readiness.sh 1.1 1.2 1.3 1.4 2.1 2.2 2.3 3.1 3.2 3.3 --quick
+#   bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4,2.1,2.2,2.3,3.1,3.2,3.3,4.1,4.2,4.3 --sim both
+#   bash scripts/verify-readiness.sh 1.1 1.2 1.3 1.4 2.1 2.2 2.3 3.1 3.2 3.3 4.1 4.2 4.3 --quick
 #
 # Options:
 #   --tasks LIST                  Comma-separated tasks (e.g. 1.1,1.2)
 #   --sim {icarus|verilator|both} Simulator selection (default: both)
 #   --quick                       Skip long simulation checks where supported
 #   --skip-task-1.2-status        Skip optional task_1_2_status.py report for Task 1.2
-#   --timeout SECONDS             Forward timeout to Task 1.2/1.3/1.4/2.1/2.2/2.3/3.1/3.2/3.3 verifiers
+#   --timeout SECONDS             Forward timeout to Task 1.2/1.3/1.4/2.1/2.2/2.3/3.1/3.2/3.3/4.1/4.2/4.3 verifiers
 #   -k, --keep-workdir            Keep temporary verification workdirs
 #   -h, --help                    Show usage
 
@@ -42,15 +42,15 @@ Generic task-driven readiness runner.
 
 Usage:
   bash scripts/verify-readiness.sh
-  bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4,2.1,2.2,2.3,3.1,3.2,3.3 --sim both
-  bash scripts/verify-readiness.sh 1.1 1.2 1.3 1.4 2.1 2.2 2.3 3.1 3.2 3.3 --quick
+  bash scripts/verify-readiness.sh --tasks 1.1,1.2,1.3,1.4,2.1,2.2,2.3,3.1,3.2,3.3,4.1,4.2,4.3 --sim both
+  bash scripts/verify-readiness.sh 1.1 1.2 1.3 1.4 2.1 2.2 2.3 3.1 3.2 3.3 4.1 4.2 4.3 --quick
 
 Options:
   --tasks LIST                  Comma-separated tasks (e.g. 1.1,1.2)
   --sim {icarus|verilator|both} Simulator selection (default: both)
   --quick                       Skip long simulation checks where supported
   --skip-task-1.2-status        Skip optional task_1_2_status.py report for Task 1.2
-  --timeout SECONDS             Forward timeout to Task 1.2/1.3/1.4/2.1/2.2/2.3/3.1/3.2/3.3 verifiers
+  --timeout SECONDS             Forward timeout to Task 1.2/1.3/1.4/2.1/2.2/2.3/3.1/3.2/3.3/4.1/4.2/4.3 verifiers
   -k, --keep-workdir            Keep temporary verification workdirs
   -h, --help                    Show usage
 EOF
@@ -100,7 +100,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ ${#TASKS[@]} -eq 0 ]]; then
-  TASKS=("1.1" "1.2" "1.3" "1.4" "2.1" "2.2" "2.3" "3.1" "3.2" "3.3")
+  TASKS=("1.1" "1.2" "1.3" "1.4" "2.1" "2.2" "2.3" "3.1" "3.2" "3.3" "4.1" "4.2" "4.3")
 fi
 
 if [[ "$SIM" != "icarus" && "$SIM" != "verilator" && "$SIM" != "both" ]]; then
@@ -137,7 +137,7 @@ for task in "${TASKS[@]}"; do
     fi
   fi
 
-  if [[ -n "$TIMEOUT" && ( "$task" == "1.2" || "$task" == "1.3" || "$task" == "1.4" || "$task" == "2.1" || "$task" == "2.2" || "$task" == "2.3" || "$task" == "3.1" || "$task" == "3.2" || "$task" == "3.3" ) ]]; then
+  if [[ -n "$TIMEOUT" && ( "$task" == "1.2" || "$task" == "1.3" || "$task" == "1.4" || "$task" == "2.1" || "$task" == "2.2" || "$task" == "2.3" || "$task" == "3.1" || "$task" == "3.2" || "$task" == "3.3" || "$task" == "4.1" || "$task" == "4.2" || "$task" == "4.3" ) ]]; then
     task_args+=(--timeout "$TIMEOUT")
   fi
 

@@ -24,7 +24,9 @@ def _cover_cfg_sha_enabled(sha_en: bool) -> None:
     pass
 
 
-@CoverPoint("hmac.func.cfg_hmac_disabled", xf=lambda hmac_en: 1 if hmac_en else 0, bins=[0])
+@CoverPoint(
+    "hmac.func.cfg_hmac_disabled", xf=lambda hmac_en: 1 if hmac_en else 0, bins=[0]
+)
 def _cover_cfg_hmac_disabled(hmac_en: bool) -> None:
     pass
 
@@ -82,7 +84,11 @@ def get_functional_coverage_percent() -> float:
 
 def write_functional_coverage_report(report_path: Optional[str] = None) -> float:
     """Write a text report that includes measured functional coverage percentage."""
-    out_path = report_path if report_path is not None else (os.getenv("FUNC_COV_OUT") or _DEFAULT_REPORT_PATH)
+    out_path = (
+        report_path
+        if report_path is not None
+        else (os.getenv("FUNC_COV_OUT") or _DEFAULT_REPORT_PATH)
+    )
     out_dir = os.path.dirname(out_path)
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)

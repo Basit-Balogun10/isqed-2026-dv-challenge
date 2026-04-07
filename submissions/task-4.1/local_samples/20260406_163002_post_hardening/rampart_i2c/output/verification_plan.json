@@ -1,0 +1,105 @@
+{
+  "features": [
+    "TL-UL CSR read/write access with same-cycle response checking",
+    "Reset behavior and CSR reset-value validation",
+    "Open-drain SCL/SDA modeling with pull-up and contention-aware sampling",
+    "Host mode enable/disable and basic command sequencing",
+    "Target mode enable/disable and transmit/acquire data path checks",
+    "FIFO control and status behavior for format, RX, TX, and acquire paths",
+    "Interrupt state/enable/test CSR behavior including W1C semantics",
+    "Timing CSR programming smoke checks across all timing registers",
+    "Bus override and line loopback functional checks",
+    "Arbitration-loss and timeout/error-path observation at a smoke-test level",
+    "Concurrent host/target enable interaction under simple bus conditions"
+  ],
+  "coverage_goals": {
+    "line_percent": 85,
+    "branch_percent": 75,
+    "functional_percent": 85
+  },
+  "directed_tests": [
+    {
+      "name": "reset_and_csr_smoke",
+      "intent": "Apply reset, verify all 19 CSRs are reachable over TL-UL, confirm reset values for CTRL/interrupt-related registers, and validate RO/WO/RW access behavior including reserved-bit masking."
+    },
+    {
+      "name": "open_drain_loopback_basic",
+      "intent": "Enable line loopback and verify SCL/SDA open-drain behavior: outputs only drive low, released lines read high via pull-up, and loopback reflects internal drive decisions."
+    },
+    {
+      "name": "host_mode_basic_transaction",
+      "intent": "Enable host mode, program timing registers with safe values, push a minimal format FIFO command sequence, and check expected bus activity plus RX FIFO/status updates."
+    },
+    {
+      "name": "target_mode_tx_acq_smoke",
+      "intent": "Enable target mode, preload TX data, stimulate an external host transaction, and verify TX data consumption and ACQDATA capture behavior."
+    },
+    {
+      "name": "interrupt_register_semantics",
+      "intent": "Exercise INTR_ENABLE, INTR_TEST, and INTR_STATE W1C behavior by injecting a subset of interrupts, observing status set/clear behavior, and confirming masked interrupts do not propagate."
+    },
+    {
+      "name": "fifo_reset_and_status",
+      "intent": "Write FIFO_CTRL reset controls, confirm FIFO_STATUS and STATUS reflect empty/full transitions, and verify read/write ports behave correctly after reset."
+    },
+    {
+      "name": "timeout_and_arbitration_smoke",
+      "intent": "Use constrained bus stimuli to provoke timeout or arbitration-loss indications at least once, then confirm the DUT reports the condition without deadlocking TL-UL access."
+    }
+  ],
+  "random_tests": [
+    {
+      "name": "csr_fuzz_with_protocol_sanity",
+      "intent": "Randomize TL-UL reads/writes across the CSR map with legal opcodes and byte enables, checking mirrored readback, access permissions, and reserved-bit stability."
+    },
+    {
+      "name": "host_command_stream_random",
+      "intent": "Generate randomized but legal host format FIFO command streams with varying timing CSR settings, while monitoring for forward progress, FIFO boundary behavior, and no protocol violations."
+    },
+    {
+      "name": "target_host_interaction_random",
+      "intent": "Randomize target-mode TX preload, external I2C master transactions, and enable combinations to stress concurrent host/target FSM interaction and acquire path capture."
+    },
+    {
+      "name": "interrupt_and_status_random",
+      "intent": "Randomly toggle interrupt enables, inject interrupt tests, and sample STATUS/FIFO_STATUS under mixed activity to validate sticky, masked, and W1C behavior."
+    }
+  ],
+  "risk_areas": [
+    {
+      "area": "Host/target FSM interaction and arbitration",
+      "reason": "Two independent FSMs share SCL/SDA and the spec explicitly allows simultaneous enable with bus-condition-dependent behavior; this is the highest functional ambiguity and likely bug source.",
+      "priority": "high"
+    },
+    {
+      "area": "FIFO boundary and reset behavior",
+      "reason": "Four 64-entry FIFOs plus reset controls create high risk for off-by-one, stale-status, and underflow/overflow issues that are practical to expose within a short run.",
+      "priority": "high"
+    },
+    {
+      "area": "Open-drain line handling and loopback",
+      "reason": "Incorrect drive/release behavior can break all bus transactions and is easy to miss without explicit contention-aware checks.",
+      "priority": "high"
+    },
+    {
+      "area": "Interrupt state/enable/test semantics",
+      "reason": "W1C and test-injection logic are common integration failure points and can be validated quickly with directed CSR tests.",
+      "priority": "medium"
+    },
+    {
+      "area": "Timing CSR programming",
+      "reason": "Multiple programmable timing registers increase configuration space; basic smoke coverage is needed, but exhaustive timing validation is out of scope for a 60-minute budget.",
+      "priority": "medium"
+    },
+    {
+      "area": "Timeout and arbitration-loss reporting",
+      "reason": "Error-path observability is important, but full protocol corner-case exploration is expensive; a smoke-level check is sufficient for this budget.",
+      "priority": "medium"
+    },
+    {
+      "area": "Reserved-bit and access-type enforcement",
+      "reason": "Lower functional risk, but easy to cover through CSR smoke and random access tests.",
+      "priority": "low"
+    }
+  ]
+}

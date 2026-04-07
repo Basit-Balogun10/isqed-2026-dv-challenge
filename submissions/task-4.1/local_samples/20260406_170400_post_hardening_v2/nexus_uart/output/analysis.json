@@ -1,0 +1,256 @@
+{
+  "rtl_files": [
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+  ],
+  "total_rtl_lines": 706,
+  "modules": [
+    "nexus_uart"
+  ],
+  "top_modules": [
+    "nexus_uart"
+  ],
+  "selected_top": "nexus_uart",
+  "port_count": 20,
+  "ports": [
+    {
+      "direction": "input",
+      "width": "",
+      "name": "clk_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "rst_ni",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_a_valid_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_a_ready_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[2:0]",
+      "name": "tl_a_opcode_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_address_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_data_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[3:0]",
+      "name": "tl_a_mask_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "tl_a_source_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[1:0]",
+      "name": "tl_a_size_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_valid_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_d_ready_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[2:0]",
+      "name": "tl_d_opcode_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[31:0]",
+      "name": "tl_d_data_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[7:0]",
+      "name": "tl_d_source_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_error_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "uart_tx_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "uart_rx_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[6:0]",
+      "name": "intr_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "alert_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    }
+  ],
+  "tlul_detected": true,
+  "tlul_ports": [
+    "tl_a_address_i",
+    "tl_a_data_i",
+    "tl_a_mask_i",
+    "tl_a_opcode_i",
+    "tl_a_ready_o",
+    "tl_a_size_i",
+    "tl_a_source_i",
+    "tl_a_valid_i",
+    "tl_d_data_o",
+    "tl_d_error_o",
+    "tl_d_opcode_o",
+    "tl_d_ready_i",
+    "tl_d_source_o",
+    "tl_d_valid_o"
+  ],
+  "protocol_hints": [
+    "uart"
+  ],
+  "clock_candidates": [
+    "clk_i"
+  ],
+  "reset_candidates": [
+    "rst_ni"
+  ],
+  "interface_hints": {
+    "interrupt_candidates": [
+      "intr_o"
+    ],
+    "alert_candidates": [
+      "alert_o"
+    ]
+  },
+  "enum_state_sets": [],
+  "fsm_candidates": [
+    {
+      "state_expression": "tl_req_addr",
+      "states": [
+        "ADDR_INTR_TEST",
+        "ADDR_RXDATA",
+        "default"
+      ],
+      "state_count": 3,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "state_expression": "tl_req_addr",
+      "states": [
+        "ADDR_CTRL",
+        "ADDR_FIFO_CTRL",
+        "ADDR_INTR_ENABLE",
+        "ADDR_INTR_STATE",
+        "ADDR_INTR_TEST",
+        "ADDR_RXDATA",
+        "ADDR_STATUS",
+        "ADDR_TXDATA",
+        "default"
+      ],
+      "state_count": 9,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "state_expression": "tx_state",
+      "states": [
+        "TX_DATA",
+        "TX_IDLE",
+        "TX_PARITY",
+        "TX_START",
+        "TX_STOP",
+        "TX_STOP2",
+        "default"
+      ],
+      "state_count": 7,
+      "next_state_values": [
+        "TX_DATA",
+        "TX_IDLE",
+        "TX_PARITY",
+        "TX_START",
+        "TX_STOP",
+        "TX_STOP2"
+      ],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    },
+    {
+      "state_expression": "rx_state",
+      "states": [
+        "RX_DATA",
+        "RX_IDLE",
+        "RX_PARITY",
+        "RX_START_DET",
+        "RX_STOP",
+        "RX_STOP2",
+        "default"
+      ],
+      "state_count": 7,
+      "next_state_values": [
+        "RX_DATA",
+        "RX_IDLE",
+        "RX_PARITY",
+        "RX_START_DET",
+        "RX_STOP",
+        "RX_STOP2"
+      ],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/nexus_uart/nexus_uart.sv"
+    }
+  ],
+  "estimated_fsm_blocks": 4,
+  "csr_summary": {
+    "register_count": 8,
+    "top_keys": [
+      "name",
+      "base_addr",
+      "registers"
+    ]
+  },
+  "spec_excerpt": "# NEXUS_UART -- Full-Duplex UART Controller\n\n> **Disclaimer:** This RTL design is a modified version of an open-source IP block, created exclusively for this competition. It is not production-quality, not security-reviewed, and must not be used outside of this competition context.\n\n---\n\n## 1. Overview\n\nNEXUS_UART is a full-duplex universal asynchronous receiver/transmitter with configurable baud rate, parity, and stop-bit options. It provides independent transmit and receive data paths, each backed by a 32-byte synchronous FIFO, and exposes a standard TileLink-UL (TL-UL) register interface for host access. The design supports loopback mode for self-test and generates maskable interrupts for a variety of status conditions.\n\nThe baud rate is set through a 16-bit programmable divisor applied to the system clock. Receive-side clock recovery uses 16x oversampling with mid-bit sampling, consistent with standard UART practice.\n\n## 2. Block-Level Architecture\n\n```\n                  TL-UL Bus\n                     |\n              +------+------+\n              |  CSR Block  |\n              +--+-------+--+\n                 |       |\n          +------+--+ +--+------+\n          | TX Path | | RX Path |\n          +----+----+ +----+----+\n               |            |\n          +----+----+ +----+----+\n          | TX FIFO | | RX FIFO |\n          | (32B)   | | (32B)   |\n          +----+----+ +----+----+\n               |            |\n          +----+----+ +----+----+\n          | TX FSM  | | RX FSM  |\n          +----+----+ +----+----+\n               |            |\n            uart_tx_o    uart_rx_i\n```\n\nWhen loopback is enabled, the transmit serial output is internally routed to the receive serial input, bypassing the external pins.\n\n## 3. Signal Interface\n\n| Signal      | Direction | Width | Description                              |\n|-------------|-----------|-------|------------------------------------------|\n| clk_i       | input     | 1     | System clock                             |\n| rst_ni      | input     | 1     | Active-low asynchronous reset            |\n| tl_i        | input     | packed| TL-UL A-channel request (tl_a_pkt_t)    |\n| tl_i_ready  | output    | 1     | Backpressure for A-channel               |\n| tl_o        | output    | packed| TL-UL D-channel response (tl_d_pkt_t)   |\n| tl_o_ready  | input     | 1     | Downstream ready for D-channel           |\n| uart_tx_o   | output    | 1     | Serial transmit data                     |\n| uart_rx_i   | input     | 1     | Serial receive data                      |\n| intr_o      | output    | 7     | Interrupt vector (active-high)           |\n| alert_o     | output    | 1     | Fatal alert (FIFO integrity, etc.)       |\n\nThe TL-UL interface follows the simplified protocol defined in `dv_common_pkg`. A-channel transactions with `a_opcode` of `PutFullData` (0) perform writes; transactions with `a_opcode` of `Get` (4) perform reads. The device always responds in the same cycle the request is accepted (single-cycle response latency). Requests to unmapped addresses receive an error response.\n\n## 4. Register Map\n\nBase offset: 0x00. All registers are 32 bits wide; undefined bit fields read as zero and writes are ignored.\n\n### 4.1 CTRL (0x00) -- Control Register [RW]\n\n| Bits   | Field          | Reset | Description                                              |\n|--------|----------------|-------|----------------------------------------------------------|\n| 0      | tx_enable      | 0     | Enable transmit path                                     |\n| 1      | rx_enable      | 0     | Enable receive path                                      |\n| 17:2   | baud_divisor   | 0     | Baud rate divisor (system_clk / (baud_rate * 16))        |\n| 19:18  | parity_mode    | 0     | 00: none, 01: even parity, 10: odd parity, 11: reserved |\n| 20     | stop_bits      | 0     | 0: 1 stop bit, 1: 2 stop bits                           |\n| 21     | loopback_en    | 0     | Connect TX output to RX input internal",
+  "rtl_bytes": 19955
+}

@@ -1,0 +1,288 @@
+{
+  "rtl_files": [
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+  ],
+  "total_rtl_lines": 796,
+  "modules": [
+    "sentinel_hmac"
+  ],
+  "top_modules": [
+    "sentinel_hmac"
+  ],
+  "selected_top": "sentinel_hmac",
+  "port_count": 27,
+  "ports": [
+    {
+      "direction": "input",
+      "width": "",
+      "name": "clk_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "rst_ni",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_a_valid_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_a_ready_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[2:0]",
+      "name": "tl_a_opcode_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_address_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_data_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[3:0]",
+      "name": "tl_a_mask_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "tl_a_source_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[1:0]",
+      "name": "tl_a_size_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_valid_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_d_ready_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[2:0]",
+      "name": "tl_d_opcode_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[31:0]",
+      "name": "tl_d_data_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[7:0]",
+      "name": "tl_d_source_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_error_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[2:0]",
+      "name": "intr_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "alert_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "int",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "int",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "x",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "x",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "x",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "x",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "e_v",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "a_v",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "d",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    }
+  ],
+  "tlul_detected": true,
+  "tlul_ports": [
+    "tl_a_address_i",
+    "tl_a_data_i",
+    "tl_a_mask_i",
+    "tl_a_opcode_i",
+    "tl_a_ready_o",
+    "tl_a_size_i",
+    "tl_a_source_i",
+    "tl_a_valid_i",
+    "tl_d_data_o",
+    "tl_d_error_o",
+    "tl_d_opcode_o",
+    "tl_d_ready_i",
+    "tl_d_source_o",
+    "tl_d_valid_o"
+  ],
+  "protocol_hints": [
+    "hmac"
+  ],
+  "clock_candidates": [
+    "clk_i"
+  ],
+  "reset_candidates": [
+    "rst_ni"
+  ],
+  "interface_hints": {
+    "interrupt_candidates": [
+      "intr_o"
+    ],
+    "alert_candidates": [
+      "alert_o"
+    ]
+  },
+  "enum_state_sets": [],
+  "fsm_candidates": [
+    {
+      "state_expression": "idx",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "state_expression": "idx",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "state_expression": "state_q",
+      "states": [
+        "ST_DONE",
+        "ST_HMAC_INNER_DONE",
+        "ST_HMAC_IPAD",
+        "ST_HMAC_OPAD",
+        "ST_HMAC_OUTER_LEN",
+        "ST_HMAC_OUTER_MSG",
+        "ST_HMAC_OUTER_PAD",
+        "ST_IDLE",
+        "ST_PAD_FILL",
+        "ST_PAD_LENGTH",
+        "ST_SHA_DONE_BLOCK",
+        "ST_SHA_ROUND",
+        "ST_SHA_WAIT_BLOCK",
+        "default"
+      ],
+      "state_count": 14,
+      "next_state_values": [
+        "ST_DONE",
+        "ST_HMAC_INNER_DONE",
+        "ST_HMAC_IPAD",
+        "ST_HMAC_OPAD",
+        "ST_HMAC_OUTER_LEN",
+        "ST_HMAC_OUTER_MSG",
+        "ST_IDLE",
+        "ST_PAD_FILL",
+        "ST_PAD_LENGTH",
+        "ST_SHA_DONE_BLOCK",
+        "ST_SHA_ROUND",
+        "ST_SHA_WAIT_BLOCK"
+      ],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    },
+    {
+      "state_expression": "i",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv"
+    }
+  ],
+  "estimated_fsm_blocks": 4,
+  "csr_summary": {
+    "register_count": 26,
+    "top_keys": [
+      "name",
+      "base_addr",
+      "registers"
+    ]
+  },
+  "spec_excerpt": "# SENTINEL_HMAC -- HMAC-SHA256 Accelerator\n\n> **Disclaimer:** This RTL design is a modified version of an open-source IP block, created exclusively for this competition. It is not production-quality, not security-reviewed, and must not be used outside of this competition context.\n\n---\n\n## 1. Overview\n\nSENTINEL_HMAC is a hardware accelerator implementing keyed-hash message authentication (HMAC) based on SHA-256, as specified in RFC 2104, as well as a raw SHA-256 hashing mode per FIPS 180-4. The module accepts message data through a 32-entry write FIFO and produces a 256-bit digest, accessible through memory-mapped control/status registers over a TileLink-UL (TL-UL) bus interface.\n\nHMAC mode computes `HMAC(K, m) = SHA-256((K XOR opad) || SHA-256((K XOR ipad) || m))` using the standard inner/outer padding constants. SHA-256-only mode bypasses HMAC key processing and computes the bare hash of the supplied message. Both modes support multi-block streaming: software writes message data in arbitrarily-sized chunks and issues control commands to advance the hash computation.\n\nThe SHA-256 core performs one compression round per clock cycle, requiring 64 cycles per 512-bit message block. Message schedule expansion is performed on-the-fly during compression. Padding (appending the terminating 1-bit, zero fill, and 64-bit message length) is handled automatically when software signals the end of the message.\n\n## 2. Block-Level Architecture\n\n```\n                    TL-UL Bus\n                       |\n                +------+------+\n                |  CSR Block  |\n                +--+--+--+--+-+\n                   |  |  |  |\n          +--------+  |  |  +--------+\n          |           |  |           |\n    +-----+-----+    |  |    +------+------+\n    | KEY Regs   |    |  |    | DIGEST Regs |\n    | (256-bit)  |    |  |    | (256-bit)   |\n    +-----+------+    |  |    +------+------+\n          |           |  |           |\n    +-----+------+    |  |           |\n    | HMAC       |    |  |           |\n    | Key Expand |    |  |           |\n    +-----+------+    |  |           |\n          |      +----+--+----+      |\n          +----->| MSG FIFO   |      |\n                 | 32x32-bit  |      |\n                 +-----+------+      |\n                       |             |\n                 +-----+------+      |\n                 | 512-bit    |      |\n                 | Block Buf  |      |\n                 +-----+------+      |\n                       |             |\n                 +-----+------+      |\n                 | SHA-256    |      |\n                 | Engine     +------+\n                 | (64 rounds)|\n                 +------------+\n```\n\nIn HMAC mode, the key expansion block first XORs the 256-bit key (zero-padded to 512 bits) with the inner pad value and feeds the resulting 512-bit block directly into the SHA-256 engine before any message data is processed. After the message is fully hashed, the intermediate digest is then used as the message input for a second SHA-256 pass with the outer-pad-XORed key block prepended.\n\n## 3. Signal Interface\n\n| Signal       | Direction | Width   | Description                                |\n|--------------|-----------|---------|--------------------------------------------|\n| `clk_i`      | Input     | 1       | System clock                               |\n| `rst_ni`     | Input     | 1       | Active-low asynchronous reset              |\n| `tl_i`       | Input     | packed  | TL-UL A-channel request (tl_a_pkt_t)      |\n| `tl_i_ready` | Output    | 1       | Backpressure for A-channel                 |\n| `tl_o`       | Output    | packed  | TL-UL D-channel response (tl_d_pkt_t)     |\n| `tl_o_ready` | Input     | 1       | Downstream ready for D-channel             |\n| `intr_o`     | Output    | 3       | Interrupt vector (active-high)             |\n| `alert_o`    | Output    | 1       | Fatal alert (integrity error, etc.)        |\n\nThe TL-UL interface follows the simplified protocol defined in `dv_common_pkg",
+  "rtl_bytes": 24501
+}

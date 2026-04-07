@@ -1,0 +1,3 @@
+status: no_findings
+summary: No static high-confidence bug signatures were detected in the available RTL
+  sample.

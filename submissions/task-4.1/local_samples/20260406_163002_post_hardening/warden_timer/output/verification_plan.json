@@ -1,0 +1,124 @@
+{
+  "features": [
+    "TL-UL CSR read/write access for 15-register map",
+    "Reset behavior for all CSRs, counters, interrupts, and alert",
+    "64-bit mtime free-running counter with 12-bit prescaler",
+    "Prescaler programming and boundary behavior",
+    "64-bit timer comparator 0 interrupt generation",
+    "64-bit timer comparator 1 interrupt generation",
+    "Comparator partial-write behavior across LOW/HIGH halves",
+    "INTR_STATE W1C behavior",
+    "INTR_ENABLE masking behavior",
+    "INTR_TEST software-forced interrupt behavior",
+    "Watchdog enable/disable operation",
+    "Watchdog bark threshold interrupt generation",
+    "Watchdog bite threshold alert generation",
+    "Watchdog pet write side effect",
+    "Watchdog lock behavior and write restrictions",
+    "Read-only and write-only register access enforcement",
+    "Reserved-bit read-as-zero / write-ignore behavior",
+    "Concurrent timer and watchdog activity under bus traffic"
+  ],
+  "coverage_goals": {
+    "line_percent": 85,
+    "branch_percent": 75,
+    "functional_percent": 85
+  },
+  "directed_tests": [
+    {
+      "name": "reset_smoke_and_csr_map",
+      "intent": "Verify reset values for all visible CSRs, confirm TL-UL reads/writes to each implemented register, and check that mtime and watchdog count start at zero with interrupts and alert deasserted."
+    },
+    {
+      "name": "mtime_prescaler_basic",
+      "intent": "Program prescaler values 0, 1, and a mid-range value to confirm mtime increments at the expected rate and remains monotonic across prescaler changes."
+    },
+    {
+      "name": "timer0_compare_interrupt",
+      "intent": "Program MTIMECMP0 below and above current mtime, enable intr_o[0], and verify raw interrupt, masked output, and W1C clear behavior."
+    },
+    {
+      "name": "timer1_compare_interrupt",
+      "intent": "Repeat comparator validation for MTIMECMP1, including independent operation from timer0 and correct interrupt enable masking."
+    },
+    {
+      "name": "comparator_partial_write_ordering",
+      "intent": "Write LOW then HIGH and HIGH then LOW for 64-bit comparator programming while mtime is active, checking intermediate compare behavior and final threshold correctness."
+    },
+    {
+      "name": "intr_test_and_w1c",
+      "intent": "Use INTR_TEST to force each interrupt bit, confirm INTR_STATE sets, verify output gating through INTR_ENABLE, and clear each bit with W1C writes."
+    },
+    {
+      "name": "watchdog_enable_bark_bite",
+      "intent": "Enable watchdog, program bark and bite thresholds, observe bark interrupt before bite alert, and confirm alert_o asserts at bite threshold."
+    },
+    {
+      "name": "watchdog_pet_resets_counter",
+      "intent": "Pet the watchdog before bark threshold and verify the counter returns to zero and no bark or bite occurs."
+    },
+    {
+      "name": "watchdog_lock_behavior",
+      "intent": "Set wd_lock, attempt to clear lock and modify watchdog control fields, verify lock is sticky until reset, and confirm WATCHDOG_PET remains writable."
+    },
+    {
+      "name": "reserved_bits_and_access_policy",
+      "intent": "Write non-zero values to reserved bits and read back to confirm RAZ/WI behavior; also attempt reads from WO register and writes to RO register to ensure no unintended side effects."
+    }
+  ],
+  "random_tests": [
+    {
+      "name": "tlul_csr_fuzz_with_scoreboard",
+      "intent": "Run constrained-random TL-UL reads/writes across the 64-byte window with a mirrored CSR model, checking access permissions, reset defaults, and reserved-bit behavior."
+    },
+    {
+      "name": "timer_watchdog_concurrent_stress",
+      "intent": "Randomize prescaler, comparator thresholds, watchdog thresholds, enable masks, and pet timing while continuously checking mtime monotonicity, interrupt correctness, and alert generation."
+    },
+    {
+      "name": "partial_64bit_programming_fuzz",
+      "intent": "Randomize the order and spacing of LOW/HIGH writes for both comparators to expose transient compare hazards and ensure final programmed values are honored."
+    },
+    {
+      "name": "interrupt_masking_and_clear_stress",
+      "intent": "Randomly toggle INTR_ENABLE and issue W1C clears while interrupts are pending to validate output gating and state retention semantics."
+    }
+  ],
+  "risk_areas": [
+    {
+      "area": "Watchdog bark/bite sequencing",
+      "reason": "Highest functional risk because two escalation thresholds and a fatal alert must occur in the correct order under continuous counting and bus activity.",
+      "priority": "high"
+    },
+    {
+      "area": "Watchdog lock stickiness",
+      "reason": "Lock behavior is security-sensitive and easy to implement incorrectly; it must survive writes and only clear on reset.",
+      "priority": "high"
+    },
+    {
+      "area": "64-bit comparator partial-write behavior",
+      "reason": "Split LOW/HIGH programming can create transient compare conditions and is a common source of off-by-one or glitch bugs.",
+      "priority": "high"
+    },
+    {
+      "area": "Prescaler boundary and update timing",
+      "reason": "Changing prescaler while active can introduce subtle timing errors if the new value is applied too early or too late.",
+      "priority": "medium"
+    },
+    {
+      "area": "Interrupt state/mask/test semantics",
+      "reason": "INTR_STATE W1C, INTR_ENABLE masking, and INTR_TEST forcing must interact correctly to avoid false or stuck interrupts.",
+      "priority": "medium"
+    },
+    {
+      "area": "Reset and access policy compliance",
+      "reason": "RO/WO/RW behavior, reserved bits, and reset defaults are straightforward but essential for CSR correctness.",
+      "priority": "medium"
+    },
+    {
+      "area": "Concurrent timer and watchdog operation",
+      "reason": "Simultaneous activity can expose shared-clock or arbitration issues, but is lower risk than core functional correctness.",
+      "priority": "low"
+    }
+  ]
+}

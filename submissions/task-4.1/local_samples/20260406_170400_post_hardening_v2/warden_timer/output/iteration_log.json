@@ -1,0 +1,46 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_warden_timer/tests/random/test_gap_iter_1.py",
+      "scenario": "watchdog_lock_semantics_gap",
+      "functional_before": 40.98,
+      "updated_functional_coverage": 47.54,
+      "coverage_delta": 6.560000000000002,
+      "simulation_passed": true,
+      "failing_runs": 0,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_warden_timer/tests/random/test_repair_iter_1_1.py",
+          "coverage_before": 40.98,
+          "coverage_after": 47.54,
+          "simulation_passed": true,
+          "failing_runs": 0
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_warden_timer/tests/random/test_gap_iter_2.py",
+      "scenario": "timer_compare_partial_write_gap",
+      "functional_before": 47.54,
+      "updated_functional_coverage": 47.54,
+      "coverage_delta": 0.0,
+      "simulation_passed": true,
+      "failing_runs": 0,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_warden_timer/tests/random/test_repair_iter_2_1.py",
+          "coverage_before": 47.54,
+          "coverage_after": 47.54,
+          "simulation_passed": true,
+          "failing_runs": 0
+        }
+      ]
+    }
+  ]
+}

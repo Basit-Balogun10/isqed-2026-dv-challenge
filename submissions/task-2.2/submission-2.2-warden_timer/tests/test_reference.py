@@ -31,7 +31,9 @@ async def test_reference(dut):
     wd_ctrl = await tl.read_reg(ADDR_WATCHDOG_CTRL)
 
     assert mtime_high == 0, f"MTIME_HIGH reset mismatch: {mtime_high:#010x}"
-    assert mtime_low < 16, f"MTIME_LOW should be near zero after reset: {mtime_low:#010x}"
+    assert (
+        mtime_low < 16
+    ), f"MTIME_LOW should be near zero after reset: {mtime_low:#010x}"
     assert prescaler == 0, f"PRESCALER reset mismatch: {prescaler:#010x}"
     assert wd_ctrl == 0, f"WATCHDOG_CTRL reset mismatch: {wd_ctrl:#010x}"
 

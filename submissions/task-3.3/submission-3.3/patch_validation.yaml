@@ -1,40 +1,40 @@
 validations:
-  - patch_id: "patch_01"
-    patch_file: "phase3_materials/task_3_3_regression/patches/patch_01.diff"
-    fixes_bucket: 1
-    introduces_regression: false
-    regression_details: null
-    evidence_basis: "Static patch analysis + failure signature correlation"
-    confidence: 0.75
+    - patch_id: "patch_01"
+      patch_file: "phase3_materials/task_3_3_regression/patches/patch_01.diff"
+      fixes_bucket: 1
+      introduces_regression: false
+      regression_details: null
+      evidence_basis: "Static patch analysis + failure signature correlation"
+      confidence: 0.75
 
-  - patch_id: "patch_02"
-    patch_file: "phase3_materials/task_3_3_regression/patches/patch_02.diff"
-    fixes_bucket: 2
-    introduces_regression: false
-    regression_details: null
-    evidence_basis: "Static patch analysis + failure signature correlation"
-    confidence: 0.70
+    - patch_id: "patch_02"
+      patch_file: "phase3_materials/task_3_3_regression/patches/patch_02.diff"
+      fixes_bucket: 2
+      introduces_regression: false
+      regression_details: null
+      evidence_basis: "Static patch analysis + failure signature correlation"
+      confidence: 0.70
 
-  - patch_id: "patch_03"
-    patch_file: "phase3_materials/task_3_3_regression/patches/patch_03.diff"
-    fixes_bucket: 3
-    introduces_regression: false
-    regression_details: null
-    evidence_basis: "Static patch analysis + failure signature correlation"
-    confidence: 0.80
+    - patch_id: "patch_03"
+      patch_file: "phase3_materials/task_3_3_regression/patches/patch_03.diff"
+      fixes_bucket: 3
+      introduces_regression: false
+      regression_details: null
+      evidence_basis: "Static patch analysis + failure signature correlation"
+      confidence: 0.80
 
-  - patch_id: "patch_04"
-    patch_file: "phase3_materials/task_3_3_regression/patches/patch_04.diff"
-    fixes_bucket: 4
-    introduces_regression: false
-    regression_details: null
-    evidence_basis: "Static patch analysis + failure signature correlation"
-    confidence: 0.68
+    - patch_id: "patch_04"
+      patch_file: "phase3_materials/task_3_3_regression/patches/patch_04.diff"
+      fixes_bucket: 4
+      introduces_regression: false
+      regression_details: null
+      evidence_basis: "Static patch analysis + failure signature correlation"
+      confidence: 0.68
 
-  - patch_id: "patch_05"
-    patch_file: "phase3_materials/task_3_3_regression/patches/patch_05.diff"
-    fixes_bucket: 5
-    introduces_regression: false
-    regression_details: null
-    evidence_basis: "Static patch analysis + failure signature correlation"
-    confidence: 0.82
+    - patch_id: "patch_05"
+      patch_file: "phase3_materials/task_3_3_regression/patches/patch_05.diff"
+      fixes_bucket: 5
+      introduces_regression: false
+      regression_details: null
+      evidence_basis: "Static patch analysis + failure signature correlation"
+      confidence: 0.82

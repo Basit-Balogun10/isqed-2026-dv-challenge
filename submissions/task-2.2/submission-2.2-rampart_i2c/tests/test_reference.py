@@ -24,4 +24,6 @@ async def test_reference(dut):
 
     status = await i2c_get_status(dut)
     host_idle = (status >> 6) & 0x1
-    assert host_idle == 1, f"Host should remain idle with no transfer queued, STATUS={status:#010x}"
+    assert (
+        host_idle == 1
+    ), f"Host should remain idle with no transfer queued, STATUS={status:#010x}"

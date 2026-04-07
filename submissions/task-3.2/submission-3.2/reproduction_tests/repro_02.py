@@ -39,7 +39,9 @@ async def test_repro_02(dut):
 
     status_full = await tl.read_reg(ADDR_STATUS)
     tx_fifo_full = (status_full >> 1) & 0x1
-    assert tx_fifo_full == 1, f"Precondition failed: TX FIFO not full, STATUS={status_full:#010x}"
+    assert (
+        tx_fifo_full == 1
+    ), f"Precondition failed: TX FIFO not full, STATUS={status_full:#010x}"
 
     # Overflow attempts (should be discarded without touching stored contents).
     await tl.write_reg(ADDR_TXDATA, 0x80)
@@ -52,9 +54,9 @@ async def test_repro_02(dut):
     fifo_head = int(dut.tx_fifo_rdata.value) & 0xFF
     tx_wptr = int(dut.tx_wptr.value)
 
-    assert tx_wptr == 0x20, (
-        f"Trace-02 bug reproduced: tx_wptr advanced on overflow, expected 0x20 got {tx_wptr:#x}"
-    )
+    assert (
+        tx_wptr == 0x20
+    ), f"Trace-02 bug reproduced: tx_wptr advanced on overflow, expected 0x20 got {tx_wptr:#x}"
     assert fifo_head == 0x00, (
         "Trace-02 bug reproduced: TX FIFO head corrupted during overflow write "
         f"(expected 0x00, observed {fifo_head:#04x})"

@@ -1,0 +1,107 @@
+{
+  "features": [
+    "TL-UL CSR read/write access for 15-register map",
+    "64-bit mtime free-running counter with 12-bit prescaler",
+    "64-bit timer comparator 0 interrupt generation",
+    "64-bit timer comparator 1 interrupt generation",
+    "watchdog enable, bark, bite, pet, and lock behavior",
+    "interrupt state/enable/test triplet behavior",
+    "alert_o assertion on watchdog bite threshold",
+    "reset initialization and read-only/write-only register behavior",
+    "reserved-bit handling and partial 64-bit register write sequencing"
+  ],
+  "coverage_goals": {
+    "line_percent": 85,
+    "branch_percent": 75,
+    "functional_percent": 85
+  },
+  "directed_tests": [
+    {
+      "name": "reset_and_register_smoke",
+      "intent": "Verify reset values for all readable CSRs, confirm mtime and watchdog count start at zero, and validate TL-UL read/write access to the full register map."
+    },
+    {
+      "name": "mtime_prescaler_basic",
+      "intent": "Program prescaler values 0, 1, and a mid-range value to confirm mtime increments at the expected rate and remains monotonic."
+    },
+    {
+      "name": "timer0_compare_interrupt",
+      "intent": "Program mtimecmp0 below and above current mtime, enable intr_o[0], and verify interrupt assertion, W1C clearing, and re-assertion behavior."
+    },
+    {
+      "name": "timer1_compare_interrupt",
+      "intent": "Repeat comparator validation for mtimecmp1, including INTR_TEST injection and INTR_STATE clearing."
+    },
+    {
+      "name": "64bit_compare_partial_write",
+      "intent": "Write comparator LOW and HIGH halves in both orders to validate intermediate compare states and ensure no atomic-write assumption is required."
+    },
+    {
+      "name": "watchdog_enable_pet_bark_bite",
+      "intent": "Enable watchdog, set bark and bite thresholds, observe watchdog_count progression, verify bark interrupt, pet reset, and bite alert assertion."
+    },
+    {
+      "name": "watchdog_lock_behavior",
+      "intent": "Set wd_lock, attempt to clear or modify watchdog control fields, confirm lock persistence until reset, and verify WATCHDOG_PET remains writable."
+    },
+    {
+      "name": "interrupt_masking_and_test",
+      "intent": "Exercise INTR_ENABLE masking, INTR_TEST self-triggering, and confirm output pins only assert when both state and enable are set."
+    },
+    {
+      "name": "reserved_bits_and_ro_wo_access",
+      "intent": "Write reserved bits in PRESCALER and WATCHDOG_CTRL, attempt writes to RO registers, and confirm readback/side-effect behavior is compliant."
+    }
+  ],
+  "random_tests": [
+    {
+      "name": "tlul_csr_fuzz_sanity",
+      "intent": "Run constrained-random TL-UL reads/writes across the 64-byte window with scoreboard checking for legal CSR behavior, focusing on accessible registers and expected read-only/write-only responses."
+    },
+    {
+      "name": "timer_watchdog_constrained_random",
+      "intent": "Randomize prescaler, comparator thresholds, watchdog thresholds, enable/mask settings, and pet timing to stress concurrent timer and watchdog interactions."
+    },
+    {
+      "name": "interrupt_state_random_sequence",
+      "intent": "Randomly toggle INTR_ENABLE, inject INTR_TEST, and clear INTR_STATE while checking that interrupt outputs track the logical AND of state and enable."
+    }
+  ],
+  "risk_areas": [
+    {
+      "area": "Watchdog lock irreversibility",
+      "reason": "Lock semantics are security-sensitive and easy to implement incorrectly; must ensure wd_lock cannot be cleared except by reset while WATCHDOG_PET remains functional.",
+      "priority": "high"
+    },
+    {
+      "area": "64-bit comparator partial-write sequencing",
+      "reason": "Comparator registers are split across two 32-bit writes and intermediate states can cause premature or missed interrupts if ordering is mishandled.",
+      "priority": "high"
+    },
+    {
+      "area": "Prescaler boundary and off-by-one behavior",
+      "reason": "Timer increment rate depends on (prescaler + 1) cycles; off-by-one errors are common and directly affect mtime and compare timing.",
+      "priority": "high"
+    },
+    {
+      "area": "Watchdog bark/bite threshold ordering",
+      "reason": "Bark should warn before bite; incorrect threshold comparison or counter reset behavior can break escalation flow.",
+      "priority": "high"
+    },
+    {
+      "area": "Interrupt state/enable/test triplet correctness",
+      "reason": "W1C behavior, masking, and software test injection are core CSR behaviors and likely to expose register decode or side-effect bugs.",
+      "priority": "medium"
+    },
+    {
+      "area": "Reset and read-only/write-only CSR compliance",
+      "reason": "RO/WO access violations and reset value mismatches are common integration issues and can be checked quickly in a short budget.",
+      "priority": "medium"
+    },
+    {
+      "area": "Reserved-bit handling",
+      "reason": "Upper bits in PRESCALER and WATCHDOG_CTRL must read as zero; improper masking can indicate decode or storage bugs.",
+      "priority": "low"
+    }
+  ]
+}

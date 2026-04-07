@@ -1,0 +1,384 @@
+{
+  "rtl_files": [
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+  ],
+  "total_rtl_lines": 706,
+  "modules": [
+    "aegis_aes"
+  ],
+  "top_modules": [
+    "aegis_aes"
+  ],
+  "selected_top": "aegis_aes",
+  "port_count": 40,
+  "ports": [
+    {
+      "direction": "input",
+      "width": "",
+      "name": "clk_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "rst_ni",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_a_valid_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_a_ready_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[2:0]",
+      "name": "tl_a_opcode_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_address_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_data_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[3:0]",
+      "name": "tl_a_mask_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "tl_a_source_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[1:0]",
+      "name": "tl_a_size_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_valid_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_d_ready_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[2:0]",
+      "name": "tl_d_opcode_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[31:0]",
+      "name": "tl_d_data_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[7:0]",
+      "name": "tl_d_source_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_error_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "intr_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "alert_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "v",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "v",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "b",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "b",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "w",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "w",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "w",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[3:0]",
+      "name": "idx",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[127:0]",
+      "name": "s",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[127:0]",
+      "name": "s",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[127:0]",
+      "name": "s",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[127:0]",
+      "name": "s",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "din",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "din",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[127:0]",
+      "name": "s",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[127:0]",
+      "name": "s",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[127:0]",
+      "name": "s",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[127:0]",
+      "name": "rk",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "last_round",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[127:0]",
+      "name": "s",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[127:0]",
+      "name": "rk",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "last_round",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    }
+  ],
+  "tlul_detected": true,
+  "tlul_ports": [
+    "tl_a_address_i",
+    "tl_a_data_i",
+    "tl_a_mask_i",
+    "tl_a_opcode_i",
+    "tl_a_ready_o",
+    "tl_a_size_i",
+    "tl_a_source_i",
+    "tl_a_valid_i",
+    "tl_d_data_o",
+    "tl_d_error_o",
+    "tl_d_opcode_o",
+    "tl_d_ready_i",
+    "tl_d_source_o",
+    "tl_d_valid_o"
+  ],
+  "protocol_hints": [
+    "aes"
+  ],
+  "clock_candidates": [
+    "clk_i"
+  ],
+  "reset_candidates": [
+    "rst_ni"
+  ],
+  "interface_hints": {
+    "interrupt_candidates": [
+      "intr_o"
+    ],
+    "alert_candidates": [
+      "alert_o"
+    ]
+  },
+  "enum_state_sets": [],
+  "fsm_candidates": [
+    {
+      "state_expression": "v",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "state_expression": "v",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "state_expression": "idx",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "state_expression": "tl_addr",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "state_expression": "tl_addr",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "state_expression": "key_exp_ctr_q",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "state_expression": "round_ctr_q",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    },
+    {
+      "state_expression": "fsm_q",
+      "states": [
+        "FSM_DONE",
+        "FSM_IDLE",
+        "FSM_INIT",
+        "FSM_KEY_EXP",
+        "FSM_ROUND",
+        "default"
+      ],
+      "state_count": 6,
+      "next_state_values": [
+        "latched_data",
+        "state_nxt"
+      ],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/aegis_aes/aegis_aes.sv"
+    }
+  ],
+  "estimated_fsm_blocks": 8,
+  "csr_summary": {
+    "register_count": 22,
+    "top_keys": [
+      "name",
+      "base_addr",
+      "registers"
+    ]
+  },
+  "spec_excerpt": "# AEGIS_AES Specification\n\n## AES-128 Encryption Engine\n\n> **Disclaimer:** This RTL design is a modified version of an open-source IP block, created exclusively for this competition. It is not production-quality, not security-reviewed, and must not be used outside of this competition context.\n\n---\n\n## 1. Overview\n\nAEGIS_AES is a hardware AES-128 encryption and decryption engine supporting both Electronic Codebook (ECB) and Cipher Block Chaining (CBC) modes of operation. The engine implements the full AES-128 algorithm as specified in FIPS 197, performing 10 rounds of transformation on 128-bit data blocks using a 128-bit cipher key.\n\nThe module connects to the system fabric via a TileLink-UL (TL-UL) bus interface and exposes control/status registers (CSRs) for key, initialization vector (IV), plaintext, and ciphertext access. All 128-bit quantities are programmed through four consecutive 32-bit register writes. The engine supports back-to-back block operations for throughput-sensitive workloads.\n\nA single interrupt output signals operation completion. An alert output is provided for fatal error conditions.\n\n---\n\n## 2. Pin Interface\n\n| Signal        | Width  | Direction | Description                                  |\n|---------------|--------|-----------|----------------------------------------------|\n| `clk_i`       | 1      | Input     | System clock                                 |\n| `rst_ni`      | 1      | Input     | Active-low asynchronous reset                |\n| `tl_i`        | struct  | Input    | TL-UL request channel (host to device)       |\n| `tl_i_ready`  | 1      | Output    | Device ready to accept TL-UL request         |\n| `tl_o`        | struct  | Output   | TL-UL response channel (device to host)      |\n| `tl_o_ready`  | 1      | Input     | Host ready to accept TL-UL response          |\n| `intr_o`      | 1      | Output    | Interrupt output (AES operation done)        |\n| `alert_o`     | 1      | Output    | Alert output                                 |\n\n---\n\n## 3. Functional Description\n\n### 3.1 AES-128 Algorithm\n\nAEGIS_AES implements the AES-128 block cipher per FIPS 197. The algorithm operates on a 4x4 byte matrix called the state, derived from the 128-bit input block. Each encryption round applies four transformations in sequence:\n\n1. **SubBytes** -- Each byte of the state is substituted using the AES S-box, a fixed non-linear substitution table per FIPS 197.\n2. **ShiftRows** -- The rows of the state matrix are cyclically shifted by row-dependent offsets.\n3. **MixColumns** -- Each column of the state is treated as a polynomial over GF(2^8) and multiplied with a fixed polynomial per the AES specification.\n4. **AddRoundKey** -- The state is XORed with the round key derived from the key schedule.\n\nThe initial round consists of a single AddRoundKey with the original cipher key. Rounds 1 through 9 apply all four transformations. Round 10 omits MixColumns.\n\nDecryption applies the inverse transformations (InvSubBytes, InvShiftRows, InvMixColumns) in the order prescribed by the equivalent inverse cipher construction in FIPS 197.\n\n### 3.2 Key Expansion\n\nThe 128-bit cipher key is expanded into 11 round keys (one for the initial AddRoundKey and one per round). Key expansion follows the FIPS 197 key schedule using the AES S-box and round constants. The engine performs key expansion internally when a start operation is triggered with a new key value. If the key has not changed since the last operation, the engine may reuse previously computed round keys.\n\nThe number of clock cycles required for key expansion is implementation-dependent. Software should poll the status register or wait for the interrupt before assuming the operation has completed.\n\n### 3.3 Modes of Operation\n\n**ECB (Electronic Codebook):** Each 128-bit block is encrypted or decrypted independently. No IV is used.\n\n**CBC (Cipher Block Chaining):** For encryption, the plaintext block is XORed with the previous ciphertext block (or the IV for the firs",
+  "rtl_bytes": 31980
+}

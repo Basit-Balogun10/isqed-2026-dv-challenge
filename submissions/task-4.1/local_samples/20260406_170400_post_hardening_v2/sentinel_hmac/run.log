@@ -1,0 +1,616 @@
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465: warning: Numeric constant truncated to 4 bits.
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:408: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:476: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:476: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:497: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:497: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491879
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+82000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+82000000000.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                                 Directed boundary/error probe on out-of-range-like addresses.
+111000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+111000000000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                              ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *******************************************************************************************************
+                                                              ** test_directed_smoke.test_directed_csr_smoke     PASS   82000000000.00           0.01   5488524958508.87  **
+                                                              ** test_directed_smoke.test_directed_error_probe   PASS   28000000000.00           0.00   6091944807552.65  **
+                                                              *******************************************************************************************************
+                                                              ** TESTS=2 PASS=2 FAIL=0 SKIP=0                           111000000000.00           0.02   5197344705173.15  **
+                                                              *******************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491879
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+110000000000.00ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+110000000000.00ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                              ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *****************************************************************************************************
+                                                              ** test_random_csr.test_randomized_csr_traffic   PASS   110000000000.00           0.02   5228797896574.00  **
+                                                              *****************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                         110000000000.00           0.02   4977435620812.79  **
+                                                              *****************************************************************************************************
+%Warning-WIDTHTRUNC: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465:26: Value too large for 4 bit number: 16
+  465 |     if (pad_start_word < 4'd16) begin
+      |                          ^~~~~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.045
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:417:67: Operator FUNCREF 'k_const' expects 32 bits on the Function Argument, but Function Argument's SEL generates 6 bits.
+                                                                                                                                                     : ... note: In instance 'sentinel_hmac'
+  417 |     t1 = h_val + big_sigma1(e_val) + ch_fn(e_val, f_val, g_val) + k_const(round_cnt[5:0]) + w_cur;
+      |                                                                   ^~~~~~~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.045
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNSIGNED: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465:24: Comparison is constant due to unsigned arithmetic
+                                                                                                                                                  : ... note: In instance 'sentinel_hmac'
+  465 |     if (pad_start_word < 4'd16) begin
+      |                        ^
+                   ... For warning description see https://verilator.org/warn/UNSIGNED?v=5.045
+                   ... Use "/* verilator lint_off UNSIGNED */" and lint_on around source to disable this message.
+%Error: Exiting due to 3 warning(s)
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465: warning: Numeric constant truncated to 4 bits.
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:408: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:476: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:476: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:497: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:497: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491884
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+82000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+82000000000.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                                 Directed boundary/error probe on out-of-range-like addresses.
+111000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+111000000000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                              ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *******************************************************************************************************
+                                                              ** test_directed_smoke.test_directed_csr_smoke     PASS   82000000000.00           0.02   3720727933619.65  **
+                                                              ** test_directed_smoke.test_directed_error_probe   PASS   28000000000.00           0.01   4265445538081.57  **
+                                                              *******************************************************************************************************
+                                                              ** TESTS=2 PASS=2 FAIL=0 SKIP=0                           111000000000.00           0.03   3548832173429.17  **
+                                                              *******************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491885
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: hmac_double_pass_sequencing_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.02   3638853264955.95  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.03   3400695116348.21  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491885
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+110000000000.00ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+110000000000.00ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                              ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *****************************************************************************************************
+                                                              ** test_random_csr.test_randomized_csr_traffic   PASS   110000000000.00           0.03   3531883243640.48  **
+                                                              *****************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                         110000000000.00           0.03   3379158750503.53  **
+                                                              *****************************************************************************************************
+%Warning-WIDTHTRUNC: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465:26: Value too large for 4 bit number: 16
+  465 |     if (pad_start_word < 4'd16) begin
+      |                          ^~~~~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.045
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:417:67: Operator FUNCREF 'k_const' expects 32 bits on the Function Argument, but Function Argument's SEL generates 6 bits.
+                                                                                                                                                     : ... note: In instance 'sentinel_hmac'
+  417 |     t1 = h_val + big_sigma1(e_val) + ch_fn(e_val, f_val, g_val) + k_const(round_cnt[5:0]) + w_cur;
+      |                                                                   ^~~~~~~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.045
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNSIGNED: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465:24: Comparison is constant due to unsigned arithmetic
+                                                                                                                                                  : ... note: In instance 'sentinel_hmac'
+  465 |     if (pad_start_word < 4'd16) begin
+      |                        ^
+                   ... For warning description see https://verilator.org/warn/UNSIGNED?v=5.045
+                   ... Use "/* verilator lint_off UNSIGNED */" and lint_on around source to disable this message.
+%Error: Exiting due to 3 warning(s)
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465: warning: Numeric constant truncated to 4 bits.
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:408: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:476: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:476: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:497: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:497: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491934
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+82000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+82000000000.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                                 Directed boundary/error probe on out-of-range-like addresses.
+111000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+111000000000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                              ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *******************************************************************************************************
+                                                              ** test_directed_smoke.test_directed_csr_smoke     PASS   82000000000.00           0.03   2908892696748.00  **
+                                                              ** test_directed_smoke.test_directed_error_probe   PASS   28000000000.00           0.01   3685911493314.92  **
+                                                              *******************************************************************************************************
+                                                              ** TESTS=2 PASS=2 FAIL=0 SKIP=0                           111000000000.00           0.04   2858734259293.37  **
+                                                              *******************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491935
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: hmac_double_pass_sequencing_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.03   2768700244240.54  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.04   2566561915705.17  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491935
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+110000000000.00ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+110000000000.00ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                              ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *****************************************************************************************************
+                                                              ** test_random_csr.test_randomized_csr_traffic   PASS   110000000000.00           0.03   3233238540403.79  **
+                                                              *****************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                         110000000000.00           0.04   3086089323817.23  **
+                                                              *****************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491936
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS   174000000000.00           0.05   3401056449019.73  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.05   3296753410548.76  **
+                                                              ********************************************************************************************************
+%Warning-WIDTHTRUNC: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465:26: Value too large for 4 bit number: 16
+  465 |     if (pad_start_word < 4'd16) begin
+      |                          ^~~~~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.045
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:417:67: Operator FUNCREF 'k_const' expects 32 bits on the Function Argument, but Function Argument's SEL generates 6 bits.
+                                                                                                                                                     : ... note: In instance 'sentinel_hmac'
+  417 |     t1 = h_val + big_sigma1(e_val) + ch_fn(e_val, f_val, g_val) + k_const(round_cnt[5:0]) + w_cur;
+      |                                                                   ^~~~~~~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.045
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNSIGNED: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465:24: Comparison is constant due to unsigned arithmetic
+                                                                                                                                                  : ... note: In instance 'sentinel_hmac'
+  465 |     if (pad_start_word < 4'd16) begin
+      |                        ^
+                   ... For warning description see https://verilator.org/warn/UNSIGNED?v=5.045
+                   ... Use "/* verilator lint_off UNSIGNED */" and lint_on around source to disable this message.
+%Error: Exiting due to 3 warning(s)
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465: warning: Numeric constant truncated to 4 bits.
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:408: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:476: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:476: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:497: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:497: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491942
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+82000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+82000000000.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                                 Directed boundary/error probe on out-of-range-like addresses.
+111000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+111000000000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                              ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *******************************************************************************************************
+                                                              ** test_directed_smoke.test_directed_csr_smoke     PASS   82000000000.00           0.02   4481969949307.38  **
+                                                              ** test_directed_smoke.test_directed_error_probe   PASS   28000000000.00           0.01   5539908108873.06  **
+                                                              *******************************************************************************************************
+                                                              ** TESTS=2 PASS=2 FAIL=0 SKIP=0                           111000000000.00           0.03   4383711950585.67  **
+                                                              *******************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491943
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: hmac_double_pass_sequencing_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.02   4036348238917.05  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.02   3785624774359.18  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491944
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_2.test_gap_iteration_2 (1/1)
+                                                            Coverage-gap iteration test: sha256_padding_boundary_gap.
+106000000000.00ns INFO     cocotb.regression                  test_gap_iter_2.test_gap_iteration_2 passed
+106000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                              ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              **********************************************************************************************
+                                                              ** test_gap_iter_2.test_gap_iteration_2   PASS   106000000000.00           0.08   1316924141444.66  **
+                                                              **********************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  106000000000.00           0.08   1273013723811.51  **
+                                                              **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491945
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+110000000000.00ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+110000000000.00ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                              ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *****************************************************************************************************
+                                                              ** test_random_csr.test_randomized_csr_traffic   PASS   110000000000.00           0.03   3183181018483.38  **
+                                                              *****************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                         110000000000.00           0.04   3034872388570.23  **
+                                                              *****************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491945
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS   174000000000.00           0.04   3967473938286.91  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.05   3790092782916.23  **
+                                                              ********************************************************************************************************
+%Warning-WIDTHTRUNC: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465:26: Value too large for 4 bit number: 16
+  465 |     if (pad_start_word < 4'd16) begin
+      |                          ^~~~~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.045
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:417:67: Operator FUNCREF 'k_const' expects 32 bits on the Function Argument, but Function Argument's SEL generates 6 bits.
+                                                                                                                                                     : ... note: In instance 'sentinel_hmac'
+  417 |     t1 = h_val + big_sigma1(e_val) + ch_fn(e_val, f_val, g_val) + k_const(round_cnt[5:0]) + w_cur;
+      |                                                                   ^~~~~~~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.045
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNSIGNED: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465:24: Comparison is constant due to unsigned arithmetic
+                                                                                                                                                  : ... note: In instance 'sentinel_hmac'
+  465 |     if (pad_start_word < 4'd16) begin
+      |                        ^
+                   ... For warning description see https://verilator.org/warn/UNSIGNED?v=5.045
+                   ... Use "/* verilator lint_off UNSIGNED */" and lint_on around source to disable this message.
+%Error: Exiting due to 3 warning(s)
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465: warning: Numeric constant truncated to 4 bits.
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:257: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:404: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:408: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:416: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:457: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:476: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:476: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:497: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:497: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491976
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_csr_smoke (1/2)
+                                                            Directed smoke test: reset, deterministic writes, deterministic reads.
+82000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_csr_smoke passed
+82000000000.00ns INFO     cocotb.regression                  running test_directed_smoke.test_directed_error_probe (2/2)
+                                                                 Directed boundary/error probe on out-of-range-like addresses.
+111000000000.00ns INFO     cocotb.regression                  test_directed_smoke.test_directed_error_probe passed
+111000000000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                              ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *******************************************************************************************************
+                                                              ** test_directed_smoke.test_directed_csr_smoke     PASS   82000000000.00           0.01   5906963125805.07  **
+                                                              ** test_directed_smoke.test_directed_error_probe   PASS   28000000000.00           0.00   6638807914075.75  **
+                                                              *******************************************************************************************************
+                                                              ** TESTS=2 PASS=2 FAIL=0 SKIP=0                           111000000000.00           0.02   5596169723778.16  **
+                                                              *******************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491976
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: hmac_double_pass_sequencing_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.02   4058872939582.59  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.02   3845202350999.79  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491976
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_2.test_gap_iteration_2 (1/1)
+                                                            Coverage-gap iteration test: sha256_padding_boundary_gap.
+106000000000.00ns INFO     cocotb.regression                  test_gap_iter_2.test_gap_iteration_2 passed
+106000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                              ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              **********************************************************************************************
+                                                              ** test_gap_iter_2.test_gap_iteration_2   PASS   106000000000.00           0.03   4164094671674.36  **
+                                                              **********************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  106000000000.00           0.03   3945548343583.33  **
+                                                              **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491977
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_csr.test_randomized_csr_traffic (1/1)
+                                                            Constrained-random TL-UL CSR traffic with reproducible seed.
+110000000000.00ns INFO     cocotb.regression                  test_random_csr.test_randomized_csr_traffic passed
+110000000000.00ns INFO     cocotb.regression                  *****************************************************************************************************
+                                                              ** TEST                                         STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              *****************************************************************************************************
+                                                              ** test_random_csr.test_randomized_csr_traffic   PASS   110000000000.00           0.03   3579896181689.80  **
+                                                              *****************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                         110000000000.00           0.03   3432531619200.67  **
+                                                              *****************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491977
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS   174000000000.00           0.04   4126944673150.87  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.04   3987656316079.93  **
+                                                              ********************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775491978
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_2_1.test_repair_iteration_2_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_2_1.test_repair_iteration_2_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_2_1.test_repair_iteration_2_1   PASS   174000000000.00           0.04   4114102642734.73  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.04   3989967229964.30  **
+                                                              ********************************************************************************************************
+%Warning-WIDTHTRUNC: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465:26: Value too large for 4 bit number: 16
+  465 |     if (pad_start_word < 4'd16) begin
+      |                          ^~~~~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.045
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:417:67: Operator FUNCREF 'k_const' expects 32 bits on the Function Argument, but Function Argument's SEL generates 6 bits.
+                                                                                                                                                     : ... note: In instance 'sentinel_hmac'
+  417 |     t1 = h_val + big_sigma1(e_val) + ch_fn(e_val, f_val, g_val) + k_const(round_cnt[5:0]) + w_cur;
+      |                                                                   ^~~~~~~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.045
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNSIGNED: /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/sentinel_hmac/sentinel_hmac.sv:465:24: Comparison is constant due to unsigned arithmetic
+                                                                                                                                                  : ... note: In instance 'sentinel_hmac'
+  465 |     if (pad_start_word < 4'd16) begin
+      |                        ^
+                   ... For warning description see https://verilator.org/warn/UNSIGNED?v=5.045
+                   ... Use "/* verilator lint_off UNSIGNED */" and lint_on around source to disable this message.
+%Error: Exiting due to 3 warning(s)

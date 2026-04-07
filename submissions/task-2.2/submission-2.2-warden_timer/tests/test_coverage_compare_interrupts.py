@@ -60,7 +60,9 @@ async def test_coverage_compare_interrupts(dut):
         await RisingEdge(dut.clk_i)
 
     intr_state = await tl.read_reg(ADDR_INTR_STATE)
-    assert (intr_state & 0x3) != 0, f"Expected timer interrupt activity, INTR_STATE={intr_state:#010x}"
+    assert (
+        intr_state & 0x3
+    ) != 0, f"Expected timer interrupt activity, INTR_STATE={intr_state:#010x}"
     if intr_state & 0x1:
         sample_timer_irq_source("timer0")
     if intr_state & 0x2:
@@ -69,7 +71,9 @@ async def test_coverage_compare_interrupts(dut):
     # Exercise INTR_TEST write path.
     await tl.write_reg(ADDR_INTR_TEST, 0x2)
     intr_state_after_test = await tl.read_reg(ADDR_INTR_STATE)
-    assert (intr_state_after_test & 0x2) == 0x2, (
+    assert (
+        intr_state_after_test & 0x2
+    ) == 0x2, (
         f"INTR_TEST bit1 path not observed, INTR_STATE={intr_state_after_test:#010x}"
     )
     sample_timer_irq_source("intr_test")
@@ -87,7 +91,9 @@ async def test_coverage_compare_interrupts(dut):
         await RisingEdge(dut.clk_i)
 
     intr_state_bark = await tl.read_reg(ADDR_INTR_STATE)
-    assert (intr_state_bark & 0x4) == 0x4, (
+    assert (
+        intr_state_bark & 0x4
+    ) == 0x4, (
         f"Watchdog bark interrupt path not observed, INTR_STATE={intr_state_bark:#010x}"
     )
     sample_timer_irq_source("wd_bark")

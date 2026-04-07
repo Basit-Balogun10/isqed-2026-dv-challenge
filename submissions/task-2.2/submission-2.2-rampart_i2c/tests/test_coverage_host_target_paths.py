@@ -31,9 +31,9 @@ async def test_coverage_host_target_paths(dut):
     await write_i2c_csr(dut, 0x30, target_cfg)
     await i2c_enable_target(dut)
     target_rd = await read_i2c_csr(dut, 0x30)
-    assert (target_rd & 0x3FFF) == (target_cfg & 0x3FFF), (
-        f"TARGET_ID readback mismatch: got {target_rd:#010x}, expected {target_cfg:#010x}"
-    )
+    assert (target_rd & 0x3FFF) == (
+        target_cfg & 0x3FFF
+    ), f"TARGET_ID readback mismatch: got {target_rd:#010x}, expected {target_cfg:#010x}"
 
     # Enable host + loopback to stimulate START/WRITE/READ/STOP host state paths.
     await i2c_enable_host(dut)
@@ -43,7 +43,9 @@ async def test_coverage_host_target_paths(dut):
     await write_i2c_csr(dut, 0x3C, 0x00100001)
     await write_i2c_csr(dut, 0x44, 0x0000FFFF)
     intr_en = await read_i2c_csr(dut, 0x44)
-    assert (intr_en & 0xFFFF) == 0xFFFF, f"INTR_ENABLE readback mismatch: {intr_en:#010x}"
+    assert (
+        intr_en & 0xFFFF
+    ) == 0xFFFF, f"INTR_ENABLE readback mismatch: {intr_en:#010x}"
 
     # Assert all FIFO reset bits to exercise reset pulse handling in all FIFOs.
     await write_i2c_csr(dut, 0x10, 0xF)
@@ -62,5 +64,9 @@ async def test_coverage_host_target_paths(dut):
     status = await i2c_get_status(dut)
     # Confirm status path remains readable and host enable bit stayed set.
     ctrl = await read_i2c_csr(dut, 0x00)
-    assert (ctrl & 0x1) == 0x1, f"CTRL.host_enable unexpectedly cleared: CTRL={ctrl:#010x}"
-    assert (status & 0xFFFFFFFF) == status, f"STATUS read must be 32-bit value: {status:#010x}"
+    assert (
+        ctrl & 0x1
+    ) == 0x1, f"CTRL.host_enable unexpectedly cleared: CTRL={ctrl:#010x}"
+    assert (
+        status & 0xFFFFFFFF
+    ) == status, f"STATUS read must be 32-bit value: {status:#010x}"

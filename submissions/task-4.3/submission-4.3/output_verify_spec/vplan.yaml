@@ -1,0 +1,235 @@
+vplan:
+- id: VP-001
+  feature: Request Acceptance and Response Ordering
+  description: When processing is enabled, valid host requests shall be eligible for
+    acceptance, queued for processing when accepted, and returned with exactly one
+    response per accepted request in acceptance order.
+  priority: high
+  risk: high
+  coverage_goals: &id001
+  - Enabled valid-request acceptance
+  - Disabled-request rejection
+  - One response per accepted request
+  - In-order responses across back-to-back requests
+  test_strategy: Directed acceptance and ordering checks with multi-request bursts,
+    scoreboard comparison, and disabled-state negative tests.
+  tests: &id002
+  - test_request_acceptance_and_ordering_basic
+  - test_request_acceptance_and_ordering_stress
+  assertions: &id003
+  - A001_request_acceptance_gate
+  - A002_request_response_progress
+  - A003_response_order_preserved
+- id: VP-002
+  feature: Processing Enable and Mode Control
+  description: The control register shall gate processing and select normal, diagnostic,
+    or low-power modes; illegal encodings shall raise error status.
+  priority: high
+  risk: medium
+  coverage_goals: &id004
+  - Enable/disable transitions
+  - Normal/diagnostic/low-power mode selection
+  - Illegal mode encodings
+  test_strategy: Register-level directed tests across enable toggles, legal mode writes,
+    and illegal-encoding injection.
+  tests: &id005
+  - test_processing_enable_and_mode_control_basic
+  - test_processing_enable_and_mode_control_stress
+  assertions: &id006
+  - A004_control_enable_mode_decode
+  - A005_illegal_mode_sets_error_status
+- id: VP-003
+  feature: Finite Queue Capacity and Idle Indication
+  description: Incoming requests shall be buffered in a finite queue; a full queue
+    shall reject new requests and set overflow status, and an empty queue shall indicate
+    idle state.
+  priority: high
+  risk: high
+  coverage_goals: &id007
+  - Empty/partial/full queue occupancy
+  - Queue-full rejection
+  - Overflow status setting
+  - Drain-to-empty idle indication
+  test_strategy: Boundary and stress tests at queue-depth limits, including overflow
+    attempts and drain/refill sequencing.
+  tests: &id008
+  - test_queue_capacity_and_idle_basic
+  - test_queue_capacity_and_idle_stress
+  assertions: &id009
+  - A006_queue_capacity_and_overflow
+  - A007_empty_queue_indicates_idle
+- id: VP-004
+  feature: Completion and Error Interrupt Signaling
+  description: Completion interrupt shall assert when a request completes and interrupt
+    enable is set; error interrupt shall assert when any enabled error status bit
+    is set; writing clear bits shall deassert the corresponding sources.
+  priority: medium
+  risk: medium
+  coverage_goals: &id010
+  - Completion interrupt with interrupt enable on/off
+  - Error interrupt from each enabled error status bit
+  - Clear-bit deassertion
+  - Interrupts remain quiet when disabled
+  test_strategy: Directed source-by-source interrupt checks with completion/error
+    stimulus, clear-bit sequencing, and interrupt-disable negative cases.
+  tests: &id011
+  - test_interrupt_signaling_basic
+  - test_interrupt_signaling_stress
+  assertions: &id012
+  - A008_completion_interrupt_gating
+  - A009_error_interrupt_gating
+  - A010_clear_bits_deassert_interrupt_sources
+- id: VP-005
+  feature: Error Status Reporting and Data Integrity
+  description: Protocol format violations shall set protocol_error status, queue overflow
+    shall set overflow_error status, and error handling shall not silently corrupt
+    requests that were already accepted.
+  priority: high
+  risk: high
+  coverage_goals: &id013
+  - Protocol format violations
+  - Queue overflow error reporting
+  - Accepted-request integrity through error injection
+  - Error-status visibility
+  test_strategy: Negative malformed-request tests, overflow stimulus, and mixed traffic
+    integrity checks with scoreboard tracking.
+  tests: &id014
+  - test_error_status_and_integrity_basic
+  - test_error_status_and_integrity_stress
+  assertions: &id015
+  - A011_protocol_and_overflow_errors_set_status
+  - A012_error_paths_preserve_accepted_requests
+- id: VP-006
+  feature: Reset and Safe Initialization
+  description: Reset shall restore documented control and status defaults, return
+    the queue to empty, and drive outputs to a safe idle state.
+  priority: high
+  risk: medium
+  coverage_goals: &id016
+  - Reset from idle state
+  - Reset during active processing
+  - Control and status defaults restored
+  - Queue empty and outputs safe idle after reset
+  test_strategy: Directed reset sequencing from idle and active states, including
+    reset while requests are queued or in flight.
+  tests: &id017
+  - test_reset_and_safe_initialization_basic
+  - test_reset_during_active_processing_stress
+  assertions: &id018
+  - A013_reset_restores_defaults_and_safe_idle
+verification_plan:
+  dut_name: generic_peripheral_controller
+  spec_version: '1.0'
+  author: agent
+  date: '2026-04-07'
+  features:
+  - id: F001
+    name: Request Acceptance and Response Ordering
+    description: When processing is enabled, valid host requests shall be eligible
+      for acceptance, queued for processing when accepted, and returned with exactly
+      one response per accepted request in acceptance order.
+    priority: high
+    risk: high
+    coverage_goals: *id001
+    test_strategy: Directed acceptance and ordering checks with multi-request bursts,
+      scoreboard comparison, and disabled-state negative tests.
+    tests: *id002
+    assertions: *id003
+  - id: F002
+    name: Processing Enable and Mode Control
+    description: The control register shall gate processing and select normal, diagnostic,
+      or low-power modes; illegal encodings shall raise error status.
+    priority: high
+    risk: medium
+    coverage_goals: *id004
+    test_strategy: Register-level directed tests across enable toggles, legal mode
+      writes, and illegal-encoding injection.
+    tests: *id005
+    assertions: *id006
+  - id: F003
+    name: Finite Queue Capacity and Idle Indication
+    description: Incoming requests shall be buffered in a finite queue; a full queue
+      shall reject new requests and set overflow status, and an empty queue shall
+      indicate idle state.
+    priority: high
+    risk: high
+    coverage_goals: *id007
+    test_strategy: Boundary and stress tests at queue-depth limits, including overflow
+      attempts and drain/refill sequencing.
+    tests: *id008
+    assertions: *id009
+  - id: F004
+    name: Completion and Error Interrupt Signaling
+    description: Completion interrupt shall assert when a request completes and interrupt
+      enable is set; error interrupt shall assert when any enabled error status bit
+      is set; writing clear bits shall deassert the corresponding sources.
+    priority: medium
+    risk: medium
+    coverage_goals: *id010
+    test_strategy: Directed source-by-source interrupt checks with completion/error
+      stimulus, clear-bit sequencing, and interrupt-disable negative cases.
+    tests: *id011
+    assertions: *id012
+  - id: F005
+    name: Error Status Reporting and Data Integrity
+    description: Protocol format violations shall set protocol_error status, queue
+      overflow shall set overflow_error status, and error handling shall not silently
+      corrupt requests that were already accepted.
+    priority: high
+    risk: high
+    coverage_goals: *id013
+    test_strategy: Negative malformed-request tests, overflow stimulus, and mixed
+      traffic integrity checks with scoreboard tracking.
+    tests: *id014
+    assertions: *id015
+  - id: F006
+    name: Reset and Safe Initialization
+    description: Reset shall restore documented control and status defaults, return
+      the queue to empty, and drive outputs to a safe idle state.
+    priority: high
+    risk: medium
+    coverage_goals: *id016
+    test_strategy: Directed reset sequencing from idle and active states, including
+      reset while requests are queued or in flight.
+    tests: *id017
+    assertions: *id018
+  cross_feature_tests:
+  - id: X001
+    name: Processing Control Under Queue Pressure
+    features:
+    - F001
+    - F002
+    - F003
+    description: Exercise processing enable/disable and legal/illegal mode programming
+      while queue pressure drives request admission and overflow rejection.
+  - id: X002
+    name: Completion Interrupt Flow
+    features:
+    - F001
+    - F004
+    description: Verify completion interrupt assertion, enable gating, and clear-bit
+      deassertion on request completions.
+  - id: X003
+    name: Error Interrupt and Status Propagation
+    features:
+    - F003
+    - F004
+    - F005
+    description: Drive queue overflow and protocol violation conditions to verify
+      error status setting, error interrupt assertion, and clear-bit deassertion.
+  - id: X004
+    name: Reset During Active Queue Processing
+    features:
+    - F001
+    - F003
+    - F006
+    description: Assert reset while requests are queued or in flight and verify default
+      restoration, queue emptying, and safe idle outputs.
+  coverage_summary:
+    total_features: 6
+    total_tests: 12
+    total_assertions: 13
+    priority_distribution:
+      high: 5
+      medium: 1
+      low: 0

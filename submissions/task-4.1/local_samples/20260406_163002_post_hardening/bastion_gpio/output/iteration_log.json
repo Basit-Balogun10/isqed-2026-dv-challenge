@@ -1,0 +1,46 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/tests/random/test_gap_iter_1.py",
+      "scenario": "sync_latency_off_by_one",
+      "functional_before": 45.45,
+      "updated_functional_coverage": 45.45,
+      "coverage_delta": 0.0,
+      "simulation_passed": false,
+      "failing_runs": 2,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/tests/random/test_repair_iter_1_1.py",
+          "coverage_before": 45.45,
+          "coverage_after": 45.45,
+          "simulation_passed": false,
+          "failing_runs": 2
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/tests/random/test_gap_iter_2.py",
+      "scenario": "mixed_mode_interrupt_coverage_gap",
+      "functional_before": 45.45,
+      "updated_functional_coverage": 45.45,
+      "coverage_delta": 0.0,
+      "simulation_passed": false,
+      "failing_runs": 4,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/tests/random/test_repair_iter_2_1.py",
+          "coverage_before": 45.45,
+          "coverage_after": 45.45,
+          "simulation_passed": false,
+          "failing_runs": 4
+        }
+      ]
+    }
+  ]
+}

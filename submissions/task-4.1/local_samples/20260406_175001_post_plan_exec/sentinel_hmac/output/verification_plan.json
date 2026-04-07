@@ -1,0 +1,114 @@
+{
+  "features": [
+    "TL-UL CSR read/write access with same-cycle response and unmapped address error handling",
+    "CFG register programming for hmac_en, sha_en, endian_swap, and digest_swap",
+    "CMD W1S sequencing for hash_start, hash_process, and hash_stop",
+    "STATUS register observation for fifo_full, fifo_empty, fifo_depth, and sha_idle",
+    "WIPE_SECRET zeroization behavior for key registers and internal secret state",
+    "HMAC mode key processing and SHA-256-only mode operation",
+    "Message FIFO depth management and backpressure behavior",
+    "Multi-block streaming hash flow with partial and full block handling",
+    "Digest register readout and byte-swap behavior",
+    "Interrupt and alert pin sanity checks",
+    "Reset recovery and post-reset register defaults",
+    "Invalid configuration handling for hmac_en without sha_en"
+  ],
+  "coverage_goals": {
+    "line_percent": 85,
+    "branch_percent": 75,
+    "functional_percent": 85
+  },
+  "directed_tests": [
+    {
+      "name": "reset_and_csr_smoke",
+      "intent": "Verify reset values, TL-UL read/write access, reserved-bit behavior, and unmapped address error response."
+    },
+    {
+      "name": "cfg_mode_matrix",
+      "intent": "Program all valid CFG combinations, confirm invalid hmac_en without sha_en is rejected or safely ignored, and check mode-dependent status transitions."
+    },
+    {
+      "name": "sha256_single_block_known_vector",
+      "intent": "Run SHA-256-only mode on a known short message, issue hash_start and hash_stop, and compare digest against a software reference."
+    },
+    {
+      "name": "hmac_known_vector",
+      "intent": "Run HMAC-SHA256 on a known key/message pair, verify key processing path, and compare final digest against a software reference."
+    },
+    {
+      "name": "streaming_multi_block_hash",
+      "intent": "Write message data in multiple chunks across FIFO boundaries, use hash_process and hash_stop, and verify correct digest for a multi-block message."
+    },
+    {
+      "name": "partial_block_padding",
+      "intent": "Exercise finalization with a non-512-bit-aligned message to validate automatic SHA-256 padding and length encoding."
+    },
+    {
+      "name": "fifo_full_backpressure",
+      "intent": "Fill the 32-entry FIFO to capacity, confirm STATUS fifo_full and tl_i_ready backpressure behavior, then drain and continue operation."
+    },
+    {
+      "name": "wipe_secret_zeroization",
+      "intent": "Load key material, trigger WIPE_SECRET, and verify key registers and secret-related state are cleared without corrupting non-secret CSRs."
+    },
+    {
+      "name": "digest_swap_endian_swap",
+      "intent": "Check byte-order transformation effects on input and output by comparing swapped versus non-swapped digest results."
+    },
+    {
+      "name": "reset_during_active_operation",
+      "intent": "Assert reset while hashing is active and verify the DUT returns to a clean idle state with cleared FIFO and default CSRs."
+    }
+  ],
+  "random_tests": [
+    {
+      "name": "tlul_csr_fuzz",
+      "intent": "Randomize legal TL-UL CSR reads and writes across the register map, including reserved bits and repeated accesses, while checking protocol stability and mirrored CSR behavior."
+    },
+    {
+      "name": "streaming_message_fuzzer",
+      "intent": "Generate random message lengths, chunk sizes, and command interleavings within legal sequencing to stress FIFO, padding, and digest generation against a Python SHA-256/HMAC model."
+    },
+    {
+      "name": "mode_and_swap_random",
+      "intent": "Randomly vary CFG mode bits and endian/digest swap settings across multiple short transactions to maximize branch coverage in mode-dependent datapaths."
+    }
+  ],
+  "risk_areas": [
+    {
+      "area": "HMAC key expansion and double-pass sequencing",
+      "reason": "Most complex control path; errors here can silently produce incorrect digests even when basic SHA-256 mode passes.",
+      "priority": "high"
+    },
+    {
+      "area": "Padding and final block handling",
+      "reason": "Off-by-one and length-encoding bugs are common in SHA-256 finalization, especially for partial blocks and multi-block streams.",
+      "priority": "high"
+    },
+    {
+      "area": "FIFO depth, backpressure, and command ordering",
+      "reason": "The 32-entry FIFO and process/stop sequencing can expose deadlocks or dropped words under boundary conditions.",
+      "priority": "high"
+    },
+    {
+      "area": "CFG invalid combinations and mode gating",
+      "reason": "Illegal hmac_en without sha_en may lead to undefined internal state if not handled defensively.",
+      "priority": "medium"
+    },
+    {
+      "area": "WIPE_SECRET zeroization completeness",
+      "reason": "Security-sensitive state clearing must cover key registers and internal secret state without disturbing functional CSRs.",
+      "priority": "medium"
+    },
+    {
+      "area": "Endian and digest byte swapping",
+      "reason": "Byte-order transforms are easy to mis-implement and can cause mismatches only on specific message patterns.",
+      "priority": "medium"
+    },
+    {
+      "area": "TL-UL unmapped address and reserved-bit handling",
+      "reason": "Protocol compliance issues are usually localized but important for integration robustness.",
+      "priority": "low"
+    }
+  ]
+}

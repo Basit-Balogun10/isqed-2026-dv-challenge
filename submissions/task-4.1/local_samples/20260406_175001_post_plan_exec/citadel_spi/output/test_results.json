@@ -1,0 +1,150 @@
+{
+  "python_file_count": 19,
+  "syntax_passed": true,
+  "syntax_errors": [],
+  "directed_test_count": 10,
+  "random_test_count": 4,
+  "directed_test_file_count": 1,
+  "random_test_file_count": 5,
+  "simulation_runs": [
+    {
+      "simulator": "icarus",
+      "module": "test_directed_plan_cases",
+      "passed": true,
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/icarus/test_directed_plan_cases/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "icarus",
+      "module": "test_gap_iter_1",
+      "passed": true,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/icarus/test_gap_iter_1/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "icarus",
+      "module": "test_gap_iter_2",
+      "passed": true,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/icarus/test_gap_iter_2/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "icarus",
+      "module": "test_random_plan_cases",
+      "passed": true,
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/icarus/test_random_plan_cases/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "icarus",
+      "module": "test_repair_iter_1_1",
+      "passed": true,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/icarus/test_repair_iter_1_1/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "icarus",
+      "module": "test_repair_iter_2_1",
+      "passed": true,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/icarus/test_repair_iter_2_1/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "verilator",
+      "module": "test_directed_plan_cases",
+      "passed": true,
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_directed_plan_cases/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "verilator",
+      "module": "test_gap_iter_1",
+      "passed": true,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_gap_iter_1/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "verilator",
+      "module": "test_gap_iter_2",
+      "passed": true,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_gap_iter_2/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "verilator",
+      "module": "test_random_plan_cases",
+      "passed": true,
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_random_plan_cases/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "verilator",
+      "module": "test_repair_iter_1_1",
+      "passed": true,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_repair_iter_1_1/results.xml",
+      "error": ""
+    },
+    {
+      "simulator": "verilator",
+      "module": "test_repair_iter_2_1",
+      "passed": true,
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "results_xml": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_repair_iter_2_1/results.xml",
+      "error": ""
+    }
+  ],
+  "simulation_passed": true,
+  "simulators_tested": [
+    "icarus",
+    "verilator"
+  ],
+  "simulators_requested": [
+    "icarus",
+    "verilator"
+  ],
+  "dual_simulator_compliant": true,
+  "selected_top": "citadel_spi",
+  "coverage_dat_files": [
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_gap_iter_2/coverage.dat",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_random_plan_cases/coverage.dat",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_repair_iter_2_1/coverage.dat",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_repair_iter_1_1/coverage.dat",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_gap_iter_1/coverage.dat",
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_citadel_spi/sim_results/verilator/test_directed_plan_cases/coverage.dat"
+  ]
+}

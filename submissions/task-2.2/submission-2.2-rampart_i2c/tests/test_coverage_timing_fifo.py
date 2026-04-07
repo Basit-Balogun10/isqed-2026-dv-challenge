@@ -31,7 +31,9 @@ async def test_coverage_timing_fifo(dut):
         await write_i2c_csr(dut, addr, value)
         await Timer(50, unit="ns")
         readback = await read_i2c_csr(dut, addr)
-        assert readback == value, f"Timing register mismatch at {addr:#x}: {readback:#010x} != {value:#010x}"
+        assert (
+            readback == value
+        ), f"Timing register mismatch at {addr:#x}: {readback:#010x} != {value:#010x}"
 
     await write_i2c_csr(dut, 0x10, 0x00010001)  # FIFO_CTRL watermark tuning
     fifo_ctrl = await read_i2c_csr(dut, 0x10)

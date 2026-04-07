@@ -573,7 +573,9 @@ def build_gap_records(summary: dict) -> list[dict]:
                 "block": tmpl["block"],
             },
             "metric": {
-                "current_coverage": 0.0 if tmpl["coverage_type"] == "line" else round(line_cov, 2),
+                "current_coverage": (
+                    0.0 if tmpl["coverage_type"] == "line" else round(line_cov, 2)
+                ),
                 "target_coverage": 0.85,
                 "uncovered_items": parse_range_len(str(tmpl["line_range"])),
             },
@@ -603,7 +605,9 @@ def sort_priority(gaps: list[dict]) -> list[dict]:
 
 def write_gap_analysis_yaml(gaps: list[dict]) -> None:
     payload = {"gaps": gaps}
-    PRIMARY_GAP_YAML.write_text(yaml.safe_dump(payload, sort_keys=False, width=100), encoding="utf-8")
+    PRIMARY_GAP_YAML.write_text(
+        yaml.safe_dump(payload, sort_keys=False, width=100), encoding="utf-8"
+    )
 
 
 def write_gap_summary_md(summary: dict, gaps: list[dict], ranked: list[dict]) -> None:
@@ -634,9 +638,17 @@ def write_gap_summary_md(summary: dict, gaps: list[dict], ranked: list[dict]) ->
     lines.append("")
     lines.append("| DUT | Uncovered Lines | Worst Region | Rationale |")
     lines.append("|-----|------------------|--------------|-----------|")
-    for dut, row in sorted(summary.items(), key=lambda x: x[1]["line_total"] - x[1]["line_hit"], reverse=True):
+    for dut, row in sorted(
+        summary.items(),
+        key=lambda x: x[1]["line_total"] - x[1]["line_hit"],
+        reverse=True,
+    ):
         unc = row["line_total"] - row["line_hit"]
-        worst = row["top_uncovered"][0]["ranges"][0] if row["top_uncovered"] and row["top_uncovered"][0]["ranges"] else "n/a"
+        worst = (
+            row["top_uncovered"][0]["ranges"][0]
+            if row["top_uncovered"] and row["top_uncovered"][0]["ranges"]
+            else "n/a"
+        )
         reason = "Control-path mode combinations under-tested"
         if dut == "aegis_aes":
             reason = "Lookup-table and key schedule diversity is limited"
@@ -655,10 +667,18 @@ def write_gap_summary_md(summary: dict, gaps: list[dict], ranked: list[dict]) ->
     lines.append("")
     lines.append("| Bucket | Gap Count | Typical Work |")
     lines.append("|--------|-----------|--------------|")
-    lines.append(f"| easy | {counts['easy']} | Directed CSR stimuli and simple protocol permutations |")
-    lines.append(f"| medium | {counts['medium']} | New constrained sequences with scoreboard extensions |")
-    lines.append(f"| hard | {counts['hard']} | Timing-sensitive scenarios and deeper protocol modeling |")
-    lines.append(f"| very_hard | {counts['very_hard']} | Architectural corner modeling and cross-agent orchestration |")
+    lines.append(
+        f"| easy | {counts['easy']} | Directed CSR stimuli and simple protocol permutations |"
+    )
+    lines.append(
+        f"| medium | {counts['medium']} | New constrained sequences with scoreboard extensions |"
+    )
+    lines.append(
+        f"| hard | {counts['hard']} | Timing-sensitive scenarios and deeper protocol modeling |"
+    )
+    lines.append(
+        f"| very_hard | {counts['very_hard']} | Architectural corner modeling and cross-agent orchestration |"
+    )
 
     PRIMARY_SUMMARY_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -675,35 +695,57 @@ def write_closure_plan_md(gaps: list[dict], ranked: list[dict]) -> None:
     lines.append("## Quick Wins")
     lines.append("")
     for g in quick[:10]:
-        lines.append(f"- {g['id']} ({g['dut']}): {g['location']['block']} -> {g['test_intent']}")
+        lines.append(
+            f"- {g['id']} ({g['dut']}): {g['location']['block']} -> {g['test_intent']}"
+        )
 
     lines.append("")
     lines.append("## Moderate Effort")
     lines.append("")
     for g in moderate[:10]:
-        lines.append(f"- {g['id']} ({g['dut']}): {g['location']['block']} -> {g['test_intent']}")
+        lines.append(
+            f"- {g['id']} ({g['dut']}): {g['location']['block']} -> {g['test_intent']}"
+        )
 
     lines.append("")
     lines.append("## Hard Targets")
     lines.append("")
     for g in hard[:12]:
-        lines.append(f"- {g['id']} ({g['dut']}): {g['location']['block']} -> {g['test_intent']}")
+        lines.append(
+            f"- {g['id']} ({g['dut']}): {g['location']['block']} -> {g['test_intent']}"
+        )
 
     lines.append("")
     lines.append("## Dependency Map")
     lines.append("")
-    lines.append(f"- {by_id['GAP-017']['id']} depends on functional coverage bins for S-box index diversity.")
-    lines.append(f"- {by_id['GAP-025']['id']} depends on a second-master contention model.")
-    lines.append(f"- {by_id['GAP-021']['id']} depends on FSM transition instrumentation across HMAC return paths.")
-    lines.append(f"- {by_id['GAP-004']['id']} depends on timing-check monitor support for stop-bit counting.")
-    lines.append(f"- {by_id['GAP-011']['id']} depends on 64-bit timer rollover stimulus helper.")
+    lines.append(
+        f"- {by_id['GAP-017']['id']} depends on functional coverage bins for S-box index diversity."
+    )
+    lines.append(
+        f"- {by_id['GAP-025']['id']} depends on a second-master contention model."
+    )
+    lines.append(
+        f"- {by_id['GAP-021']['id']} depends on FSM transition instrumentation across HMAC return paths."
+    )
+    lines.append(
+        f"- {by_id['GAP-004']['id']} depends on timing-check monitor support for stop-bit counting."
+    )
+    lines.append(
+        f"- {by_id['GAP-011']['id']} depends on 64-bit timer rollover stimulus helper."
+    )
 
     lines.append("")
     lines.append("## Execution Order")
     lines.append("")
-    lines.append("1. Close all easy gaps first to lift baseline quickly and stabilize infrastructure.")
-    lines.append("2. Address medium gaps by extending existing drivers/sequences with mode permutations.")
-    lines.append("3. Tackle hard gaps last with dedicated protocol stress agents and model enhancements.")
+    lines.append(
+        "1. Close all easy gaps first to lift baseline quickly and stabilize infrastructure."
+    )
+    lines.append(
+        "2. Address medium gaps by extending existing drivers/sequences with mode permutations."
+    )
+    lines.append(
+        "3. Tackle hard gaps last with dedicated protocol stress agents and model enhancements."
+    )
 
     PRIMARY_PLAN_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -751,26 +793,34 @@ def write_compat_per_dut(summary: dict, gaps: list[dict]) -> None:
             lines.append(f"- Test intent: {g['test_intent']}")
             lines.append("")
 
-        (COMPAT_GAP_DIR / f"{dut}_gaps.md").write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+        (COMPAT_GAP_DIR / f"{dut}_gaps.md").write_text(
+            "\n".join(lines).rstrip() + "\n", encoding="utf-8"
+        )
 
 
 def write_compat_summary(summary: dict, ranked: list[dict]) -> None:
     lines = []
     lines.append("# Task 2.1 Executive Summary")
     lines.append("")
-    lines.append("This report consolidates gap analysis across all seven DUTs and maps each gap to actionable stimulus intent.")
+    lines.append(
+        "This report consolidates gap analysis across all seven DUTs and maps each gap to actionable stimulus intent."
+    )
     lines.append("")
     lines.append("## Highest Priority Gaps")
     lines.append("")
     for g in ranked[:12]:
-        lines.append(f"- {g['id']} ({g['dut']}): {g['location']['block']} [{g['severity']}, {g['difficulty']}]")
+        lines.append(
+            f"- {g['id']} ({g['dut']}): {g['location']['block']} [{g['severity']}, {g['difficulty']}]"
+        )
     lines.append("")
     lines.append("## Coverage Baseline")
     lines.append("")
     lines.append("| DUT | Line % | Branch % |")
     lines.append("|-----|--------|----------|")
     for dut, row in summary.items():
-        lines.append(f"| {dut} | {row['line_coverage']:.2f} | {row['branch_coverage']:.2f} |")
+        lines.append(
+            f"| {dut} | {row['line_coverage']:.2f} | {row['branch_coverage']:.2f} |"
+        )
 
     COMPAT_SUMMARY_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -791,7 +841,9 @@ def write_priority_table(ranked: list[dict]) -> None:
         )
 
     payload = {"priorities": priorities}
-    COMPAT_PRIORITY_YAML.write_text(yaml.safe_dump(payload, sort_keys=False, width=100), encoding="utf-8")
+    COMPAT_PRIORITY_YAML.write_text(
+        yaml.safe_dump(payload, sort_keys=False, width=100), encoding="utf-8"
+    )
 
 
 def main() -> int:

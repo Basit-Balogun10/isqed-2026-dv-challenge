@@ -1,0 +1,46 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_aegis_aes/tests/random/test_gap_iter_1.py",
+      "scenario": "aes_ecb_cbc_correctness_gap",
+      "functional_before": 33.33,
+      "updated_functional_coverage": 33.33,
+      "coverage_delta": 0.0,
+      "simulation_passed": false,
+      "failing_runs": 2,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_aegis_aes/tests/random/test_repair_iter_1_1.py",
+          "coverage_before": 33.33,
+          "coverage_after": 33.33,
+          "simulation_passed": false,
+          "failing_runs": 2
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "added_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_aegis_aes/tests/random/test_gap_iter_2.py",
+      "scenario": "key_schedule_state_reuse_gap",
+      "functional_before": 33.33,
+      "updated_functional_coverage": 33.33,
+      "coverage_delta": 0.0,
+      "simulation_passed": false,
+      "failing_runs": 4,
+      "repairs_used": 1,
+      "repair_attempts": [
+        {
+          "repair_attempt": 1,
+          "repair_test": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_aegis_aes/tests/random/test_repair_iter_2_1.py",
+          "coverage_before": 33.33,
+          "coverage_after": 33.33,
+          "simulation_passed": false,
+          "failing_runs": 4
+        }
+      ]
+    }
+  ]
+}

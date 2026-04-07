@@ -76,8 +76,12 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--dut", default="sentinel_hmac", help="Target DUT ID")
     parser.add_argument("--budget", type=int, default=100000, help="Cycle budget")
     parser.add_argument("--output", default="results", help="Output directory")
-    parser.add_argument("--iterations", type=int, default=12, help="Number of adaptive iterations")
-    parser.add_argument("--sim", default="verilator", choices=["icarus", "verilator"], help="Simulator")
+    parser.add_argument(
+        "--iterations", type=int, default=12, help="Number of adaptive iterations"
+    )
+    parser.add_argument(
+        "--sim", default="verilator", choices=["icarus", "verilator"], help="Simulator"
+    )
     parser.add_argument("--seed", type=int, default=2026, help="Random seed")
     return parser.parse_args()
 
@@ -92,7 +96,9 @@ def _load_config(config_path: Path, args: argparse.Namespace) -> dict[str, Any]:
     base["seed"] = int(args.seed)
     base["iterations"] = max(10, int(args.iterations))
     base["budget_cycles"] = int(args.budget)
-    base["cycles_per_iteration"] = max(1000, int(args.budget) // max(10, int(args.iterations)))
+    base["cycles_per_iteration"] = max(
+        1000, int(args.budget) // max(10, int(args.iterations))
+    )
     base["dut"] = str(args.dut)
     base["sim"] = str(args.sim)
     return base
@@ -198,14 +204,18 @@ def _write_curve_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def _write_final_reports(results_dir: Path, history: list[dict[str, Any]]) -> None:
-    latest = history[-1] if history else {
-        "line_coverage": 0.0,
-        "branch_coverage": 0.0,
-        "toggle_coverage": 0.0,
-        "functional_coverage": 0.0,
-        "combined_coverage": 0.0,
-        "cycles_used": 0,
-    }
+    latest = (
+        history[-1]
+        if history
+        else {
+            "line_coverage": 0.0,
+            "branch_coverage": 0.0,
+            "toggle_coverage": 0.0,
+            "functional_coverage": 0.0,
+            "combined_coverage": 0.0,
+            "cycles_used": 0,
+        }
+    )
     latest_toggle = float(latest.get("toggle_coverage", 0.0))
 
     final_txt = results_dir / "final_coverage.txt"
@@ -253,8 +263,13 @@ def _write_final_reports(results_dir: Path, history: list[dict[str, Any]]) -> No
         encoding="utf-8",
     )
 
+
 def _combined(row: dict[str, Any]) -> float:
-    return (float(row["line_coverage"]) + float(row["branch_coverage"]) + float(row["functional_coverage"])) / 3.0
+    return (
+        float(row["line_coverage"])
+        + float(row["branch_coverage"])
+        + float(row["functional_coverage"])
+    ) / 3.0
 
 
 def _auc(rows: list[dict[str, Any]]) -> float:
@@ -331,14 +346,17 @@ def main() -> int:
     for iteration in range(iterations):
         stimulus = system.generate(iteration=iteration, coverage_state=state)
         stimulus_path = stimulus_dir / f"stimulus_iter_{iteration:02d}.json"
-        _write_json(stimulus_path, {
-            "seed": stimulus.seed,
-            "iteration": stimulus.iteration,
-            "target_cycles": stimulus.target_cycles,
-            "focus_target": stimulus.focus_target,
-            "selected_knobs": stimulus.selected_knobs,
-            "transactions": stimulus.transactions,
-        })
+        _write_json(
+            stimulus_path,
+            {
+                "seed": stimulus.seed,
+                "iteration": stimulus.iteration,
+                "target_cycles": stimulus.target_cycles,
+                "focus_target": stimulus.focus_target,
+                "selected_knobs": stimulus.selected_knobs,
+                "transactions": stimulus.transactions,
+            },
+        )
 
         metrics, run_status = _run_iteration(
             submission_root=submission_root,
@@ -349,9 +367,13 @@ def main() -> int:
         )
 
         cycles_used = (iteration + 1) * cycles_per_iteration
-        report = to_report(iteration=iteration + 1, cycles_used=cycles_used, metrics=metrics)
+        report = to_report(
+            iteration=iteration + 1, cycles_used=cycles_used, metrics=metrics
+        )
         state.history.append(report)
-        system.adjust(iteration=iteration + 1, new_coverage=report, cumulative_coverage=state)
+        system.adjust(
+            iteration=iteration + 1, new_coverage=report, cumulative_coverage=state
+        )
 
         row = {
             "iteration": report.iteration,
@@ -392,7 +414,9 @@ def main() -> int:
             focus_target="baseline:uniform_random",
             policy=baseline_policy,
         )
-        baseline_stimulus_path = stimulus_dir / f"stimulus_baseline_iter_{iteration:02d}.json"
+        baseline_stimulus_path = (
+            stimulus_dir / f"stimulus_baseline_iter_{iteration:02d}.json"
+        )
         _write_json(
             baseline_stimulus_path,
             {
@@ -413,7 +437,11 @@ def main() -> int:
             logs_dir=logs_dir,
         )
         baseline_cycles = (iteration + 1) * cycles_per_iteration
-        baseline_report = to_report(iteration=iteration + 1, cycles_used=baseline_cycles, metrics=baseline_metrics)
+        baseline_report = to_report(
+            iteration=iteration + 1,
+            cycles_used=baseline_cycles,
+            metrics=baseline_metrics,
+        )
         baseline_rows.append(
             {
                 "iteration": baseline_report.iteration,
@@ -426,20 +454,26 @@ def main() -> int:
         )
 
     # Required by submission_requirements.md
-    _write_submission_convergence_csv(results_dir / "convergence_log.csv", convergence_rows)
+    _write_submission_convergence_csv(
+        results_dir / "convergence_log.csv", convergence_rows
+    )
     _write_final_reports(results_dir, convergence_rows)
     _write_baseline_comparison(results_dir, convergence_rows, baseline_rows)
 
     # Required by task page observability
     _write_curve_csv(logs_dir / "coverage_curve.csv", convergence_rows)
     _write_curve_csv(logs_dir / "baseline_curve.csv", baseline_rows)
-    (logs_dir / "iteration_log.yaml").write_text(_dump_yaml_no_alias(iteration_log), encoding="utf-8")
+    (logs_dir / "iteration_log.yaml").write_text(
+        _dump_yaml_no_alias(iteration_log), encoding="utf-8"
+    )
     (logs_dir / "strategy_evolution.yaml").write_text(
         _dump_yaml_no_alias(system.strategy_evolution),
         encoding="utf-8",
     )
 
-    print(f"[CDG] Completed {iterations} iterations for DUT={config['dut']} SIM={config['sim']}")
+    print(
+        f"[CDG] Completed {iterations} iterations for DUT={config['dut']} SIM={config['sim']}"
+    )
     print(f"[CDG] Results written to {results_dir}")
     return 0
 

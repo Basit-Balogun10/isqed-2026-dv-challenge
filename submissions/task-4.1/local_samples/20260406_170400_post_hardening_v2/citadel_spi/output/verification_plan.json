@@ -1,0 +1,113 @@
+{
+  "features": [
+    "TL-UL register access smoke and decode checks for all 12 CSRs",
+    "Reset behavior and default register state validation",
+    "SPI mode configuration coverage for CPOL/CPHA modes 0-3",
+    "Clock divider programming and SCLK idle/active polarity checks",
+    "Chip-select selection and one-hot active-low csn_o[3:0] behavior",
+    "TX FIFO enqueue/dequeue behavior via TXDATA and STATUS level tracking",
+    "RX FIFO fill/read behavior via RXDATA and STATUS level tracking",
+    "Command FIFO enqueue and segment execution sequencing",
+    "Segment length handling for 1-byte and multi-byte transfers",
+    "CSAAT multi-segment transaction continuity and CS hold behavior",
+    "Transmit-only, receive-only, and bidirectional segment coverage",
+    "Interrupt and error flag observation for underflow/overflow/basic completion events",
+    "Basic timing parameter programming for CSN_LEAD, CSN_TRAIL, and CSN_IDLE",
+    "MOSI/MISO bit ordering and byte ordering checks",
+    "Idle-to-active and active-to-idle transaction transitions"
+  ],
+  "coverage_goals": {
+    "line_percent": 85,
+    "branch_percent": 75,
+    "functional_percent": 85
+  },
+  "directed_tests": [
+    {
+      "name": "reset_and_csr_smoke",
+      "intent": "Apply reset, verify all readable CSRs return legal defaults, confirm TL-UL read/write access, and check idle pin states for sclk_o, csn_o, mosi_o, intr_o, and alert_o."
+    },
+    {
+      "name": "spi_mode_matrix_basic",
+      "intent": "Program CPOL/CPHA across modes 0-3 with a short transfer in each mode, verifying SCLK idle polarity, edge alignment, and MOSI/MISO sampling behavior."
+    },
+    {
+      "name": "single_byte_tx_rx_loopback",
+      "intent": "Write one TX byte, issue a one-byte bidirectional command, loop MOSI to MISO in the testbench, and confirm RXDATA matches the transmitted pattern."
+    },
+    {
+      "name": "cs_select_and_idle_timing",
+      "intent": "Select each chip-select index 0-3, verify only the chosen csn_o line asserts low, and confirm CSN_LEAD/TRAIl/IDLE programming affects observable gaps at a coarse functional level."
+    },
+    {
+      "name": "multi_segment_csaat_chain",
+      "intent": "Queue two or more commands with CSAAT set on the first segment, verify chip-select remains asserted across segments, and confirm the controller continues the same transaction without deasserting CS."
+    },
+    {
+      "name": "tx_underflow_error",
+      "intent": "Issue a transmit or bidirectional command without sufficient TX FIFO data, verify underflow indication and associated interrupt/error behavior, and ensure the controller does not falsely complete the transfer."
+    },
+    {
+      "name": "rx_overflow_error",
+      "intent": "Drive repeated receive data into a full RX FIFO, verify overflow indication and status behavior, and confirm readable data is preserved up to FIFO depth."
+    },
+    {
+      "name": "fifo_depth_and_status",
+      "intent": "Fill TX FIFO to depth 16 and RX FIFO to depth 16, verify STATUS TXLVL/RXLVL and full/empty flags transition correctly at boundaries."
+    }
+  ],
+  "random_tests": [
+    {
+      "name": "constrained_register_fuzz",
+      "intent": "Randomize legal CSR writes for CONFIGOPTS, CSID, timing fields, and command descriptors while checking TL-UL readback, register side effects, and no illegal bus responses."
+    },
+    {
+      "name": "mixed_segment_stream",
+      "intent": "Generate short random sequences of transmit-only, receive-only, and bidirectional segments with random lengths 1-8 bytes, random CSAAT usage, and loopback MISO stimulus to validate sequencing."
+    },
+    {
+      "name": "fifo_pressure_random",
+      "intent": "Randomly interleave TXDATA writes, RXDATA reads, and command launches to stress FIFO level tracking, underflow/overflow detection, and command FIFO backpressure behavior."
+    },
+    {
+      "name": "spi_mode_and_divider_random",
+      "intent": "Randomly sweep CPOL/CPHA and small divider values while running short transfers to catch edge-alignment bugs, idle polarity mistakes, and divider off-by-one errors."
+    }
+  ],
+  "risk_areas": [
+    {
+      "area": "SPI mode edge alignment and sampling",
+      "reason": "CPOL/CPHA combinations are a common source of off-by-one edge bugs, and the design has multiple FSM blocks controlling launch/sample timing.",
+      "priority": "high"
+    },
+    {
+      "area": "FIFO boundary and status correctness",
+      "reason": "TX/RX FIFO depth, full/empty flags, and level counters are high-risk for integration bugs and are directly observable through software.",
+      "priority": "high"
+    },
+    {
+      "area": "CSAAT multi-segment sequencing",
+      "reason": "Keeping chip-select asserted across command boundaries exercises command FIFO interaction and stall behavior, which is likely to contain corner-case bugs.",
+      "priority": "high"
+    },
+    {
+      "area": "Underflow and overflow error handling",
+      "reason": "Error paths often have incomplete coverage and can affect interrupt generation, status reporting, and transaction termination.",
+      "priority": "high"
+    },
+    {
+      "area": "Chip-select timing parameters",
+      "reason": "CSN_LEAD, CSN_TRAIL, and CSN_IDLE are timing-sensitive and may have implementation-specific minimum-delay behavior.",
+      "priority": "medium"
+    },
+    {
+      "area": "TL-UL register decode and reset defaults",
+      "reason": "Basic bus access is essential but lower risk than protocol timing; still needed to unblock all other tests.",
+      "priority": "medium"
+    },
+    {
+      "area": "Alert and interrupt pin behavior",
+      "reason": "These outputs are important for system integration, but can be partially validated with limited autonomous time.",
+      "priority": "low"
+    }
+  ]
+}

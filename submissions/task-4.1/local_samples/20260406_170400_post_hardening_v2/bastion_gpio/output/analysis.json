@@ -1,0 +1,223 @@
+{
+  "rtl_files": [
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+  ],
+  "total_rtl_lines": 324,
+  "modules": [
+    "bastion_gpio"
+  ],
+  "top_modules": [
+    "bastion_gpio"
+  ],
+  "selected_top": "bastion_gpio",
+  "port_count": 21,
+  "ports": [
+    {
+      "direction": "input",
+      "width": "",
+      "name": "clk_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "rst_ni",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_a_valid_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_a_ready_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[2:0]",
+      "name": "tl_a_opcode_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_address_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_data_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[3:0]",
+      "name": "tl_a_mask_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "tl_a_source_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[1:0]",
+      "name": "tl_a_size_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_valid_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_d_ready_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[2:0]",
+      "name": "tl_d_opcode_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[31:0]",
+      "name": "tl_d_data_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[7:0]",
+      "name": "tl_d_source_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_error_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "gpio_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[31:0]",
+      "name": "gpio_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[31:0]",
+      "name": "gpio_oe_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[31:0]",
+      "name": "intr_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "alert_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    }
+  ],
+  "tlul_detected": true,
+  "tlul_ports": [
+    "tl_a_address_i",
+    "tl_a_data_i",
+    "tl_a_mask_i",
+    "tl_a_opcode_i",
+    "tl_a_ready_o",
+    "tl_a_size_i",
+    "tl_a_source_i",
+    "tl_a_valid_i",
+    "tl_d_data_o",
+    "tl_d_error_o",
+    "tl_d_opcode_o",
+    "tl_d_ready_i",
+    "tl_d_source_o",
+    "tl_d_valid_o"
+  ],
+  "protocol_hints": [
+    "gpio"
+  ],
+  "clock_candidates": [
+    "clk_i"
+  ],
+  "reset_candidates": [
+    "rst_ni"
+  ],
+  "interface_hints": {
+    "interrupt_candidates": [
+      "intr_o"
+    ],
+    "alert_candidates": [
+      "alert_o"
+    ]
+  },
+  "enum_state_sets": [],
+  "fsm_candidates": [
+    {
+      "state_expression": "tl_addr",
+      "states": [
+        "ADDR_DATA_IN",
+        "ADDR_DATA_OUT",
+        "ADDR_DIR",
+        "ADDR_INTR_CTRL_EN_FALLING",
+        "ADDR_INTR_CTRL_EN_LVLHIGH",
+        "ADDR_INTR_CTRL_EN_LVLLOW",
+        "ADDR_INTR_CTRL_EN_RISING",
+        "ADDR_INTR_ENABLE",
+        "ADDR_INTR_STATE",
+        "ADDR_INTR_TEST",
+        "ADDR_MASKED_OUT_LOWER",
+        "ADDR_MASKED_OUT_UPPER",
+        "default"
+      ],
+      "state_count": 13,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    },
+    {
+      "state_expression": "tl_addr",
+      "states": [
+        "ADDR_DATA_OUT",
+        "ADDR_MASKED_OUT_LOWER",
+        "ADDR_MASKED_OUT_UPPER",
+        "default"
+      ],
+      "state_count": 4,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv"
+    }
+  ],
+  "estimated_fsm_blocks": 2,
+  "csr_summary": {
+    "register_count": 12,
+    "top_keys": [
+      "name",
+      "base_addr",
+      "registers"
+    ]
+  },
+  "spec_excerpt": "# BASTION_GPIO Specification\n\n## General-Purpose I/O Controller\n\n> **Disclaimer:** This RTL design is a modified version of an open-source IP block, created exclusively for this competition. It is not production-quality, not security-reviewed, and must not be used outside of this competition context.\n\n---\n\n## 1. Overview\n\nBASTION_GPIO is a 32-pin general-purpose I/O controller. Each pin is independently configurable as either an input or an output. The module provides input synchronization for metastability hardening, per-pin edge and level-sensitive interrupt generation, and a masked write mechanism that allows atomic modification of output pins without requiring a read-modify-write sequence.\n\nThe controller connects to the system fabric via a TileLink-UL (TL-UL) bus interface and exposes a set of control/status registers (CSRs) for configuration and data access. All 32 GPIO pins share a single consolidated interrupt output vector (`intr_o[31:0]`), with one interrupt line per pin, as well as a single `alert_o` output.\n\n---\n\n## 2. Pin Interface\n\n| Signal        | Width | Direction | Description                                  |\n|---------------|-------|-----------|----------------------------------------------|\n| `clk_i`       | 1     | Input     | System clock                                 |\n| `rst_ni`      | 1     | Input     | Active-low asynchronous reset                |\n| `tl_i`        | struct | Input    | TL-UL request channel (host to device)       |\n| `tl_i_ready`  | 1     | Output    | Device ready to accept TL-UL request         |\n| `tl_o`        | struct | Output   | TL-UL response channel (device to host)      |\n| `tl_o_ready`  | 1     | Input     | Host ready to accept TL-UL response          |\n| `gpio_i`      | 32    | Input     | External pin input values                    |\n| `gpio_o`      | 32    | Output    | Pin output values                            |\n| `gpio_oe_o`   | 32    | Output    | Per-pin output enable (1 = driving)          |\n| `intr_o`      | 32    | Output    | Interrupt output, one per pin                |\n| `alert_o`     | 1     | Output    | Alert output                                 |\n\n---\n\n## 3. Functional Description\n\n### 3.1 Pin Direction and Output Control\n\nEach of the 32 GPIO pins can be configured independently as an input or output via the **DIR** register. When a pin is configured as an output (`DIR[n] = 1`), the value in **DATA_OUT[n]** is driven onto `gpio_o[n]`, and `gpio_oe_o[n]` is asserted. When configured as an input (`DIR[n] = 0`), `gpio_oe_o[n]` is deasserted, and the pin's external value is captured through the input synchronizer. The behavior during a direction transition is implementation-dependent; software should avoid relying on specific ordering of the direction change relative to data path updates.\n\n### 3.2 Input Synchronization\n\nAll 32 input pins pass through a two-stage synchronizer before being visible to the register interface. This provides metastability hardening for asynchronous external inputs. The synchronized values are available in the **DATA_IN** register.\n\nThe synchronizer introduces a two-clock-cycle latency between an external pin transition and its visibility in DATA_IN. The synchronizer also provides inherent glitch filtering for very narrow pulses, though the precise minimum pulse width that is guaranteed to be captured is a function of the synchronizer's sampling characteristics and process parameters.\n\n### 3.3 Edge Detection\n\nThe controller compares the current synchronized input value against the value from the previous clock cycle to detect edges. A rising edge on pin N is detected when the previous value was 0 and the current value is 1. A falling edge is the converse.\n\nEdge detection operates on the synchronized input values (after the two-stage synchronizer), not on the raw `gpio_i` inputs.\n\nWhether simultaneous edges on multiple pins within the same clock cycle are all reliably captured depends on internal arbitration. In general, a",
+  "rtl_bytes": 8924
+}

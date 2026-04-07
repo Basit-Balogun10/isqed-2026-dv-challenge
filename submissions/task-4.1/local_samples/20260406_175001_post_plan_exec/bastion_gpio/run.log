@@ -1,0 +1,1082 @@
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:119: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:132: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:132: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494304
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_reset_smoke_and_csr_map (1/10)
+118000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_reset_smoke_and_csr_map passed
+118000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_dir_and_output_drive_basic (2/10)
+251000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_dir_and_output_drive_basic passed
+251000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_input_sync_latency (3/10)
+390000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_input_sync_latency passed
+390000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_rising_falling_interrupts (4/10)
+541000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_rising_falling_interrupts passed
+541000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_level_interrupt_reassertion (5/10)
+654000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_level_interrupt_reassertion passed
+654000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_intr_test_injection (6/10)
+773000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_intr_test_injection passed
+773000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_lower_half (7/10)
+904000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_lower_half passed
+904000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_upper_half (8/10)
+1047000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_upper_half passed
+1047000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_w1c_intr_state_clear (9/10)
+1196000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_w1c_intr_state_clear passed
+1196000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_mixed_direction_and_data_stability (10/10)
+1307000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_mixed_direction_and_data_stability passed
+1307000000000.00ns INFO     cocotb.regression                  ***********************************************************************************************************************************
+                                                               ** TEST                                                                       STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                               ***********************************************************************************************************************************
+                                                               ** test_directed_plan_cases.test_directed_reset_smoke_and_csr_map              PASS   118000000000.00           0.01   12722427433036.86  **
+                                                               ** test_directed_plan_cases.test_directed_dir_and_output_drive_basic           PASS   132000000000.00           0.01   12577766550047.71  **
+                                                               ** test_directed_plan_cases.test_directed_input_sync_latency                   PASS   138000000000.00           0.01   10724337656562.66  **
+                                                               ** test_directed_plan_cases.test_directed_rising_falling_interrupts            PASS   150000000000.00           0.02   9501413555636.10  **
+                                                               ** test_directed_plan_cases.test_directed_level_interrupt_reassertion          PASS   112000000000.00           0.01   12522312949832.06  **
+                                                               ** test_directed_plan_cases.test_directed_intr_test_injection                  PASS   118000000000.00           0.01   11258851930207.69  **
+                                                               ** test_directed_plan_cases.test_directed_masked_write_lower_half              PASS   130000000000.00           0.01   11722733859351.15  **
+                                                               ** test_directed_plan_cases.test_directed_masked_write_upper_half              PASS   142000000000.00           0.01   11060188820798.51  **
+                                                               ** test_directed_plan_cases.test_directed_w1c_intr_state_clear                 PASS   148000000000.00           0.01   10471255895550.08  **
+                                                               ** test_directed_plan_cases.test_directed_mixed_direction_and_data_stability   PASS   110000000000.00           0.01   10426518418079.10  **
+                                                               ***********************************************************************************************************************************
+                                                               ** TESTS=10 PASS=10 FAIL=0 SKIP=0                                                     1307000000000.00           0.12   10661611328394.70  **
+                                                               ***********************************************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494305
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_constrained_csr_fuzzer (1/4)
+146000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_constrained_csr_fuzzer passed
+146000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_gpio_activity_stress_subset (2/4)
+307000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_gpio_activity_stress_subset passed
+307000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_masked_write_random_patterns (3/4)
+480000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_masked_write_random_patterns passed
+480000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_interrupt_mode_cross_product_sample (4/4)
+665000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_interrupt_mode_cross_product_sample passed
+665000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************************************
+                                                              ** TEST                                                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************************************
+                                                              ** test_random_plan_cases.test_random_constrained_csr_fuzzer                PASS   146000000000.00           0.02   8889462220738.31  **
+                                                              ** test_random_plan_cases.test_random_gpio_activity_stress_subset           PASS   160000000000.00           0.02   7895439133145.88  **
+                                                              ** test_random_plan_cases.test_random_masked_write_random_patterns          PASS   172000000000.00           0.02   8531460359508.04  **
+                                                              ** test_random_plan_cases.test_random_interrupt_mode_cross_product_sample   PASS   184000000000.00           0.02   9083816146611.89  **
+                                                              ********************************************************************************************************************************
+                                                              ** TESTS=4 PASS=4 FAIL=0 SKIP=0                                                    665000000000.00           0.08   8213929222460.10  **
+                                                              ********************************************************************************************************************************
+- V e r i l a t i o n   R e p o r t: Verilator 5.045 devel rev v5.044-259-g6a5d3b0b7
+- Verilator: Built from 0.056 MB sources in 3 modules, into 0.204 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.041 s (elab=0.002, cvt=0.026, bld=0.000); cpu 0.039 s on 1 threads; allocated 31.461 MB
+make: Entering directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/sim_build/verilator'
+ccache g++  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /home/abdulbasit/open-source/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /home/abdulbasit/open-source/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /home/abdulbasit/open-source/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_cov.o /home/abdulbasit/open-source/verilator/include/verilated_cov.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /home/abdulbasit/open-source/verilator/include/verilated_threads.cpp
+python3 /home/abdulbasit/open-source/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop_dv_common_pkg__Slow.cpp Vtop_dv_common_pkg__0__Slow.cpp Vtop__Syms__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -L/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o bastion_gpio
+rm Vtop__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/sim_build/verilator'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494306
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_reset_smoke_and_csr_map (1/10)
+     0.12ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_reset_smoke_and_csr_map passed
+     0.12ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_dir_and_output_drive_basic (2/10)
+     0.25ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_dir_and_output_drive_basic passed
+     0.25ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_input_sync_latency (3/10)
+     0.39ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_input_sync_latency passed
+     0.39ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_rising_falling_interrupts (4/10)
+     0.54ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_rising_falling_interrupts passed
+     0.54ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_level_interrupt_reassertion (5/10)
+     0.65ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_level_interrupt_reassertion passed
+     0.65ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_intr_test_injection (6/10)
+     0.77ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_intr_test_injection passed
+     0.77ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_lower_half (7/10)
+     0.90ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_lower_half passed
+     0.90ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_upper_half (8/10)
+     1.05ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_upper_half passed
+     1.05ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_w1c_intr_state_clear (9/10)
+     1.20ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_w1c_intr_state_clear passed
+     1.20ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_mixed_direction_and_data_stability (10/10)
+     1.31ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_mixed_direction_and_data_stability passed
+     1.31ns INFO     cocotb.regression                  ***********************************************************************************************************************************
+                                                        ** TEST                                                                       STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ***********************************************************************************************************************************
+                                                        ** test_directed_plan_cases.test_directed_reset_smoke_and_csr_map              PASS           0.12           0.01         22.30  **
+                                                        ** test_directed_plan_cases.test_directed_dir_and_output_drive_basic           PASS           0.13           0.01         23.29  **
+                                                        ** test_directed_plan_cases.test_directed_input_sync_latency                   PASS           0.14           0.01         22.41  **
+                                                        ** test_directed_plan_cases.test_directed_rising_falling_interrupts            PASS           0.15           0.01         23.21  **
+                                                        ** test_directed_plan_cases.test_directed_level_interrupt_reassertion          PASS           0.11           0.01         21.66  **
+                                                        ** test_directed_plan_cases.test_directed_intr_test_injection                  PASS           0.12           0.01         23.03  **
+                                                        ** test_directed_plan_cases.test_directed_masked_write_lower_half              PASS           0.13           0.01         23.69  **
+                                                        ** test_directed_plan_cases.test_directed_masked_write_upper_half              PASS           0.14           0.01         23.14  **
+                                                        ** test_directed_plan_cases.test_directed_w1c_intr_state_clear                 PASS           0.15           0.01         21.90  **
+                                                        ** test_directed_plan_cases.test_directed_mixed_direction_and_data_stability   PASS           0.11           0.01         21.82  **
+                                                        ***********************************************************************************************************************************
+                                                        ** TESTS=10 PASS=10 FAIL=0 SKIP=0                                                             1.31           0.06         20.68  **
+                                                        ***********************************************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494307
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_constrained_csr_fuzzer (1/4)
+     0.15ns INFO     cocotb.regression                  test_random_plan_cases.test_random_constrained_csr_fuzzer passed
+     0.15ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_gpio_activity_stress_subset (2/4)
+     0.31ns INFO     cocotb.regression                  test_random_plan_cases.test_random_gpio_activity_stress_subset passed
+     0.31ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_masked_write_random_patterns (3/4)
+     0.48ns INFO     cocotb.regression                  test_random_plan_cases.test_random_masked_write_random_patterns passed
+     0.48ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_interrupt_mode_cross_product_sample (4/4)
+     0.67ns INFO     cocotb.regression                  test_random_plan_cases.test_random_interrupt_mode_cross_product_sample passed
+     0.67ns INFO     cocotb.regression                  ********************************************************************************************************************************
+                                                        ** TEST                                                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************************************
+                                                        ** test_random_plan_cases.test_random_constrained_csr_fuzzer                PASS           0.15           0.01         27.37  **
+                                                        ** test_random_plan_cases.test_random_gpio_activity_stress_subset           PASS           0.16           0.01         27.61  **
+                                                        ** test_random_plan_cases.test_random_masked_write_random_patterns          PASS           0.17           0.01         24.08  **
+                                                        ** test_random_plan_cases.test_random_interrupt_mode_cross_product_sample   PASS           0.18           0.01         28.39  **
+                                                        ********************************************************************************************************************************
+                                                        ** TESTS=4 PASS=4 FAIL=0 SKIP=0                                                            0.67           0.03         24.28  **
+                                                        ********************************************************************************************************************************
+- :0: Verilog $finish
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:119: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:132: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:132: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494311
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_reset_smoke_and_csr_map (1/10)
+118000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_reset_smoke_and_csr_map passed
+118000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_dir_and_output_drive_basic (2/10)
+251000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_dir_and_output_drive_basic passed
+251000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_input_sync_latency (3/10)
+390000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_input_sync_latency passed
+390000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_rising_falling_interrupts (4/10)
+541000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_rising_falling_interrupts passed
+541000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_level_interrupt_reassertion (5/10)
+654000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_level_interrupt_reassertion passed
+654000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_intr_test_injection (6/10)
+773000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_intr_test_injection passed
+773000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_lower_half (7/10)
+904000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_lower_half passed
+904000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_upper_half (8/10)
+1047000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_upper_half passed
+1047000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_w1c_intr_state_clear (9/10)
+1196000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_w1c_intr_state_clear passed
+1196000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_mixed_direction_and_data_stability (10/10)
+1307000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_mixed_direction_and_data_stability passed
+1307000000000.00ns INFO     cocotb.regression                  ***********************************************************************************************************************************
+                                                               ** TEST                                                                       STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                               ***********************************************************************************************************************************
+                                                               ** test_directed_plan_cases.test_directed_reset_smoke_and_csr_map              PASS   118000000000.00           0.01   12136236776930.43  **
+                                                               ** test_directed_plan_cases.test_directed_dir_and_output_drive_basic           PASS   132000000000.00           0.01   12426730590532.62  **
+                                                               ** test_directed_plan_cases.test_directed_input_sync_latency                   PASS   138000000000.00           0.01   12675220672287.31  **
+                                                               ** test_directed_plan_cases.test_directed_rising_falling_interrupts            PASS   150000000000.00           0.01   12879132036847.49  **
+                                                               ** test_directed_plan_cases.test_directed_level_interrupt_reassertion          PASS   112000000000.00           0.01   12170316536697.84  **
+                                                               ** test_directed_plan_cases.test_directed_intr_test_injection                  PASS   118000000000.00           0.01   12495969702325.35  **
+                                                               ** test_directed_plan_cases.test_directed_masked_write_lower_half              PASS   130000000000.00           0.01   12514850467075.21  **
+                                                               ** test_directed_plan_cases.test_directed_masked_write_upper_half              PASS   142000000000.00           0.01   12699172025586.35  **
+                                                               ** test_directed_plan_cases.test_directed_w1c_intr_state_clear                 PASS   148000000000.00           0.01   12539531997414.35  **
+                                                               ** test_directed_plan_cases.test_directed_mixed_direction_and_data_stability   PASS   110000000000.00           0.01   12315442970397.46  **
+                                                               ***********************************************************************************************************************************
+                                                               ** TESTS=10 PASS=10 FAIL=0 SKIP=0                                                     1307000000000.00           0.11   12023202926649.53  **
+                                                               ***********************************************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494312
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: interrupt_reassertion_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.01   10510576639287.21  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.01   9206110623353.82  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494312
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_constrained_csr_fuzzer (1/4)
+146000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_constrained_csr_fuzzer passed
+146000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_gpio_activity_stress_subset (2/4)
+307000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_gpio_activity_stress_subset passed
+307000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_masked_write_random_patterns (3/4)
+480000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_masked_write_random_patterns passed
+480000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_interrupt_mode_cross_product_sample (4/4)
+665000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_interrupt_mode_cross_product_sample passed
+665000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************************************
+                                                              ** TEST                                                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************************************
+                                                              ** test_random_plan_cases.test_random_constrained_csr_fuzzer                PASS   146000000000.00           0.01   11057772513046.46  **
+                                                              ** test_random_plan_cases.test_random_gpio_activity_stress_subset           PASS   160000000000.00           0.01   10867656232287.74  **
+                                                              ** test_random_plan_cases.test_random_masked_write_random_patterns          PASS   172000000000.00           0.02   11138357671108.09  **
+                                                              ** test_random_plan_cases.test_random_interrupt_mode_cross_product_sample   PASS   184000000000.00           0.02   11101788595431.27  **
+                                                              ********************************************************************************************************************************
+                                                              ** TESTS=4 PASS=4 FAIL=0 SKIP=0                                                    665000000000.00           0.06   10513030643398.29  **
+                                                              ********************************************************************************************************************************
+- V e r i l a t i o n   R e p o r t: Verilator 5.045 devel rev v5.044-259-g6a5d3b0b7
+- Verilator: Built from 0.056 MB sources in 3 modules, into 0.204 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.028 s (elab=0.002, cvt=0.016, bld=0.000); cpu 0.026 s on 1 threads; allocated 31.461 MB
+make: Entering directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/sim_build/verilator'
+ccache g++  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /home/abdulbasit/open-source/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /home/abdulbasit/open-source/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /home/abdulbasit/open-source/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_cov.o /home/abdulbasit/open-source/verilator/include/verilated_cov.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /home/abdulbasit/open-source/verilator/include/verilated_threads.cpp
+python3 /home/abdulbasit/open-source/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop_dv_common_pkg__Slow.cpp Vtop_dv_common_pkg__0__Slow.cpp Vtop__Syms__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -L/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o bastion_gpio
+rm Vtop__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/sim_build/verilator'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494313
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_reset_smoke_and_csr_map (1/10)
+     0.12ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_reset_smoke_and_csr_map passed
+     0.12ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_dir_and_output_drive_basic (2/10)
+     0.25ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_dir_and_output_drive_basic passed
+     0.25ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_input_sync_latency (3/10)
+     0.39ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_input_sync_latency passed
+     0.39ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_rising_falling_interrupts (4/10)
+     0.54ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_rising_falling_interrupts passed
+     0.54ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_level_interrupt_reassertion (5/10)
+     0.65ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_level_interrupt_reassertion passed
+     0.65ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_intr_test_injection (6/10)
+     0.77ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_intr_test_injection passed
+     0.77ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_lower_half (7/10)
+     0.90ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_lower_half passed
+     0.90ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_upper_half (8/10)
+     1.05ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_upper_half passed
+     1.05ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_w1c_intr_state_clear (9/10)
+     1.20ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_w1c_intr_state_clear passed
+     1.20ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_mixed_direction_and_data_stability (10/10)
+     1.31ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_mixed_direction_and_data_stability passed
+     1.31ns INFO     cocotb.regression                  ***********************************************************************************************************************************
+                                                        ** TEST                                                                       STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ***********************************************************************************************************************************
+                                                        ** test_directed_plan_cases.test_directed_reset_smoke_and_csr_map              PASS           0.12           0.01         16.60  **
+                                                        ** test_directed_plan_cases.test_directed_dir_and_output_drive_basic           PASS           0.13           0.01         18.54  **
+                                                        ** test_directed_plan_cases.test_directed_input_sync_latency                   PASS           0.14           0.01         18.22  **
+                                                        ** test_directed_plan_cases.test_directed_rising_falling_interrupts            PASS           0.15           0.01         19.33  **
+                                                        ** test_directed_plan_cases.test_directed_level_interrupt_reassertion          PASS           0.11           0.01         18.42  **
+                                                        ** test_directed_plan_cases.test_directed_intr_test_injection                  PASS           0.12           0.01         18.23  **
+                                                        ** test_directed_plan_cases.test_directed_masked_write_lower_half              PASS           0.13           0.01         18.52  **
+                                                        ** test_directed_plan_cases.test_directed_masked_write_upper_half              PASS           0.14           0.01         18.75  **
+                                                        ** test_directed_plan_cases.test_directed_w1c_intr_state_clear                 PASS           0.15           0.01         19.37  **
+                                                        ** test_directed_plan_cases.test_directed_mixed_direction_and_data_stability   PASS           0.11           0.01         18.82  **
+                                                        ***********************************************************************************************************************************
+                                                        ** TESTS=10 PASS=10 FAIL=0 SKIP=0                                                             1.31           0.08         17.02  **
+                                                        ***********************************************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494314
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: interrupt_reassertion_gap.
+     0.09ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+     0.09ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_1.test_gap_iteration_1   PASS           0.09           0.01         17.24  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.09           0.01         13.13  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494314
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_constrained_csr_fuzzer (1/4)
+     0.15ns INFO     cocotb.regression                  test_random_plan_cases.test_random_constrained_csr_fuzzer passed
+     0.15ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_gpio_activity_stress_subset (2/4)
+     0.31ns INFO     cocotb.regression                  test_random_plan_cases.test_random_gpio_activity_stress_subset passed
+     0.31ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_masked_write_random_patterns (3/4)
+     0.48ns INFO     cocotb.regression                  test_random_plan_cases.test_random_masked_write_random_patterns passed
+     0.48ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_interrupt_mode_cross_product_sample (4/4)
+     0.67ns INFO     cocotb.regression                  test_random_plan_cases.test_random_interrupt_mode_cross_product_sample passed
+     0.67ns INFO     cocotb.regression                  ********************************************************************************************************************************
+                                                        ** TEST                                                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************************************
+                                                        ** test_random_plan_cases.test_random_constrained_csr_fuzzer                PASS           0.15           0.01         15.64  **
+                                                        ** test_random_plan_cases.test_random_gpio_activity_stress_subset           PASS           0.16           0.01         15.94  **
+                                                        ** test_random_plan_cases.test_random_masked_write_random_patterns          PASS           0.17           0.01         17.25  **
+                                                        ** test_random_plan_cases.test_random_interrupt_mode_cross_product_sample   PASS           0.18           0.01         17.41  **
+                                                        ********************************************************************************************************************************
+                                                        ** TESTS=4 PASS=4 FAIL=0 SKIP=0                                                            0.67           0.04         14.96  **
+                                                        ********************************************************************************************************************************
+- :0: Verilog $finish
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:119: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:132: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:132: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494356
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_reset_smoke_and_csr_map (1/10)
+118000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_reset_smoke_and_csr_map passed
+118000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_dir_and_output_drive_basic (2/10)
+251000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_dir_and_output_drive_basic passed
+251000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_input_sync_latency (3/10)
+390000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_input_sync_latency passed
+390000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_rising_falling_interrupts (4/10)
+541000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_rising_falling_interrupts passed
+541000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_level_interrupt_reassertion (5/10)
+654000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_level_interrupt_reassertion passed
+654000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_intr_test_injection (6/10)
+773000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_intr_test_injection passed
+773000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_lower_half (7/10)
+904000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_lower_half passed
+904000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_upper_half (8/10)
+1047000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_upper_half passed
+1047000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_w1c_intr_state_clear (9/10)
+1196000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_w1c_intr_state_clear passed
+1196000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_mixed_direction_and_data_stability (10/10)
+1307000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_mixed_direction_and_data_stability passed
+1307000000000.00ns INFO     cocotb.regression                  ***********************************************************************************************************************************
+                                                               ** TEST                                                                       STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                               ***********************************************************************************************************************************
+                                                               ** test_directed_plan_cases.test_directed_reset_smoke_and_csr_map              PASS   118000000000.00           0.02   5628529682027.02  **
+                                                               ** test_directed_plan_cases.test_directed_dir_and_output_drive_basic           PASS   132000000000.00           0.02   6170775270003.68  **
+                                                               ** test_directed_plan_cases.test_directed_input_sync_latency                   PASS   138000000000.00           0.02   6299947233227.39  **
+                                                               ** test_directed_plan_cases.test_directed_rising_falling_interrupts            PASS   150000000000.00           0.03   5848871865906.83  **
+                                                               ** test_directed_plan_cases.test_directed_level_interrupt_reassertion          PASS   112000000000.00           0.02   6386801827278.66  **
+                                                               ** test_directed_plan_cases.test_directed_intr_test_injection                  PASS   118000000000.00           0.02   5409757257782.44  **
+                                                               ** test_directed_plan_cases.test_directed_masked_write_lower_half              PASS   130000000000.00           0.02   5585073134756.42  **
+                                                               ** test_directed_plan_cases.test_directed_masked_write_upper_half              PASS   142000000000.00           0.02   6236491429409.12  **
+                                                               ** test_directed_plan_cases.test_directed_w1c_intr_state_clear                 PASS   148000000000.00           0.02   6046668082329.22  **
+                                                               ** test_directed_plan_cases.test_directed_mixed_direction_and_data_stability   PASS   110000000000.00           0.03   4316904075751.34  **
+                                                               ***********************************************************************************************************************************
+                                                               ** TESTS=10 PASS=10 FAIL=0 SKIP=0                                                     1307000000000.00           0.24   5549531978907.15  **
+                                                               ***********************************************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494357
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: interrupt_reassertion_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.01   6440225202170.13  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.02   5596965824004.74  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494358
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_constrained_csr_fuzzer (1/4)
+146000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_constrained_csr_fuzzer passed
+146000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_gpio_activity_stress_subset (2/4)
+307000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_gpio_activity_stress_subset passed
+307000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_masked_write_random_patterns (3/4)
+480000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_masked_write_random_patterns passed
+480000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_interrupt_mode_cross_product_sample (4/4)
+665000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_interrupt_mode_cross_product_sample passed
+665000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************************************
+                                                              ** TEST                                                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************************************
+                                                              ** test_random_plan_cases.test_random_constrained_csr_fuzzer                PASS   146000000000.00           0.02   8615320755778.78  **
+                                                              ** test_random_plan_cases.test_random_gpio_activity_stress_subset           PASS   160000000000.00           0.02   9226995916459.28  **
+                                                              ** test_random_plan_cases.test_random_masked_write_random_patterns          PASS   172000000000.00           0.02   9180127098046.70  **
+                                                              ** test_random_plan_cases.test_random_interrupt_mode_cross_product_sample   PASS   184000000000.00           0.02   9472952116756.07  **
+                                                              ********************************************************************************************************************************
+                                                              ** TESTS=4 PASS=4 FAIL=0 SKIP=0                                                    665000000000.00           0.08   8784698842233.90  **
+                                                              ********************************************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494358
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS   174000000000.00           0.02   7560984387140.89  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.02   7051838750821.32  **
+                                                              ********************************************************************************************************
+- V e r i l a t i o n   R e p o r t: Verilator 5.045 devel rev v5.044-259-g6a5d3b0b7
+- Verilator: Built from 0.056 MB sources in 3 modules, into 0.204 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.036 s (elab=0.002, cvt=0.019, bld=0.000); cpu 0.034 s on 1 threads; allocated 31.457 MB
+make: Entering directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/sim_build/verilator'
+ccache g++  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /home/abdulbasit/open-source/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /home/abdulbasit/open-source/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /home/abdulbasit/open-source/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_cov.o /home/abdulbasit/open-source/verilator/include/verilated_cov.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /home/abdulbasit/open-source/verilator/include/verilated_threads.cpp
+python3 /home/abdulbasit/open-source/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop_dv_common_pkg__Slow.cpp Vtop_dv_common_pkg__0__Slow.cpp Vtop__Syms__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -L/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o bastion_gpio
+rm Vtop__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/sim_build/verilator'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494360
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_reset_smoke_and_csr_map (1/10)
+     0.12ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_reset_smoke_and_csr_map passed
+     0.12ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_dir_and_output_drive_basic (2/10)
+     0.25ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_dir_and_output_drive_basic passed
+     0.25ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_input_sync_latency (3/10)
+     0.39ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_input_sync_latency passed
+     0.39ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_rising_falling_interrupts (4/10)
+     0.54ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_rising_falling_interrupts passed
+     0.54ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_level_interrupt_reassertion (5/10)
+     0.65ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_level_interrupt_reassertion passed
+     0.65ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_intr_test_injection (6/10)
+     0.77ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_intr_test_injection passed
+     0.77ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_lower_half (7/10)
+     0.90ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_lower_half passed
+     0.90ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_upper_half (8/10)
+     1.05ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_upper_half passed
+     1.05ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_w1c_intr_state_clear (9/10)
+     1.20ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_w1c_intr_state_clear passed
+     1.20ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_mixed_direction_and_data_stability (10/10)
+     1.31ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_mixed_direction_and_data_stability passed
+     1.31ns INFO     cocotb.regression                  ***********************************************************************************************************************************
+                                                        ** TEST                                                                       STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ***********************************************************************************************************************************
+                                                        ** test_directed_plan_cases.test_directed_reset_smoke_and_csr_map              PASS           0.12           0.01         14.93  **
+                                                        ** test_directed_plan_cases.test_directed_dir_and_output_drive_basic           PASS           0.13           0.01         16.33  **
+                                                        ** test_directed_plan_cases.test_directed_input_sync_latency                   PASS           0.14           0.01         13.36  **
+                                                        ** test_directed_plan_cases.test_directed_rising_falling_interrupts            PASS           0.15           0.01         17.08  **
+                                                        ** test_directed_plan_cases.test_directed_level_interrupt_reassertion          PASS           0.11           0.01         15.64  **
+                                                        ** test_directed_plan_cases.test_directed_intr_test_injection                  PASS           0.12           0.01         16.23  **
+                                                        ** test_directed_plan_cases.test_directed_masked_write_lower_half              PASS           0.13           0.01         17.12  **
+                                                        ** test_directed_plan_cases.test_directed_masked_write_upper_half              PASS           0.14           0.01         18.26  **
+                                                        ** test_directed_plan_cases.test_directed_w1c_intr_state_clear                 PASS           0.15           0.01         17.99  **
+                                                        ** test_directed_plan_cases.test_directed_mixed_direction_and_data_stability   PASS           0.11           0.01         16.03  **
+                                                        ***********************************************************************************************************************************
+                                                        ** TESTS=10 PASS=10 FAIL=0 SKIP=0                                                             1.31           0.09         14.96  **
+                                                        ***********************************************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494360
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: interrupt_reassertion_gap.
+     0.09ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+     0.09ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_1.test_gap_iteration_1   PASS           0.09           0.01         13.92  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.09           0.01         10.68  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494361
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_constrained_csr_fuzzer (1/4)
+     0.15ns INFO     cocotb.regression                  test_random_plan_cases.test_random_constrained_csr_fuzzer passed
+     0.15ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_gpio_activity_stress_subset (2/4)
+     0.31ns INFO     cocotb.regression                  test_random_plan_cases.test_random_gpio_activity_stress_subset passed
+     0.31ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_masked_write_random_patterns (3/4)
+     0.48ns INFO     cocotb.regression                  test_random_plan_cases.test_random_masked_write_random_patterns passed
+     0.48ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_interrupt_mode_cross_product_sample (4/4)
+     0.67ns INFO     cocotb.regression                  test_random_plan_cases.test_random_interrupt_mode_cross_product_sample passed
+     0.67ns INFO     cocotb.regression                  ********************************************************************************************************************************
+                                                        ** TEST                                                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************************************
+                                                        ** test_random_plan_cases.test_random_constrained_csr_fuzzer                PASS           0.15           0.01         15.33  **
+                                                        ** test_random_plan_cases.test_random_gpio_activity_stress_subset           PASS           0.16           0.01         19.51  **
+                                                        ** test_random_plan_cases.test_random_masked_write_random_patterns          PASS           0.17           0.01         20.50  **
+                                                        ** test_random_plan_cases.test_random_interrupt_mode_cross_product_sample   PASS           0.18           0.01         20.48  **
+                                                        ********************************************************************************************************************************
+                                                        ** TESTS=4 PASS=4 FAIL=0 SKIP=0                                                            0.67           0.04         17.15  **
+                                                        ********************************************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494362
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+     0.17ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+     0.17ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                        ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************
+                                                        ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS           0.17           0.01         13.97  **
+                                                        ********************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                    0.17           0.01         12.20  **
+                                                        ********************************************************************************************************
+- :0: Verilog $finish
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:119: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:132: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:132: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494366
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_reset_smoke_and_csr_map (1/10)
+118000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_reset_smoke_and_csr_map passed
+118000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_dir_and_output_drive_basic (2/10)
+251000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_dir_and_output_drive_basic passed
+251000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_input_sync_latency (3/10)
+390000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_input_sync_latency passed
+390000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_rising_falling_interrupts (4/10)
+541000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_rising_falling_interrupts passed
+541000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_level_interrupt_reassertion (5/10)
+654000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_level_interrupt_reassertion passed
+654000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_intr_test_injection (6/10)
+773000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_intr_test_injection passed
+773000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_lower_half (7/10)
+904000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_lower_half passed
+904000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_upper_half (8/10)
+1047000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_upper_half passed
+1047000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_w1c_intr_state_clear (9/10)
+1196000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_w1c_intr_state_clear passed
+1196000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_mixed_direction_and_data_stability (10/10)
+1307000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_mixed_direction_and_data_stability passed
+1307000000000.00ns INFO     cocotb.regression                  ***********************************************************************************************************************************
+                                                               ** TEST                                                                       STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                               ***********************************************************************************************************************************
+                                                               ** test_directed_plan_cases.test_directed_reset_smoke_and_csr_map              PASS   118000000000.00           0.01   12002324958773.89  **
+                                                               ** test_directed_plan_cases.test_directed_dir_and_output_drive_basic           PASS   132000000000.00           0.01   12665236034222.45  **
+                                                               ** test_directed_plan_cases.test_directed_input_sync_latency                   PASS   138000000000.00           0.01   12480356030876.71  **
+                                                               ** test_directed_plan_cases.test_directed_rising_falling_interrupts            PASS   150000000000.00           0.01   12563815001198.18  **
+                                                               ** test_directed_plan_cases.test_directed_level_interrupt_reassertion          PASS   112000000000.00           0.01   12620548277900.17  **
+                                                               ** test_directed_plan_cases.test_directed_intr_test_injection                  PASS   118000000000.00           0.01   12377219396303.80  **
+                                                               ** test_directed_plan_cases.test_directed_masked_write_lower_half              PASS   130000000000.00           0.01   12853528205369.98  **
+                                                               ** test_directed_plan_cases.test_directed_masked_write_upper_half              PASS   142000000000.00           0.01   12949323129103.80  **
+                                                               ** test_directed_plan_cases.test_directed_w1c_intr_state_clear                 PASS   148000000000.00           0.01   12504925202957.23  **
+                                                               ** test_directed_plan_cases.test_directed_mixed_direction_and_data_stability   PASS   110000000000.00           0.01   12658402107111.50  **
+                                                               ***********************************************************************************************************************************
+                                                               ** TESTS=10 PASS=10 FAIL=0 SKIP=0                                                     1307000000000.00           0.11   12096479873605.98  **
+                                                               ***********************************************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494367
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: interrupt_reassertion_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.01   9552289083455.64  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.01   8359257717347.98  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494367
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_2.test_gap_iteration_2 (1/1)
+                                                            Coverage-gap iteration test: sync_edge_timing_gap.
+106000000000.00ns INFO     cocotb.regression                  test_gap_iter_2.test_gap_iteration_2 passed
+106000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                              ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              **********************************************************************************************
+                                                              ** test_gap_iter_2.test_gap_iteration_2   PASS   106000000000.00           0.01   9682395226272.92  **
+                                                              **********************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  106000000000.00           0.01   8636961380060.61  **
+                                                              **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494368
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_constrained_csr_fuzzer (1/4)
+146000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_constrained_csr_fuzzer passed
+146000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_gpio_activity_stress_subset (2/4)
+307000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_gpio_activity_stress_subset passed
+307000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_masked_write_random_patterns (3/4)
+480000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_masked_write_random_patterns passed
+480000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_interrupt_mode_cross_product_sample (4/4)
+665000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_interrupt_mode_cross_product_sample passed
+665000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************************************
+                                                              ** TEST                                                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************************************
+                                                              ** test_random_plan_cases.test_random_constrained_csr_fuzzer                PASS   146000000000.00           0.01   12148961095129.45  **
+                                                              ** test_random_plan_cases.test_random_gpio_activity_stress_subset           PASS   160000000000.00           0.01   12593616574087.97  **
+                                                              ** test_random_plan_cases.test_random_masked_write_random_patterns          PASS   172000000000.00           0.01   13044867150064.19  **
+                                                              ** test_random_plan_cases.test_random_interrupt_mode_cross_product_sample   PASS   184000000000.00           0.01   12992019393286.42  **
+                                                              ********************************************************************************************************************************
+                                                              ** TESTS=4 PASS=4 FAIL=0 SKIP=0                                                    665000000000.00           0.05   12238271239836.95  **
+                                                              ********************************************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494368
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS   174000000000.00           0.02   10817753112771.26  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.02   10072720567532.50  **
+                                                              ********************************************************************************************************
+- V e r i l a t i o n   R e p o r t: Verilator 5.045 devel rev v5.044-259-g6a5d3b0b7
+- Verilator: Built from 0.056 MB sources in 3 modules, into 0.204 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.021 s (elab=0.001, cvt=0.012, bld=0.000); cpu 0.020 s on 1 threads; allocated 31.453 MB
+make: Entering directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/sim_build/verilator'
+ccache g++  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /home/abdulbasit/open-source/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /home/abdulbasit/open-source/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /home/abdulbasit/open-source/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_cov.o /home/abdulbasit/open-source/verilator/include/verilated_cov.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /home/abdulbasit/open-source/verilator/include/verilated_threads.cpp
+python3 /home/abdulbasit/open-source/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop_dv_common_pkg__Slow.cpp Vtop_dv_common_pkg__0__Slow.cpp Vtop__Syms__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -L/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o bastion_gpio
+rm Vtop__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/sim_build/verilator'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494369
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_reset_smoke_and_csr_map (1/10)
+     0.12ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_reset_smoke_and_csr_map passed
+     0.12ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_dir_and_output_drive_basic (2/10)
+     0.25ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_dir_and_output_drive_basic passed
+     0.25ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_input_sync_latency (3/10)
+     0.39ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_input_sync_latency passed
+     0.39ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_rising_falling_interrupts (4/10)
+     0.54ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_rising_falling_interrupts passed
+     0.54ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_level_interrupt_reassertion (5/10)
+     0.65ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_level_interrupt_reassertion passed
+     0.65ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_intr_test_injection (6/10)
+     0.77ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_intr_test_injection passed
+     0.77ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_lower_half (7/10)
+     0.90ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_lower_half passed
+     0.90ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_upper_half (8/10)
+     1.05ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_upper_half passed
+     1.05ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_w1c_intr_state_clear (9/10)
+     1.20ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_w1c_intr_state_clear passed
+     1.20ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_mixed_direction_and_data_stability (10/10)
+     1.31ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_mixed_direction_and_data_stability passed
+     1.31ns INFO     cocotb.regression                  ***********************************************************************************************************************************
+                                                        ** TEST                                                                       STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ***********************************************************************************************************************************
+                                                        ** test_directed_plan_cases.test_directed_reset_smoke_and_csr_map              PASS           0.12           0.01         23.52  **
+                                                        ** test_directed_plan_cases.test_directed_dir_and_output_drive_basic           PASS           0.13           0.01         23.42  **
+                                                        ** test_directed_plan_cases.test_directed_input_sync_latency                   PASS           0.14           0.01         24.39  **
+                                                        ** test_directed_plan_cases.test_directed_rising_falling_interrupts            PASS           0.15           0.01         25.21  **
+                                                        ** test_directed_plan_cases.test_directed_level_interrupt_reassertion          PASS           0.11           0.01         20.08  **
+                                                        ** test_directed_plan_cases.test_directed_intr_test_injection                  PASS           0.12           0.01         23.36  **
+                                                        ** test_directed_plan_cases.test_directed_masked_write_lower_half              PASS           0.13           0.01         24.78  **
+                                                        ** test_directed_plan_cases.test_directed_masked_write_upper_half              PASS           0.14           0.01         25.53  **
+                                                        ** test_directed_plan_cases.test_directed_w1c_intr_state_clear                 PASS           0.15           0.01         24.17  **
+                                                        ** test_directed_plan_cases.test_directed_mixed_direction_and_data_stability   PASS           0.11           0.01         21.93  **
+                                                        ***********************************************************************************************************************************
+                                                        ** TESTS=10 PASS=10 FAIL=0 SKIP=0                                                             1.31           0.06         21.59  **
+                                                        ***********************************************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494370
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: interrupt_reassertion_gap.
+     0.09ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+     0.09ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_1.test_gap_iteration_1   PASS           0.09           0.00         20.14  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.09           0.01         15.31  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494370
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_2.test_gap_iteration_2 (1/1)
+                                                            Coverage-gap iteration test: sync_edge_timing_gap.
+     0.11ns INFO     cocotb.regression                  test_gap_iter_2.test_gap_iteration_2 passed
+     0.11ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_2.test_gap_iteration_2   PASS           0.11           0.00         22.10  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.11           0.01         16.87  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494371
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_constrained_csr_fuzzer (1/4)
+     0.15ns INFO     cocotb.regression                  test_random_plan_cases.test_random_constrained_csr_fuzzer passed
+     0.15ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_gpio_activity_stress_subset (2/4)
+     0.31ns INFO     cocotb.regression                  test_random_plan_cases.test_random_gpio_activity_stress_subset passed
+     0.31ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_masked_write_random_patterns (3/4)
+     0.48ns INFO     cocotb.regression                  test_random_plan_cases.test_random_masked_write_random_patterns passed
+     0.48ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_interrupt_mode_cross_product_sample (4/4)
+     0.67ns INFO     cocotb.regression                  test_random_plan_cases.test_random_interrupt_mode_cross_product_sample passed
+     0.67ns INFO     cocotb.regression                  ********************************************************************************************************************************
+                                                        ** TEST                                                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************************************
+                                                        ** test_random_plan_cases.test_random_constrained_csr_fuzzer                PASS           0.15           0.01         24.23  **
+                                                        ** test_random_plan_cases.test_random_gpio_activity_stress_subset           PASS           0.16           0.01         24.73  **
+                                                        ** test_random_plan_cases.test_random_masked_write_random_patterns          PASS           0.17           0.01         25.30  **
+                                                        ** test_random_plan_cases.test_random_interrupt_mode_cross_product_sample   PASS           0.18           0.01         24.34  **
+                                                        ********************************************************************************************************************************
+                                                        ** TESTS=4 PASS=4 FAIL=0 SKIP=0                                                            0.67           0.03         22.32  **
+                                                        ********************************************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494371
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+     0.17ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+     0.17ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                        ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************
+                                                        ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS           0.17           0.01         21.36  **
+                                                        ********************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                    0.17           0.01         18.30  **
+                                                        ********************************************************************************************************
+- :0: Verilog $finish
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:119: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:132: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/bastion_gpio/bastion_gpio.sv:132: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494382
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_reset_smoke_and_csr_map (1/10)
+118000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_reset_smoke_and_csr_map passed
+118000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_dir_and_output_drive_basic (2/10)
+251000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_dir_and_output_drive_basic passed
+251000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_input_sync_latency (3/10)
+390000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_input_sync_latency passed
+390000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_rising_falling_interrupts (4/10)
+541000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_rising_falling_interrupts passed
+541000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_level_interrupt_reassertion (5/10)
+654000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_level_interrupt_reassertion passed
+654000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_intr_test_injection (6/10)
+773000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_intr_test_injection passed
+773000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_lower_half (7/10)
+904000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_lower_half passed
+904000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_upper_half (8/10)
+1047000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_upper_half passed
+1047000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_w1c_intr_state_clear (9/10)
+1196000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_w1c_intr_state_clear passed
+1196000000000.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_mixed_direction_and_data_stability (10/10)
+1307000000000.00ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_mixed_direction_and_data_stability passed
+1307000000000.00ns INFO     cocotb.regression                  ***********************************************************************************************************************************
+                                                               ** TEST                                                                       STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                               ***********************************************************************************************************************************
+                                                               ** test_directed_plan_cases.test_directed_reset_smoke_and_csr_map              PASS   118000000000.00           0.01   13683002184070.11  **
+                                                               ** test_directed_plan_cases.test_directed_dir_and_output_drive_basic           PASS   132000000000.00           0.01   14809365467433.46  **
+                                                               ** test_directed_plan_cases.test_directed_input_sync_latency                   PASS   138000000000.00           0.01   14397282590851.43  **
+                                                               ** test_directed_plan_cases.test_directed_rising_falling_interrupts            PASS   150000000000.00           0.01   14631973580166.52  **
+                                                               ** test_directed_plan_cases.test_directed_level_interrupt_reassertion          PASS   112000000000.00           0.01   13869561499852.38  **
+                                                               ** test_directed_plan_cases.test_directed_intr_test_injection                  PASS   118000000000.00           0.01   14544296688118.96  **
+                                                               ** test_directed_plan_cases.test_directed_masked_write_lower_half              PASS   130000000000.00           0.01   14710900310265.75  **
+                                                               ** test_directed_plan_cases.test_directed_masked_write_upper_half              PASS   142000000000.00           0.01   14525905272913.52  **
+                                                               ** test_directed_plan_cases.test_directed_w1c_intr_state_clear                 PASS   148000000000.00           0.01   14459411427639.70  **
+                                                               ** test_directed_plan_cases.test_directed_mixed_direction_and_data_stability   PASS   110000000000.00           0.01   14173428360776.60  **
+                                                               ***********************************************************************************************************************************
+                                                               ** TESTS=10 PASS=10 FAIL=0 SKIP=0                                                     1307000000000.00           0.09   13807756102967.11  **
+                                                               ***********************************************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494382
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: interrupt_reassertion_gap.
+90000000000.00ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+90000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                             ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                             **********************************************************************************************
+                                                             ** test_gap_iter_1.test_gap_iteration_1   PASS   90000000000.00           0.01   11264244449749.34  **
+                                                             **********************************************************************************************
+                                                             ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  90000000000.00           0.01   9907284656973.39  **
+                                                             **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494382
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_2.test_gap_iteration_2 (1/1)
+                                                            Coverage-gap iteration test: sync_edge_timing_gap.
+106000000000.00ns INFO     cocotb.regression                  test_gap_iter_2.test_gap_iteration_2 passed
+106000000000.00ns INFO     cocotb.regression                  **********************************************************************************************
+                                                              ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              **********************************************************************************************
+                                                              ** test_gap_iter_2.test_gap_iteration_2   PASS   106000000000.00           0.01   12857405477312.82  **
+                                                              **********************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                  106000000000.00           0.01   11423922709286.19  **
+                                                              **********************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494381
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_constrained_csr_fuzzer (1/4)
+146000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_constrained_csr_fuzzer passed
+146000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_gpio_activity_stress_subset (2/4)
+307000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_gpio_activity_stress_subset passed
+307000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_masked_write_random_patterns (3/4)
+480000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_masked_write_random_patterns passed
+480000000000.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_interrupt_mode_cross_product_sample (4/4)
+665000000000.00ns INFO     cocotb.regression                  test_random_plan_cases.test_random_interrupt_mode_cross_product_sample passed
+665000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************************************
+                                                              ** TEST                                                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************************************
+                                                              ** test_random_plan_cases.test_random_constrained_csr_fuzzer                PASS   146000000000.00           0.01   15315718780481.71  **
+                                                              ** test_random_plan_cases.test_random_gpio_activity_stress_subset           PASS   160000000000.00           0.01   16017964483482.91  **
+                                                              ** test_random_plan_cases.test_random_masked_write_random_patterns          PASS   172000000000.00           0.01   16245277607638.26  **
+                                                              ** test_random_plan_cases.test_random_interrupt_mode_cross_product_sample   PASS   184000000000.00           0.01   15474964127448.82  **
+                                                              ********************************************************************************************************************************
+                                                              ** TESTS=4 PASS=4 FAIL=0 SKIP=0                                                    665000000000.00           0.04   15117517208485.54  **
+                                                              ********************************************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494382
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS   174000000000.00           0.01   13485262033666.55  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.01   12520740049409.83  **
+                                                              ********************************************************************************************************
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494382
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_2_1.test_repair_iteration_2_1 (1/1)
+174000000000.00ns INFO     cocotb.regression                  test_repair_iter_2_1.test_repair_iteration_2_1 passed
+174000000000.00ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                              ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                              ********************************************************************************************************
+                                                              ** test_repair_iter_2_1.test_repair_iteration_2_1   PASS   174000000000.00           0.01   11690971501802.16  **
+                                                              ********************************************************************************************************
+                                                              ** TESTS=1 PASS=1 FAIL=0 SKIP=0                            174000000000.00           0.02   10825776485596.46  **
+                                                              ********************************************************************************************************
+- V e r i l a t i o n   R e p o r t: Verilator 5.045 devel rev v5.044-259-g6a5d3b0b7
+- Verilator: Built from 0.056 MB sources in 3 modules, into 0.204 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.023 s (elab=0.001, cvt=0.013, bld=0.000); cpu 0.021 s on 1 threads; allocated 31.457 MB
+make: Entering directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/sim_build/verilator'
+ccache g++  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/share/lib/verilator/verilator.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /home/abdulbasit/open-source/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /home/abdulbasit/open-source/verilator/include/verilated_dpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /home/abdulbasit/open-source/verilator/include/verilated_vpi.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_cov.o /home/abdulbasit/open-source/verilator/include/verilated_cov.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /home/abdulbasit/open-source/verilator/include/verilated_threads.cpp
+python3 /home/abdulbasit/open-source/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop_dv_common_pkg__Slow.cpp Vtop_dv_common_pkg__0__Slow.cpp Vtop__Syms__Slow.cpp > Vtop__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/home/abdulbasit/open-source/verilator/include -I/home/abdulbasit/open-source/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -L/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o bastion_gpio
+rm Vtop__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_bastion_gpio/sim_build/verilator'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494383
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_reset_smoke_and_csr_map (1/10)
+     0.12ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_reset_smoke_and_csr_map passed
+     0.12ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_dir_and_output_drive_basic (2/10)
+     0.25ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_dir_and_output_drive_basic passed
+     0.25ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_input_sync_latency (3/10)
+     0.39ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_input_sync_latency passed
+     0.39ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_rising_falling_interrupts (4/10)
+     0.54ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_rising_falling_interrupts passed
+     0.54ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_level_interrupt_reassertion (5/10)
+     0.65ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_level_interrupt_reassertion passed
+     0.65ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_intr_test_injection (6/10)
+     0.77ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_intr_test_injection passed
+     0.77ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_lower_half (7/10)
+     0.90ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_lower_half passed
+     0.90ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_masked_write_upper_half (8/10)
+     1.05ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_masked_write_upper_half passed
+     1.05ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_w1c_intr_state_clear (9/10)
+     1.20ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_w1c_intr_state_clear passed
+     1.20ns INFO     cocotb.regression                  running test_directed_plan_cases.test_directed_mixed_direction_and_data_stability (10/10)
+     1.31ns INFO     cocotb.regression                  test_directed_plan_cases.test_directed_mixed_direction_and_data_stability passed
+     1.31ns INFO     cocotb.regression                  ***********************************************************************************************************************************
+                                                        ** TEST                                                                       STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ***********************************************************************************************************************************
+                                                        ** test_directed_plan_cases.test_directed_reset_smoke_and_csr_map              PASS           0.12           0.01         21.40  **
+                                                        ** test_directed_plan_cases.test_directed_dir_and_output_drive_basic           PASS           0.13           0.01         23.82  **
+                                                        ** test_directed_plan_cases.test_directed_input_sync_latency                   PASS           0.14           0.01         23.38  **
+                                                        ** test_directed_plan_cases.test_directed_rising_falling_interrupts            PASS           0.15           0.01         22.37  **
+                                                        ** test_directed_plan_cases.test_directed_level_interrupt_reassertion          PASS           0.11           0.01         21.61  **
+                                                        ** test_directed_plan_cases.test_directed_intr_test_injection                  PASS           0.12           0.01         21.72  **
+                                                        ** test_directed_plan_cases.test_directed_masked_write_lower_half              PASS           0.13           0.01         22.53  **
+                                                        ** test_directed_plan_cases.test_directed_masked_write_upper_half              PASS           0.14           0.01         23.47  **
+                                                        ** test_directed_plan_cases.test_directed_w1c_intr_state_clear                 PASS           0.15           0.01         21.55  **
+                                                        ** test_directed_plan_cases.test_directed_mixed_direction_and_data_stability   PASS           0.11           0.00         23.07  **
+                                                        ***********************************************************************************************************************************
+                                                        ** TESTS=10 PASS=10 FAIL=0 SKIP=0                                                             1.31           0.06         20.51  **
+                                                        ***********************************************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494383
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_1.test_gap_iteration_1 (1/1)
+                                                            Coverage-gap iteration test: interrupt_reassertion_gap.
+     0.09ns INFO     cocotb.regression                  test_gap_iter_1.test_gap_iteration_1 passed
+     0.09ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_1.test_gap_iteration_1   PASS           0.09           0.00         20.28  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.09           0.01         15.30  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494384
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_gap_iter_2.test_gap_iteration_2 (1/1)
+                                                            Coverage-gap iteration test: sync_edge_timing_gap.
+     0.11ns INFO     cocotb.regression                  test_gap_iter_2.test_gap_iteration_2 passed
+     0.11ns INFO     cocotb.regression                  **********************************************************************************************
+                                                        ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **********************************************************************************************
+                                                        ** test_gap_iter_2.test_gap_iteration_2   PASS           0.11           0.00         21.97  **
+                                                        **********************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                          0.11           0.01         17.32  **
+                                                        **********************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494384
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_constrained_csr_fuzzer (1/4)
+     0.15ns INFO     cocotb.regression                  test_random_plan_cases.test_random_constrained_csr_fuzzer passed
+     0.15ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_gpio_activity_stress_subset (2/4)
+     0.31ns INFO     cocotb.regression                  test_random_plan_cases.test_random_gpio_activity_stress_subset passed
+     0.31ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_masked_write_random_patterns (3/4)
+     0.48ns INFO     cocotb.regression                  test_random_plan_cases.test_random_masked_write_random_patterns passed
+     0.48ns INFO     cocotb.regression                  running test_random_plan_cases.test_random_interrupt_mode_cross_product_sample (4/4)
+     0.67ns INFO     cocotb.regression                  test_random_plan_cases.test_random_interrupt_mode_cross_product_sample passed
+     0.67ns INFO     cocotb.regression                  ********************************************************************************************************************************
+                                                        ** TEST                                                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************************************
+                                                        ** test_random_plan_cases.test_random_constrained_csr_fuzzer                PASS           0.15           0.01         26.81  **
+                                                        ** test_random_plan_cases.test_random_gpio_activity_stress_subset           PASS           0.16           0.01         26.91  **
+                                                        ** test_random_plan_cases.test_random_masked_write_random_patterns          PASS           0.17           0.01         28.25  **
+                                                        ** test_random_plan_cases.test_random_interrupt_mode_cross_product_sample   PASS           0.18           0.01         28.91  **
+                                                        ********************************************************************************************************************************
+                                                        ** TESTS=4 PASS=4 FAIL=0 SKIP=0                                                            0.67           0.03         25.25  **
+                                                        ********************************************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494385
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_1_1.test_repair_iteration_1_1 (1/1)
+     0.17ns INFO     cocotb.regression                  test_repair_iter_1_1.test_repair_iteration_1_1 passed
+     0.17ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                        ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************
+                                                        ** test_repair_iter_1_1.test_repair_iteration_1_1   PASS           0.17           0.01         20.27  **
+                                                        ********************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                    0.17           0.01         17.36  **
+                                                        ********************************************************************************************************
+- :0: Verilog $finish
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.045 devel
+     0.00ns INFO     cocotb                             Seeding Python random module with 1775494385
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/.venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_repair_iter_2_1.test_repair_iteration_2_1 (1/1)
+     0.17ns INFO     cocotb.regression                  test_repair_iter_2_1.test_repair_iteration_2_1 passed
+     0.17ns INFO     cocotb.regression                  ********************************************************************************************************
+                                                        ** TEST                                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ********************************************************************************************************
+                                                        ** test_repair_iter_2_1.test_repair_iteration_2_1   PASS           0.17           0.01         18.88  **
+                                                        ********************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                    0.17           0.01         16.21  **
+                                                        ********************************************************************************************************
+- :0: Verilog $finish

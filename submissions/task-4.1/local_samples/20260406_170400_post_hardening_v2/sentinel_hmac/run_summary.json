@@ -1,0 +1,27 @@
+{
+  "dut": "sentinel_hmac",
+  "exit_code": 0,
+  "duration_seconds": 120,
+  "status": "pass",
+  "simulator_mode": "both",
+  "retention_mode": "full",
+  "simulation_passed": true,
+  "simulators_tested": [
+    "icarus",
+    "verilator"
+  ],
+  "simulators_requested": [
+    "icarus",
+    "verilator"
+  ],
+  "dual_simulator_compliant": false,
+  "directed_test_count": 1,
+  "random_test_count": 5,
+  "line_percent": 0.0,
+  "branch_percent": 0.0,
+  "toggle_percent": 0.0,
+  "fsm_percent": 0.0,
+  "functional_percent": 34.94,
+  "toggle_source": "unknown",
+  "fsm_source": "unknown"
+}

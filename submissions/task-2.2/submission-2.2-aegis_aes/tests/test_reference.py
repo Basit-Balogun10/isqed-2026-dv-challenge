@@ -17,4 +17,6 @@ async def test_reference(dut):
     input_ready = (status >> 2) & 0x1
 
     assert idle == 1, f"AES must be idle after reset, STATUS={status:#010x}"
-    assert input_ready == 1, f"AES input must be ready after reset, STATUS={status:#010x}"
+    assert (
+        input_ready == 1
+    ), f"AES input must be ready after reset, STATUS={status:#010x}"

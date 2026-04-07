@@ -1,0 +1,196 @@
+{
+  "rtl_files": [
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+  ],
+  "total_rtl_lines": 636,
+  "modules": [
+    "warden_timer"
+  ],
+  "top_modules": [
+    "warden_timer"
+  ],
+  "selected_top": "warden_timer",
+  "port_count": 18,
+  "ports": [
+    {
+      "direction": "input",
+      "width": "",
+      "name": "clk_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "rst_ni",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_a_valid_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_a_ready_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[2:0]",
+      "name": "tl_a_opcode_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_address_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_data_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[3:0]",
+      "name": "tl_a_mask_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "tl_a_source_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[1:0]",
+      "name": "tl_a_size_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_valid_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_d_ready_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[2:0]",
+      "name": "tl_d_opcode_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[31:0]",
+      "name": "tl_d_data_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[7:0]",
+      "name": "tl_d_source_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_error_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[2:0]",
+      "name": "intr_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "alert_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    }
+  ],
+  "tlul_detected": true,
+  "tlul_ports": [
+    "tl_a_address_i",
+    "tl_a_data_i",
+    "tl_a_mask_i",
+    "tl_a_opcode_i",
+    "tl_a_ready_o",
+    "tl_a_size_i",
+    "tl_a_source_i",
+    "tl_a_valid_i",
+    "tl_d_data_o",
+    "tl_d_error_o",
+    "tl_d_opcode_o",
+    "tl_d_ready_i",
+    "tl_d_source_o",
+    "tl_d_valid_o"
+  ],
+  "protocol_hints": [
+    "timer"
+  ],
+  "clock_candidates": [
+    "clk_i"
+  ],
+  "reset_candidates": [
+    "rst_ni"
+  ],
+  "interface_hints": {
+    "interrupt_candidates": [
+      "intr_o"
+    ],
+    "alert_candidates": [
+      "alert_o"
+    ]
+  },
+  "enum_state_sets": [],
+  "fsm_candidates": [
+    {
+      "state_expression": "tl_addr",
+      "states": [
+        "ADDR_INTR_ENABLE",
+        "ADDR_INTR_STATE",
+        "ADDR_INTR_TEST",
+        "ADDR_MTIMECMP0_HIGH",
+        "ADDR_MTIMECMP0_LOW",
+        "ADDR_MTIMECMP1_HIGH",
+        "ADDR_MTIMECMP1_LOW",
+        "ADDR_MTIME_HIGH",
+        "ADDR_MTIME_LOW",
+        "ADDR_PRESCALER",
+        "ADDR_WATCHDOG_BARK_THRESH",
+        "ADDR_WATCHDOG_BITE_THRESH",
+        "ADDR_WATCHDOG_COUNT",
+        "ADDR_WATCHDOG_CTRL",
+        "ADDR_WATCHDOG_PET",
+        "default"
+      ],
+      "state_count": 16,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/warden_timer/warden_timer.sv"
+    }
+  ],
+  "estimated_fsm_blocks": 1,
+  "csr_summary": {
+    "register_count": 15,
+    "top_keys": [
+      "name",
+      "base_addr",
+      "registers"
+    ]
+  },
+  "spec_excerpt": "# WARDEN_TIMER -- Timer/Watchdog Module Specification\n\n> **Disclaimer:** This RTL design is a modified version of an open-source IP block, created exclusively for this competition. It is not production-quality, not security-reviewed, and must not be used outside of this competition context.\n\n---\n\n## 1. Overview\n\nWARDEN_TIMER is a combined timer and watchdog peripheral intended for RISC-V-class systems. It provides:\n\n- A 64-bit free-running monotonic counter (`mtime`) with a configurable 12-bit prescaler.\n- Two independent 64-bit timer comparators (`mtimecmp0`, `mtimecmp1`) that generate interrupts when the counter reaches or exceeds their programmed values.\n- A watchdog timer with configurable bark (warning) and bite (fatal) thresholds, requiring periodic software \"pet\" writes to prevent timeout escalation.\n\nThe module exposes a register-mapped CSR interface over a simplified TileLink-UL (TL-UL) bus. All registers are 32 bits wide; 64-bit values are accessed as paired LOW/HIGH registers.\n\n---\n\n## 2. Functional Description\n\n### 2.1 Main Timer (mtime)\n\nThe main timer is a 64-bit free-running counter that increments monotonically from its reset value of zero. The rate of increment is governed by the prescaler register: `mtime` advances by one for every `(PRESCALER + 1)` clock cycles. When the prescaler is 0, `mtime` increments on every clock cycle.\n\nAn internal prescale counter counts from 0 up to the programmed prescaler value. When the prescale counter reaches the prescaler value, it wraps back to 0 and `mtime` is incremented. The prescale counter is not directly visible to software.\n\nIf the prescaler value is changed while counting is active, the new prescaler value takes effect on the next prescaler cycle boundary. The prescale counter is not explicitly reset on a prescaler register write.\n\nThe `mtime` counter cannot be written by software; it is strictly read-only. On reset, `mtime` is initialized to zero.\n\n### 2.2 Timer Comparators\n\nTwo independent comparators continuously compare the current `mtime` value against their respective 64-bit thresholds (`mtimecmp0` and `mtimecmp1`). Each comparator uses an unsigned greater-than-or-equal comparison:\n\n- When `mtime >= mtimecmp0`, the `timer0_expired` interrupt condition is raised.\n- When `mtime >= mtimecmp1`, the `timer1_expired` interrupt condition is raised.\n\nOnce an interrupt condition is raised, it remains asserted until software clears it by writing a 1 to the corresponding bit in `INTR_STATE`. Software may also suppress the interrupt output by clearing the corresponding bit in `INTR_ENABLE`.\n\nThe comparator values are written as two separate 32-bit register writes (LOW half, then HIGH half, or vice versa). Software should consider the intermediate state where only one half has been updated. The module does not provide any atomic 64-bit write mechanism for the comparator registers.\n\n### 2.3 Watchdog Timer\n\nThe watchdog timer is an independent 32-bit counter that increments on every clock cycle when enabled. It provides two escalation thresholds:\n\n- **Bark threshold** (`WATCHDOG_BARK_THRESH`): When the watchdog counter reaches this value, the `watchdog_bark` interrupt is raised as a warning to software.\n- **Bite threshold** (`WATCHDOG_BITE_THRESH`): When the watchdog counter reaches this value, the `alert_o` signal is asserted, indicating a fatal condition. The bite alert is intended to trigger a system-level reset or similar recovery action.\n\nThe watchdog counter is reset to zero by writing any value to the `WATCHDOG_PET` register. Software is expected to periodically pet the watchdog before the bark threshold is reached.\n\nThe watchdog is enabled and controlled via the `WATCHDOG_CTRL` register. The watchdog counter only increments when `wd_enable` is set.\n\n### 2.4 Watchdog Lock\n\nThe `WATCHDOG_CTRL` register contains a `wd_lock` bit. Once this bit is set by software, it cannot be cleared except by a full hardware reset (`rst_ni` assertion). When the watchdog is in locked mode",
+  "rtl_bytes": 17128
+}

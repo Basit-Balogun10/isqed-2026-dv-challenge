@@ -2,13 +2,13 @@
 
 ## Failure Overview
 
-| Failure | DUT | Manifestation Cycle | Root Cause Cycle | Latency | One-line Diagnosis |
-|---|---|---:|---:|---:|---|
-| Trace 01 | warden_timer | 150 | 142 | 8 | Split MTIMECMP write is compared non-atomically, causing early timer interrupt set |
-| Trace 02 | nexus_uart | 500 | 490 | 10 | TX overflow write corrupts FIFO payload despite full-state pointer freeze |
-| Trace 03 | citadel_spi | 300 | 300 | 0 | CS hold completion condition fires one SCLK tick too early |
-| Trace 04 | aegis_aes | 200 | 173 | 27 | CBC block1 uses stale IV rather than C0 chain value |
-| Trace 05 | rampart_i2c | 400 | 397 | 3 | Repeated START setup momentarily matches STOP signature |
+| Failure  | DUT          | Manifestation Cycle | Root Cause Cycle | Latency | One-line Diagnosis                                                                 |
+| -------- | ------------ | ------------------: | ---------------: | ------: | ---------------------------------------------------------------------------------- |
+| Trace 01 | warden_timer |                 150 |              142 |       8 | Split MTIMECMP write is compared non-atomically, causing early timer interrupt set |
+| Trace 02 | nexus_uart   |                 500 |              490 |      10 | TX overflow write corrupts FIFO payload despite full-state pointer freeze          |
+| Trace 03 | citadel_spi  |                 300 |              300 |       0 | CS hold completion condition fires one SCLK tick too early                         |
+| Trace 04 | aegis_aes    |                 200 |              173 |      27 | CBC block1 uses stale IV rather than C0 chain value                                |
+| Trace 05 | rampart_i2c  |                 400 |              397 |       3 | Repeated START setup momentarily matches STOP signature                            |
 
 ## Debug Methodology
 
@@ -20,6 +20,6 @@
 
 ## Difficulty Assessment
 
-- Trace 04 (AES CBC chain) was the hardest because manifestation is late and depends on internal round-state chaining semantics.
-- Trace 05 (I2C repeated START) required temporal bus-event ordering (START/STOP edge semantics), not just FSM state checks.
-- Trace 01/02/03 were more direct because their failure signatures were tightly correlated with single control-path events.
+-   Trace 04 (AES CBC chain) was the hardest because manifestation is late and depends on internal round-state chaining semantics.
+-   Trace 05 (I2C repeated START) required temporal bus-event ordering (START/STOP edge semantics), not just FSM state checks.
+-   Trace 01/02/03 were more direct because their failure signatures were tightly correlated with single control-path events.

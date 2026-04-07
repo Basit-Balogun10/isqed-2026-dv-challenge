@@ -1,0 +1,25 @@
+{
+  "python_file_count": 19,
+  "syntax_passed": false,
+  "syntax_errors": [
+    {
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_warden_timer/tests/directed/test_directed_plan_cases.py",
+      "error": "unexpected indent (test_directed_plan_cases.py, line 1)"
+    },
+    {
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/submissions/task-4.1/submission-4.1/output_warden_timer/tests/random/test_random_plan_cases.py",
+      "error": "unexpected indent (test_random_plan_cases.py, line 1)"
+    }
+  ],
+  "directed_test_count": 10,
+  "random_test_count": 4,
+  "directed_test_file_count": 1,
+  "random_test_file_count": 5,
+  "simulation_runs": [],
+  "simulation_passed": false,
+  "simulators_tested": [],
+  "simulators_requested": [],
+  "dual_simulator_compliant": false,
+  "selected_top": "warden_timer",
+  "coverage_dat_files": []
+}

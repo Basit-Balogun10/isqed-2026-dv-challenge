@@ -17,7 +17,7 @@ prob_ceiling: 0.92
 
 # Initial focus queue (Approach C target priority).
 focus_targets:
-  - hmac.func.intr_write_kind:1/2
-  - hmac.func.msg_len_bucket:1/2
-  - hmac.func.msg_len_nonzero:0/1
-  - global:coverage_efficiency
+    - hmac.func.intr_write_kind:1/2
+    - hmac.func.msg_len_bucket:1/2
+    - hmac.func.msg_len_nonzero:0/1
+    - global:coverage_efficiency

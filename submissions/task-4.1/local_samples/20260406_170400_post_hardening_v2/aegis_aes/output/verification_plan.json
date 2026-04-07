@@ -1,0 +1,121 @@
+{
+  "features": [
+    "TL-UL CSR access compliance for 32-bit register reads/writes",
+    "AES-128 ECB encrypt/decrypt functional flow",
+    "AES-128 CBC encrypt/decrypt functional flow with IV handling",
+    "128-bit key programming across four consecutive CSR writes",
+    "128-bit data input/output programming across four consecutive CSR accesses",
+    "Interrupt generation on operation completion",
+    "Status polling for output_valid and input_ready behavior",
+    "Back-to-back block operation sequencing",
+    "Key/IV/data clear behavior via trigger bits",
+    "Reset behavior and CSR default state",
+    "Register field packing and little-endian word ordering",
+    "TL-UL ready/response handshake stability under backpressure",
+    "Alert output observation for fatal error conditions",
+    "FSM state progression across IDLE, KEY_EXPAND, INIT_CBC, ROUND, and DONE"
+  ],
+  "coverage_goals": {
+    "line_percent": 85,
+    "branch_percent": 75,
+    "functional_percent": 85
+  },
+  "directed_tests": [
+    {
+      "name": "reset_and_csr_sanity",
+      "intent": "Verify reset deassertion, TL-UL accessibility, readable/writable CSR defaults, and that status/control registers respond without protocol errors."
+    },
+    {
+      "name": "aes_ecb_encrypt_known_vector",
+      "intent": "Program a known AES-128 key and plaintext, trigger ECB encryption, and compare ciphertext against a golden model."
+    },
+    {
+      "name": "aes_ecb_decrypt_known_vector",
+      "intent": "Program a known AES-128 key and ciphertext, trigger ECB decryption, and compare recovered plaintext against a golden model."
+    },
+    {
+      "name": "aes_cbc_encrypt_known_vector",
+      "intent": "Program key, IV, and plaintext, trigger CBC encryption, and verify ciphertext plus IV update behavior against a golden model."
+    },
+    {
+      "name": "aes_cbc_decrypt_known_vector",
+      "intent": "Program key, IV, and ciphertext, trigger CBC decryption, and verify plaintext recovery and IV update behavior."
+    },
+    {
+      "name": "back_to_back_block_operations",
+      "intent": "Issue consecutive start triggers with new input data and confirm the DUT accepts the next block when input_ready indicates availability."
+    },
+    {
+      "name": "clear_triggers",
+      "intent": "Exercise key_iv_data_in_clear and data_out_clear independently and confirm registers are zeroized without corrupting unrelated control/status behavior."
+    },
+    {
+      "name": "interrupt_completion_flow",
+      "intent": "Enable/observe completion interrupt behavior and confirm intr_o asserts on done and deasserts according to the design's completion semantics."
+    },
+    {
+      "name": "tlul_backpressure_and_wait_states",
+      "intent": "Apply host-side ready deassertion and randomized TL-UL request spacing to verify stable request/response handling under backpressure."
+    }
+  ],
+  "random_tests": [
+    {
+      "name": "csr_fuzz_smoke",
+      "intent": "Randomize legal CSR writes and reads across key, IV, data, control, trigger, and status registers while checking TL-UL protocol correctness and basic register coherency."
+    },
+    {
+      "name": "mode_operation_randomized",
+      "intent": "Randomly select ECB/CBC and encrypt/decrypt operations with constrained legal sequences, then compare outputs to a Python AES reference model."
+    },
+    {
+      "name": "multi_block_stream_randomized",
+      "intent": "Generate short random block streams to stress back-to-back operation handling, output retention, and IV chaining in CBC mode."
+    },
+    {
+      "name": "reset_interruption_randomized",
+      "intent": "Assert reset at random points during idle and active operation to verify safe recovery, no protocol deadlock, and clean post-reset CSR state."
+    }
+  ],
+  "risk_areas": [
+    {
+      "area": "AES algorithm correctness",
+      "reason": "Core functionality depends on correct key expansion, round transformations, and inverse cipher behavior; a single mismatch breaks all cryptographic outputs.",
+      "priority": "high"
+    },
+    {
+      "area": "CBC IV chaining and update semantics",
+      "reason": "CBC mode adds stateful dependency across blocks and is prone to off-by-one or ordering bugs in IV capture/update.",
+      "priority": "high"
+    },
+    {
+      "area": "Back-to-back operation sequencing",
+      "reason": "FSM transitions and input_ready/output_valid timing are likely to expose race conditions or stale data reuse.",
+      "priority": "high"
+    },
+    {
+      "area": "TL-UL CSR access integrity",
+      "reason": "Incorrect register addressing, byte ordering, or handshake behavior can block all software interaction and is fast to validate early.",
+      "priority": "high"
+    },
+    {
+      "area": "Trigger clear interactions",
+      "reason": "Simultaneous clear/start behavior is explicitly underdefined and may reveal implementation-specific hazards or unintended side effects.",
+      "priority": "medium"
+    },
+    {
+      "area": "Interrupt and alert signaling",
+      "reason": "Completion interrupt and fatal alert outputs are externally visible integration points that may be miswired or incorrectly timed.",
+      "priority": "medium"
+    },
+    {
+      "area": "Reset recovery",
+      "reason": "Asynchronous reset during active processing can expose state retention bugs, though it is typically less complex than algorithmic correctness.",
+      "priority": "medium"
+    },
+    {
+      "area": "Non-functional throughput/pipelining assumptions",
+      "reason": "The design claims back-to-back support, but exact latency is implementation-dependent; verify only observable readiness and completion behavior within the time budget.",
+      "priority": "low"
+    }
+  ]
+}

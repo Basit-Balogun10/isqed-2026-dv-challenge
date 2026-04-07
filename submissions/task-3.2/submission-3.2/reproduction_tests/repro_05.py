@@ -70,10 +70,10 @@ async def test_repro_05(dut):
         if start_count == 1 and stop_det:
             stop_between_starts = True
 
-    assert start_count >= 2, (
-        "Did not observe two START events; repeated-START stimulus did not execute correctly"
-    )
+    assert (
+        start_count >= 2
+    ), "Did not observe two START events; repeated-START stimulus did not execute correctly"
 
-    assert not stop_between_starts, (
-        "Trace-05 bug reproduced: STOP condition detected between first START and repeated START"
-    )
+    assert (
+        not stop_between_starts
+    ), "Trace-05 bug reproduced: STOP condition detected between first START and repeated START"

@@ -71,10 +71,16 @@ def validate_analysis_dir(analysis_dir: pathlib.Path) -> None:
             if data[key] < 0:
                 _fail(f"{path.name}: {key} must be >= 0")
 
-        if not isinstance(data["root_cause_file"], str) or not data["root_cause_file"].strip():
+        if (
+            not isinstance(data["root_cause_file"], str)
+            or not data["root_cause_file"].strip()
+        ):
             _fail(f"{path.name}: root_cause_file must be non-empty string")
 
-        if not isinstance(data["root_cause_description"], str) or not data["root_cause_description"].strip():
+        if (
+            not isinstance(data["root_cause_description"], str)
+            or not data["root_cause_description"].strip()
+        ):
             _fail(f"{path.name}: root_cause_description must be non-empty string")
 
         trace = data["signal_trace"]

@@ -1,0 +1,291 @@
+{
+  "rtl_files": [
+    "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+  ],
+  "total_rtl_lines": 916,
+  "modules": [
+    "citadel_spi"
+  ],
+  "top_modules": [
+    "citadel_spi"
+  ],
+  "selected_top": "citadel_spi",
+  "port_count": 22,
+  "ports": [
+    {
+      "direction": "input",
+      "width": "",
+      "name": "clk_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "rst_ni",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_a_valid_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_a_ready_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[2:0]",
+      "name": "tl_a_opcode_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_address_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[31:0]",
+      "name": "tl_a_data_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[3:0]",
+      "name": "tl_a_mask_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[7:0]",
+      "name": "tl_a_source_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "input",
+      "width": "[1:0]",
+      "name": "tl_a_size_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_valid_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "tl_d_ready_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[2:0]",
+      "name": "tl_d_opcode_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[31:0]",
+      "name": "tl_d_data_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[7:0]",
+      "name": "tl_d_source_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "tl_d_error_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "sclk_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[3:0]",
+      "name": "csn_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "mosi_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "input",
+      "width": "",
+      "name": "miso_i",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "[3:0]",
+      "name": "intr_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "direction": "output",
+      "width": "",
+      "name": "alert_o",
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    }
+  ],
+  "tlul_detected": true,
+  "tlul_ports": [
+    "tl_a_address_i",
+    "tl_a_data_i",
+    "tl_a_mask_i",
+    "tl_a_opcode_i",
+    "tl_a_ready_o",
+    "tl_a_size_i",
+    "tl_a_source_i",
+    "tl_a_valid_i",
+    "tl_d_data_o",
+    "tl_d_error_o",
+    "tl_d_opcode_o",
+    "tl_d_ready_i",
+    "tl_d_source_o",
+    "tl_d_valid_o"
+  ],
+  "protocol_hints": [
+    "spi"
+  ],
+  "clock_candidates": [
+    "clk_i",
+    "sclk_o"
+  ],
+  "reset_candidates": [
+    "rst_ni"
+  ],
+  "interface_hints": {
+    "interrupt_candidates": [
+      "intr_o"
+    ],
+    "alert_candidates": [
+      "alert_o"
+    ]
+  },
+  "enum_state_sets": [],
+  "fsm_candidates": [
+    {
+      "state_expression": "tl_addr",
+      "states": [
+        "ADDR_COMMAND",
+        "ADDR_CONFIGOPTS",
+        "ADDR_CSID",
+        "ADDR_CTRL",
+        "ADDR_ERROR_ENABLE",
+        "ADDR_ERROR_STATUS",
+        "ADDR_INTR_ENABLE",
+        "ADDR_INTR_STATE",
+        "ADDR_INTR_TEST",
+        "ADDR_RXDATA",
+        "ADDR_STATUS",
+        "ADDR_TXDATA",
+        "default"
+      ],
+      "state_count": 13,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "state_expression": "fsm_state",
+      "states": [
+        "FSM_CS_HOLD",
+        "FSM_CS_IDLE",
+        "FSM_IDLE",
+        "default"
+      ],
+      "state_count": 4,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "state_expression": "fsm_state",
+      "states": [
+        "FSM_CS_HOLD",
+        "FSM_CS_IDLE",
+        "FSM_CS_SETUP",
+        "FSM_DATA_XFER",
+        "FSM_IDLE",
+        "default"
+      ],
+      "state_count": 6,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "state_expression": "fsm_state",
+      "states": [
+        "FSM_CS_HOLD",
+        "FSM_CS_IDLE",
+        "FSM_CS_SETUP",
+        "FSM_DATA_XFER",
+        "FSM_IDLE",
+        "default"
+      ],
+      "state_count": 6,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "state_expression": "fsm_state",
+      "states": [
+        "FSM_CS_HOLD",
+        "FSM_CS_IDLE",
+        "FSM_CS_SETUP",
+        "default"
+      ],
+      "state_count": 4,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "state_expression": "fsm_state",
+      "states": [
+        "FSM_CS_SETUP",
+        "FSM_DATA_XFER",
+        "FSM_IDLE",
+        "default"
+      ],
+      "state_count": 4,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    },
+    {
+      "state_expression": "fsm_state",
+      "states": [
+        "default"
+      ],
+      "state_count": 1,
+      "next_state_values": [],
+      "file": "/home/abdulbasit/electrical-and-electronics-engineering/VLSI/isqed-2026-dv-challenge/duts/citadel_spi/citadel_spi.sv"
+    }
+  ],
+  "estimated_fsm_blocks": 7,
+  "csr_summary": {
+    "register_count": 12,
+    "top_keys": [
+      "name",
+      "base_addr",
+      "registers"
+    ]
+  },
+  "spec_excerpt": "# CITADEL_SPI -- SPI Host Controller Specification\n\n> **Disclaimer:** This RTL design is a modified version of an open-source IP block, created exclusively for this competition. It is not production-quality, not security-reviewed, and must not be used outside of this competition context.\n\n---\n\n## 1. Overview\n\nCITADEL_SPI is a serial peripheral interface (SPI) host (master) controller. It generates the SPI clock (SCLK), drives chip-select lines, and transfers data to and from external SPI peripherals. The controller supports all four standard SPI modes via configurable clock polarity (CPOL) and clock phase (CPHA) settings.\n\nKey features:\n\n- Four active-low chip-select outputs (`csn_o[3:0]`), individually selectable.\n- Configurable SCLK frequency via a 16-bit clock divider.\n- Independent 16-entry transmit and receive FIFOs (8 bits per entry).\n- Segment-based command interface: each SPI transaction consists of one or more segments, where each segment specifies a transfer direction, byte count, and chip-select management policy.\n- A 4-entry command FIFO for queuing segment descriptors.\n- Per-chip-select timing control for setup, hold, and inter-transfer idle periods.\n- Four interrupt sources and an error reporting mechanism.\n\nThe controller connects to the system fabric through a TileLink-UL (TL-UL) bus interface.\n\n---\n\n## 2. Pin Interface\n\n| Signal        | Width | Direction | Description                                    |\n|---------------|-------|-----------|------------------------------------------------|\n| `clk_i`       | 1     | Input     | System clock                                   |\n| `rst_ni`      | 1     | Input     | Active-low asynchronous reset                  |\n| `tl_i`        | struct | Input    | TL-UL request channel (host to device)         |\n| `tl_i_ready`  | 1     | Output    | Device ready to accept TL-UL request           |\n| `tl_o`        | struct | Output   | TL-UL response channel (device to host)        |\n| `tl_o_ready`  | 1     | Input     | Host ready to accept TL-UL response            |\n| `intr_o`      | 4     | Output    | Interrupt outputs (see Section 5)              |\n| `alert_o`     | 1     | Output    | Alert output                                   |\n| `sclk_o`      | 1     | Output    | SPI clock                                      |\n| `csn_o`       | 4     | Output    | Chip-select outputs (active low)               |\n| `mosi_o`      | 1     | Output    | Master-out / slave-in data                     |\n| `miso_i`      | 1     | Input     | Master-in / slave-out data                     |\n\n---\n\n## 3. Functional Description\n\n### 3.1 SPI Clock Generation\n\nSCLK is derived from the system clock using a programmable 16-bit divider. The output frequency is:\n\n    f_sclk = f_clk / (2 * (CLKDIV + 1))\n\nwhere CLKDIV is the value programmed in the CONFIGOPTS register. The divider generates a symmetric (50% duty cycle) clock at the output.\n\nWhen the SPI controller is idle (no active transaction), the SCLK output is held at the value determined by the CPOL setting. During a transaction, SCLK toggles at the programmed rate for the duration of data transfer.\n\n### 3.2 SPI Modes (CPOL / CPHA)\n\nThe controller supports the four standard SPI modes through the CPOL and CPHA configuration bits:\n\n| Mode | CPOL | CPHA | SCLK Idle | Data Output     | Data Sample     |\n|------|------|------|-----------|-----------------|-----------------|\n| 0    | 0    | 0    | Low       | Falling edge    | Rising edge     |\n| 1    | 0    | 1    | Low       | Rising edge     | Falling edge    |\n| 2    | 1    | 0    | High      | Rising edge     | Falling edge    |\n| 3    | 1    | 1    | High      | Falling edge    | Rising edge     |\n\nWhen CPHA is 0, the first data bit is driven onto MOSI at the leading edge of the chip-select assertion, before the first SCLK transition. The receiving side samples MISO on the first (leading) SCLK edge. When CPHA is 1, data is driven on the leading SCLK edge and sampled on the trailing SCLK edge",
+  "rtl_bytes": 25062
+}

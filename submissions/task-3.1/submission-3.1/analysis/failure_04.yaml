@@ -3,14 +3,14 @@ classification: "configuration_error"
 root_module: "timer_driver"
 root_line_range: "N/A"
 root_cause: |
-  The test programs a 64-bit comparator using LOW-first then HIGH write ordering while the spec
-  explicitly states comparator writes are non-atomic and software must account for intermediate
-  state. During that transient, comparator value is effectively 0x0000000000000000 and current
-  counter is already above it, so interrupt assertion is expected. The later HIGH-first safe
-  sequence passes in the same log, confirming the failure is setup-sequence misuse, not RTL
-  compare logic failure.
+    The test programs a 64-bit comparator using LOW-first then HIGH write ordering while the spec
+    explicitly states comparator writes are non-atomic and software must account for intermediate
+    state. During that transient, comparator value is effectively 0x0000000000000000 and current
+    counter is already above it, so interrupt assertion is expected. The later HIGH-first safe
+    sequence passes in the same log, confirming the failure is setup-sequence misuse, not RTL
+    compare logic failure.
 suggested_fix: |
-  Update configuration sequence in testbench to use a safe write order (HIGH guard value, then
-  LOW, then final HIGH) for 64-bit compare registers. Keep scoreboard expectations aligned with
-  documented non-atomic comparator semantics.
+    Update configuration sequence in testbench to use a safe write order (HIGH guard value, then
+    LOW, then final HIGH) for 64-bit compare registers. Keep scoreboard expectations aligned with
+    documented non-atomic comparator semantics.
 confidence: 0.98

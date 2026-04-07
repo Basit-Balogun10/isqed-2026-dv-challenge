@@ -24,7 +24,11 @@ def load_yaml(path: pathlib.Path) -> Any:
         return yaml.safe_load(f)
 
 
-def validate(submission_dir: pathlib.Path, failure_details_path: pathlib.Path, patches_dir: pathlib.Path) -> None:
+def validate(
+    submission_dir: pathlib.Path,
+    failure_details_path: pathlib.Path,
+    patches_dir: pathlib.Path,
+) -> None:
     required_files = [
         submission_dir / "bucketing.yaml",
         submission_dir / "bug_descriptions.yaml",
@@ -98,7 +102,9 @@ def validate(submission_dir: pathlib.Path, failure_details_path: pathlib.Path, p
 
     expected_ranks = list(range(1, len(ranking) + 1))
     if sorted(seen_ranks) != expected_ranks:
-        fail(f"priority ranks must be contiguous {expected_ranks}, got {sorted(seen_ranks)}")
+        fail(
+            f"priority ranks must be contiguous {expected_ranks}, got {sorted(seen_ranks)}"
+        )
     if set(rank_bucket_ids) != set(bucket_ids):
         fail("priority_ranking.yaml must rank every bucket exactly once")
 
@@ -113,7 +119,12 @@ def validate(submission_dir: pathlib.Path, failure_details_path: pathlib.Path, p
 
     seen_patch_ids = set()
     for item in validations:
-        for key in ("patch_id", "fixes_bucket", "introduces_regression", "regression_details"):
+        for key in (
+            "patch_id",
+            "fixes_bucket",
+            "introduces_regression",
+            "regression_details",
+        ):
             if key not in item:
                 fail(f"patch_validation entry missing key '{key}'")
         if item["fixes_bucket"] not in set(bucket_ids):
@@ -132,8 +143,12 @@ def validate(submission_dir: pathlib.Path, failure_details_path: pathlib.Path, p
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate Task 3.3 submission artifacts")
-    parser.add_argument("--submission-dir", required=True, help="Path to submission-3.3 directory")
+    parser = argparse.ArgumentParser(
+        description="Validate Task 3.3 submission artifacts"
+    )
+    parser.add_argument(
+        "--submission-dir", required=True, help="Path to submission-3.3 directory"
+    )
     parser.add_argument(
         "--failure-details",
         default="phase3_materials/task_3_3_regression/failure_details.yaml",
